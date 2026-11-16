@@ -1,0 +1,1392 @@
+{
+ "pantanal": {
+  "passiva": {
+   "vitoria": 0,
+   "patrimonio": 122,
+   "ia": [
+    142,
+    449,
+    290
+   ],
+   "ataquesVoce": 13.6,
+   "ataquesIA": [
+    9.5,
+    7.5,
+    5.7
+   ],
+   "abates": 3.5,
+   "oncasFim": 11.3,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.28,
+   "Jmedio": [
+    7,
+    9.7,
+    12.7,
+    14.3,
+    13.8,
+    12.1,
+    10.6,
+    9.9,
+    10.1,
+    10.7,
+    11.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.54,
+    0.42,
+    0.32,
+    0.28,
+    0.29,
+    0.34,
+    0.39,
+    0.42,
+    0.42
+   ]
+  },
+  "conviver": {
+   "vitoria": 66.7,
+   "patrimonio": 504,
+   "ia": [
+    139,
+    449,
+    290
+   ],
+   "ataquesVoce": 9.2,
+   "ataquesIA": [
+    8.3,
+    7.1,
+    5.4
+   ],
+   "abates": 3,
+   "oncasFim": 10.6,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.28,
+   "Jmedio": [
+    7,
+    9.7,
+    12.6,
+    14.1,
+    13.6,
+    11.7,
+    10.4,
+    9.7,
+    9.8,
+    10.2,
+    10.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.41,
+    0.33,
+    0.28,
+    0.31,
+    0.36,
+    0.41,
+    0.44,
+    0.44
+   ]
+  },
+  "desmatar_abater": {
+   "vitoria": 0,
+   "patrimonio": 90,
+   "ia": [
+    126,
+    439,
+    278
+   ],
+   "ataquesVoce": 8.9,
+   "ataquesIA": [
+    10,
+    7.9,
+    6.2
+   ],
+   "abates": 7.6,
+   "oncasFim": 11,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.4,
+    12.1,
+    13.7,
+    13.6,
+    12.3,
+    11,
+    10.4,
+    10.3,
+    10.6,
+    11
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.56,
+    0.46,
+    0.37,
+    0.32,
+    0.32,
+    0.35,
+    0.39,
+    0.41,
+    0.42
+   ]
+  },
+  "abater": {
+   "vitoria": 0,
+   "patrimonio": 72,
+   "ia": [
+    128,
+    437,
+    280
+   ],
+   "ataquesVoce": 8.2,
+   "ataquesIA": [
+    9.8,
+    7.9,
+    6.3
+   ],
+   "abates": 7.9,
+   "oncasFim": 11.2,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.3,
+    12.1,
+    13.8,
+    13.9,
+    12.5,
+    11.2,
+    10.4,
+    10.3,
+    10.7,
+    11.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.56,
+    0.46,
+    0.36,
+    0.31,
+    0.31,
+    0.34,
+    0.38,
+    0.41,
+    0.41
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 9.7,
+   "patrimonio": 322,
+   "ia": [
+    142,
+    441,
+    295
+   ],
+   "ataquesVoce": 6.2,
+   "ataquesIA": [
+    9.5,
+    7.9,
+    5.4
+   ],
+   "abates": 3.5,
+   "oncasFim": 10.8,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.7,
+    12.6,
+    14.2,
+    13.6,
+    11.9,
+    10.4,
+    9.7,
+    9.8,
+    10.3,
+    10.8
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.54,
+    0.42,
+    0.33,
+    0.29,
+    0.3,
+    0.35,
+    0.4,
+    0.44,
+    0.44
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 0,
+   "patrimonio": 153,
+   "ia": [
+    143,
+    444,
+    291
+   ],
+   "ataquesVoce": 15.3,
+   "ataquesIA": [
+    9.5,
+    7.7,
+    5.7
+   ],
+   "abates": 3.4,
+   "oncasFim": 11.1,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.7,
+    12.6,
+    14.1,
+    13.5,
+    11.8,
+    10.5,
+    9.9,
+    10,
+    10.6,
+    11.1
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.54,
+    0.42,
+    0.33,
+    0.29,
+    0.3,
+    0.35,
+    0.4,
+    0.43,
+    0.42
+   ]
+  }
+ },
+ "amazonia": {
+  "passiva": {
+   "vitoria": 9.3,
+   "patrimonio": 304,
+   "ia": [
+    228,
+    454,
+    365
+   ],
+   "ataquesVoce": 26.4,
+   "ataquesIA": [
+    12.5,
+    4.2,
+    4.9
+   ],
+   "abates": 3.6,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.33,
+   "Jmedio": [
+    6,
+    8.1,
+    10.2,
+    11.3,
+    11,
+    9.8,
+    8.6,
+    7.8,
+    7.6,
+    7.9,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.27,
+    0.27,
+    0.29,
+    0.33,
+    0.37,
+    0.39
+   ]
+  },
+  "conviver": {
+   "vitoria": 87.3,
+   "patrimonio": 515,
+   "ia": [
+    215,
+    450,
+    367
+   ],
+   "ataquesVoce": 8.4,
+   "ataquesIA": [
+    12.6,
+    4.3,
+    5.1
+   ],
+   "abates": 3.4,
+   "oncasFim": 8.4,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.34,
+   "Jmedio": [
+    6,
+    8,
+    10.2,
+    11.2,
+    10.9,
+    9.6,
+    8.5,
+    7.8,
+    7.6,
+    7.9,
+    8.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.27,
+    0.27,
+    0.3,
+    0.34,
+    0.37,
+    0.39
+   ]
+  },
+  "desmatar_abater": {
+   "vitoria": 0,
+   "patrimonio": 22,
+   "ia": [
+    197,
+    437,
+    352
+   ],
+   "ataquesVoce": 14.1,
+   "ataquesIA": [
+    14.8,
+    5.8,
+    6
+   ],
+   "abates": 7,
+   "oncasFim": 8.3,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.32,
+   "Jmedio": [
+    6,
+    7.7,
+    9.6,
+    10.7,
+    10.7,
+    9.9,
+    8.9,
+    8.2,
+    7.9,
+    8,
+    8.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.58,
+    0.54,
+    0.44,
+    0.36,
+    0.31,
+    0.29,
+    0.31,
+    0.34,
+    0.37,
+    0.38
+   ]
+  },
+  "abater": {
+   "vitoria": 0.3,
+   "patrimonio": 159,
+   "ia": [
+    185,
+    433,
+    348
+   ],
+   "ataquesVoce": 15.4,
+   "ataquesIA": [
+    15.8,
+    6,
+    6.5
+   ],
+   "abates": 9.7,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.32,
+   "Jmedio": [
+    6,
+    7.8,
+    9.6,
+    10.7,
+    10.7,
+    9.9,
+    9.1,
+    8.5,
+    8.3,
+    8.3,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.54,
+    0.45,
+    0.37,
+    0.33,
+    0.31,
+    0.32,
+    0.34,
+    0.36,
+    0.38
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 67.7,
+   "patrimonio": 474,
+   "ia": [
+    222,
+    446,
+    361
+   ],
+   "ataquesVoce": 7,
+   "ataquesIA": [
+    13.1,
+    4.8,
+    5.2
+   ],
+   "abates": 3.5,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.33,
+   "Jmedio": [
+    6,
+    8,
+    10.1,
+    11.3,
+    10.9,
+    9.7,
+    8.5,
+    7.8,
+    7.6,
+    8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.27,
+    0.27,
+    0.3,
+    0.34,
+    0.37,
+    0.39
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 9.3,
+   "patrimonio": 305,
+   "ia": [
+    229,
+    453,
+    367
+   ],
+   "ataquesVoce": 26.5,
+   "ataquesIA": [
+    12.6,
+    4.2,
+    4.7
+   ],
+   "abates": 3.6,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.33,
+   "Jmedio": [
+    6,
+    8.1,
+    10.2,
+    11.3,
+    11,
+    9.8,
+    8.6,
+    7.8,
+    7.6,
+    7.9,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.27,
+    0.27,
+    0.29,
+    0.33,
+    0.37,
+    0.39
+   ]
+  }
+ },
+ "cerrado": {
+  "passiva": {
+   "vitoria": 0,
+   "patrimonio": 350,
+   "ia": [
+    347,
+    757,
+    490
+   ],
+   "ataquesVoce": 19.9,
+   "ataquesIA": [
+    11.9,
+    7.5,
+    5.7
+   ],
+   "abates": 3,
+   "oncasFim": 5.3,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    4,
+    4.7,
+    5.6,
+    6.3,
+    6.6,
+    6.6,
+    6.4,
+    6,
+    5.7,
+    5.5,
+    5.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.57,
+    0.52,
+    0.49,
+    0.46,
+    0.46,
+    0.47,
+    0.49,
+    0.51
+   ]
+  },
+  "conviver": {
+   "vitoria": 60.3,
+   "patrimonio": 773,
+   "ia": [
+    331,
+    735,
+    472
+   ],
+   "ataquesVoce": 8.5,
+   "ataquesIA": [
+    11.7,
+    7.7,
+    5.8
+   ],
+   "abates": 3.1,
+   "oncasFim": 4.6,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.31,
+   "Jmedio": [
+    4,
+    4.7,
+    5.5,
+    6.2,
+    6.4,
+    6.3,
+    6,
+    5.7,
+    5.3,
+    4.9,
+    4.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.61,
+    0.58,
+    0.53,
+    0.5,
+    0.49,
+    0.49,
+    0.51,
+    0.53,
+    0.56
+   ]
+  },
+  "desmatar_abater": {
+   "vitoria": 0,
+   "patrimonio": 239,
+   "ia": [
+    281,
+    765,
+    451
+   ],
+   "ataquesVoce": 13,
+   "ataquesIA": [
+    14.7,
+    8,
+    7.7
+   ],
+   "abates": 8.2,
+   "oncasFim": 4.9,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    4,
+    4.5,
+    5.2,
+    5.8,
+    6,
+    5.9,
+    5.8,
+    5.6,
+    5.4,
+    5.2,
+    4.9
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.63,
+    0.61,
+    0.58,
+    0.56,
+    0.54,
+    0.54,
+    0.54,
+    0.56,
+    0.57
+   ]
+  },
+  "abater": {
+   "vitoria": 0,
+   "patrimonio": 203,
+   "ia": [
+    283,
+    766,
+    449
+   ],
+   "ataquesVoce": 12.1,
+   "ataquesIA": [
+    15.1,
+    8.1,
+    7.5
+   ],
+   "abates": 8.3,
+   "oncasFim": 5.3,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.34,
+   "Jmedio": [
+    4,
+    4.5,
+    5.2,
+    5.8,
+    6.1,
+    6.1,
+    6.1,
+    5.9,
+    5.6,
+    5.4,
+    5.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.63,
+    0.61,
+    0.57,
+    0.55,
+    0.53,
+    0.52,
+    0.52,
+    0.53,
+    0.54
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 2.3,
+   "patrimonio": 544,
+   "ia": [
+    343,
+    762,
+    482
+   ],
+   "ataquesVoce": 6.5,
+   "ataquesIA": [
+    12.7,
+    8.2,
+    5.9
+   ],
+   "abates": 3.1,
+   "oncasFim": 4.7,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    4,
+    4.7,
+    5.5,
+    6.2,
+    6.5,
+    6.4,
+    6.1,
+    5.7,
+    5.3,
+    4.9,
+    4.7
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.58,
+    0.53,
+    0.5,
+    0.48,
+    0.49,
+    0.51,
+    0.54,
+    0.56
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 9.7,
+   "patrimonio": 485,
+   "ia": [
+    340,
+    771,
+    498
+   ],
+   "ataquesVoce": 21.1,
+   "ataquesIA": [
+    11.9,
+    7.7,
+    5.7
+   ],
+   "abates": 3,
+   "oncasFim": 4.7,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    4,
+    4.7,
+    5.6,
+    6.2,
+    6.5,
+    6.4,
+    6.1,
+    5.7,
+    5.3,
+    5,
+    4.7
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.62,
+    0.58,
+    0.54,
+    0.5,
+    0.48,
+    0.49,
+    0.5,
+    0.53,
+    0.55
+   ]
+  }
+ },
+ "caatinga": {
+  "passiva": {
+   "vitoria": 45.3,
+   "patrimonio": 293,
+   "ia": [
+    194,
+    288,
+    238
+   ],
+   "ataquesVoce": 6.1,
+   "ataquesIA": [
+    5.3,
+    2.1,
+    2.2
+   ],
+   "abates": 1.1,
+   "oncasFim": 1.9,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2.1,
+    2,
+    1.9
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.62,
+    0.66,
+    0.68,
+    0.7,
+    0.72,
+    0.73,
+    0.73,
+    0.74,
+    0.75
+   ]
+  },
+  "conviver": {
+   "vitoria": 9,
+   "patrimonio": 240,
+   "ia": [
+    176,
+    284,
+    223
+   ],
+   "ataquesVoce": 3.1,
+   "ataquesIA": [
+    5,
+    2,
+    2.2
+   ],
+   "abates": 0.9,
+   "oncasFim": 1.6,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    2,
+    2,
+    1.8,
+    1.7,
+    1.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.67,
+    0.7,
+    0.72,
+    0.74,
+    0.76,
+    0.77,
+    0.79,
+    0.8
+   ]
+  },
+  "desmatar_abater": {
+   "vitoria": 0.3,
+   "patrimonio": 162,
+   "ia": [
+    165,
+    276,
+    213
+   ],
+   "ataquesVoce": 7.7,
+   "ataquesIA": [
+    5.8,
+    2,
+    2.4
+   ],
+   "abates": 3.1,
+   "oncasFim": 1.6,
+   "extincao": 1,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.5,
+    2.3,
+    2.2,
+    2.1,
+    2.1,
+    2,
+    1.9,
+    1.8,
+    1.7,
+    1.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.66,
+    0.69,
+    0.72,
+    0.74,
+    0.76,
+    0.77,
+    0.78,
+    0.8,
+    0.81
+   ]
+  },
+  "abater": {
+   "vitoria": 2.3,
+   "patrimonio": 160,
+   "ia": [
+    190,
+    285,
+    230
+   ],
+   "ataquesVoce": 5.3,
+   "ataquesIA": [
+    5.9,
+    2.2,
+    2.6
+   ],
+   "abates": 2.9,
+   "oncasFim": 1.9,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.5,
+    2.4,
+    2.3,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2.1,
+    2,
+    1.9
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.64,
+    0.68,
+    0.7,
+    0.72,
+    0.73,
+    0.74,
+    0.74,
+    0.75,
+    0.76
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 2.3,
+   "patrimonio": 222,
+   "ia": [
+    179,
+    288,
+    224
+   ],
+   "ataquesVoce": 2.9,
+   "ataquesIA": [
+    5,
+    1.9,
+    2.2
+   ],
+   "abates": 1,
+   "oncasFim": 1.6,
+   "extincao": 0,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    2.1,
+    2,
+    1.9,
+    1.7,
+    1.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.67,
+    0.7,
+    0.72,
+    0.74,
+    0.75,
+    0.77,
+    0.78,
+    0.8
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 67,
+   "patrimonio": 320,
+   "ia": [
+    169,
+    287,
+    212
+   ],
+   "ataquesVoce": 7.8,
+   "ataquesIA": [
+    4.7,
+    1.7,
+    2.1
+   ],
+   "abates": 0.9,
+   "oncasFim": 1.3,
+   "extincao": 0.3,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2,
+    1.9,
+    1.8,
+    1.6,
+    1.5,
+    1.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.65,
+    0.68,
+    0.72,
+    0.75,
+    0.77,
+    0.79,
+    0.79,
+    0.81,
+    0.83
+   ]
+  }
+ },
+ "araripe": {
+  "passiva": {
+   "vitoria": 0,
+   "patrimonio": 485,
+   "ia": [
+    429,
+    748,
+    589
+   ],
+   "ataquesVoce": 18.5,
+   "ataquesIA": [
+    9,
+    3.7,
+    2.9
+   ],
+   "abates": 1.9,
+   "oncasFim": 3.5,
+   "extincao": 0,
+   "soldadinho": 0.8,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    4,
+    4.1,
+    4.2,
+    4.2,
+    4.1,
+    3.9,
+    3.8,
+    3.7,
+    3.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.7,
+    0.7,
+    0.69,
+    0.69,
+    0.69,
+    0.7,
+    0.71,
+    0.72
+   ]
+  },
+  "conviver": {
+   "vitoria": 60.3,
+   "patrimonio": 699,
+   "ia": [
+    414,
+    675,
+    530
+   ],
+   "ataquesVoce": 6.2,
+   "ataquesIA": [
+    9.8,
+    3.9,
+    2.9
+   ],
+   "abates": 1.9,
+   "oncasFim": 2.6,
+   "extincao": 0,
+   "soldadinho": 0.8,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    3.9,
+    4,
+    4,
+    3.9,
+    3.7,
+    3.4,
+    3.2,
+    2.9,
+    2.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.71,
+    0.71,
+    0.72,
+    0.73,
+    0.75,
+    0.77,
+    0.79
+   ]
+  },
+  "desmatar_abater": {
+   "vitoria": 0,
+   "patrimonio": 275,
+   "ia": [
+    373,
+    674,
+    496
+   ],
+   "ataquesVoce": 13.3,
+   "ataquesIA": [
+    12.6,
+    4,
+    3.9
+   ],
+   "abates": 5.5,
+   "oncasFim": 3,
+   "extincao": 0,
+   "soldadinho": 0.75,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.6,
+    3.7,
+    3.8,
+    3.8,
+    3.8,
+    3.6,
+    3.5,
+    3.3,
+    3.2,
+    3
+   ],
+   "Nmedio": [
+    0.55,
+    0.65,
+    0.71,
+    0.74,
+    0.74,
+    0.73,
+    0.73,
+    0.74,
+    0.75,
+    0.76,
+    0.77
+   ]
+  },
+  "abater": {
+   "vitoria": 0,
+   "patrimonio": 284,
+   "ia": [
+    376,
+    707,
+    528
+   ],
+   "ataquesVoce": 12.2,
+   "ataquesIA": [
+    12.8,
+    3.9,
+    4
+   ],
+   "abates": 5.8,
+   "oncasFim": 3.4,
+   "extincao": 0,
+   "soldadinho": 0.81,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.6,
+    3.8,
+    3.9,
+    4,
+    3.9,
+    3.9,
+    3.8,
+    3.6,
+    3.5,
+    3.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.65,
+    0.71,
+    0.73,
+    0.73,
+    0.72,
+    0.72,
+    0.72,
+    0.73,
+    0.73,
+    0.74
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 39.7,
+   "patrimonio": 659,
+   "ia": [
+    414,
+    677,
+    526
+   ],
+   "ataquesVoce": 6,
+   "ataquesIA": [
+    9.9,
+    3.7,
+    2.9
+   ],
+   "abates": 2,
+   "oncasFim": 2.6,
+   "extincao": 0,
+   "soldadinho": 0.8,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    3.9,
+    4,
+    4,
+    3.9,
+    3.7,
+    3.4,
+    3.2,
+    2.9,
+    2.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.71,
+    0.71,
+    0.72,
+    0.73,
+    0.75,
+    0.77,
+    0.79
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 77.7,
+   "patrimonio": 786,
+   "ia": [
+    434,
+    682,
+    537
+   ],
+   "ataquesVoce": 18.9,
+   "ataquesIA": [
+    8.9,
+    3.5,
+    2.5
+   ],
+   "abates": 1.8,
+   "oncasFim": 2.5,
+   "extincao": 0,
+   "soldadinho": 0.81,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    3.9,
+    4.1,
+    4,
+    3.9,
+    3.6,
+    3.4,
+    3.1,
+    2.8,
+    2.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.71,
+    0.71,
+    0.72,
+    0.74,
+    0.76,
+    0.78,
+    0.79
+   ]
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "jaguarete",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Jaguaretê: no reino do jaguar. Jogo de estratégia sobre pecuária, jaguares e suçuaranas, com dinâmica de presa e predador.",
+  "type": "module",
+  "scripts": {
+    "build": "node ferramentas/construir.mjs . dist",
+    "sim": "node sim/simular.mjs 300 > sim/resultados.json && node sim/resumo.mjs sim/resultados.json"
+  },
+  "devDependencies": {
+    "esbuild": "0.23.1"
+  }
+}

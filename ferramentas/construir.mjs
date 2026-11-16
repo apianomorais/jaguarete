@@ -1,0 +1,20 @@
+// Gera dist/jaguares.html (arquivo único, abre com duplo clique) e a versão para publicação como artefato.
+import { build } from 'esbuild';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { resolve } from 'path';
+const raiz = resolve(process.argv[2] || '.');
+const saida = resolve(process.argv[3] || raiz + '/dist');
+mkdirSync(saida, { recursive: true });
+const r = await build({ entryPoints: [raiz + '/js/interface.js'], bundle: true, format: 'iife', minify: true, write: false, target: 'es2020' });
+const js = r.outputFiles[0].text.replace(/<\/script/gi, '<\\/script');
+const css = readFileSync(raiz + '/estilo.css', 'utf8');
+const html = readFileSync(raiz + '/index.html', 'utf8');
+const corpo = html.slice(html.indexOf('<!--CORPO-->') + 12, html.indexOf('<!--/CORPO-->'));
+const fontes = html.match(/<link rel="stylesheet" href="https:\/\/fonts[^>]+>/)[0];
+const desc = html.match(/<meta name="description"[^>]+>/)[0];
+const titulo = html.match(/<title>[^<]*<\/title>/)[0];
+const cabeca = `${titulo}\n<meta name="claude:viewport-fit-sides" content="cover">\n${desc}\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n${fontes}\n<style>\n${css}\n</style>`;
+const pagina = `${corpo}\n<script>\n${js}\n</script>`;
+writeFileSync(saida + '/jaguarete.html', `<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n${cabeca}\n</head>\n<body>\n${pagina}\n</body>\n</html>\n`);
+writeFileSync(saida + '/artefato.html', `${cabeca}\n${pagina}\n`);
+console.log('ok', (js.length / 1024).toFixed(0) + ' KB de JS');
