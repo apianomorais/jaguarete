@@ -1,6 +1,6 @@
 // Interface do jogo no navegador: mapa SVG, painel, relatórios e gráficos.
 import * as M from './motor.js';
-import { BIOMAS, ESPECIES, GALINHA, CUSTOS, FAZENDAS, RODADAS, TIPOS, W, H, MAX_CAMERAS, SELO_BONUS, CRA_POR_CELULA, CERCAS, MULTA, VENDA_FORCADA } from './dados.js';
+import { BIOMAS, ESPECIES, GALINHA, CUSTOS, COR_FAZENDA, RODADAS, TIPOS, W, H, MAX_CAMERAS, SELO_BONUS, CRA_POR_CELULA, CERCAS, MULTA, VENDA_FORCADA } from './dados.js';
 import { NATUREZA, dicaDaEstacao, COMO_JOGAR } from './textos.js';
 
 const $ = s => document.querySelector(s);
@@ -105,8 +105,14 @@ function telaInicio() {
   if (temSalvo) $('#continuar').onclick = () => { st = salvo; abrirJogo(); };
 }
 
+// onde fica a sede de um vizinho no mapa
+function onde(sede) {
+  const r = Math.floor(sede / W), c = sede % W;
+  return `${r < H / 2 ? 'no alto' : 'embaixo'}, ${c < W / 2 ? 'à esquerda' : 'à direita'}`;
+}
 function comecar(biomaId) {
   st = M.novoJogo(biomaId);
+  const vant = BIOMAS[biomaId].vantagemVizinhos;
   abrirJogo();
   const araripe = biomaId === 'araripe';
   const n = araripe ? NATUREZA.plano : NATUREZA.modelo;
@@ -116,6 +122,9 @@ function comecar(biomaId) {
     <p>${esc(BIOMAS[biomaId].resumo)}</p>
     ${araripe ? '<p>No alto do mapa fica a chapada, com a FLONA e duas fazendas. Na encosta, as nascentes e o Refúgio do Soldadinho. Embaixo, o vale, onde fica a sua fazenda. Cada área tem uma zona do plano de manejo: <b>Produção</b> (sem marca), <b>Uso Moderado</b> (pontilhada) e <b>Uso Restrito</b> (riscada). Só a Zona de Produção, fora das APPs das nascentes, pode ser desmatada legalmente.</p>' : ''}
     <p>Toque numa área do mapa para ver o que dá para fazer ali. Você tem <b>3 ações</b> por estação; comprar, vender e mover animais não gasta ação. Quando terminar, toque em <b>Encerrar estação</b>: ${art(P(), true)} ${P().plural} andam à noite, e de manhã você vê o que aconteceu.</p>
+    <h3>Seus vizinhos nesta partida</h3>
+    <ul class="lista vizinhos-inicio">${st.fazendas.slice(1).map((F, k) => `<li><span class="ponto" style="background:${COR_FAZENDA[k + 1]}"></span><b>${esc(F.apelido)}</b>, ${esc(F.tipo)} (${esc(onde(F.sede))}): ${esc(F.descricao)}</li>`).join('')}</ul>
+    ${vant ? `<p>Eles chegaram à região antes de você e começam com R$ ${vant} mil a mais em caixa.</p>` : ''}
     ${blocoNatureza({ ...n, id: araripe ? 'plano' : 'modelo' })}
     <div class="modal-acoes"><button class="btn btn-forte" data-fechar>Ver a fazenda</button></div>`);
 }
@@ -523,11 +532,13 @@ function painelVizinhos() {
   return `
   <div class="bloco"><h3>Patrimônio</h3>
     <table class="tabela"><tbody>
-      ${rk.map((r, i) => `<tr><td>${i + 1}º</td><td><span class="ponto" style="background:${FAZENDAS[r.f].cor}"></span>${esc(r.f === 0 ? 'Você' : r.apelido)}</td><td>${r.selo ? '<span class="chip chip-ok">selo</span>' : '<span class="chip">sem selo</span>'}</td><td class="num">${reais(r.patrimonio)}</td></tr>`).join('')}
+      ${rk.map((r, i) => `<tr><td>${i + 1}º</td><td><span class="ponto" style="background:${COR_FAZENDA[r.f]}"></span>${esc(r.f === 0 ? 'Você' : r.apelido)}</td><td>${r.selo ? '<span class="chip chip-ok">selo</span>' : '<span class="chip">sem selo</span>'}</td><td class="num">${reais(r.patrimonio)}</td></tr>`).join('')}
     </tbody></table>
   </div>
-  ${st.fazendas.slice(1).map((F, k) => `<div class="bloco"><h3><span class="ponto" style="background:${FAZENDAS[k + 1].cor}"></span>${esc(F.apelido)} · ${esc(F.nome)}</h3>
-    <p class="vazio" style="margin:0">${esc(FAZENDAS[k + 1].descricao)}</p>
+  ${st.fazendas.slice(1).map((F, k) => `<div class="bloco"><h3><span class="ponto" style="background:${COR_FAZENDA[k + 1]}"></span>${esc(F.apelido)} · ${esc(F.nome)}</h3>
+    ${F.tipo ? `<div class="rotulo">${esc(F.tipo)} · ${esc(onde(F.sede))}</div>` : ''}
+    <p class="vazio" style="margin:0">${esc(F.descricao || '')}</p>
+    ${(F.rancor?.[0] ?? 0) > 0 ? `<div class="msg erro">${(F.perfil?.vinganca ?? 0) >= 0.5 ? 'Guarda rancor de você e vai revidar.' : 'Guarda rancor de você.'}</div>` : ''}
     <div class="linha-info"><span>Ataques sofridos</span><span class="num">${F.ataquesTotal}</span></div>
     <div class="linha-info"><span>Vegetação nativa</span><span class="num">${Math.round(M.nativaFrac(st, k + 1) * 100)}%</span></div></div>`).join('')}`;
 }
@@ -702,7 +713,7 @@ function telaFinal() {
     <div class="rotulo">${esc(M.bioma(st).nome)} · dez anos depois</div>
     <h2>${titulo}</h2>
     <table class="tabela"><tbody>
-      ${rk.map((r, i) => `<tr><td>${i + 1}º</td><td><span class="ponto" style="background:${FAZENDAS[r.f].cor}"></span>${esc(r.f === 0 ? 'Você' : `${r.apelido} · ${st.fazendas[r.f].nome}`)}</td><td>${r.selo ? '<span class="chip chip-ok">selo</span>' : '<span class="chip">sem selo</span>'}</td><td class="num">${r.abates ? `${r.abates} ${r.abates > 1 ? `${P().plural} ${gen('abatidos', 'abatidas')}` : `${P().nome} ${gen('abatido', 'abatida')}`}` : ''}</td><td class="num"><b>${reais(r.patrimonio)}</b></td></tr>`).join('')}
+      ${rk.map((r, i) => `<tr><td>${i + 1}º</td><td><span class="ponto" style="background:${COR_FAZENDA[r.f]}"></span>${esc(r.f === 0 ? 'Você' : `${r.apelido} · ${st.fazendas[r.f].nome}`)}</td><td>${r.selo ? '<span class="chip chip-ok">selo</span>' : '<span class="chip">sem selo</span>'}</td><td class="num">${r.abates ? `${r.abates} ${r.abates > 1 ? `${P().plural} ${gen('abatidos', 'abatidas')}` : `${P().nome} ${gen('abatido', 'abatida')}`}` : ''}</td><td class="num"><b>${reais(r.patrimonio)}</b></td></tr>`).join('')}
     </tbody></table>
     <p>${extinta ? `${maiusc(art(P(), true))} ${P().plural} desapareceram da região.` : `A região começou com ${J0.toFixed(0)} ${P().plural} e terminou com cerca de ${Jf.toFixed(0)}.`}${st.soldadinho ? ` O soldadinho-do-araripe terminou com ${Math.round(100 * st.soldadinho.S)}% da população inicial.` : ''}${hist.at(-1).V != null ? ` Os ${M.bioma(st).javaporco.plural} ocupavam ${Math.round(100 * hist.at(-1).V)}% da capacidade da região.` : ''} A vegetação nativa passou de ${Math.round(hist[0].nativa * 100)}% para ${Math.round(hist.at(-1).nativa * 100)}% da paisagem. ${!st.abatesTotal ? `${gen('Nenhum', 'Nenhuma')} ${P().nome} foi ${gen('abatido', 'abatida')} por matadores.` : `Ao todo, ${st.abatesTotal === 1 ? `${um()} ${P().nome} foi ${gen('abatido', 'abatida')}` : `${st.abatesTotal} ${P().plural} foram ${gen('abatidos', 'abatidas')}`} por matadores.`}</p>
     <div class="graficos">

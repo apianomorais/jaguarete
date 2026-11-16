@@ -62,10 +62,33 @@ As divisas entre as fazendas são abertas. O título (a linha pontilhada no mapa
   - A cada estação, cada animal solto tem 50% de chance de ir para uma área aberta vizinha (difusão) e 10% de chance de se perder.
   - Na mata, ficam duas vezes mais expostos aos predadores do que num pasto de borda sem defesa, e entram na resposta funcional do modelo como parte do rebanho exposto.
   - O dono recolhe todos de uma vez, na sede (uma ação e R$ 2 mil): vaqueiros levam os animais para os pastos cercados com vaga e vendem às pressas os que não couberem. Quem cerca a área onde estão os próprios animais soltos também os prende de volta.
-- **Os vizinhos:** cada fazendeiro do computador tem um grau de respeito à lei.
-  - Seu Brás, o menos cuidadoso, cerca com frequência a terra aberta dos outros e, de vez em quando, derruba a cerca do pasto mais cheio de um vizinho (no máximo uma por estação).
-  - Zé Ramos faz isso raramente; Dona Celeste nunca.
-  - Os três derrubam logo a cerca de quem grilou a sua terra (desforço imediato), processam quem derrubou as suas cercas, recolhem os animais soltos, renovam as cercas dos pastos com animais, cercam os próprios pastos abertos e reforçam as divisas quando há um grileiro por perto.
+- **Os vizinhos e as cercas:** todos derrubam logo a cerca de quem grilou a sua terra (desforço imediato), processam quem derrubou as suas cercas, recolhem os animais soltos, renovam as cercas dos pastos com animais e cercam os próprios pastos abertos. Quem grila e quem sabota depende da personalidade (veja a seção seguinte).
+
+## Os vizinhos
+
+A cada partida, três vizinhos são sorteados de um elenco de sete: um de cada grupo (cuidadoso, tradicional e encrenqueiro), em posições sorteadas no mapa. A abertura da partida e a aba **Vizinhos** mostram quem são, onde ficam e se guardam rancor de você.
+
+| Vizinho | Fazenda | Grupo | Jeito de jogar |
+|---|---|---|---|
+| Dona Celeste | Santa Clara | cuidadoso | conservacionista: mantém a reserva, eletrifica a borda, monitora a fauna, entra na compensação e expande só dentro da lei |
+| Professora Lúcia | Olho d'Água | cuidadoso | conservacionista que restaura: não desmata, deixa pasto vazio virar mata e vende cotas de reserva |
+| Zé Ramos | Três Marias | tradicional | pecuarista que expande dentro da lei e só chama o matador depois de vários prejuízos |
+| Doutor Otávio | Nova Fronteira | tradicional | desmatador especulador: abre até duas áreas por estação, enche de boi e arrisca desmate ilegal onde a fiscalização é fraca |
+| Dona Zefa | Juazeiro | tradicional | vingativa: não mexe com ninguém, mas revida contra quem grilou a terra dela ou derrubou a cerca dela, derrubando uma cerca ou cercando terra do ofensor |
+| Seu Brás | Boa Vista | encrenqueiro | grileiro e sabotador: cerca terra alheia, derruba a cerca do pasto mais cheio de um vizinho e chama o matador depois de um ataque |
+| Coronel Firmino | Serra Alta | encrenqueiro | grileiro de terra pública: avança sobre os campos da reserva e das unidades de conservação |
+
+Cada perfil é um conjunto de números entre 0 e 1 em `js/dados.js` (vontade de desmatar, de abater, de defender o rebanho, de monitorar, respeito à lei, grilagem, sabotagem e vingança), mais traços especiais (especular, restaurar, grilar terra pública).
+
+Todos seguem a mesma rotina econômica de base:
+
+- repõem o rebanho antes de gastar com o resto, sem passar do que o pasto suporta na estação seguinte;
+- controlam os javaporcos quando eles passam de 30% da capacidade;
+- entram na compensação enquanto têm o selo;
+- eletrificam a borda quando há muitos predadores ou já houve ataques;
+- abrem pasto quando os pastos cercados passam de 85% da lotação.
+
+Jogadas arriscadas (grilar, derrubar cerca, revidar) só acontecem com caixa folgado e pastos cheios. Quem tem a terra grilada ou a cerca derrubada guarda rancor; a Dona Zefa sempre revida, os outros às vezes.
 
 ## Cenário da Chapada do Araripe
 
@@ -74,7 +97,7 @@ O cenário segue o plano de manejo da APA Chapada do Araripe aprovado pelo ICMBi
 - **Mapa:**
   - No alto fica a chapada, com a FLONA Araripe-Apodi e duas fazendas.
   - Na encosta úmida ficam quatro nascentes e o Refúgio de Vida Silvestre do Soldadinho-do-Araripe.
-  - No vale do Cariri ficam a sua fazenda e a do Seu Brás.
+  - No vale do Cariri ficam a sua fazenda e a de um vizinho sorteado.
 - **Zonas do plano de manejo:** cada área das fazendas recebe uma zona.
   - **Produção:** sem marca no mapa; pode virar pasto.
   - **Uso Moderado:** pontilhada; só roças de subsistência, sem pasto novo.
@@ -141,6 +164,7 @@ Comandos (Node 18 ou mais recente):
 npm install          # instala o esbuild, usado só para gerar o arquivo único
 npm run build        # gera dist/jaguarete.html
 npm run sim          # roda 300 partidas por bioma e estratégia e grava sim/resultados.json
+node sim/resumo.mjs sim/resultados.json perfis   # resumo legível, com o desempenho de cada vizinho
 ```
 
 Para trocar os ícones pelas ilustrações, substitua os `<symbol>` no fim do `index.html`. Os ids (`i-boi`, `i-carneiro`, `i-galinha`, `i-sede`, `i-pegada` etc.) são usados pelo mapa e pela legenda.
@@ -165,37 +189,76 @@ Com os parâmetros padrão, Pantanal e Amazônia mostram oscilações amortecida
 
 ## Balanceamento
 
-Resultado de `npm run sim` com 300 partidas por bioma e estratégia (semente 20261116). Cada coluna é uma estratégia de teste para a fazenda da pessoa:
+Resultado de `npm run sim`: 300 partidas por bioma e estratégia, semente 20261116, com os três vizinhos sorteados a cada partida (um de cada grupo). A meta foi o equilíbrio entre estratégias:
 
-Todas as estratégias, menos a passiva, cuidam das cercas: renovam as que estão vencendo, cercam os pastos abertos, derrubam logo a cerca de quem grilou a sua terra, processam quem derrubou as suas cercas e recolhem os animais soltos.
+- a estratégia "conviver", a de um bom jogador, vence de 40% a 60% das partidas em cada bioma;
+- nenhuma estratégia passa de 70%;
+- as jogadas agressivas são apostas, e não derrotas certas.
 
-- **Conviver:** cerca elétrica na borda, compensação, cotas de reserva, manejo de javaporcos e expansão só dentro da lei.
+### O que foi ajustado
+
+- **Terra dividida por igual:** o mapa dava à sua fazenda até 27 áreas contra 12 dos vizinhos da chapada. Agora as áreas de divisa passam da fazenda maior para a vizinha menor até as quatro ficarem com o mesmo valor de terra. A água não conta e, no Araripe, área fora da Zona de Produção ou em APP vale 30% de uma área produtiva.
+- **Mapas com mais contato:**
+  - Na Amazônia, as sedes ficam ao longo de uma estrada e os pastos de fazendas vizinhas se encostam.
+  - Na Caatinga, as fazendas ficam mais próximas.
+  - No Araripe, as duas fazendas do vale ficam mais próximas.
+- **Bois e carneiros:**
+  - Antes, carneiros rendiam quase o dobro do investimento dos bois. Agora o boi rende R$ 2,3 mil por estação, e o carneiro custa R$ 6 mil, vale R$ 5 mil e rende R$ 0,9 mil.
+  - Os ovinos sofrem com a umidade e a verminose: a capacidade de carneiros cai para 60% no Pantanal, 65% na Amazônia e 85% no Cerrado.
+  - Um ataque a um rebanho de ovinos pode matar até três animais.
+  - Com isso, bois rendem mais no Pantanal, carneiros no semiárido, e os dois empatam no resto.
+- **Vizinhos mais competentes:**
+  - Todos seguem a rotina de base descrita em "Os vizinhos".
+  - Antes, gastavam ações com câmeras e cães de guarda antes de controlar os javaporcos e repor o rebanho. Com a nova ordem, a Dona Celeste rende cerca de 18% a mais no Pantanal.
+- **Vizinhos estabelecidos:** no Pantanal, na Amazônia e no Araripe, os vizinhos começam com R$ 45 mil a mais em caixa (`vantagemVizinhos` em `js/dados.js`). A abertura da partida avisa.
+
+### Estratégias de teste
+
+Todas, menos a passiva, cuidam das cercas: renovam as que estão vencendo, cercam os pastos abertos, derrubam logo a cerca de quem grilou a sua terra, processam quem derrubou as suas cercas e recolhem os animais soltos.
+
+- **Conviver:** cerca elétrica na borda quando há sinal de predador, compensação, cotas de reserva, manejo de javaporcos e expansão só dentro da lei.
+- **Sabotar duas vezes:** "conviver" que, nos seis primeiros anos, derruba duas vezes a cerca do pasto mais cheio do vizinho que lidera.
+- **Grilar quando dá:** "conviver" que cerca o pasto aberto de um vizinho sempre que aparece um.
 - **Desmatar legal:** abre pasto até o limite da reserva.
-- **Grileiro:** usa as três ações de cada estação para cercar a terra aberta dos vizinhos.
-- **Sabotador:** "conviver" que derruba, a cada estação, a cerca do pasto mais cheio de um vizinho encostado na sua terra.
-- **Passiva:** só repõe animais e não renova as cercas.
+- **Sabotar sempre:** "conviver" que derruba uma cerca de vizinho a cada estação.
 - **Abater:** chama o matador após cada ataque.
-- **Desmatar e abater:** combina desmate e matador.
+- **Passiva:** só repõe animais e não renova as cercas.
+- **Grileiro:** usa as três ações de cada estação para cercar terra alheia.
 
 Vitória (%) e patrimônio médio (R$ mil):
 
-| Bioma    | Conviver | Desmatar legal | Grileiro | Sabotador | Passiva | Abater | Desmatar e abater |
-|----------|---------:|---------------:|---------:|----------:|--------:|-------:|------------------:|
-| Pantanal | 60% · 407 | 1% · 120 | 0% · 41 | 31% · 291 | 0% · 172 | 0% · 70 | 0% · 77 |
-| Amazônia | 99% · 498 | 16% · 294 | 0% · 65 | 99% · 498 | 0% · 200 | 1% · 155 | 0% · −5 |
-| Cerrado  | 34% · 596 | 2% · 349 | 0% · 80 | 15% · 420 | 0% · 231 | 0% · 171 | 1% · 195 |
-| Caatinga | 67% · 246 | 95% · 292 | 0% · 63 | 67% · 246 | 2% · 171 | 14% · 172 | 18% · 189 |
-| Araripe  | 54% · 665 | 41% · 620 | 0% · 95 | 54% · 665 | 0% · 218 | 0% · 251 | 0% · 270 |
+| Bioma    | Conviver | Sabotar 2 vezes | Grilar quando dá | Desmatar legal | Sabotar sempre | Abater | Passiva | Grileiro |
+|----------|---------:|----------------:|-----------------:|---------------:|---------------:|-------:|--------:|---------:|
+| Pantanal | 55% · 538 | 55% · 526 | 32% · 442 | 0% · 196 | 42% · 474 | 0% · 124 | 0% · 223 | 0% · 40 |
+| Amazônia | 51% · 434 | 34% · 386 | 51% · 430 | 11% · 325 | 3% · 108 | 2% · 209 | 0% · 232 | 0% · 67 |
+| Cerrado  | 49% · 696 | 40% · 658 | 31% · 598 | 6% · 410 | 14% · 429 | 0% · 199 | 0% · 233 | 0% · 82 |
+| Caatinga | 43% · 398 | 39% · 391 | 37% · 381 | 53% · 402 | 6% · 218 | 6% · 302 | 0% · 227 | 0% · 54 |
+| Araripe  | 53% · 823 | 22% · 700 | 40% · 764 | 31% · 701 | 0% · 214 | 0% · 246 | 0% · 210 | 0% · 79 |
 
-Crime continua não compensando como regra, mas a volta do selo tornou as jogadas agressivas uma aposta, e não uma derrota certa:
+- **Apostas:** sabotar de vez em quando e grilar quando aparece um pasto aberto vencem de 22% a 55% das partidas: às vezes compensam, às vezes não. Na Amazônia, grilar quando dá rende o mesmo que conviver, porque quase nunca aparece pasto aberto.
+- **Crimes em série:** sabotar toda estação mantém o selo sempre perdido e acumula processos; com as fazendas próximas, como na Amazônia e no Araripe, quase sempre termina em último. O grileiro e o matador também perdem quase sempre.
+- **Desmate:** na Caatinga, desmatar até o limite legal ainda rende um pouco mais que conviver, enquanto a população de jaguares cai de 3 para cerca de 1,5 em dez anos. Nos outros biomas, o desmate deixa o rebanho exposto e perde.
+- **Javaporcos:** sem o manejo, "conviver" cai para 36% de vitórias no Pantanal, 22% na Amazônia e 9% no Cerrado.
+- **Soldadinho:** termina com cerca de 80% da população inicial.
 
-- **Grilagem:** o grileiro que usa todas as ações para cercar terra alheia termina sempre em último, com R$ 40 mil a R$ 95 mil. Já a grilagem ocasional (cercar o pasto aberto de um vizinho quando aparece um) dá 44% de vitórias no Pantanal e 23% no Cerrado, contra 26% e 16% quando o selo não voltava.
-- **Sabotagem:** derrubar cercas toda estação mantém o selo perdido e cai para 31% de vitórias no Pantanal e 15% no Cerrado. Derrubar só duas vezes nos seis primeiros anos, sempre no pasto do vizinho que lidera, quase não custa: 54% no Pantanal e 33% no Cerrado. Na Amazônia, na Caatinga e no Araripe, a sua terra quase nunca encosta num pasto cercado de vizinho, e a estratégia não tem o que derrubar.
-- **Defesa:** quem cuida das cercas derruba, por desforço imediato, de 1 a 4 cercas de grileiro por partida. Seu Brás tem de 8 a 14 cercas derrubadas por partida, quase todas por desforço imediato dos vizinhos que ele grilou. Com a estratégia passiva, que não recolhe os animais, de 1 a 8 animais soltos se perdem por partida.
+### Como joga cada vizinho
 
-Onde há javaporcos, "conviver" inclui chamar os caçadores de manejo quando os porcos ocupam mais de 30% da capacidade. Sem o manejo, a mesma estratégia cai para 18% de vitórias no Pantanal, 93% na Amazônia e 3% no Cerrado. No Araripe, conviver rende um pouco mais que desmatar dentro da Zona de Produção. O soldadinho termina com cerca de 84% da população inicial, pressionado pelo fogo e pelo desmate no alto da chapada.
+Vitórias de cada vizinho quando está na partida, e suas vitórias com a estratégia "conviver" contra o trio em que ele está:
 
-Na Caatinga há poucos jaguares e poucos ataques. Lá, desmatar até o limite legal rende mais ao fazendeiro, enquanto a população de jaguares cai de 3 para cerca de 2 em dez anos.
+| Vizinho | Pantanal | Amazônia | Cerrado | Caatinga | Araripe |
+|---|---|---|---|---|---|
+| Dona Celeste | 35% · você 43% | 42% · você 52% | 44% · você 34% | 24% · você 54% | 47% · você 36% |
+| Professora Lúcia | 6% · você 68% | 39% · você 51% | 4% · você 65% | 58% · você 33% | 7% · você 70% |
+| Zé Ramos | 20% · você 57% | 10% · você 54% | 22% · você 51% | 13% · você 42% | 23% · você 52% |
+| Doutor Otávio | 21% · você 59% | 4% · você 49% | 39% · você 41% | 0% · você 46% | 5% · você 58% |
+| Dona Zefa | 27% · você 50% | 11% · você 51% | 15% · você 57% | 22% · você 40% | 24% · você 50% |
+| Seu Brás | 1% · você 56% | 0% · você 49% | 1% · você 49% | 0% · você 35% | 0% · você 48% |
+| Coronel Firmino | 2% · você 54% | 0% · você 54% | 1% · você 50% | 6% · você 50% | 6% · você 58% |
+
+- **Dona Celeste** é a rival mais forte em quase todos os biomas.
+- **Professora Lúcia** só lidera na Caatinga: lá, manter a vegetação nativa segura o pasto na seca e as cotas de reserva rendem.
+- **Doutor Otávio** vai bem onde a fiscalização é fraca e há campo para abrir, como no Cerrado, e quebra com as multas na Amazônia.
+- **Os encrenqueiros** quase nunca vencem, mas atrapalham os outros: na Caatinga, com Seu Brás na partida, as suas vitórias caem para 35%.
 
 ## Referências
 

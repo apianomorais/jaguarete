@@ -5,8 +5,8 @@ export const ACOES_POR_RODADA = 3;
 export const W = 11, H = 9;           // mapa hexagonal (linhas ímpares deslocadas)
 
 export const ESPECIES = {
-  boi:      { nome: 'boi', plural: 'bois', compra: 18, venda: 15, renda: 2, repro: 0.15, presa: 1.0 },
-  carneiro: { nome: 'carneiro', plural: 'carneiros', compra: 5, venda: 4, renda: 1, repro: 0.25, presa: 0.5 },
+  boi:      { nome: 'boi', plural: 'bois', compra: 18, venda: 15, renda: 2.3, repro: 0.15, presa: 1.0 },
+  carneiro: { nome: 'carneiro', plural: 'carneiros', compra: 6, venda: 5, renda: 0.9, repro: 0.25, presa: 0.6 },
 };
 export const GALINHA = { nome: 'lote de galinhas', plural: 'lotes de galinhas', compra: 4, venda: 3, renda: 1, repro: 0.3, cap: 6 };
 
@@ -78,6 +78,8 @@ export const BIOMAS = {
     evento: 'cheia', agua: 9, campo: 16, pastoInicial: 2,
     javaporco: { nome: 'porco-monteiro', plural: 'porcos-monteiros', V0: 0.5, r: 0.8, Kcel: 3, preferencia: 0.6, conversao: 0.03, dano: 0.4 },
     rebanho: [['boi', 3], ['boi', 3], ['boi', 2]], caixa: 50,
+    capCarneiro: 0.6, // ovinos sofrem com a umidade e a verminose
+    vantagemVizinhos: 45, // R$ mil a mais no caixa inicial dos vizinhos, que já estão na região (calibrado na simulação)
   },
   amazonia: {
     id: 'amazonia', nome: 'Amazônia', predador: { nome: 'jaguar', plural: 'jaguares', f: false, popular: 'onça-pintada' }, status: 'vulnerável',
@@ -85,8 +87,11 @@ export const BIOMAS = {
     reservaLegal: 0.8, Kcel: 9, r: 0.7, J0: 6, Jcap: 8, imigracao: 0.2, pegada: 0.3,
     fiscalDesmate: 0.5, fiscalAbate: 0.3, regen: 4, passos: 2, custoDesmate: 10,
     evento: null, agua: 6, campo: 0, pastoInicial: 4,
+    sedes: [[1, 6], [9, 6], [1, 3], [9, 3]], // fazendas abertas ao longo de uma estrada, encostadas umas nas outras
     javaporco: { nome: 'javaporco', plural: 'javaporcos', V0: 0.05, r: 0.8, Kcel: 3, preferencia: 0.6, conversao: 0.03, dano: 0.4 },
     rebanho: [['boi', 3], ['boi', 3], ['carneiro', 6]], caixa: 50,
+    capCarneiro: 0.65,
+    vantagemVizinhos: 45,
   },
   cerrado: {
     id: 'cerrado', nome: 'Cerrado', predador: { nome: 'jaguar', plural: 'jaguares', f: false, popular: 'onça-pintada' }, status: 'em perigo',
@@ -96,6 +101,7 @@ export const BIOMAS = {
     evento: 'fogo', agua: 0, campo: 20, pastoInicial: 3,
     javaporco: { nome: 'javaporco', plural: 'javaporcos', V0: 0.25, r: 0.8, Kcel: 3, preferencia: 0.6, conversao: 0.03, dano: 0.4 },
     rebanho: [['boi', 3], ['boi', 3], ['carneiro', 6]], caixa: 50,
+    capCarneiro: 0.85,
   },
   caatinga: {
     id: 'caatinga', nome: 'Caatinga', predador: { nome: 'jaguar', plural: 'jaguares', f: false, popular: 'onça-pintada' }, status: 'criticamente em perigo',
@@ -103,6 +109,7 @@ export const BIOMAS = {
     reservaLegal: 0.2, Kcel: 4, r: 0.6, J0: 3, Jcap: 4, imigracao: 0.05, pegada: 0.35,
     fiscalDesmate: 0.15, fiscalAbate: 0.2, regen: 8, passos: 3, custoDesmate: 6,
     evento: 'seca', agua: 0, campo: 0, pastoInicial: 3, capPasto: 0.75, // solo raso do semiárido
+    sedes: [[1, 6], [9, 6], [1, 2], [9, 2]],
     mesopredador: { nome: 'raposa', plural: 'raposas' }, // no Nordeste, "raposa" é o nome popular do cachorro-do-mato
     rebanho: [['carneiro', 6], ['carneiro', 6], ['boi', 2]], caixa: 50,
   },
@@ -112,21 +119,46 @@ export const BIOMAS = {
     reservaLegal: 0.2, Kcel: 5, r: 0.7, J0: 4, Jcap: 5, imigracao: 0.08, pegada: 0.35,
     fiscalDesmate: 0.3, fiscalAbate: 0.25, regen: 6, passos: 2, custoDesmate: 7,
     evento: 'fogo', agua: 0, campo: 0, pastoInicial: 3,
+    sedes: [[3, 7], [7, 7], [1, 1], [9, 1]], // no vale, as duas fazendas de baixo ficam mais próximas
+    vantagemVizinhos: 45,
     pref: 0.35, presaPeso: { boi: 0.45, carneiro: 1.0 }, // a suçuarana ataca mais ovinos, caprinos e bezerros
     soldadinho: true,
     rebanho: [['carneiro', 6], ['carneiro', 6], ['boi', 2]], caixa: 50,
   },
 };
 
-// Fazendeiros. O índice 0 é a pessoa; os demais são controlados pelo computador.
-export const FAZENDAS = [
-  { nome: 'Sua fazenda', apelido: 'Você', perfil: null, cor: 'var(--voce)' },
-  { nome: 'Fazenda Boa Vista', apelido: 'Seu Brás', perfil: { desmata: 0.9, abate: 0.7, defende: 0.1, monitora: 0.0, respeitaLei: 0.4 }, cor: 'var(--ia1)',
-    descricao: 'Abre pasto sempre que pode e chama o matador depois de um ataque.' },
-  { nome: 'Fazenda Santa Clara', apelido: 'Dona Celeste', perfil: { desmata: 0.2, abate: 0.0, defende: 0.9, monitora: 0.8, respeitaLei: 1.0 }, cor: 'var(--ia2)',
-    descricao: 'Mantém a reserva, cerca a borda da mata e monitora a fauna com câmeras.' },
-  { nome: 'Fazenda Três Marias', apelido: 'Zé Ramos', perfil: { desmata: 0.5, abate: 0.25, defende: 0.5, monitora: 0.3, respeitaLei: 0.9 }, cor: 'var(--ia3)',
+// Fazendeiros. O índice 0 é a pessoa; os outros três são sorteados do elenco de vizinhos a cada partida:
+// um de cada grupo (cuidadoso, tradicional e encrenqueiro), em posições sorteadas no mapa.
+export const JOGADOR = { nome: 'Sua fazenda', apelido: 'Você', perfil: null };
+export const COR_FAZENDA = ['var(--voce)', 'var(--ia1)', 'var(--ia2)', 'var(--ia3)'];
+// Perfil dos fazendeiros do computador (0 a 1):
+//   desmata: vontade de abrir pasto · abate: chamar o matador depois de ataques · defende: cercas elétricas e guarda
+//   monitora: câmeras · respeitaLei: cumprir reserva legal, zonas e APP · grila: cercar terra aberta alheia
+//   sabota: derrubar a cerca de pasto do vizinho · vinganca: revidar contra quem grilou a sua terra ou derrubou a sua cerca
+//   publica: grila também a reserva e as unidades de conservação · especula: abre pasto toda estação, mesmo sem lotação
+//   restaura: deixa pasto vazio virar mata para vender cotas de reserva
+export const VIZINHOS = {
+  bras: { grupo: 'encrenqueiro', nome: 'Fazenda Boa Vista', apelido: 'Seu Brás', tipo: 'grileiro e sabotador',
+    perfil: { desmata: 0.9, abate: 0.7, defende: 0.1, monitora: 0.0, respeitaLei: 0.4, grila: 0.7, sabota: 0.3, vinganca: 0.3 },
+    descricao: 'Cerca terra alheia sempre que pode, derruba a cerca dos vizinhos e chama o matador depois de um ataque.' },
+  firmino: { grupo: 'encrenqueiro', nome: 'Fazenda Serra Alta', apelido: 'Coronel Firmino', tipo: 'grileiro de terra pública',
+    perfil: { desmata: 0.7, abate: 0.4, defende: 0.3, monitora: 0.0, respeitaLei: 0.5, grila: 0.5, sabota: 0.05, vinganca: 0.2, publica: true },
+    descricao: 'Avança sobre a reserva e as terras públicas; diz que terra parada é terra de ninguém.' },
+  celeste: { grupo: 'cuidadoso', nome: 'Fazenda Santa Clara', apelido: 'Dona Celeste', tipo: 'conservacionista',
+    perfil: { desmata: 0.8, abate: 0.0, defende: 0.9, monitora: 0.8, respeitaLei: 1.0, grila: 0, sabota: 0, vinganca: 0 },
+    descricao: 'Mantém a reserva, cerca a borda da mata, monitora a fauna com câmeras e entra no programa de compensação.' },
+  lucia: { grupo: 'cuidadoso', nome: "Fazenda Olho d'Água", apelido: 'Professora Lúcia', tipo: 'conservacionista que restaura',
+    perfil: { desmata: 0.0, abate: 0.0, defende: 0.7, monitora: 1.0, respeitaLei: 1.0, grila: 0, sabota: 0, vinganca: 0, restaura: 0.5 },
+    descricao: 'Bióloga que herdou a fazenda: cria carneiros, deixa pasto vazio virar mata, vende cotas de reserva e fotografa os felinos da mata.' },
+  ze: { grupo: 'tradicional', nome: 'Fazenda Três Marias', apelido: 'Zé Ramos', tipo: 'pecuarista tradicional',
+    perfil: { desmata: 0.75, abate: 0.25, defende: 0.5, monitora: 0.3, respeitaLei: 0.9, grila: 0.04, sabota: 0.02, vinganca: 0.2 },
     descricao: 'Expande dentro da lei e só pensa em abate depois de vários prejuízos.' },
-];
-// Posição das sedes (coluna, linha).
+  otavio: { grupo: 'tradicional', nome: 'Fazenda Nova Fronteira', apelido: 'Doutor Otávio', tipo: 'desmatador especulador',
+    perfil: { desmata: 1.0, abate: 0.5, defende: 0.2, monitora: 0.0, respeitaLei: 0.5, grila: 0.2, sabota: 0, vinganca: 0.1, especula: true },
+    descricao: 'Abre pasto a cada estação, enche de boi e aposta que a multa não chega.' },
+  zefa: { grupo: 'tradicional', nome: 'Fazenda Juazeiro', apelido: 'Dona Zefa', tipo: 'vingativa',
+    perfil: { desmata: 0.7, abate: 0.3, defende: 0.6, monitora: 0.3, respeitaLei: 0.8, grila: 0.03, sabota: 0, vinganca: 1.0 },
+    descricao: 'Não mexe com ninguém, mas não esquece: quem cerca a terra dela ou derruba a cerca dela leva o troco.' },
+};
+// Posição das sedes (coluna, linha). Um bioma pode trocar com "sedes" (fazendas mais próximas, com mais contato).
 export const SEDES = [[1, 7], [9, 7], [1, 1], [9, 1]];

@@ -26,12 +26,20 @@ export function cuidaCercas(st, preferido = 'madeira') {
   for (const c of M.controladas(st, 0).filter(c => c.cercaDe < 0 && M.pastejavel(c) && c.dono === 0)) cercar(c);
   return cercar;
 }
+// risco visível para a pessoa: ataques recentes na fazenda ou pegadas encostadas no pasto
+export function emRisco(st, c) {
+  const perto = new Set([c.id, ...M.vizinhos(c.id)]);
+  return st.fazendas[0].ataquesTotal >= 2 || st.vistos.ataques.length > 0 || st.vistos.pegadas.some(id => perto.has(id));
+}
 export function reabastece(st, reserva = 10) {
   const F = st.fazendas[0];
   const ps = M.celulasDe(st, 0).filter(M.pastejavel).sort((a, b) => (M.naBorda(st, a) ? 1 : 0) - (M.naBorda(st, b) ? 1 : 0) || (b.eletrica ? 1 : 0) - (a.eletrica ? 1 : 0));
   for (const c of ps) {
-    const esp = c.especie || (st.bioma === 'caatinga' ? 'carneiro' : 'boi');
-    while (F.caixa > reserva + ESPECIES[esp].compra && M.comprar(st, 0, c.id, esp, 1).ok) {}
+    // carneiros onde a terra favorece ovinos (semiárido), bois no resto
+    const esp = c.especie || (process.env.ESP || ((M.bioma(st).capCarneiro ?? 1) > 0.9 ? 'carneiro' : 'boi'));
+    // não compra acima do que o pasto suporta na próxima estação (o excesso seria vendido às pressas)
+    const teto = Math.min(M.capacidade(st, c, esp), M.capacidade(st, c, esp, st.t + 1));
+    while (c.n < teto && F.caixa > reserva + ESPECIES[esp].compra && M.comprar(st, 0, c.id, esp, 1).ok) {}
   }
   while (F.caixa > reserva + 4 && M.comprar(st, 0, F.sede, 'galinha', 1).ok) {}
 }
@@ -55,7 +63,7 @@ export const ESTR = {
     if (!F.seguro && F.selo) tenta('seguro', F.sede);
     if (!F.cra && M.folgaReserva(st, 0) > 2) tenta('cra', F.sede);
     if (st.onca.V != null && st.onca.V / M.capacidadeKV(st) > 0.3 && (F.manejoAte ?? -1) < st.t) tenta('manejo', F.sede);
-    for (const c of M.celulasDe(st, 0).filter(c => M.pastejavel(c) && M.naBorda(st, c) && c.n).sort((a, b) => b.n * ESPECIES[b.especie].venda - a.n * ESPECIES[a.especie].venda)) {
+    for (const c of M.celulasDe(st, 0).filter(c => M.pastejavel(c) && M.naBorda(st, c) && c.n && emRisco(st, c)).sort((a, b) => b.n * ESPECIES[b.especie].venda - a.n * ESPECIES[a.especie].venda)) {
       if (!c.eletrica && F.caixa > CUSTOS.cerca + 5) tenta('cerca', c.id);
     }
     if (!F.telado && st.onca.M > 0.4) tenta('telar', F.sede);
@@ -113,7 +121,7 @@ export const ESTR = {
     reabastece(st, 25);
     if (!F.seguro && F.selo) tenta('seguro', F.sede);
     if (!F.cra && M.folgaReserva(st, 0) > 2) tenta('cra', F.sede);
-    for (const c of M.celulasDe(st, 0).filter(c => M.pastejavel(c) && M.naBorda(st, c) && c.n)) if (!c.eletrica && F.caixa > CUSTOS.cerca + 5) tenta('cerca', c.id);
+    for (const c of M.celulasDe(st, 0).filter(c => M.pastejavel(c) && M.naBorda(st, c) && c.n && emRisco(st, c))) if (!c.eletrica && F.caixa > CUSTOS.cerca + 5) tenta('cerca', c.id);
     if (lotacao(st) > 0.85 && M.folgaReserva(st, 0) > 0 && F.caixa > 30) { const c = candidataDesmate(st); if (c) tenta('desmatar', c.id); }
     reabastece(st);
   },

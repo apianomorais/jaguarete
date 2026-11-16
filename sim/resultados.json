@@ -2,2483 +2,3837 @@
  "pantanal": {
   "passiva": {
    "vitoria": 0,
-   "patrimonio": 172,
-   "ia": [
-    73,
-    379,
-    232
-   ],
-   "ataquesVoce": 8,
-   "ataquesIA": [
-    5.3,
-    7.3,
-    5
-   ],
-   "abates": 1.8,
-   "oncasFim": 11.6,
+   "posicao": 3.5,
+   "patrimonio": 223,
+   "iaMedia": 396,
+   "iaMelhor": 540,
+   "ataquesVoce": 6.2,
+   "abates": 1.6,
+   "oncasFim": 10.4,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.7,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.7,
-   "extraviados": [
-    1,
-    0,
-    0.1,
-    0
-   ],
-   "derrubou": [
-    0,
-    1.2,
-    0.1,
-    6.3
-   ],
-   "sofreu": [
-    0.3,
-    6.1,
-    0.2,
-    1
-   ],
-   "seloFim": [
-    100,
-    23,
-    100,
-    70
-   ],
-   "multasMedia": [
-    0,
-    57,
-    0,
-    15
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.29,
-   "Jmedio": [
-    7,
-    9.8,
-    12.9,
-    14.5,
-    13.9,
-    12,
-    10.4,
-    9.8,
-    10,
-    10.8,
-    11.6
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.54,
-    0.41,
-    0.31,
-    0.27,
-    0.28,
-    0.33,
-    0.39,
-    0.42,
-    0.41
-   ]
-  },
-  "grileiro": {
-   "vitoria": 0,
-   "patrimonio": 41,
-   "ia": [
-    84,
-    342,
-    230
-   ],
-   "ataquesVoce": 5.4,
-   "ataquesIA": [
-    5.7,
-    9.7,
-    5
-   ],
-   "abates": 2.1,
-   "oncasFim": 11.7,
-   "extincao": 0,
-   "griladasFim": [
-    0.2,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.6,
-    3.5,
-    10.8,
-    6.6
-   ],
-   "sofreu": [
-    13.2,
-    8,
-    0.2,
-    1.1
-   ],
-   "seloFim": [
-    23,
-    25,
-    100,
-    70
-   ],
-   "multasMedia": [
-    33,
-    40,
-    0,
-    14
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.29,
-   "Jmedio": [
-    7,
-    9.8,
-    12.9,
-    14.7,
-    14,
-    12.1,
-    10.4,
-    9.7,
-    10,
-    10.9,
-    11.7
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.54,
-    0.41,
-    0.31,
-    0.26,
-    0.28,
-    0.33,
-    0.39,
-    0.42,
-    0.41
-   ]
-  },
-  "conviver": {
-   "vitoria": 60.3,
-   "patrimonio": 407,
-   "ia": [
-    73,
-    379,
-    226
-   ],
-   "ataquesVoce": 8.4,
-   "ataquesIA": [
-    5,
-    7,
-    4.8
-   ],
-   "abates": 1.9,
-   "oncasFim": 11,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
-   ],
+   "multasVoce": 0,
    "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0.1,
-    0
-   ],
-   "derrubou": [
-    1.7,
-    1.3,
-    0.1,
-    7
-   ],
-   "sofreu": [
-    0.4,
-    8.5,
-    0.2,
-    1
-   ],
-   "seloFim": [
-    100,
-    20,
-    100,
-    72
-   ],
-   "multasMedia": [
-    0,
-    45,
-    0,
-    15
-   ],
+   "derrubouVoce": 0,
+   "sofreuVoce": 0,
+   "extraviadosVoce": 0.9,
+   "seloFimVoce": 100,
    "soldadinho": null,
-   "javaporcoFim": 0.27,
+   "javaporcoFim": 0.28,
    "Jmedio": [
     7,
-    9.7,
-    12.7,
-    14.2,
-    13.6,
-    11.8,
-    10.4,
-    9.7,
-    9.9,
-    10.4,
-    11
+    9.8,
+    12.6,
+    14,
+    13.2,
+    11.4,
+    10,
+    9.5,
+    9.6,
+    10.1,
+    10.4
    ],
    "Nmedio": [
     0.55,
     0.6,
     0.53,
     0.41,
-    0.32,
-    0.28,
-    0.3,
-    0.34,
-    0.4,
-    0.43,
-    0.42
-   ]
-  },
-  "desmatar_abater": {
-   "vitoria": 0,
-   "patrimonio": 77,
-   "ia": [
-    75,
-    376,
-    217
-   ],
-   "ataquesVoce": 7.8,
-   "ataquesIA": [
-    5.8,
-    7.5,
-    5.3
-   ],
-   "abates": 5.8,
-   "oncasFim": 11.2,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0.1,
-    0
-   ],
-   "derrubou": [
-    1.4,
-    0.8,
-    0.1,
-    6.8
-   ],
-   "sofreu": [
-    0,
-    8.1,
-    0.1,
-    0.9
-   ],
-   "seloFim": [
-    59,
-    23,
-    100,
-    66
-   ],
-   "multasMedia": [
-    34,
-    43,
-    0,
-    18
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.29,
-   "Jmedio": [
-    7,
-    9.5,
-    12.4,
-    13.9,
-    13.8,
-    12.4,
-    11.1,
-    10.2,
-    10.2,
-    10.6,
-    11.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.56,
-    0.45,
-    0.35,
-    0.3,
-    0.3,
     0.33,
-    0.38,
-    0.41,
-    0.41
-   ]
-  },
-  "abater": {
-   "vitoria": 0,
-   "patrimonio": 70,
-   "ia": [
-    75,
-    372,
-    216
-   ],
-   "ataquesVoce": 7.2,
-   "ataquesIA": [
-    5.8,
-    7.6,
-    5.5
-   ],
-   "abates": 5.6,
-   "oncasFim": 11.4,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.4,
-    1,
-    0.1,
-    6.6
-   ],
-   "sofreu": [
-    0,
-    7.9,
-    0.1,
-    1.1
-   ],
-   "seloFim": [
-    64,
-    24,
-    100,
-    69
-   ],
-   "multasMedia": [
-    38,
-    46,
-    0,
-    15
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.3,
-   "Jmedio": [
-    7,
-    9.5,
-    12.4,
-    14.1,
-    13.9,
-    12.5,
-    11.1,
-    10.3,
-    10.2,
-    10.7,
-    11.4
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.56,
-    0.44,
-    0.34,
-    0.29,
     0.29,
     0.32,
     0.37,
-    0.4,
-    0.41
-   ]
-  },
-  "oportunista": {
-   "vitoria": 44,
-   "patrimonio": 368,
-   "ia": [
-    73,
-    381,
-    225
-   ],
-   "ataquesVoce": 7.8,
-   "ataquesIA": [
-    5.1,
-    7.2,
-    4.8
-   ],
-   "abates": 1.9,
-   "oncasFim": 11.1,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0.1,
-    0
-   ],
-   "derrubou": [
-    1.6,
-    1.8,
-    0.8,
-    6.9
-   ],
-   "sofreu": [
-    1.6,
-    8.4,
-    0.2,
-    1
-   ],
-   "seloFim": [
-    98,
-    19,
-    100,
-    68
-   ],
-   "multasMedia": [
-    3,
-    44,
-    0,
-    15
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.27,
-   "Jmedio": [
-    7,
-    9.7,
-    12.7,
-    14.3,
-    13.7,
-    11.8,
-    10.4,
-    9.7,
-    9.9,
-    10.5,
-    11.1
-   ],
-   "Nmedio": [
-    0.55,
-    0.6,
-    0.53,
-    0.41,
-    0.32,
-    0.28,
-    0.3,
-    0.34,
-    0.4,
     0.43,
-    0.42
-   ]
+    0.45,
+    0.45
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 222,
+     "posicao": 3.4,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 38,
+     "derrubou": 0.9,
+     "revides": 0.3,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 276,
+     "posicao": 3.2,
+     "vence": 5,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 50,
+     "derrubou": 0.3,
+     "revides": 0.1,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 534,
+     "posicao": 1.4,
+     "vence": 63,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 424,
+     "posicao": 1.6,
+     "vence": 43,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 466,
+     "posicao": 1.7,
+     "vence": 39,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 6,
+     "derrubou": 0.6,
+     "revides": 0.4,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 436,
+     "posicao": 1.9,
+     "vence": 42,
+     "voceVence": 0,
+     "vizinhoDeFrente": 26,
+     "multas": 7,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 470,
+     "posicao": 1.6,
+     "vence": 46,
+     "voceVence": 0,
+     "vizinhoDeFrente": 27,
+     "multas": 6,
+     "derrubou": 0.5,
+     "revides": 0.6,
+     "griladas": 0
+    }
+   }
   },
-  "sabotador": {
-   "vitoria": 31.3,
-   "patrimonio": 291,
-   "ia": [
-    75,
-    363,
-    227
-   ],
-   "ataquesVoce": 7.2,
-   "ataquesIA": [
-    5.1,
-    8.3,
-    4.9
-   ],
-   "abates": 2,
-   "oncasFim": 11.2,
+  "grileiro": {
+   "vitoria": 0,
+   "posicao": 4,
+   "patrimonio": 40,
+   "iaMedia": 363,
+   "iaMelhor": 507,
+   "ataquesVoce": 5.1,
+   "abates": 1.6,
+   "oncasFim": 10.6,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0.1,
-    0
-   ],
-   "derrubou": [
-    5.7,
-    1.2,
-    0.1,
-    7
-   ],
-   "sofreu": [
-    0.3,
-    8.5,
-    4.2,
-    1.1
-   ],
-   "seloFim": [
-    55,
-    23,
-    100,
-    68
-   ],
-   "multasMedia": [
-    39,
-    43,
-    0,
-    14
-   ],
+   "multasVoce": 49,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.9,
+   "sofreuVoce": 12.7,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 14,
    "soldadinho": null,
-   "javaporcoFim": 0.27,
+   "javaporcoFim": 0.28,
    "Jmedio": [
     7,
-    9.7,
-    12.7,
-    14.3,
-    13.7,
-    11.9,
-    10.4,
     9.8,
-    9.9,
-    10.5,
-    11.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.6,
-    0.53,
-    0.41,
-    0.32,
-    0.28,
-    0.29,
-    0.34,
-    0.39,
-    0.42,
-    0.42
-   ]
-  },
-  "sabotador_pontual": {
-   "vitoria": 54.3,
-   "patrimonio": 394,
-   "ia": [
-    74,
-    377,
-    226
-   ],
-   "ataquesVoce": 8.2,
-   "ataquesIA": [
-    5,
-    7.1,
-    4.8
-   ],
-   "abates": 2,
-   "oncasFim": 11,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0.1,
-    0
-   ],
-   "derrubou": [
-    2.1,
-    1.3,
-    0.1,
-    7.1
-   ],
-   "sofreu": [
-    0.3,
-    8.7,
-    0.5,
-    1
-   ],
-   "seloFim": [
-    100,
-    19,
-    100,
-    71
-   ],
-   "multasMedia": [
-    4,
-    44,
-    0,
-    14
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.27,
-   "Jmedio": [
-    7,
-    9.7,
-    12.7,
-    14.3,
-    13.6,
-    11.8,
-    10.4,
-    9.7,
-    9.9,
-    10.5,
-    11
-   ],
-   "Nmedio": [
-    0.55,
-    0.6,
-    0.53,
-    0.41,
-    0.32,
-    0.28,
-    0.3,
-    0.34,
-    0.4,
-    0.43,
-    0.42
-   ]
-  },
-  "conviver_sem_manejo": {
-   "vitoria": 18.3,
-   "patrimonio": 287,
-   "ia": [
-    80,
-    379,
-    229
-   ],
-   "ataquesVoce": 6,
-   "ataquesIA": [
-    5.3,
-    6.9,
-    4.9
-   ],
-   "abates": 1.9,
-   "oncasFim": 11.1,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.7,
-    1.2,
-    0.1,
-    7.1
-   ],
-   "sofreu": [
-    0.1,
-    8.7,
-    0.1,
-    1.2
-   ],
-   "seloFim": [
-    100,
-    17,
-    100,
-    68
-   ],
-   "multasMedia": [
-    0,
-    43,
-    0,
-    14
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.3,
-   "Jmedio": [
-    7,
-    9.7,
     12.8,
-    14.4,
-    13.7,
-    11.9,
-    10.3,
-    9.7,
+    14.1,
+    13.3,
+    11.5,
+    10.1,
+    9.6,
     9.8,
-    10.4,
-    11.1
+    10.2,
+    10.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.41,
+    0.32,
+    0.29,
+    0.31,
+    0.36,
+    0.42,
+    0.44,
+    0.44
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 217,
+     "posicao": 2.8,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 32,
+     "derrubou": 3.8,
+     "revides": 1.6,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 259,
+     "posicao": 2.7,
+     "vence": 5,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 39,
+     "derrubou": 4.1,
+     "revides": 1.1,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 502,
+     "posicao": 1.3,
+     "vence": 70,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 5.8,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 408,
+     "posicao": 1.6,
+     "vence": 52,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 404,
+     "posicao": 1.8,
+     "vence": 39,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 9,
+     "derrubou": 5.3,
+     "revides": 1.2,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 383,
+     "posicao": 1.9,
+     "vence": 36,
+     "voceVence": 0,
+     "vizinhoDeFrente": 26,
+     "multas": 8,
+     "derrubou": 2.6,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 393,
+     "posicao": 1.9,
+     "vence": 33,
+     "voceVence": 0,
+     "vizinhoDeFrente": 27,
+     "multas": 17,
+     "derrubou": 4.3,
+     "revides": 2.9,
+     "griladas": 0.1
+    }
+   }
+  },
+  "conviver": {
+   "vitoria": 55.3,
+   "posicao": 1.6,
+   "patrimonio": 538,
+   "iaMedia": 390,
+   "iaMelhor": 524,
+   "ataquesVoce": 10,
+   "abates": 1.6,
+   "oncasFim": 9.6,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.7,
+    12.5,
+    13.7,
+    12.9,
+    11.1,
+    9.8,
+    9.2,
+    9.2,
+    9.4,
+    9.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.42,
+    0.34,
+    0.31,
+    0.33,
+    0.39,
+    0.45,
+    0.48,
+    0.48
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 229,
+     "posicao": 3.9,
+     "vence": 1,
+     "voceVence": 56,
+     "vizinhoDeFrente": 40,
+     "multas": 34,
+     "derrubou": 1.2,
+     "revides": 0.4,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 267,
+     "posicao": 3.8,
+     "vence": 2,
+     "voceVence": 54,
+     "vizinhoDeFrente": 38,
+     "multas": 50,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 528,
+     "posicao": 1.9,
+     "vence": 35,
+     "voceVence": 43,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 416,
+     "posicao": 2.5,
+     "vence": 6,
+     "voceVence": 68,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 444,
+     "posicao": 2.4,
+     "vence": 20,
+     "voceVence": 57,
+     "vizinhoDeFrente": 35,
+     "multas": 6,
+     "derrubou": 0.8,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 434,
+     "posicao": 2.5,
+     "vence": 21,
+     "voceVence": 59,
+     "vizinhoDeFrente": 26,
+     "multas": 7,
+     "derrubou": 0.5,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 465,
+     "posicao": 2.2,
+     "vence": 27,
+     "voceVence": 50,
+     "vizinhoDeFrente": 27,
+     "multas": 9,
+     "derrubou": 0.8,
+     "revides": 0.8,
+     "griladas": 0
+    }
+   }
+  },
+  "desmatar_abater": {
+   "vitoria": 0,
+   "posicao": 3.9,
+   "patrimonio": 108,
+   "iaMedia": 385,
+   "iaMelhor": 532,
+   "ataquesVoce": 9.1,
+   "abates": 6,
+   "oncasFim": 10.1,
+   "extincao": 0,
+   "multasVoce": 45,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 47,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.5,
+    12.1,
+    13.5,
+    13.1,
+    11.7,
+    10.5,
+    9.8,
+    9.7,
+    9.9,
+    10.1
    ],
    "Nmedio": [
     0.55,
     0.61,
-    0.54,
-    0.41,
-    0.31,
-    0.28,
-    0.29,
-    0.34,
-    0.4,
-    0.43,
-    0.43
-   ]
+    0.55,
+    0.45,
+    0.37,
+    0.33,
+    0.33,
+    0.37,
+    0.42,
+    0.45,
+    0.46
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 210,
+     "posicao": 3,
+     "vence": 2,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 31,
+     "derrubou": 1,
+     "revides": 0.4,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 266,
+     "posicao": 2.9,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 48,
+     "derrubou": 0.4,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 522,
+     "posicao": 1.4,
+     "vence": 62,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 410,
+     "posicao": 1.6,
+     "vence": 44,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 471,
+     "posicao": 1.6,
+     "vence": 48,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 6,
+     "derrubou": 0.4,
+     "revides": 0.4,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 441,
+     "posicao": 1.7,
+     "vence": 40,
+     "voceVence": 0,
+     "vizinhoDeFrente": 26,
+     "multas": 5,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 436,
+     "posicao": 1.6,
+     "vence": 45,
+     "voceVence": 0,
+     "vizinhoDeFrente": 27,
+     "multas": 10,
+     "derrubou": 0.9,
+     "revides": 1,
+     "griladas": 0
+    }
+   }
   },
-  "desmatar_legal": {
-   "vitoria": 0.7,
-   "patrimonio": 120,
-   "ia": [
-    80,
-    376,
-    229
-   ],
-   "ataquesVoce": 12.3,
-   "ataquesIA": [
-    5.4,
-    7.3,
-    5
-   ],
-   "abates": 2.1,
-   "oncasFim": 11.4,
+  "abater": {
+   "vitoria": 0,
+   "posicao": 3.8,
+   "patrimonio": 124,
+   "iaMedia": 382,
+   "iaMelhor": 523,
+   "ataquesVoce": 7.4,
+   "abates": 5.8,
+   "oncasFim": 10.3,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
+   "multasVoce": 38,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 53,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.5,
+    12.2,
+    13.6,
+    13.3,
+    11.8,
+    10.6,
+    9.9,
+    9.7,
+    10,
+    10.3
    ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0.1,
-    0
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.55,
+    0.44,
+    0.36,
+    0.32,
+    0.32,
+    0.36,
+    0.41,
+    0.44,
+    0.45
    ],
-   "derrubou": [
-    1.7,
-    1,
-    0,
-    7.1
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 209,
+     "posicao": 3.1,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 34,
+     "derrubou": 0.9,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 265,
+     "posicao": 3,
+     "vence": 4,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 50,
+     "derrubou": 0.3,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 526,
+     "posicao": 1.4,
+     "vence": 62,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 413,
+     "posicao": 1.7,
+     "vence": 38,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 459,
+     "posicao": 1.5,
+     "vence": 51,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 4,
+     "derrubou": 0.5,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 421,
+     "posicao": 1.8,
+     "vence": 44,
+     "voceVence": 0,
+     "vizinhoDeFrente": 26,
+     "multas": 6,
+     "derrubou": 0.4,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 437,
+     "posicao": 1.7,
+     "vence": 46,
+     "voceVence": 0,
+     "vizinhoDeFrente": 27,
+     "multas": 12,
+     "derrubou": 0.9,
+     "revides": 0.9,
+     "griladas": 0
+    }
+   }
+  },
+  "oportunista": {
+   "vitoria": 32.3,
+   "posicao": 2.2,
+   "patrimonio": 442,
+   "iaMedia": 385,
+   "iaMelhor": 517,
+   "ataquesVoce": 9.5,
+   "abates": 1.6,
+   "oncasFim": 9.8,
+   "extincao": 0,
+   "multasVoce": 4,
+   "perdidasVoce": 0,
+   "derrubouVoce": 1,
+   "sofreuVoce": 2.5,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 92,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.7,
+    12.6,
+    13.8,
+    13,
+    11.1,
+    9.9,
+    9.3,
+    9.3,
+    9.6,
+    9.8
    ],
-   "sofreu": [
-    0,
-    8.6,
-    0.2,
-    1
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.42,
+    0.33,
+    0.3,
+    0.33,
+    0.39,
+    0.44,
+    0.47,
+    0.48
    ],
-   "seloFim": [
-    100,
-    21,
-    100,
-    71
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 235,
+     "posicao": 3.7,
+     "vence": 2,
+     "voceVence": 32,
+     "vizinhoDeFrente": 40,
+     "multas": 36,
+     "derrubou": 1.7,
+     "revides": 0.9,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 268,
+     "posicao": 3.7,
+     "vence": 1,
+     "voceVence": 32,
+     "vizinhoDeFrente": 38,
+     "multas": 46,
+     "derrubou": 1.2,
+     "revides": 0.6,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 521,
+     "posicao": 1.6,
+     "vence": 52,
+     "voceVence": 25,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 419,
+     "posicao": 2.2,
+     "vence": 20,
+     "voceVence": 40,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 1.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 446,
+     "posicao": 2.1,
+     "vence": 31,
+     "voceVence": 32,
+     "vizinhoDeFrente": 35,
+     "multas": 6,
+     "derrubou": 1.4,
+     "revides": 0.9,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 404,
+     "posicao": 2.4,
+     "vence": 31,
+     "voceVence": 32,
+     "vizinhoDeFrente": 26,
+     "multas": 7,
+     "derrubou": 1.5,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 442,
+     "posicao": 2.3,
+     "vence": 26,
+     "voceVence": 33,
+     "vizinhoDeFrente": 27,
+     "multas": 10,
+     "derrubou": 1.7,
+     "revides": 1.4,
+     "griladas": 0.1
+    }
+   }
+  },
+  "sabotador": {
+   "vitoria": 42,
+   "posicao": 2,
+   "patrimonio": 474,
+   "iaMedia": 386,
+   "iaMelhor": 519,
+   "ataquesVoce": 9.6,
+   "abates": 1.6,
+   "oncasFim": 9.7,
+   "extincao": 0,
+   "multasVoce": 10,
+   "perdidasVoce": 0,
+   "derrubouVoce": 1.7,
+   "sofreuVoce": 0.3,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 72,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.7,
+    12.5,
+    13.8,
+    13,
+    11.1,
+    9.8,
+    9.3,
+    9.3,
+    9.5,
+    9.7
    ],
-   "multasMedia": [
-    0,
-    42,
-    0,
-    16
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.42,
+    0.33,
+    0.3,
+    0.33,
+    0.39,
+    0.45,
+    0.47,
+    0.48
    ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 226,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 42,
+     "vizinhoDeFrente": 40,
+     "multas": 34,
+     "derrubou": 1.1,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 261,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 42,
+     "vizinhoDeFrente": 38,
+     "multas": 49,
+     "derrubou": 0.6,
+     "revides": 0.4,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 524,
+     "posicao": 1.8,
+     "vence": 41,
+     "voceVence": 36,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 418,
+     "posicao": 2.3,
+     "vence": 12,
+     "voceVence": 48,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 445,
+     "posicao": 2.2,
+     "vence": 28,
+     "voceVence": 46,
+     "vizinhoDeFrente": 35,
+     "multas": 6,
+     "derrubou": 0.8,
+     "revides": 0.7,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 423,
+     "posicao": 2.3,
+     "vence": 32,
+     "voceVence": 40,
+     "vizinhoDeFrente": 26,
+     "multas": 8,
+     "derrubou": 0.6,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 458,
+     "posicao": 2.1,
+     "vence": 30,
+     "voceVence": 40,
+     "vizinhoDeFrente": 27,
+     "multas": 7,
+     "derrubou": 1,
+     "revides": 1.1,
+     "griladas": 0
+    }
+   }
+  },
+  "sabotador_pontual": {
+   "vitoria": 55.3,
+   "posicao": 1.7,
+   "patrimonio": 526,
+   "iaMedia": 385,
+   "iaMelhor": 517,
+   "ataquesVoce": 9.9,
+   "abates": 1.6,
+   "oncasFim": 9.6,
+   "extincao": 0,
+   "multasVoce": 3,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.7,
+   "sofreuVoce": 0.3,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.7,
+    12.5,
+    13.7,
+    13,
+    11.1,
+    9.8,
+    9.2,
+    9.2,
+    9.4,
+    9.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.42,
+    0.34,
+    0.3,
+    0.33,
+    0.39,
+    0.45,
+    0.48,
+    0.48
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 226,
+     "posicao": 3.9,
+     "vence": 1,
+     "voceVence": 54,
+     "vizinhoDeFrente": 40,
+     "multas": 34,
+     "derrubou": 1.3,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 263,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 56,
+     "vizinhoDeFrente": 38,
+     "multas": 50,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 522,
+     "posicao": 1.9,
+     "vence": 35,
+     "voceVence": 44,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 415,
+     "posicao": 2.4,
+     "vence": 7,
+     "voceVence": 68,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 439,
+     "posicao": 2.4,
+     "vence": 19,
+     "voceVence": 57,
+     "vizinhoDeFrente": 35,
+     "multas": 7,
+     "derrubou": 0.8,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 425,
+     "posicao": 2.5,
+     "vence": 21,
+     "voceVence": 60,
+     "vizinhoDeFrente": 26,
+     "multas": 7,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 459,
+     "posicao": 2.2,
+     "vence": 27,
+     "voceVence": 49,
+     "vizinhoDeFrente": 27,
+     "multas": 10,
+     "derrubou": 0.9,
+     "revides": 1,
+     "griladas": 0
+    }
+   }
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 36.3,
+   "posicao": 1.9,
+   "patrimonio": 493,
+   "iaMedia": 404,
+   "iaMelhor": 542,
+   "ataquesVoce": 7.7,
+   "abates": 1.7,
+   "oncasFim": 9.4,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0.1,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 100,
    "soldadinho": null,
    "javaporcoFim": 0.29,
    "Jmedio": [
     7,
     9.8,
-    12.8,
-    14.3,
-    13.6,
-    11.9,
-    10.4,
+    12.6,
+    13.8,
+    12.9,
+    11.1,
     9.8,
-    10,
-    10.7,
-    11.4
+    9.1,
+    9.1,
+    9.3,
+    9.4
    ],
    "Nmedio": [
     0.55,
-    0.61,
-    0.54,
-    0.41,
-    0.32,
-    0.28,
-    0.29,
+    0.6,
+    0.53,
+    0.42,
+    0.34,
+    0.31,
     0.34,
     0.4,
+    0.45,
+    0.48,
+    0.49
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 251,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 38,
+     "vizinhoDeFrente": 40,
+     "multas": 30,
+     "derrubou": 1,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 287,
+     "posicao": 3.7,
+     "vence": 4,
+     "voceVence": 35,
+     "vizinhoDeFrente": 38,
+     "multas": 48,
+     "derrubou": 0.4,
+     "revides": 0.1,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 534,
+     "posicao": 1.9,
+     "vence": 43,
+     "voceVence": 25,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 423,
+     "posicao": 2.4,
+     "vence": 12,
+     "voceVence": 49,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 476,
+     "posicao": 2.2,
+     "vence": 29,
+     "voceVence": 43,
+     "vizinhoDeFrente": 35,
+     "multas": 5,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 445,
+     "posicao": 2.3,
+     "vence": 37,
+     "voceVence": 33,
+     "vizinhoDeFrente": 26,
+     "multas": 7,
+     "derrubou": 0.5,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 467,
+     "posicao": 2.1,
+     "vence": 34,
+     "voceVence": 32,
+     "vizinhoDeFrente": 27,
+     "multas": 6,
+     "derrubou": 0.6,
+     "revides": 0.7,
+     "griladas": 0
+    }
+   }
+  },
+  "desmatar_legal": {
+   "vitoria": 0,
+   "posicao": 3.6,
+   "patrimonio": 196,
+   "iaMedia": 402,
+   "iaMelhor": 540,
+   "ataquesVoce": 16.4,
+   "abates": 1.8,
+   "oncasFim": 10,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0,
+   "extraviadosVoce": 0,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.28,
+   "Jmedio": [
+    7,
+    9.8,
+    12.5,
+    13.7,
+    13,
+    11.2,
+    9.9,
+    9.4,
+    9.5,
+    9.8,
+    10
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
     0.42,
-    0.42
-   ]
+    0.34,
+    0.3,
+    0.33,
+    0.39,
+    0.44,
+    0.46,
+    0.46
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 151,
+     "patrimonio": 241,
+     "posicao": 3.2,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 30,
+     "derrubou": 1,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 149,
+     "patrimonio": 289,
+     "posicao": 3,
+     "vence": 5,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 46,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 155,
+     "patrimonio": 537,
+     "posicao": 1.4,
+     "vence": 61,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 145,
+     "patrimonio": 419,
+     "posicao": 1.7,
+     "vence": 41,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 0,
+     "derrubou": 0.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 104,
+     "patrimonio": 470,
+     "posicao": 1.6,
+     "vence": 46,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 6,
+     "derrubou": 0.7,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 100,
+     "patrimonio": 450,
+     "posicao": 1.8,
+     "vence": 44,
+     "voceVence": 0,
+     "vizinhoDeFrente": 26,
+     "multas": 5,
+     "derrubou": 0.5,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 96,
+     "patrimonio": 459,
+     "posicao": 1.7,
+     "vence": 44,
+     "voceVence": 0,
+     "vizinhoDeFrente": 27,
+     "multas": 8,
+     "derrubou": 0.9,
+     "revides": 0.9,
+     "griladas": 0.1
+    }
+   }
   }
  },
  "amazonia": {
   "passiva": {
    "vitoria": 0,
-   "patrimonio": 200,
-   "ia": [
-    137,
-    381,
-    278
-   ],
-   "ataquesVoce": 13.8,
-   "ataquesIA": [
-    9.9,
-    4.8,
-    5.7
-   ],
-   "abates": 2.7,
+   "posicao": 3,
+   "patrimonio": 232,
+   "iaMedia": 311,
+   "iaMelhor": 438,
+   "ataquesVoce": 8.7,
+   "abates": 1.4,
    "oncasFim": 8.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.7,
-    0,
-    0.2
-   ],
+   "multasVoce": 0,
    "perdidasVoce": 0.6,
-   "extraviados": [
-    4.2,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0,
-    1,
-    0,
-    9.9
-   ],
-   "sofreu": [
-    0,
-    9.9,
-    0,
-    1
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    44
-   ],
-   "multasMedia": [
-    0,
-    86,
-    0,
-    33
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.33,
-   "Jmedio": [
-    6,
-    8,
-    10.3,
-    11.3,
-    11,
-    9.7,
-    8.4,
-    7.7,
-    7.6,
-    7.9,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.51,
-    0.4,
-    0.31,
-    0.26,
-    0.26,
-    0.29,
-    0.33,
-    0.37,
-    0.39
-   ]
-  },
-  "grileiro": {
-   "vitoria": 0,
-   "patrimonio": 65,
-   "ia": [
-    142,
-    377,
-    271
-   ],
-   "ataquesVoce": 12.2,
-   "ataquesIA": [
-    10.9,
-    7.6,
-    5.6
-   ],
-   "abates": 2.9,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0.3,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.4,
-    3.9,
-    18.2,
-    8.6
-   ],
-   "sofreu": [
-    21.1,
-    10,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    13,
-    11,
-    100,
-    41
-   ],
-   "multasMedia": [
-    64,
-    71,
-    0,
-    35
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.33,
-   "Jmedio": [
-    6,
-    8,
-    10.3,
-    11.4,
-    11.1,
-    9.8,
-    8.5,
-    7.8,
-    7.6,
-    7.9,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.51,
-    0.4,
-    0.31,
-    0.26,
-    0.26,
-    0.29,
-    0.33,
-    0.37,
-    0.39
-   ]
-  },
-  "conviver": {
-   "vitoria": 99,
-   "patrimonio": 498,
-   "ia": [
-    136,
-    384,
-    283
-   ],
-   "ataquesVoce": 7.6,
-   "ataquesIA": [
-    9.4,
-    4,
-    5.5
-   ],
-   "abates": 2.8,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.8,
-    1,
-    0,
-    10
-   ],
-   "sofreu": [
-    0,
-    11.8,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    7,
-    100,
-    41
-   ],
-   "multasMedia": [
-    0,
-    75,
-    0,
-    30
-   ],
+   "derrubouVoce": 0,
+   "sofreuVoce": 0.3,
+   "extraviadosVoce": 3.4,
+   "seloFimVoce": 100,
    "soldadinho": null,
    "javaporcoFim": 0.35,
    "Jmedio": [
     6,
-    8,
-    10.2,
-    11.3,
-    10.9,
-    9.6,
-    8.4,
-    7.7,
-    7.6,
-    7.9,
+    8.1,
+    10.3,
+    11.5,
+    11,
+    9.7,
+    8.3,
+    7.5,
+    7.4,
+    7.8,
     8.5
    ],
    "Nmedio": [
     0.55,
     0.57,
-    0.51,
-    0.4,
-    0.31,
+    0.5,
+    0.39,
+    0.3,
     0.26,
-    0.27,
+    0.26,
+    0.29,
+    0.33,
+    0.38,
+    0.4
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 147,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 72,
+     "derrubou": 3.3,
+     "revides": 1.2,
+     "griladas": 0.5
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 226,
+     "posicao": 3.4,
+     "vence": 0,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 52,
+     "derrubou": 1.8,
+     "revides": 0.9,
+     "griladas": 0.8
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 428,
+     "posicao": 1.1,
+     "vence": 88,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 436,
+     "posicao": 1.1,
+     "vence": 88,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 335,
+     "posicao": 2.1,
+     "vence": 16,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 22,
+     "derrubou": 2.8,
+     "revides": 1.6,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 282,
+     "posicao": 2.5,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 36,
+     "multas": 30,
+     "derrubou": 1.9,
+     "revides": 0.9,
+     "griladas": 0.4
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 330,
+     "posicao": 2.1,
+     "vence": 20,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 23,
+     "derrubou": 3.3,
+     "revides": 3.2,
+     "griladas": 0.1
+    }
+   }
+  },
+  "grileiro": {
+   "vitoria": 0,
+   "posicao": 3.9,
+   "patrimonio": 67,
+   "iaMedia": 298,
+   "iaMelhor": 417,
+   "ataquesVoce": 7,
+   "abates": 1.4,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "multasVoce": 74,
+   "perdidasVoce": 0.3,
+   "derrubouVoce": 3.6,
+   "sofreuVoce": 18.2,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 14,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8.2,
+    10.4,
+    11.5,
+    11,
+    9.7,
+    8.4,
+    7.6,
+    7.4,
+    7.8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.56,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
+    0.26,
     0.29,
     0.33,
     0.37,
     0.39
-   ]
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 147,
+     "posicao": 2.9,
+     "vence": 0,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 63,
+     "derrubou": 5.9,
+     "revides": 2.3,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 246,
+     "posicao": 2.6,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 34,
+     "derrubou": 6.2,
+     "revides": 1.8,
+     "griladas": 0.4
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 405,
+     "posicao": 1.2,
+     "vence": 84,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 10.8,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 413,
+     "posicao": 1.2,
+     "vence": 84,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 8.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 322,
+     "posicao": 2,
+     "vence": 20,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 17,
+     "derrubou": 7.7,
+     "revides": 2.1,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 285,
+     "posicao": 2.2,
+     "vence": 9,
+     "voceVence": 0,
+     "vizinhoDeFrente": 36,
+     "multas": 22,
+     "derrubou": 5.3,
+     "revides": 1,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 262,
+     "posicao": 2.2,
+     "vence": 16,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 30,
+     "derrubou": 9.6,
+     "revides": 6,
+     "griladas": 0.2
+    }
+   }
+  },
+  "conviver": {
+   "vitoria": 51.3,
+   "posicao": 1.6,
+   "patrimonio": 434,
+   "iaMedia": 310,
+   "iaMelhor": 427,
+   "ataquesVoce": 5.3,
+   "abates": 1.5,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 2.2,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8.1,
+    10.3,
+    11.4,
+    11,
+    9.7,
+    8.4,
+    7.6,
+    7.4,
+    7.8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
+    0.26,
+    0.29,
+    0.33,
+    0.38,
+    0.4
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 138,
+     "posicao": 4,
+     "vence": 0,
+     "voceVence": 49,
+     "vizinhoDeFrente": 33,
+     "multas": 69,
+     "derrubou": 3.4,
+     "revides": 1.3,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 237,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 54,
+     "vizinhoDeFrente": 35,
+     "multas": 35,
+     "derrubou": 1.9,
+     "revides": 1,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 421,
+     "posicao": 1.7,
+     "vence": 42,
+     "voceVence": 52,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.2,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 419,
+     "posicao": 1.7,
+     "vence": 39,
+     "voceVence": 51,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 346,
+     "posicao": 2.6,
+     "vence": 10,
+     "voceVence": 54,
+     "vizinhoDeFrente": 33,
+     "multas": 18,
+     "derrubou": 2.9,
+     "revides": 1.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 293,
+     "posicao": 3,
+     "vence": 4,
+     "voceVence": 49,
+     "vizinhoDeFrente": 36,
+     "multas": 24,
+     "derrubou": 2.1,
+     "revides": 0.8,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 334,
+     "posicao": 2.7,
+     "vence": 11,
+     "voceVence": 51,
+     "vizinhoDeFrente": 38,
+     "multas": 21,
+     "derrubou": 3.2,
+     "revides": 3,
+     "griladas": 0.1
+    }
+   }
   },
   "desmatar_abater": {
    "vitoria": 0,
-   "patrimonio": -5,
-   "ia": [
-    123,
-    379,
-    262
-   ],
-   "ataquesVoce": 13.1,
-   "ataquesIA": [
-    11.1,
-    5,
-    6.6
-   ],
-   "abates": 6.2,
+   "posicao": 4,
+   "patrimonio": -68,
+   "iaMedia": 305,
+   "iaMelhor": 430,
+   "ataquesVoce": 8.1,
+   "abates": 3.1,
    "oncasFim": 8.4,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.5,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.4,
-   "extraviados": [
-    1,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.9,
-    1.1,
-    0,
-    9.1
-   ],
-   "sofreu": [
-    0,
-    9.9,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    5,
-    9,
-    100,
-    41
-   ],
-   "multasMedia": [
-    191,
-    78,
-    0,
-    35
-   ],
+   "multasVoce": 235,
+   "perdidasVoce": 0.6,
+   "derrubouVoce": 1.2,
+   "sofreuVoce": 0.4,
+   "extraviadosVoce": 1.1,
+   "seloFimVoce": 1,
    "soldadinho": null,
-   "javaporcoFim": 0.33,
+   "javaporcoFim": 0.34,
    "Jmedio": [
     6,
-    7.7,
-    9.7,
-    10.9,
-    10.8,
-    9.9,
-    8.9,
-    8.1,
-    7.8,
     7.9,
+    10,
+    11.2,
+    10.8,
+    9.6,
+    8.4,
+    7.7,
+    7.6,
+    7.8,
     8.4
    ],
    "Nmedio": [
     0.55,
     0.58,
-    0.53,
-    0.44,
-    0.35,
+    0.52,
+    0.41,
+    0.32,
+    0.27,
+    0.27,
     0.3,
-    0.29,
-    0.3,
-    0.33,
-    0.36,
-    0.38
-   ]
+    0.34,
+    0.37,
+    0.39
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 137,
+     "posicao": 3,
+     "vence": 0,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 71,
+     "derrubou": 3.2,
+     "revides": 1.1,
+     "griladas": 0.4
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 224,
+     "posicao": 2.9,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 43,
+     "derrubou": 1.8,
+     "revides": 0.9,
+     "griladas": 0.7
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 419,
+     "posicao": 1.2,
+     "vence": 84,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.2,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 424,
+     "posicao": 1.2,
+     "vence": 84,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 334,
+     "posicao": 1.9,
+     "vence": 18,
+     "voceVence": 0,
+     "vizinhoDeFrente": 33,
+     "multas": 21,
+     "derrubou": 2.4,
+     "revides": 1.3,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 281,
+     "posicao": 2.1,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 36,
+     "multas": 22,
+     "derrubou": 2,
+     "revides": 0.7,
+     "griladas": 0.3
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 321,
+     "posicao": 1.8,
+     "vence": 27,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 21,
+     "derrubou": 2.8,
+     "revides": 2.8,
+     "griladas": 0.1
+    }
+   }
   },
   "abater": {
-   "vitoria": 1.3,
-   "patrimonio": 155,
-   "ia": [
-    120,
-    374,
-    251
-   ],
-   "ataquesVoce": 15,
-   "ataquesIA": [
-    11.3,
-    5.6,
-    7
-   ],
-   "abates": 8.4,
+   "vitoria": 1.7,
+   "posicao": 3.2,
+   "patrimonio": 209,
+   "iaMedia": 305,
+   "iaMelhor": 432,
+   "ataquesVoce": 9.9,
+   "abates": 5.1,
    "oncasFim": 8.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.4,
-    1.1,
-    0,
-    8.8
-   ],
-   "sofreu": [
-    0,
-    10.2,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    24,
-    9,
-    100,
-    41
-   ],
-   "multasMedia": [
-    62,
-    76,
-    0,
-    40
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.32,
-   "Jmedio": [
-    6,
-    7.7,
-    9.7,
-    10.9,
-    10.8,
-    10,
-    9.1,
-    8.4,
-    8.1,
-    8.2,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.53,
-    0.44,
-    0.36,
-    0.31,
-    0.3,
-    0.31,
-    0.33,
-    0.36,
-    0.38
-   ]
-  },
-  "oportunista": {
-   "vitoria": 99,
-   "patrimonio": 498,
-   "ia": [
-    136,
-    384,
-    283
-   ],
-   "ataquesVoce": 7.6,
-   "ataquesIA": [
-    9.4,
-    4,
-    5.5
-   ],
-   "abates": 2.8,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.8,
-    1,
-    0,
-    10
-   ],
-   "sofreu": [
-    0,
-    11.8,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    7,
-    100,
-    41
-   ],
-   "multasMedia": [
-    0,
-    75,
-    0,
-    30
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.35,
-   "Jmedio": [
-    6,
-    8,
-    10.2,
-    11.3,
-    10.9,
-    9.6,
-    8.4,
-    7.7,
-    7.6,
-    7.9,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.51,
-    0.4,
-    0.31,
-    0.26,
-    0.27,
-    0.29,
-    0.33,
-    0.37,
-    0.39
-   ]
-  },
-  "sabotador": {
-   "vitoria": 99,
-   "patrimonio": 498,
-   "ia": [
-    136,
-    384,
-    283
-   ],
-   "ataquesVoce": 7.6,
-   "ataquesIA": [
-    9.4,
-    4,
-    5.5
-   ],
-   "abates": 2.8,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.8,
-    1,
-    0,
-    10
-   ],
-   "sofreu": [
-    0,
-    11.8,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    7,
-    100,
-    41
-   ],
-   "multasMedia": [
-    0,
-    75,
-    0,
-    30
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.35,
-   "Jmedio": [
-    6,
-    8,
-    10.2,
-    11.3,
-    10.9,
-    9.6,
-    8.4,
-    7.7,
-    7.6,
-    7.9,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.51,
-    0.4,
-    0.31,
-    0.26,
-    0.27,
-    0.29,
-    0.33,
-    0.37,
-    0.39
-   ]
-  },
-  "sabotador_pontual": {
-   "vitoria": 99,
-   "patrimonio": 498,
-   "ia": [
-    136,
-    384,
-    283
-   ],
-   "ataquesVoce": 7.6,
-   "ataquesIA": [
-    9.4,
-    4,
-    5.5
-   ],
-   "abates": 2.8,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.8,
-    1,
-    0,
-    10
-   ],
-   "sofreu": [
-    0,
-    11.8,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    7,
-    100,
-    41
-   ],
-   "multasMedia": [
-    0,
-    75,
-    0,
-    30
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.35,
-   "Jmedio": [
-    6,
-    8,
-    10.2,
-    11.3,
-    10.9,
-    9.6,
-    8.4,
-    7.7,
-    7.6,
-    7.9,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.51,
-    0.4,
-    0.31,
-    0.26,
-    0.27,
-    0.29,
-    0.33,
-    0.37,
-    0.39
-   ]
-  },
-  "conviver_sem_manejo": {
-   "vitoria": 93.3,
-   "patrimonio": 458,
-   "ia": [
-    139,
-    386,
-    266
-   ],
-   "ataquesVoce": 6.5,
-   "ataquesIA": [
-    9.8,
-    4.3,
-    5.8
-   ],
-   "abates": 2.8,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.7,
-    1.1,
-    0,
-    9.7
-   ],
-   "sofreu": [
-    0,
-    11.4,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    7,
-    100,
-    40
-   ],
-   "multasMedia": [
-    0,
-    78,
-    0,
-    35
-   ],
+   "multasVoce": 43,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.9,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 45,
    "soldadinho": null,
    "javaporcoFim": 0.34,
    "Jmedio": [
     6,
-    8,
-    10.2,
-    11.3,
-    10.9,
-    9.7,
-    8.5,
-    7.7,
-    7.6,
     7.9,
+    10.1,
+    11.3,
+    11,
+    9.8,
+    8.7,
+    8,
+    7.7,
+    8,
     8.5
    ],
    "Nmedio": [
     0.55,
     0.57,
-    0.51,
-    0.4,
-    0.31,
+    0.52,
+    0.41,
+    0.32,
+    0.28,
     0.27,
-    0.26,
     0.29,
     0.33,
     0.37,
     0.39
-   ]
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 137,
+     "posicao": 3.6,
+     "vence": 0,
+     "voceVence": 1,
+     "vizinhoDeFrente": 33,
+     "multas": 59,
+     "derrubou": 3.2,
+     "revides": 1.3,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 230,
+     "posicao": 3.3,
+     "vence": 0,
+     "voceVence": 3,
+     "vizinhoDeFrente": 35,
+     "multas": 34,
+     "derrubou": 1.8,
+     "revides": 0.9,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 422,
+     "posicao": 1.1,
+     "vence": 86,
+     "voceVence": 1,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 427,
+     "posicao": 1.2,
+     "vence": 80,
+     "voceVence": 2,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 333,
+     "posicao": 2,
+     "vence": 23,
+     "voceVence": 2,
+     "vizinhoDeFrente": 33,
+     "multas": 18,
+     "derrubou": 2.6,
+     "revides": 1.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 277,
+     "posicao": 2.4,
+     "vence": 8,
+     "voceVence": 3,
+     "vizinhoDeFrente": 36,
+     "multas": 26,
+     "derrubou": 1.9,
+     "revides": 0.8,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 313,
+     "posicao": 2.2,
+     "vence": 16,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 23,
+     "derrubou": 3.2,
+     "revides": 3,
+     "griladas": 0.1
+    }
+   }
   },
-  "desmatar_legal": {
-   "vitoria": 16.3,
-   "patrimonio": 294,
-   "ia": [
-    147,
-    388,
-    275
-   ],
-   "ataquesVoce": 24.4,
-   "ataquesIA": [
-    9.5,
-    4.3,
-    5.5
-   ],
-   "abates": 2.8,
+  "oportunista": {
+   "vitoria": 51,
+   "posicao": 1.6,
+   "patrimonio": 430,
+   "iaMedia": 310,
+   "iaMelhor": 427,
+   "ataquesVoce": 5.3,
+   "abates": 1.5,
    "oncasFim": 8.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    1.9,
-    1,
-    0,
-    9.9
-   ],
-   "sofreu": [
-    0,
-    11.8,
-    0,
-    1
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    47
-   ],
-   "multasMedia": [
-    0,
-    79,
-    0,
-    35
-   ],
+   "multasVoce": 1,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 2.3,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 98,
    "soldadinho": null,
-   "javaporcoFim": 0.33,
+   "javaporcoFim": 0.35,
    "Jmedio": [
     6,
-    8,
-    10.2,
+    8.1,
+    10.3,
     11.4,
     11,
     9.7,
-    8.5,
-    7.8,
+    8.4,
     7.6,
-    7.9,
+    7.4,
+    7.8,
     8.5
    ],
    "Nmedio": [
     0.55,
     0.57,
-    0.51,
-    0.4,
-    0.31,
-    0.27,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
+    0.26,
+    0.29,
+    0.33,
+    0.38,
+    0.4
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 136,
+     "posicao": 4,
+     "vence": 0,
+     "voceVence": 49,
+     "vizinhoDeFrente": 33,
+     "multas": 69,
+     "derrubou": 3.5,
+     "revides": 1.3,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 237,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 53,
+     "vizinhoDeFrente": 35,
+     "multas": 35,
+     "derrubou": 1.9,
+     "revides": 1,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 421,
+     "posicao": 1.7,
+     "vence": 42,
+     "voceVence": 51,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.2,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 418,
+     "posicao": 1.8,
+     "vence": 39,
+     "voceVence": 51,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 347,
+     "posicao": 2.6,
+     "vence": 12,
+     "voceVence": 54,
+     "vizinhoDeFrente": 33,
+     "multas": 18,
+     "derrubou": 2.8,
+     "revides": 1.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 290,
+     "posicao": 3,
+     "vence": 4,
+     "voceVence": 48,
+     "vizinhoDeFrente": 36,
+     "multas": 24,
+     "derrubou": 2.2,
+     "revides": 0.8,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 333,
+     "posicao": 2.7,
+     "vence": 11,
+     "voceVence": 51,
+     "vizinhoDeFrente": 38,
+     "multas": 21,
+     "derrubou": 3.2,
+     "revides": 3.1,
+     "griladas": 0.1
+    }
+   }
+  },
+  "sabotador": {
+   "vitoria": 3.3,
+   "posicao": 3.5,
+   "patrimonio": 108,
+   "iaMedia": 273,
+   "iaMelhor": 387,
+   "ataquesVoce": 5.1,
+   "abates": 1.2,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "multasVoce": 92,
+   "perdidasVoce": 0.2,
+   "derrubouVoce": 10.8,
+   "sofreuVoce": 0.9,
+   "extraviadosVoce": 0.6,
+   "seloFimVoce": 41,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8.1,
+    10.4,
+    11.4,
+    11,
+    9.6,
+    8.3,
+    7.5,
+    7.4,
+    7.8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.56,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
+    0.26,
+    0.29,
+    0.33,
+    0.38,
+    0.39
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 135,
+     "posicao": 3.1,
+     "vence": 1,
+     "voceVence": 3,
+     "vizinhoDeFrente": 33,
+     "multas": 59,
+     "derrubou": 3.1,
+     "revides": 1.5,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 216,
+     "posicao": 2.8,
+     "vence": 5,
+     "voceVence": 3,
+     "vizinhoDeFrente": 35,
+     "multas": 34,
+     "derrubou": 1.8,
+     "revides": 1.3,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 375,
+     "posicao": 1.2,
+     "vence": 79,
+     "voceVence": 1,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1.7,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 377,
+     "posicao": 1.4,
+     "vence": 67,
+     "voceVence": 6,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.2,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 287,
+     "posicao": 2,
+     "vence": 30,
+     "voceVence": 3,
+     "vizinhoDeFrente": 33,
+     "multas": 19,
+     "derrubou": 2.8,
+     "revides": 1.7,
+     "griladas": 0.2
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 266,
+     "posicao": 2.3,
+     "vence": 15,
+     "voceVence": 4,
+     "vizinhoDeFrente": 36,
+     "multas": 20,
+     "derrubou": 1.7,
+     "revides": 0.7,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 254,
+     "posicao": 2.4,
+     "vence": 18,
+     "voceVence": 3,
+     "vizinhoDeFrente": 38,
+     "multas": 28,
+     "derrubou": 3.4,
+     "revides": 3.8,
+     "griladas": 0.2
+    }
+   }
+  },
+  "sabotador_pontual": {
+   "vitoria": 34,
+   "posicao": 1.9,
+   "patrimonio": 386,
+   "iaMedia": 301,
+   "iaMelhor": 415,
+   "ataquesVoce": 5.7,
+   "abates": 1.5,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "multasVoce": 9,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 3.3,
+   "sofreuVoce": 0.9,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8.1,
+    10.3,
+    11.4,
+    11,
+    9.7,
+    8.4,
+    7.6,
+    7.4,
+    7.8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
+    0.26,
+    0.29,
+    0.33,
+    0.38,
+    0.39
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 139,
+     "posicao": 3.9,
+     "vence": 0,
+     "voceVence": 29,
+     "vizinhoDeFrente": 33,
+     "multas": 71,
+     "derrubou": 3.5,
+     "revides": 1.2,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 234,
+     "posicao": 3.7,
+     "vence": 1,
+     "voceVence": 39,
+     "vizinhoDeFrente": 35,
+     "multas": 37,
+     "derrubou": 2.1,
+     "revides": 1.1,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 407,
+     "posicao": 1.5,
+     "vence": 55,
+     "voceVence": 37,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 413,
+     "posicao": 1.5,
+     "vence": 59,
+     "voceVence": 31,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 322,
+     "posicao": 2.6,
+     "vence": 10,
+     "voceVence": 36,
+     "vizinhoDeFrente": 33,
+     "multas": 21,
+     "derrubou": 2.9,
+     "revides": 1.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 276,
+     "posicao": 3,
+     "vence": 4,
+     "voceVence": 36,
+     "vizinhoDeFrente": 36,
+     "multas": 24,
+     "derrubou": 2.3,
+     "revides": 1.1,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 319,
+     "posicao": 2.6,
+     "vence": 14,
+     "voceVence": 30,
+     "vizinhoDeFrente": 38,
+     "multas": 24,
+     "derrubou": 3.2,
+     "revides": 3.3,
+     "griladas": 0.1
+    }
+   }
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 22.3,
+   "posicao": 2,
+   "patrimonio": 393,
+   "iaMedia": 319,
+   "iaMelhor": 439,
+   "ataquesVoce": 4.5,
+   "abates": 1.6,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 2.1,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8.1,
+    10.3,
+    11.5,
+    11,
+    9.7,
+    8.4,
+    7.6,
+    7.4,
+    7.8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
+    0.26,
+    0.29,
+    0.33,
+    0.38,
+    0.39
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 156,
+     "posicao": 3.9,
+     "vence": 0,
+     "voceVence": 24,
+     "vizinhoDeFrente": 33,
+     "multas": 65,
+     "derrubou": 3.5,
+     "revides": 1.3,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 245,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 20,
+     "vizinhoDeFrente": 35,
+     "multas": 36,
+     "derrubou": 2,
+     "revides": 1,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 431,
+     "posicao": 1.4,
+     "vence": 67,
+     "voceVence": 23,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 430,
+     "posicao": 1.5,
+     "vence": 59,
+     "voceVence": 22,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.7,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 341,
+     "posicao": 2.6,
+     "vence": 17,
+     "voceVence": 21,
+     "vizinhoDeFrente": 33,
+     "multas": 20,
+     "derrubou": 2.8,
+     "revides": 1.6,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 308,
+     "posicao": 2.8,
+     "vence": 8,
+     "voceVence": 22,
+     "vizinhoDeFrente": 36,
+     "multas": 20,
+     "derrubou": 2.2,
+     "revides": 0.7,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 330,
+     "posicao": 2.6,
+     "vence": 19,
+     "voceVence": 24,
+     "vizinhoDeFrente": 38,
+     "multas": 21,
+     "derrubou": 3.4,
+     "revides": 3.3,
+     "griladas": 0.1
+    }
+   }
+  },
+  "desmatar_legal": {
+   "vitoria": 11.3,
+   "posicao": 2.5,
+   "patrimonio": 325,
+   "iaMedia": 315,
+   "iaMelhor": 435,
+   "ataquesVoce": 13.7,
+   "abates": 1.5,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 2.1,
+   "sofreuVoce": 0.4,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8.1,
+    10.3,
+    11.5,
+    11,
+    9.7,
+    8.4,
+    7.6,
+    7.4,
+    7.8,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.5,
+    0.39,
+    0.3,
+    0.26,
     0.26,
     0.29,
     0.33,
     0.37,
     0.39
-   ]
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 147,
+     "patrimonio": 147,
+     "posicao": 3.9,
+     "vence": 0,
+     "voceVence": 14,
+     "vizinhoDeFrente": 33,
+     "multas": 63,
+     "derrubou": 3.4,
+     "revides": 1.3,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 153,
+     "patrimonio": 243,
+     "posicao": 3.7,
+     "vence": 1,
+     "voceVence": 8,
+     "vizinhoDeFrente": 35,
+     "multas": 37,
+     "derrubou": 1.9,
+     "revides": 0.9,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 153,
+     "patrimonio": 427,
+     "posicao": 1.3,
+     "vence": 76,
+     "voceVence": 11,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 2.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 147,
+     "patrimonio": 429,
+     "posicao": 1.3,
+     "vence": 73,
+     "voceVence": 12,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 2.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 343,
+     "posicao": 2.3,
+     "vence": 17,
+     "voceVence": 15,
+     "vizinhoDeFrente": 33,
+     "multas": 17,
+     "derrubou": 2.7,
+     "revides": 1.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 104,
+     "patrimonio": 298,
+     "posicao": 2.6,
+     "vence": 6,
+     "voceVence": 12,
+     "vizinhoDeFrente": 36,
+     "multas": 20,
+     "derrubou": 1.7,
+     "revides": 0.8,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 102,
+     "patrimonio": 324,
+     "posicao": 2.4,
+     "vence": 18,
+     "voceVence": 8,
+     "vizinhoDeFrente": 38,
+     "multas": 23,
+     "derrubou": 3.5,
+     "revides": 3.3,
+     "griladas": 0.1
+    }
+   }
   }
  },
  "cerrado": {
   "passiva": {
    "vitoria": 0,
-   "patrimonio": 231,
-   "ia": [
-    146,
-    655,
-    372
-   ],
-   "ataquesVoce": 8.1,
-   "ataquesIA": [
-    8.5,
-    8.1,
-    6.4
-   ],
-   "abates": 2.2,
-   "oncasFim": 5.5,
+   "posicao": 3.8,
+   "patrimonio": 233,
+   "iaMedia": 547,
+   "iaMelhor": 720,
+   "ataquesVoce": 7.4,
+   "abates": 0.9,
+   "oncasFim": 4.9,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.6,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.5,
-   "extraviados": [
-    5.1,
-    0.1,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    0,
-    1.8,
-    0,
-    8.9
-   ],
-   "sofreu": [
-    0.3,
-    8.7,
-    0.2,
-    1.5
-   ],
-   "seloFim": [
-    100,
-    11,
-    100,
-    73
-   ],
-   "multasMedia": [
-    0,
-    72,
-    0,
-    13
-   ],
+   "multasVoce": 0,
+   "perdidasVoce": 0.2,
+   "derrubouVoce": 0,
+   "sofreuVoce": 0,
+   "extraviadosVoce": 4.5,
+   "seloFimVoce": 100,
    "soldadinho": null,
-   "javaporcoFim": 0.36,
+   "javaporcoFim": 0.34,
    "Jmedio": [
     4,
-    4.7,
-    5.7,
-    6.4,
-    6.8,
-    6.8,
-    6.6,
-    6.2,
-    5.9,
+    4.8,
     5.6,
-    5.5
+    6.2,
+    6.4,
+    6.3,
+    6,
+    5.6,
+    5.3,
+    5.1,
+    4.9
    ],
    "Nmedio": [
     0.55,
-    0.61,
-    0.61,
+    0.6,
+    0.6,
     0.57,
     0.52,
+    0.48,
     0.47,
-    0.45,
-    0.44,
-    0.45,
-    0.46,
-    0.48
-   ]
+    0.48,
+    0.5,
+    0.52,
+    0.53
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 338,
+     "posicao": 3.2,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 34,
+     "derrubou": 1.6,
+     "revides": 0.4,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 386,
+     "posicao": 3,
+     "vence": 7,
+     "voceVence": 0,
+     "vizinhoDeFrente": 37,
+     "multas": 50,
+     "derrubou": 0.3,
+     "revides": 0.1,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 707,
+     "posicao": 1.4,
+     "vence": 65,
+     "voceVence": 0,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 578,
+     "posicao": 1.7,
+     "vence": 33,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 618,
+     "posicao": 1.6,
+     "vence": 46,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 5,
+     "derrubou": 0.6,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 685,
+     "posicao": 1.5,
+     "vence": 57,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 4,
+     "derrubou": 0.6,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 600,
+     "posicao": 1.7,
+     "vence": 37,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 5,
+     "derrubou": 0.6,
+     "revides": 0.8,
+     "griladas": 0.1
+    }
+   }
   },
   "grileiro": {
    "vitoria": 0,
-   "patrimonio": 80,
-   "ia": [
-    157,
-    545,
-    373
-   ],
-   "ataquesVoce": 9.3,
-   "ataquesIA": [
-    8.6,
-    13.7,
-    7
-   ],
-   "abates": 2.3,
-   "oncasFim": 5.7,
+   "posicao": 4,
+   "patrimonio": 82,
+   "iaMedia": 505,
+   "iaMelhor": 670,
+   "ataquesVoce": 8.4,
+   "abates": 0.8,
+   "oncasFim": 5.1,
    "extincao": 0,
-   "griladasFim": [
-    0.2,
-    0.2,
-    0,
-    0.1
-   ],
+   "multasVoce": 63,
    "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0.1,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    1,
-    2.6,
-    20.6,
-    9.6
-   ],
-   "sofreu": [
-    21.7,
-    10.4,
-    0.1,
-    1.6
-   ],
-   "seloFim": [
-    10,
-    17,
-    100,
-    71
-   ],
-   "multasMedia": [
-    39,
-    59,
-    0,
-    12
-   ],
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 16.7,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 16,
    "soldadinho": null,
-   "javaporcoFim": 0.39,
+   "javaporcoFim": 0.36,
    "Jmedio": [
     4,
-    4.7,
-    5.7,
-    6.6,
-    7.1,
-    7.1,
-    6.9,
+    4.8,
+    5.6,
+    6.3,
     6.5,
+    6.4,
     6.1,
-    5.9,
-    5.7
+    5.8,
+    5.5,
+    5.3,
+    5.1
    ],
    "Nmedio": [
     0.55,
-    0.61,
-    0.61,
+    0.6,
+    0.6,
     0.57,
     0.51,
+    0.48,
+    0.46,
     0.47,
-    0.43,
-    0.42,
-    0.43,
-    0.44,
-    0.46
-   ]
+    0.48,
+    0.5,
+    0.52
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 351,
+     "posicao": 2.7,
+     "vence": 9,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 27,
+     "derrubou": 4.2,
+     "revides": 1.5,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 367,
+     "posicao": 2.7,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 37,
+     "multas": 35,
+     "derrubou": 5.5,
+     "revides": 0.9,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 662,
+     "posicao": 1.4,
+     "vence": 62,
+     "voceVence": 0,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 7.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 545,
+     "posicao": 1.7,
+     "vence": 43,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 8.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 555,
+     "posicao": 1.8,
+     "vence": 41,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 7,
+     "derrubou": 5.7,
+     "revides": 0.9,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 623,
+     "posicao": 1.6,
+     "vence": 56,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 4,
+     "derrubou": 4.2,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 475,
+     "posicao": 2.1,
+     "vence": 28,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 16,
+     "derrubou": 7.4,
+     "revides": 3.6,
+     "griladas": 0.2
+    }
+   }
   },
   "conviver": {
-   "vitoria": 34,
-   "patrimonio": 596,
-   "ia": [
-    140,
-    649,
-    372
-   ],
-   "ataquesVoce": 7.8,
-   "ataquesIA": [
-    8,
-    7.3,
-    6.4
-   ],
-   "abates": 2.1,
-   "oncasFim": 5.2,
+   "vitoria": 49.3,
+   "posicao": 1.7,
+   "patrimonio": 696,
+   "iaMedia": 520,
+   "iaMelhor": 692,
+   "ataquesVoce": 8.6,
+   "abates": 0.8,
+   "oncasFim": 4.4,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.5,
-    0.1,
-    0.2,
-    0.1
-   ],
-   "derrubou": [
-    1.1,
-    2.2,
-    0,
-    9.5
-   ],
-   "sofreu": [
-    0.7,
-    10.4,
-    0.2,
-    1.5
-   ],
-   "seloFim": [
-    100,
-    13,
-    100,
-    72
-   ],
-   "multasMedia": [
-    0,
-    65,
-    0,
-    12
-   ],
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.5,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 0.3,
+   "seloFimVoce": 100,
    "soldadinho": null,
-   "javaporcoFim": 0.35,
+   "javaporcoFim": 0.3,
+   "Jmedio": [
+    4,
+    4.8,
+    5.6,
+    6.2,
+    6.3,
+    6.1,
+    5.8,
+    5.4,
+    5,
+    4.7,
+    4.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.61,
+    0.58,
+    0.52,
+    0.49,
+    0.49,
+    0.5,
+    0.53,
+    0.55,
+    0.57
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 301,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 49,
+     "vizinhoDeFrente": 31,
+     "multas": 33,
+     "derrubou": 1.8,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 360,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 50,
+     "vizinhoDeFrente": 37,
+     "multas": 54,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 709,
+     "posicao": 1.7,
+     "vence": 44,
+     "voceVence": 34,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 551,
+     "posicao": 2.6,
+     "vence": 4,
+     "voceVence": 65,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 596,
+     "posicao": 2.3,
+     "vence": 22,
+     "voceVence": 51,
+     "vizinhoDeFrente": 31,
+     "multas": 7,
+     "derrubou": 1,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 645,
+     "posicao": 2.1,
+     "vence": 39,
+     "voceVence": 41,
+     "vizinhoDeFrente": 30,
+     "multas": 7,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 543,
+     "posicao": 2.6,
+     "vence": 15,
+     "voceVence": 57,
+     "vizinhoDeFrente": 34,
+     "multas": 9,
+     "derrubou": 1.4,
+     "revides": 1.5,
+     "griladas": 0.1
+    }
+   }
+  },
+  "desmatar_abater": {
+   "vitoria": 1,
+   "posicao": 3.6,
+   "patrimonio": 244,
+   "iaMedia": 530,
+   "iaMelhor": 701,
+   "ataquesVoce": 10.8,
+   "abates": 4.2,
+   "oncasFim": 4.8,
+   "extincao": 0,
+   "multasVoce": 36,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 0.1,
+   "seloFimVoce": 43,
+   "soldadinho": null,
+   "javaporcoFim": 0.33,
    "Jmedio": [
     4,
     4.7,
-    5.6,
-    6.3,
-    6.6,
-    6.6,
-    6.3,
+    5.4,
+    6,
+    6.2,
+    6.2,
     6,
     5.6,
-    5.4,
-    5.2
+    5.3,
+    5,
+    4.8
    ],
    "Nmedio": [
     0.55,
     0.61,
-    0.61,
-    0.57,
-    0.52,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
-    0.49,
-    0.51
-   ]
-  },
-  "desmatar_abater": {
-   "vitoria": 0.7,
-   "patrimonio": 195,
-   "ia": [
-    140,
-    649,
-    350
-   ],
-   "ataquesVoce": 11.8,
-   "ataquesIA": [
-    9.7,
-    8.5,
-    8.1
-   ],
-   "abates": 6.2,
-   "oncasFim": 5.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0.2,
-    0.1,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    0.8,
-    1.7,
-    0,
-    9.4
-   ],
-   "sofreu": [
-    0.3,
-    10.1,
-    0.1,
-    1.4
-   ],
-   "seloFim": [
-    34,
-    15,
-    100,
-    72
-   ],
-   "multasMedia": [
-    35,
-    57,
-    0,
-    13
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.37,
-   "Jmedio": [
-    4,
-    4.6,
-    5.4,
-    6,
-    6.4,
-    6.5,
-    6.4,
-    6.1,
-    5.9,
-    5.7,
-    5.5
-   ],
-   "Nmedio": [
+    0.62,
+    0.59,
     0.55,
-    0.61,
-    0.63,
-    0.6,
-    0.56,
+    0.51,
+    0.5,
+    0.5,
     0.52,
-    0.49,
-    0.48,
-    0.48,
-    0.49,
-    0.51
-   ]
+    0.53,
+    0.55
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 326,
+     "posicao": 3.2,
+     "vence": 1,
+     "voceVence": 1,
+     "vizinhoDeFrente": 31,
+     "multas": 27,
+     "derrubou": 1.7,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 369,
+     "posicao": 3.1,
+     "vence": 2,
+     "voceVence": 1,
+     "vizinhoDeFrente": 37,
+     "multas": 47,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 690,
+     "posicao": 1.4,
+     "vence": 64,
+     "voceVence": 1,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 572,
+     "posicao": 1.7,
+     "vence": 40,
+     "voceVence": 1,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 600,
+     "posicao": 1.8,
+     "vence": 40,
+     "voceVence": 2,
+     "vizinhoDeFrente": 31,
+     "multas": 8,
+     "derrubou": 0.9,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 661,
+     "posicao": 1.6,
+     "vence": 56,
+     "voceVence": 1,
+     "vizinhoDeFrente": 30,
+     "multas": 5,
+     "derrubou": 0.6,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 565,
+     "posicao": 1.7,
+     "vence": 39,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 10,
+     "derrubou": 1.1,
+     "revides": 1.2,
+     "griladas": 0
+    }
+   }
   },
   "abater": {
    "vitoria": 0,
-   "patrimonio": 171,
-   "ia": [
-    136,
-    653,
-    348
-   ],
-   "ataquesVoce": 11.4,
-   "ataquesIA": [
-    9.4,
-    8.4,
-    8.1
-   ],
-   "abates": 6.2,
-   "oncasFim": 5.6,
+   "posicao": 3.8,
+   "patrimonio": 199,
+   "iaMedia": 532,
+   "iaMelhor": 703,
+   "ataquesVoce": 9.9,
+   "abates": 4.3,
+   "oncasFim": 5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.2,
-    0.1,
-    0.2,
-    0.1
-   ],
-   "derrubou": [
-    0.7,
-    1.8,
-    0,
-    9.6
-   ],
-   "sofreu": [
-    0.4,
-    10.1,
-    0.1,
-    1.4
-   ],
-   "seloFim": [
-    30,
-    16,
-    100,
-    75
-   ],
-   "multasMedia": [
-    41,
-    59,
-    0,
-    13
-   ],
+   "multasVoce": 42,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.1,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 38,
    "soldadinho": null,
-   "javaporcoFim": 0.36,
+   "javaporcoFim": 0.33,
    "Jmedio": [
     4,
-    4.6,
+    4.7,
     5.4,
-    6,
-    6.5,
-    6.7,
-    6.6,
+    6.1,
     6.3,
-    6,
-    5.8,
-    5.6
+    6.3,
+    6.1,
+    5.7,
+    5.4,
+    5.2,
+    5
    ],
    "Nmedio": [
     0.55,
     0.61,
-    0.63,
-    0.6,
-    0.55,
+    0.62,
+    0.59,
+    0.54,
     0.51,
-    0.48,
-    0.47,
-    0.47,
-    0.48,
-    0.49
-   ]
+    0.49,
+    0.49,
+    0.5,
+    0.52,
+    0.54
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 312,
+     "posicao": 3.2,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 30,
+     "derrubou": 1.7,
+     "revides": 0.7,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 389,
+     "posicao": 3,
+     "vence": 2,
+     "voceVence": 0,
+     "vizinhoDeFrente": 37,
+     "multas": 39,
+     "derrubou": 0.4,
+     "revides": 0.1,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 700,
+     "posicao": 1.4,
+     "vence": 66,
+     "voceVence": 0,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 571,
+     "posicao": 1.6,
+     "vence": 42,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 583,
+     "posicao": 1.8,
+     "vence": 40,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 7,
+     "derrubou": 0.9,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 671,
+     "posicao": 1.5,
+     "vence": 56,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 3,
+     "derrubou": 0.6,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 566,
+     "posicao": 1.7,
+     "vence": 37,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 11,
+     "derrubou": 1.2,
+     "revides": 1.1,
+     "griladas": 0.1
+    }
+   }
   },
   "oportunista": {
-   "vitoria": 23.3,
-   "patrimonio": 537,
-   "ia": [
-    147,
-    642,
-    370
-   ],
-   "ataquesVoce": 7.7,
-   "ataquesIA": [
-    7.9,
-    7.7,
-    6.6
-   ],
-   "abates": 2,
-   "oncasFim": 5.3,
+   "vitoria": 30.7,
+   "posicao": 2.1,
+   "patrimonio": 598,
+   "iaMedia": 514,
+   "iaMelhor": 689,
+   "ataquesVoce": 8.4,
+   "abates": 0.8,
+   "oncasFim": 4.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.4,
-    0.1,
-    0.2,
-    0
-   ],
-   "derrubou": [
-    1.1,
-    2.7,
-    0.7,
-    9.5
-   ],
-   "sofreu": [
-    1.9,
-    10.5,
-    0.1,
-    1.5
-   ],
-   "seloFim": [
-    97,
-    14,
-    100,
-    70
-   ],
-   "multasMedia": [
-    3,
-    62,
-    0,
-    12
-   ],
+   "multasVoce": 3,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.8,
+   "sofreuVoce": 2.2,
+   "extraviadosVoce": 0.4,
+   "seloFimVoce": 87,
    "soldadinho": null,
-   "javaporcoFim": 0.35,
+   "javaporcoFim": 0.3,
    "Jmedio": [
     4,
-    4.7,
+    4.8,
     5.6,
+    6.2,
     6.3,
-    6.6,
-    6.6,
-    6.3,
-    6,
-    5.7,
+    6.1,
+    5.8,
     5.4,
-    5.3
+    5.1,
+    4.8,
+    4.5
    ],
    "Nmedio": [
     0.55,
+    0.6,
     0.61,
-    0.61,
-    0.57,
+    0.58,
     0.52,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
     0.49,
-    0.51
-   ]
+    0.48,
+    0.49,
+    0.52,
+    0.54,
+    0.56
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 304,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 33,
+     "vizinhoDeFrente": 31,
+     "multas": 33,
+     "derrubou": 2.3,
+     "revides": 1,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 364,
+     "posicao": 3.6,
+     "vence": 2,
+     "voceVence": 29,
+     "vizinhoDeFrente": 37,
+     "multas": 50,
+     "derrubou": 1.2,
+     "revides": 0.6,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 701,
+     "posicao": 1.5,
+     "vence": 58,
+     "voceVence": 16,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 549,
+     "posicao": 2.3,
+     "vence": 13,
+     "voceVence": 46,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 1.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 586,
+     "posicao": 2.3,
+     "vence": 23,
+     "voceVence": 38,
+     "vizinhoDeFrente": 31,
+     "multas": 6,
+     "derrubou": 1.3,
+     "revides": 0.7,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 640,
+     "posicao": 1.9,
+     "vence": 50,
+     "voceVence": 21,
+     "vizinhoDeFrente": 30,
+     "multas": 6,
+     "derrubou": 2.1,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 512,
+     "posicao": 2.6,
+     "vence": 21,
+     "voceVence": 34,
+     "vizinhoDeFrente": 34,
+     "multas": 11,
+     "derrubou": 2.2,
+     "revides": 1.9,
+     "griladas": 0
+    }
+   }
   },
   "sabotador": {
-   "vitoria": 15,
-   "patrimonio": 420,
-   "ia": [
-    150,
-    592,
-    369
-   ],
-   "ataquesVoce": 7.2,
-   "ataquesIA": [
-    7.7,
-    8.4,
-    6.5
-   ],
-   "abates": 2.1,
-   "oncasFim": 5.4,
+   "vitoria": 13.7,
+   "posicao": 2.9,
+   "patrimonio": 429,
+   "iaMedia": 492,
+   "iaMelhor": 656,
+   "ataquesVoce": 7.9,
+   "abates": 0.8,
+   "oncasFim": 4.7,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.4,
-    0.1,
-    0.2,
-    0.1
-   ],
-   "derrubou": [
-    6,
-    2,
-    0,
-    9.5
-   ],
-   "sofreu": [
-    0.5,
-    10.6,
-    4.9,
-    1.5
-   ],
-   "seloFim": [
-    50,
-    15,
-    100,
-    75
-   ],
-   "multasMedia": [
-    49,
-    61,
-    0,
-    13
-   ],
+   "multasVoce": 58,
+   "perdidasVoce": 0,
+   "derrubouVoce": 6.9,
+   "sofreuVoce": 0.4,
+   "extraviadosVoce": 0.3,
+   "seloFimVoce": 37,
    "soldadinho": null,
-   "javaporcoFim": 0.35,
+   "javaporcoFim": 0.33,
    "Jmedio": [
     4,
-    4.7,
+    4.8,
     5.6,
+    6.2,
     6.3,
-    6.6,
-    6.6,
-    6.4,
-    6,
-    5.8,
-    5.6,
-    5.4
+    6.2,
+    5.9,
+    5.5,
+    5.2,
+    4.9,
+    4.7
    ],
    "Nmedio": [
     0.55,
+    0.6,
     0.61,
-    0.61,
-    0.57,
+    0.58,
     0.52,
+    0.49,
     0.48,
-    0.45,
-    0.45,
-    0.46,
-    0.48,
-    0.49
-   ]
+    0.49,
+    0.51,
+    0.53,
+    0.55
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 301,
+     "posicao": 3.4,
+     "vence": 8,
+     "voceVence": 15,
+     "vizinhoDeFrente": 31,
+     "multas": 32,
+     "derrubou": 1.9,
+     "revides": 0.9,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 358,
+     "posicao": 3.3,
+     "vence": 2,
+     "voceVence": 12,
+     "vizinhoDeFrente": 37,
+     "multas": 48,
+     "derrubou": 0.5,
+     "revides": 0.4,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 650,
+     "posicao": 1.5,
+     "vence": 58,
+     "voceVence": 7,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 518,
+     "posicao": 2.1,
+     "vence": 26,
+     "voceVence": 20,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 537,
+     "posicao": 2,
+     "vence": 36,
+     "voceVence": 11,
+     "vizinhoDeFrente": 31,
+     "multas": 6,
+     "derrubou": 1,
+     "revides": 0.8,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 644,
+     "posicao": 1.7,
+     "vence": 55,
+     "voceVence": 16,
+     "vizinhoDeFrente": 30,
+     "multas": 6,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 496,
+     "posicao": 2.2,
+     "vence": 25,
+     "voceVence": 13,
+     "vizinhoDeFrente": 34,
+     "multas": 13,
+     "derrubou": 1.7,
+     "revides": 2.3,
+     "griladas": 0.1
+    }
+   }
   },
   "sabotador_pontual": {
-   "vitoria": 33.3,
-   "patrimonio": 573,
-   "ia": [
-    142,
-    633,
-    365
-   ],
-   "ataquesVoce": 7.6,
-   "ataquesIA": [
-    7.9,
-    7.5,
-    6.6
-   ],
-   "abates": 2.2,
-   "oncasFim": 5.3,
+   "vitoria": 40,
+   "posicao": 1.9,
+   "patrimonio": 658,
+   "iaMedia": 516,
+   "iaMelhor": 683,
+   "ataquesVoce": 8.3,
+   "abates": 0.8,
+   "oncasFim": 4.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.5,
-    0.1,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    1.5,
-    2.2,
-    0,
-    9.5
-   ],
-   "sofreu": [
-    0.7,
-    10.4,
-    0.6,
-    1.6
-   ],
-   "seloFim": [
-    100,
-    15,
-    100,
-    72
-   ],
-   "multasMedia": [
-    5,
-    65,
-    0,
-    13
-   ],
+   "multasVoce": 6,
+   "perdidasVoce": 0,
+   "derrubouVoce": 1.1,
+   "sofreuVoce": 0.3,
+   "extraviadosVoce": 0.4,
+   "seloFimVoce": 100,
    "soldadinho": null,
-   "javaporcoFim": 0.35,
+   "javaporcoFim": 0.3,
    "Jmedio": [
     4,
-    4.7,
+    4.8,
     5.6,
+    6.2,
     6.3,
-    6.6,
-    6.6,
-    6.3,
-    6,
-    5.6,
+    6.1,
+    5.8,
     5.4,
-    5.3
+    5,
+    4.7,
+    4.5
    ],
    "Nmedio": [
     0.55,
+    0.6,
     0.61,
-    0.61,
-    0.57,
+    0.58,
     0.52,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
     0.49,
-    0.51
-   ]
+    0.48,
+    0.5,
+    0.52,
+    0.55,
+    0.56
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 308,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 42,
+     "vizinhoDeFrente": 31,
+     "multas": 33,
+     "derrubou": 2,
+     "revides": 0.7,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 364,
+     "posicao": 3.8,
+     "vence": 3,
+     "voceVence": 39,
+     "vizinhoDeFrente": 37,
+     "multas": 54,
+     "derrubou": 0.4,
+     "revides": 0.2,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 696,
+     "posicao": 1.7,
+     "vence": 49,
+     "voceVence": 26,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 548,
+     "posicao": 2.5,
+     "vence": 9,
+     "voceVence": 54,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 587,
+     "posicao": 2.3,
+     "vence": 24,
+     "voceVence": 45,
+     "vizinhoDeFrente": 31,
+     "multas": 7,
+     "derrubou": 1,
+     "revides": 0.7,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 647,
+     "posicao": 2,
+     "vence": 48,
+     "voceVence": 33,
+     "vizinhoDeFrente": 30,
+     "multas": 7,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 528,
+     "posicao": 2.6,
+     "vence": 12,
+     "voceVence": 42,
+     "vizinhoDeFrente": 34,
+     "multas": 10,
+     "derrubou": 1.4,
+     "revides": 1.7,
+     "griladas": 0
+    }
+   }
   },
   "conviver_sem_manejo": {
-   "vitoria": 2.7,
-   "patrimonio": 462,
-   "ia": [
-    152,
-    659,
-    373
-   ],
-   "ataquesVoce": 6,
-   "ataquesIA": [
-    8.2,
-    8,
-    6.6
-   ],
-   "abates": 2.2,
-   "oncasFim": 5.2,
+   "vitoria": 9.3,
+   "posicao": 2.7,
+   "patrimonio": 535,
+   "iaMedia": 549,
+   "iaMelhor": 712,
+   "ataquesVoce": 7.2,
+   "abates": 0.9,
+   "oncasFim": 4.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.2,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.3,
-    0.2,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    1.1,
-    2.1,
-    0,
-    9.6
-   ],
-   "sofreu": [
-    0.6,
-    10.6,
-    0.1,
-    1.5
-   ],
-   "seloFim": [
-    100,
-    12,
-    100,
-    71
-   ],
-   "multasMedia": [
-    0,
-    62,
-    0,
-    12
-   ],
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 0.4,
+   "seloFimVoce": 100,
    "soldadinho": null,
-   "javaporcoFim": 0.37,
+   "javaporcoFim": 0.33,
    "Jmedio": [
     4,
-    4.7,
+    4.8,
     5.6,
+    6.2,
     6.3,
-    6.7,
-    6.7,
-    6.4,
-    6,
-    5.6,
+    6.1,
+    5.8,
     5.4,
-    5.2
+    5,
+    4.7,
+    4.5
    ],
    "Nmedio": [
     0.55,
+    0.6,
     0.61,
-    0.61,
-    0.57,
+    0.58,
     0.52,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
     0.49,
-    0.51
-   ]
+    0.49,
+    0.5,
+    0.52,
+    0.55,
+    0.57
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 358,
+     "posicao": 3.7,
+     "vence": 3,
+     "voceVence": 9,
+     "vizinhoDeFrente": 31,
+     "multas": 30,
+     "derrubou": 1.8,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 390,
+     "posicao": 3.7,
+     "vence": 2,
+     "voceVence": 9,
+     "vizinhoDeFrente": 37,
+     "multas": 47,
+     "derrubou": 0.4,
+     "revides": 0.1,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 717,
+     "posicao": 1.4,
+     "vence": 66,
+     "voceVence": 3,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 585,
+     "posicao": 1.9,
+     "vence": 32,
+     "voceVence": 15,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 629,
+     "posicao": 2,
+     "vence": 41,
+     "voceVence": 7,
+     "vizinhoDeFrente": 31,
+     "multas": 8,
+     "derrubou": 0.7,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 654,
+     "posicao": 1.8,
+     "vence": 49,
+     "voceVence": 10,
+     "vizinhoDeFrente": 30,
+     "multas": 5,
+     "derrubou": 0.7,
+     "revides": 0.1,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 578,
+     "posicao": 2.2,
+     "vence": 28,
+     "voceVence": 11,
+     "vizinhoDeFrente": 34,
+     "multas": 7,
+     "derrubou": 1,
+     "revides": 1.1,
+     "griladas": 0
+    }
+   }
   },
   "desmatar_legal": {
-   "vitoria": 1.7,
-   "patrimonio": 349,
-   "ia": [
-    155,
-    660,
-    368
-   ],
-   "ataquesVoce": 18.3,
-   "ataquesIA": [
-    8.6,
-    7.5,
-    7
-   ],
-   "abates": 2.4,
-   "oncasFim": 5.3,
+   "vitoria": 6.3,
+   "posicao": 3.2,
+   "patrimonio": 410,
+   "iaMedia": 554,
+   "iaMelhor": 721,
+   "ataquesVoce": 16.9,
+   "abates": 1,
+   "oncasFim": 4.6,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0.1,
-    0.2,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    0.9,
-    1.8,
-    0,
-    9.8
-   ],
-   "sofreu": [
-    0.4,
-    10.6,
-    0.1,
-    1.5
-   ],
-   "seloFim": [
-    100,
-    11,
-    100,
-    74
-   ],
-   "multasMedia": [
-    0,
-    57,
-    0,
-    12
-   ],
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 100,
    "soldadinho": null,
-   "javaporcoFim": 0.36,
+   "javaporcoFim": 0.33,
    "Jmedio": [
     4,
-    4.7,
+    4.8,
     5.6,
-    6.4,
-    6.7,
-    6.7,
-    6.4,
-    6,
-    5.7,
+    6.2,
+    6.3,
+    6.1,
+    5.8,
     5.4,
-    5.3
+    5,
+    4.8,
+    4.6
    ],
    "Nmedio": [
     0.55,
@@ -2486,249 +3840,131 @@
     0.61,
     0.58,
     0.52,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
-    0.48,
-    0.5
-   ]
+    0.49,
+    0.49,
+    0.5,
+    0.52,
+    0.54,
+    0.57
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 139,
+     "patrimonio": 358,
+     "posicao": 3.4,
+     "vence": 1,
+     "voceVence": 6,
+     "vizinhoDeFrente": 31,
+     "multas": 28,
+     "derrubou": 1.7,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 161,
+     "patrimonio": 401,
+     "posicao": 3.3,
+     "vence": 4,
+     "voceVence": 6,
+     "vizinhoDeFrente": 37,
+     "multas": 46,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 151,
+     "patrimonio": 716,
+     "posicao": 1.4,
+     "vence": 63,
+     "voceVence": 5,
+     "vizinhoDeFrente": 28,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 149,
+     "patrimonio": 586,
+     "posicao": 1.8,
+     "vence": 35,
+     "voceVence": 8,
+     "vizinhoDeFrente": 40,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 96,
+     "patrimonio": 642,
+     "posicao": 1.8,
+     "vence": 45,
+     "voceVence": 9,
+     "vizinhoDeFrente": 31,
+     "multas": 6,
+     "derrubou": 0.7,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 105,
+     "patrimonio": 667,
+     "posicao": 1.7,
+     "vence": 51,
+     "voceVence": 3,
+     "vizinhoDeFrente": 30,
+     "multas": 7,
+     "derrubou": 0.6,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 99,
+     "patrimonio": 575,
+     "posicao": 2.1,
+     "vence": 28,
+     "voceVence": 7,
+     "vizinhoDeFrente": 34,
+     "multas": 9,
+     "derrubou": 1.2,
+     "revides": 1.2,
+     "griladas": 0
+    }
+   }
   }
  },
  "caatinga": {
   "passiva": {
-   "vitoria": 1.7,
-   "patrimonio": 171,
-   "ia": [
-    131,
-    233,
-    209
-   ],
-   "ataquesVoce": 5.5,
-   "ataquesIA": [
-    3.8,
-    2.1,
-    2.3
-   ],
-   "abates": 0.6,
-   "oncasFim": 2.1,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "extraviados": [
-    8.1,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0,
-    1,
-    0,
-    12.4
-   ],
-   "sofreu": [
-    0,
-    12.4,
-    0,
-    1
-   ],
-   "seloFim": [
-    100,
-    11,
-    100,
-    78
-   ],
-   "multasMedia": [
-    0,
-    43,
-    0,
-    9
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
-    2.3,
-    2.3,
-    2.3,
-    2.2,
-    2.2,
-    2.2,
-    2.1,
-    2.1
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.62,
-    0.65,
-    0.67,
-    0.69,
-    0.7,
-    0.71,
-    0.71,
-    0.72,
-    0.72
-   ]
-  },
-  "grileiro": {
    "vitoria": 0,
-   "patrimonio": 63,
-   "ia": [
-    136,
-    235,
-    207
-   ],
-   "ataquesVoce": 4.3,
-   "ataquesIA": [
-    4,
-    3.3,
-    2.4
-   ],
-   "abates": 0.7,
-   "oncasFim": 2.2,
+   "posicao": 3.5,
+   "patrimonio": 227,
+   "iaMedia": 345,
+   "iaMelhor": 427,
+   "ataquesVoce": 4.1,
+   "abates": 0.5,
+   "oncasFim": 1.8,
    "extincao": 0,
-   "griladasFim": [
-    0.2,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.7,
-    2.3,
-    22.7,
-    11.7
-   ],
-   "sofreu": [
-    24,
-    12.4,
-    0,
-    1
-   ],
-   "seloFim": [
-    10,
-    15,
-    100,
-    80
-   ],
-   "multasMedia": [
-    51,
-    39,
-    0,
-    10
-   ],
+   "multasVoce": 0,
+   "perdidasVoce": 0.2,
+   "derrubouVoce": 0,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 5.8,
+   "seloFimVoce": 100,
    "soldadinho": null,
    "javaporcoFim": null,
    "Jmedio": [
     3,
     2.6,
     2.5,
-    2.4,
-    2.3,
-    2.3,
-    2.3,
-    2.3,
-    2.2,
-    2.2,
-    2.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.62,
-    0.65,
-    0.67,
-    0.69,
-    0.7,
-    0.71,
-    0.71,
-    0.72,
-    0.72
-   ]
-  },
-  "conviver": {
-   "vitoria": 66.7,
-   "patrimonio": 246,
-   "ia": [
-    123,
-    224,
-    195
-   ],
-   "ataquesVoce": 2.8,
-   "ataquesIA": [
-    3.9,
-    1.9,
-    2.4
-   ],
-   "abates": 0.7,
-   "oncasFim": 1.8,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.8,
-    1.1,
-    0,
-    11.8
-   ],
-   "sofreu": [
-    0,
-    12.5,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    10,
-    100,
-    81
-   ],
-   "multasMedia": [
-    0,
-    44,
-    0,
-    10
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
     2.3,
     2.2,
     2.2,
     2.1,
     2,
-    2,
     1.9,
+    1.8,
     1.8
    ],
    "Nmedio": [
@@ -2740,75 +3976,123 @@
     0.71,
     0.73,
     0.74,
-    0.74,
+    0.75,
     0.76,
     0.77
-   ]
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 272,
+     "posicao": 2.9,
+     "vence": 5,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 25,
+     "derrubou": 1.8,
+     "revides": 0.5,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 315,
+     "posicao": 2.5,
+     "vence": 15,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 17,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 363,
+     "posicao": 1.6,
+     "vence": 53,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 450,
+     "posicao": 1.2,
+     "vence": 78,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 395,
+     "posicao": 1.9,
+     "vence": 28,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 6,
+     "derrubou": 0.8,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 202,
+     "posicao": 3.5,
+     "vence": 0,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 3,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 399,
+     "posicao": 1.7,
+     "vence": 44,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 10,
+     "derrubou": 1.3,
+     "revides": 1.1,
+     "griladas": 0
+    }
+   }
   },
-  "desmatar_abater": {
-   "vitoria": 17.7,
-   "patrimonio": 189,
-   "ia": [
-    117,
-    222,
-    195
-   ],
-   "ataquesVoce": 8.4,
-   "ataquesIA": [
-    4.5,
-    2.1,
-    2.8
-   ],
-   "abates": 2.7,
+  "grileiro": {
+   "vitoria": 0,
+   "posicao": 4,
+   "patrimonio": 54,
+   "iaMedia": 337,
+   "iaMelhor": 427,
+   "ataquesVoce": 3.6,
+   "abates": 0.4,
    "oncasFim": 1.9,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.5,
-    0.9,
-    0,
-    12
-   ],
-   "sofreu": [
-    0,
-    12.5,
-    0,
-    0.9
-   ],
-   "seloFim": [
-    36,
-    13,
-    100,
-    82
-   ],
-   "multasMedia": [
-    15,
-    43,
-    0,
-    9
-   ],
+   "multasVoce": 72,
+   "perdidasVoce": 0.2,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 17.2,
+   "extraviadosVoce": 0.9,
+   "seloFimVoce": 23,
    "soldadinho": null,
    "javaporcoFim": null,
    "Jmedio": [
     3,
+    2.7,
     2.5,
+    2.3,
     2.3,
     2.2,
     2.2,
-    2.1,
-    2.1,
     2.1,
     2,
     2,
@@ -2816,586 +4100,1184 @@
    ],
    "Nmedio": [
     0.55,
-    0.6,
-    0.65,
+    0.59,
+    0.62,
+    0.66,
     0.68,
     0.7,
     0.72,
+    0.72,
     0.73,
     0.74,
+    0.75
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 259,
+     "posicao": 2.6,
+     "vence": 3,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 30,
+     "derrubou": 5.5,
+     "revides": 1.6,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 330,
+     "posicao": 2.3,
+     "vence": 17,
+     "voceVence": 0,
+     "vizinhoDeFrente": 40,
+     "multas": 15,
+     "derrubou": 6.1,
+     "revides": 1.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 376,
+     "posicao": 1.4,
+     "vence": 63,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 7.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 439,
+     "posicao": 1.3,
+     "vence": 76,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 7,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 368,
+     "posicao": 1.9,
+     "vence": 28,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 12,
+     "derrubou": 6.2,
+     "revides": 1.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 212,
+     "posicao": 2.8,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 35,
+     "multas": 5,
+     "derrubou": 4.6,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 335,
+     "posicao": 2,
+     "vence": 31,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 32,
+     "derrubou": 7.6,
+     "revides": 5.5,
+     "griladas": 0.2
+    }
+   }
+  },
+  "conviver": {
+   "vitoria": 42.7,
+   "posicao": 1.8,
+   "patrimonio": 398,
+   "iaMedia": 321,
+   "iaMelhor": 406,
+   "ataquesVoce": 3.4,
+   "abates": 0.5,
+   "oncasFim": 1.5,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    2,
+    1.8,
+    1.7,
+    1.6,
+    1.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.64,
+    0.68,
+    0.7,
+    0.73,
     0.75,
     0.76,
-    0.76
-   ]
-  },
-  "abater": {
-   "vitoria": 14,
-   "patrimonio": 172,
-   "ia": [
-    122,
-    231,
-    202
-   ],
-   "ataquesVoce": 5.3,
-   "ataquesIA": [
-    4.6,
-    2,
-    3
-   ],
-   "abates": 2.5,
-   "oncasFim": 2.1,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.7,
-    1,
-    0,
-    11.9
-   ],
-   "sofreu": [
-    0,
-    12.6,
-    0,
-    1
-   ],
-   "seloFim": [
-    57,
-    9,
-    100,
-    75
-   ],
-   "multasMedia": [
-    13,
-    41,
-    0,
-    11
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.5,
-    2.4,
-    2.3,
-    2.3,
-    2.2,
-    2.2,
-    2.2,
-    2.2,
-    2.2,
-    2.1
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.67,
-    0.69,
-    0.7,
-    0.71,
-    0.72,
-    0.72,
-    0.72,
-    0.73
-   ]
-  },
-  "oportunista": {
-   "vitoria": 66.7,
-   "patrimonio": 246,
-   "ia": [
-    123,
-    224,
-    195
-   ],
-   "ataquesVoce": 2.8,
-   "ataquesIA": [
-    3.9,
-    1.9,
-    2.4
-   ],
-   "abates": 0.7,
-   "oncasFim": 1.8,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
+    0.78,
     0.8,
-    1.1,
-    0,
-    11.8
+    0.81
    ],
-   "sofreu": [
-    0,
-    12.5,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    10,
-    100,
-    81
-   ],
-   "multasMedia": [
-    0,
-    44,
-    0,
-    10
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
-    2.3,
-    2.2,
-    2.2,
-    2.1,
-    2,
-    2,
-    1.9,
-    1.8
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.66,
-    0.69,
-    0.71,
-    0.73,
-    0.74,
-    0.74,
-    0.76,
-    0.77
-   ]
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 236,
+     "posicao": 3.6,
+     "vence": 0,
+     "voceVence": 35,
+     "vizinhoDeFrente": 34,
+     "multas": 30,
+     "derrubou": 2.4,
+     "revides": 0.6,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 310,
+     "posicao": 3.2,
+     "vence": 6,
+     "voceVence": 50,
+     "vizinhoDeFrente": 40,
+     "multas": 9,
+     "derrubou": 0.7,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 337,
+     "posicao": 2.2,
+     "vence": 24,
+     "voceVence": 54,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 438,
+     "posicao": 1.5,
+     "vence": 58,
+     "voceVence": 33,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 355,
+     "posicao": 2.7,
+     "vence": 13,
+     "voceVence": 42,
+     "vizinhoDeFrente": 30,
+     "multas": 8,
+     "derrubou": 1.1,
+     "revides": 0.7,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 167,
+     "posicao": 3.9,
+     "vence": 0,
+     "voceVence": 46,
+     "vizinhoDeFrente": 35,
+     "multas": 3,
+     "derrubou": 0.4,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 373,
+     "posicao": 2.3,
+     "vence": 22,
+     "voceVence": 40,
+     "vizinhoDeFrente": 32,
+     "multas": 11,
+     "derrubou": 1.6,
+     "revides": 1.4,
+     "griladas": 0
+    }
+   }
   },
-  "sabotador": {
-   "vitoria": 66.7,
-   "patrimonio": 246,
-   "ia": [
-    123,
-    224,
-    195
-   ],
-   "ataquesVoce": 2.8,
-   "ataquesIA": [
-    3.9,
-    1.9,
-    2.4
-   ],
-   "abates": 0.7,
-   "oncasFim": 1.8,
+  "desmatar_abater": {
+   "vitoria": 16,
+   "posicao": 2.6,
+   "patrimonio": 305,
+   "iaMedia": 309,
+   "iaMelhor": 396,
+   "ataquesVoce": 6.4,
+   "abates": 1.7,
+   "oncasFim": 1.5,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
+   "multasVoce": 11,
    "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.8,
-    1.1,
-    0,
-    11.8
-   ],
-   "sofreu": [
-    0,
-    12.5,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    10,
-    100,
-    81
-   ],
-   "multasMedia": [
-    0,
-    44,
-    0,
-    10
-   ],
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 62,
    "soldadinho": null,
    "javaporcoFim": null,
    "Jmedio": [
     3,
     2.6,
-    2.4,
     2.3,
-    2.2,
-    2.2,
-    2.1,
-    2,
-    2,
-    1.9,
-    1.8
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.66,
-    0.69,
-    0.71,
-    0.73,
-    0.74,
-    0.74,
-    0.76,
-    0.77
-   ]
-  },
-  "sabotador_pontual": {
-   "vitoria": 66.7,
-   "patrimonio": 246,
-   "ia": [
-    123,
-    224,
-    195
-   ],
-   "ataquesVoce": 2.8,
-   "ataquesIA": [
-    3.9,
-    1.9,
-    2.4
-   ],
-   "abates": 0.7,
-   "oncasFim": 1.8,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.8,
-    1.1,
-    0,
-    11.8
-   ],
-   "sofreu": [
-    0,
-    12.5,
-    0,
-    1.1
-   ],
-   "seloFim": [
-    100,
-    10,
-    100,
-    81
-   ],
-   "multasMedia": [
-    0,
-    44,
-    0,
-    10
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
     2.3,
-    2.2,
-    2.2,
-    2.1,
-    2,
-    2,
-    1.9,
-    1.8
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.66,
-    0.69,
-    0.71,
-    0.73,
-    0.74,
-    0.74,
-    0.76,
-    0.77
-   ]
-  },
-  "conviver_sem_manejo": {
-   "vitoria": 46.7,
-   "patrimonio": 226,
-   "ia": [
-    121,
-    224,
-    196
-   ],
-   "ataquesVoce": 2.6,
-   "ataquesIA": [
-    3.7,
-    1.9,
-    2.5
-   ],
-   "abates": 0.6,
-   "oncasFim": 1.8,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.1,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.6,
-    1,
-    0,
-    12.1
-   ],
-   "sofreu": [
-    0,
-    12.7,
-    0,
-    1
-   ],
-   "seloFim": [
-    100,
-    11,
-    100,
-    83
-   ],
-   "multasMedia": [
-    0,
-    43,
-    0,
-    9
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
-    2.3,
-    2.2,
-    2.2,
-    2.1,
-    2.1,
-    2,
-    1.9,
-    1.8
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.66,
-    0.69,
-    0.71,
-    0.72,
-    0.73,
-    0.74,
-    0.75,
-    0.76
-   ]
-  },
-  "desmatar_legal": {
-   "vitoria": 94.7,
-   "patrimonio": 292,
-   "ia": [
-    117,
-    219,
-    192
-   ],
-   "ataquesVoce": 10,
-   "ataquesIA": [
-    4,
-    2,
-    2.3
-   ],
-   "abates": 0.8,
-   "oncasFim": 1.7,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.1,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0,
-   "extraviados": [
-    0,
-    0,
-    0,
-    0
-   ],
-   "derrubou": [
-    0.6,
-    1,
-    0,
-    12.2
-   ],
-   "sofreu": [
-    0,
-    12.8,
-    0,
-    1
-   ],
-   "seloFim": [
-    100,
-    10,
-    100,
-    79
-   ],
-   "multasMedia": [
-    0,
-    41,
-    0,
-    10
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
-    2.3,
-    2.2,
-    2.1,
     2.1,
     2,
     1.9,
     1.8,
-    1.7
+    1.7,
+    1.6,
+    1.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.66,
+    0.69,
+    0.72,
+    0.75,
+    0.76,
+    0.77,
+    0.79,
+    0.81,
+    0.82
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 226,
+     "posicao": 3.4,
+     "vence": 3,
+     "voceVence": 19,
+     "vizinhoDeFrente": 34,
+     "multas": 29,
+     "derrubou": 2.2,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 302,
+     "posicao": 2.9,
+     "vence": 10,
+     "voceVence": 13,
+     "vizinhoDeFrente": 40,
+     "multas": 10,
+     "derrubou": 0.8,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 315,
+     "posicao": 2,
+     "vence": 37,
+     "voceVence": 22,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 431,
+     "posicao": 1.3,
+     "vence": 79,
+     "voceVence": 11,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 332,
+     "posicao": 2.4,
+     "vence": 22,
+     "voceVence": 16,
+     "vizinhoDeFrente": 30,
+     "multas": 8,
+     "derrubou": 1.1,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 160,
+     "posicao": 3.7,
+     "vence": 0,
+     "voceVence": 15,
+     "vizinhoDeFrente": 35,
+     "multas": 3,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 366,
+     "posicao": 2.1,
+     "vence": 31,
+     "voceVence": 17,
+     "vizinhoDeFrente": 32,
+     "multas": 10,
+     "derrubou": 1.5,
+     "revides": 1.2,
+     "griladas": 0
+    }
+   }
+  },
+  "abater": {
+   "vitoria": 6.3,
+   "posicao": 2.9,
+   "patrimonio": 302,
+   "iaMedia": 345,
+   "iaMelhor": 427,
+   "ataquesVoce": 4,
+   "abates": 1.6,
+   "oncasFim": 1.8,
+   "extincao": 0,
+   "multasVoce": 10,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.6,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 77,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.3,
+    2.2,
+    2.1,
+    2,
+    2,
+    1.9,
+    1.8
    ],
    "Nmedio": [
     0.55,
     0.6,
     0.64,
     0.67,
-    0.69,
+    0.7,
     0.72,
     0.73,
     0.74,
     0.75,
+    0.76,
+    0.77
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 259,
+     "posicao": 3.3,
+     "vence": 1,
+     "voceVence": 7,
+     "vizinhoDeFrente": 34,
+     "multas": 24,
+     "derrubou": 2.1,
+     "revides": 0.4,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 329,
+     "posicao": 2.8,
+     "vence": 13,
+     "voceVence": 6,
+     "vizinhoDeFrente": 40,
+     "multas": 10,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 360,
+     "posicao": 1.8,
+     "vence": 43,
+     "voceVence": 14,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 451,
+     "posicao": 1.2,
+     "vence": 83,
+     "voceVence": 0,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 376,
+     "posicao": 2.2,
+     "vence": 16,
+     "voceVence": 5,
+     "vizinhoDeFrente": 30,
+     "multas": 7,
+     "derrubou": 1,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 205,
+     "posicao": 3.7,
+     "vence": 1,
+     "voceVence": 11,
+     "vizinhoDeFrente": 35,
+     "multas": 4,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 411,
+     "posicao": 1.7,
+     "vence": 46,
+     "voceVence": 3,
+     "vizinhoDeFrente": 32,
+     "multas": 8,
+     "derrubou": 1.1,
+     "revides": 0.9,
+     "griladas": 0
+    }
+   }
+  },
+  "oportunista": {
+   "vitoria": 37,
+   "posicao": 1.9,
+   "patrimonio": 381,
+   "iaMedia": 321,
+   "iaMelhor": 407,
+   "ataquesVoce": 3.5,
+   "abates": 0.5,
+   "oncasFim": 1.5,
+   "extincao": 0,
+   "multasVoce": 2,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 1.5,
+   "extraviadosVoce": 0.3,
+   "seloFimVoce": 91,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    2,
+    1.9,
+    1.7,
+    1.6,
+    1.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.64,
+    0.68,
+    0.7,
+    0.73,
+    0.75,
+    0.76,
     0.77,
-    0.78
-   ]
+    0.79,
+    0.81
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 236,
+     "posicao": 3.7,
+     "vence": 0,
+     "voceVence": 34,
+     "vizinhoDeFrente": 34,
+     "multas": 31,
+     "derrubou": 2.5,
+     "revides": 0.6,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 302,
+     "posicao": 3.2,
+     "vence": 7,
+     "voceVence": 40,
+     "vizinhoDeFrente": 40,
+     "multas": 12,
+     "derrubou": 1.1,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 340,
+     "posicao": 2,
+     "vence": 34,
+     "voceVence": 46,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 438,
+     "posicao": 1.5,
+     "vence": 61,
+     "voceVence": 29,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 353,
+     "posicao": 2.7,
+     "vence": 14,
+     "voceVence": 37,
+     "vizinhoDeFrente": 30,
+     "multas": 8,
+     "derrubou": 1.3,
+     "revides": 0.8,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 178,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 32,
+     "vizinhoDeFrente": 35,
+     "multas": 5,
+     "derrubou": 2.3,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 368,
+     "posicao": 2.4,
+     "vence": 18,
+     "voceVence": 42,
+     "vizinhoDeFrente": 32,
+     "multas": 12,
+     "derrubou": 1.8,
+     "revides": 1.5,
+     "griladas": 0
+    }
+   }
+  },
+  "sabotador": {
+   "vitoria": 6.3,
+   "posicao": 3.4,
+   "patrimonio": 218,
+   "iaMedia": 340,
+   "iaMelhor": 423,
+   "ataquesVoce": 3.5,
+   "abates": 0.4,
+   "oncasFim": 1.6,
+   "extincao": 0,
+   "multasVoce": 81,
+   "perdidasVoce": 0,
+   "derrubouVoce": 8.8,
+   "sofreuVoce": 0.7,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 26,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    2,
+    1.9,
+    1.8,
+    1.7,
+    1.6
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.64,
+    0.67,
+    0.7,
+    0.72,
+    0.74,
+    0.75,
+    0.76,
+    0.77,
+    0.79
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 261,
+     "posicao": 3,
+     "vence": 1,
+     "voceVence": 5,
+     "vizinhoDeFrente": 34,
+     "multas": 24,
+     "derrubou": 1.9,
+     "revides": 0.8,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 327,
+     "posicao": 2.5,
+     "vence": 11,
+     "voceVence": 8,
+     "vizinhoDeFrente": 40,
+     "multas": 9,
+     "derrubou": 0.8,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 371,
+     "posicao": 1.5,
+     "vence": 58,
+     "voceVence": 2,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 443,
+     "posicao": 1.3,
+     "vence": 77,
+     "voceVence": 10,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 382,
+     "posicao": 2,
+     "vence": 29,
+     "voceVence": 3,
+     "vizinhoDeFrente": 30,
+     "multas": 8,
+     "derrubou": 0.9,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 193,
+     "posicao": 3.3,
+     "vence": 0,
+     "voceVence": 11,
+     "vizinhoDeFrente": 35,
+     "multas": 4,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 369,
+     "posicao": 2.1,
+     "vence": 30,
+     "voceVence": 5,
+     "vizinhoDeFrente": 32,
+     "multas": 18,
+     "derrubou": 2.2,
+     "revides": 2.4,
+     "griladas": 0.1
+    }
+   }
+  },
+  "sabotador_pontual": {
+   "vitoria": 39.3,
+   "posicao": 1.8,
+   "patrimonio": 391,
+   "iaMedia": 321,
+   "iaMelhor": 406,
+   "ataquesVoce": 3.4,
+   "abates": 0.5,
+   "oncasFim": 1.5,
+   "extincao": 0,
+   "multasVoce": 3,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.6,
+   "sofreuVoce": 0.7,
+   "extraviadosVoce": 0.3,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    2,
+    1.8,
+    1.7,
+    1.6,
+    1.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.64,
+    0.68,
+    0.7,
+    0.73,
+    0.75,
+    0.76,
+    0.78,
+    0.8,
+    0.81
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 238,
+     "posicao": 3.6,
+     "vence": 0,
+     "voceVence": 34,
+     "vizinhoDeFrente": 34,
+     "multas": 29,
+     "derrubou": 2.4,
+     "revides": 0.7,
+     "griladas": 0.1
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 308,
+     "posicao": 3.2,
+     "vence": 6,
+     "voceVence": 45,
+     "vizinhoDeFrente": 40,
+     "multas": 10,
+     "derrubou": 0.8,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 336,
+     "posicao": 2.1,
+     "vence": 28,
+     "voceVence": 50,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 440,
+     "posicao": 1.5,
+     "vence": 62,
+     "voceVence": 30,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 358,
+     "posicao": 2.6,
+     "vence": 14,
+     "voceVence": 41,
+     "vizinhoDeFrente": 30,
+     "multas": 8,
+     "derrubou": 1.1,
+     "revides": 0.8,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 167,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 41,
+     "vizinhoDeFrente": 35,
+     "multas": 3,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 365,
+     "posicao": 2.4,
+     "vence": 19,
+     "voceVence": 36,
+     "vizinhoDeFrente": 32,
+     "multas": 13,
+     "derrubou": 1.7,
+     "revides": 1.6,
+     "griladas": 0
+    }
+   }
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 19.7,
+   "posicao": 2.3,
+   "patrimonio": 347,
+   "iaMedia": 321,
+   "iaMelhor": 408,
+   "ataquesVoce": 3.1,
+   "abates": 0.4,
+   "oncasFim": 1.5,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.4,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.1,
+    1.9,
+    1.8,
+    1.7,
+    1.6,
+    1.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.64,
+    0.68,
+    0.7,
+    0.73,
+    0.75,
+    0.76,
+    0.78,
+    0.8,
+    0.81
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 238,
+     "posicao": 3.6,
+     "vence": 3,
+     "voceVence": 19,
+     "vizinhoDeFrente": 34,
+     "multas": 26,
+     "derrubou": 2.3,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 306,
+     "posicao": 3,
+     "vence": 10,
+     "voceVence": 20,
+     "vizinhoDeFrente": 40,
+     "multas": 11,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 333,
+     "posicao": 2,
+     "vence": 31,
+     "voceVence": 33,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 439,
+     "posicao": 1.2,
+     "vence": 77,
+     "voceVence": 9,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.4,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 348,
+     "posicao": 2.5,
+     "vence": 16,
+     "voceVence": 23,
+     "vizinhoDeFrente": 30,
+     "multas": 8,
+     "derrubou": 0.9,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 175,
+     "posicao": 3.7,
+     "vence": 0,
+     "voceVence": 23,
+     "vizinhoDeFrente": 35,
+     "multas": 3,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 374,
+     "posicao": 2.1,
+     "vence": 37,
+     "voceVence": 13,
+     "vizinhoDeFrente": 32,
+     "multas": 11,
+     "derrubou": 1.4,
+     "revides": 1.2,
+     "griladas": 0
+    }
+   }
+  },
+  "desmatar_legal": {
+   "vitoria": 53.3,
+   "posicao": 1.7,
+   "patrimonio": 402,
+   "iaMedia": 312,
+   "iaMelhor": 399,
+   "ataquesVoce": 6.8,
+   "abates": 0.5,
+   "oncasFim": 1.4,
+   "extincao": 0.3,
+   "multasVoce": 0,
+   "perdidasVoce": 0,
+   "derrubouVoce": 0.3,
+   "sofreuVoce": 0.6,
+   "extraviadosVoce": 0.2,
+   "seloFimVoce": 100,
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.1,
+    2,
+    1.9,
+    1.8,
+    1.6,
+    1.5,
+    1.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.65,
+    0.68,
+    0.71,
+    0.74,
+    0.76,
+    0.77,
+    0.79,
+    0.81,
+    0.83
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 143,
+     "patrimonio": 232,
+     "posicao": 3.5,
+     "vence": 2,
+     "voceVence": 49,
+     "vizinhoDeFrente": 34,
+     "multas": 29,
+     "derrubou": 2.4,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "firmino": {
+     "jogos": 157,
+     "patrimonio": 301,
+     "posicao": 3.1,
+     "vence": 8,
+     "voceVence": 57,
+     "vizinhoDeFrente": 40,
+     "multas": 9,
+     "derrubou": 0.7,
+     "revides": 0.4,
+     "griladas": 0.1
+    },
+    "celeste": {
+     "jogos": 137,
+     "patrimonio": 317,
+     "posicao": 2.5,
+     "vence": 10,
+     "voceVence": 72,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 163,
+     "patrimonio": 438,
+     "posicao": 1.5,
+     "vence": 55,
+     "voceVence": 37,
+     "vizinhoDeFrente": 31,
+     "multas": 0,
+     "derrubou": 0.5,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 97,
+     "patrimonio": 343,
+     "posicao": 2.8,
+     "vence": 11,
+     "voceVence": 59,
+     "vizinhoDeFrente": 30,
+     "multas": 6,
+     "derrubou": 1.1,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 103,
+     "patrimonio": 160,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 53,
+     "vizinhoDeFrente": 35,
+     "multas": 2,
+     "derrubou": 0.5,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 100,
+     "patrimonio": 359,
+     "posicao": 2.6,
+     "vence": 11,
+     "voceVence": 48,
+     "vizinhoDeFrente": 32,
+     "multas": 10,
+     "derrubou": 1.5,
+     "revides": 1.3,
+     "griladas": 0
+    }
+   }
   }
  },
  "araripe": {
   "passiva": {
    "vitoria": 0,
-   "patrimonio": 218,
-   "ia": [
-    181,
-    726,
-    531
-   ],
-   "ataquesVoce": 12.6,
-   "ataquesIA": [
-    7.6,
-    4.3,
-    4
-   ],
-   "abates": 1.5,
-   "oncasFim": 4,
+   "posicao": 4,
+   "patrimonio": 210,
+   "iaMedia": 697,
+   "iaMelhor": 874,
+   "ataquesVoce": 14.6,
+   "abates": 1.2,
+   "oncasFim": 3.7,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    1.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 1.3,
-   "extraviados": [
-    7.8,
-    0.3,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    0,
-    1.3,
-    0,
-    10.5
-   ],
-   "sofreu": [
-    0,
-    10.5,
-    0,
-    1.3
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    64
-   ],
-   "multasMedia": [
-    0,
-    86,
-    0,
-    16
-   ],
-   "soldadinho": 0.85,
+   "multasVoce": 0,
+   "perdidasVoce": 0.9,
+   "derrubouVoce": 0,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 7.1,
+   "seloFimVoce": 100,
+   "soldadinho": 0.8079999999999999,
    "javaporcoFim": null,
    "Jmedio": [
     4,
-    3.8,
+    3.9,
     4,
-    4.2,
-    4.2,
-    4.3,
-    4.3,
-    4.2,
+    4.1,
+    4.1,
     4.1,
     4,
-    4
+    3.9,
+    3.8,
+    3.7,
+    3.7
    ],
    "Nmedio": [
     0.55,
@@ -3403,247 +5285,522 @@
     0.69,
     0.7,
     0.69,
-    0.68,
-    0.68,
-    0.67,
-    0.67,
-    0.68,
-    0.68
-   ]
+    0.69,
+    0.69,
+    0.69,
+    0.7,
+    0.7,
+    0.71
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 488,
+     "posicao": 2.9,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 39,
+     "multas": 91,
+     "derrubou": 1.3,
+     "revides": 0.4,
+     "griladas": 1.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 539,
+     "posicao": 2.7,
+     "vence": 6,
+     "voceVence": 0,
+     "vizinhoDeFrente": 25,
+     "multas": 93,
+     "derrubou": 0.6,
+     "revides": 0.4,
+     "griladas": 0.8
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 887,
+     "posicao": 1.3,
+     "vence": 72,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 708,
+     "posicao": 1.8,
+     "vence": 30,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 868,
+     "posicao": 1.4,
+     "vence": 60,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 15,
+     "derrubou": 1,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 657,
+     "posicao": 2,
+     "vence": 24,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 74,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0.3
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 819,
+     "posicao": 1.5,
+     "vence": 53,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 20,
+     "derrubou": 1.4,
+     "revides": 1,
+     "griladas": 0
+    }
+   }
   },
   "grileiro": {
    "vitoria": 0,
-   "patrimonio": 95,
-   "ia": [
-    207,
-    602,
-    564
-   ],
-   "ataquesVoce": 14.8,
-   "ataquesIA": [
-    8.4,
-    10.8,
-    3.5
-   ],
-   "abates": 1.5,
-   "oncasFim": 4.1,
+   "posicao": 4,
+   "patrimonio": 79,
+   "iaMedia": 664,
+   "iaMelhor": 833,
+   "ataquesVoce": 14.5,
+   "abates": 1.1,
+   "oncasFim": 3.8,
    "extincao": 0,
-   "griladasFim": [
-    0.4,
-    0.3,
-    0,
-    0.1
-   ],
+   "multasVoce": 80,
    "perdidasVoce": 0.3,
-   "extraviados": [
-    0.3,
-    0.3,
-    0.3,
-    0.1
-   ],
-   "derrubou": [
-    3.1,
-    3.9,
-    25.3,
-    9.9
-   ],
-   "sofreu": [
-    28.1,
-    12.9,
-    0,
-    1.2
-   ],
-   "seloFim": [
-    6,
-    15,
-    100,
-    63
-   ],
-   "multasMedia": [
-    70,
-    53,
-    0,
-    15
-   ],
-   "soldadinho": 0.86,
+   "derrubouVoce": 2.7,
+   "sofreuVoce": 18.7,
+   "extraviadosVoce": 0.9,
+   "seloFimVoce": 18,
+   "soldadinho": 0.8270000000000001,
    "javaporcoFim": null,
    "Jmedio": [
     4,
-    3.8,
+    3.9,
+    4.1,
+    4.2,
+    4.2,
+    4.2,
+    4.1,
     4,
-    4.2,
-    4.3,
-    4.4,
-    4.4,
-    4.3,
-    4.2,
-    4.2,
-    4.1
+    4,
+    3.9,
+    3.8
    ],
    "Nmedio": [
     0.55,
     0.64,
-    0.68,
+    0.69,
+    0.7,
     0.69,
     0.68,
     0.68,
-    0.67,
-    0.67,
-    0.67,
-    0.67,
-    0.68
-   ]
+    0.69,
+    0.69,
+    0.69,
+    0.7
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 484,
+     "posicao": 2.7,
+     "vence": 5,
+     "voceVence": 0,
+     "vizinhoDeFrente": 39,
+     "multas": 68,
+     "derrubou": 5.6,
+     "revides": 2.2,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 577,
+     "posicao": 2.5,
+     "vence": 14,
+     "voceVence": 0,
+     "vizinhoDeFrente": 25,
+     "multas": 65,
+     "derrubou": 5.4,
+     "revides": 1,
+     "griladas": 0.4
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 836,
+     "posicao": 1.4,
+     "vence": 68,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 686,
+     "posicao": 1.8,
+     "vence": 35,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 7.7,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 785,
+     "posicao": 1.5,
+     "vence": 56,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 16,
+     "derrubou": 7.5,
+     "revides": 1.6,
+     "griladas": 0.1
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 655,
+     "posicao": 2,
+     "vence": 24,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 53,
+     "derrubou": 5.9,
+     "revides": 0.7,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 674,
+     "posicao": 1.9,
+     "vence": 38,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 29,
+     "derrubou": 9.1,
+     "revides": 5.6,
+     "griladas": 0.2
+    }
+   }
   },
   "conviver": {
-   "vitoria": 54,
-   "patrimonio": 665,
-   "ia": [
-    194,
-    660,
-    457
-   ],
-   "ataquesVoce": 5.9,
-   "ataquesIA": [
-    7.6,
-    4,
-    3.5
-   ],
-   "abates": 1.5,
-   "oncasFim": 3.2,
+   "vitoria": 53,
+   "posicao": 1.6,
+   "patrimonio": 823,
+   "iaMedia": 656,
+   "iaMelhor": 825,
+   "ataquesVoce": 13.5,
+   "abates": 1.1,
+   "oncasFim": 3,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.4,
-    0.3,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    3.6,
-    1.3,
-    0,
-    10.6
-   ],
-   "sofreu": [
-    0,
-    14.2,
-    0,
-    1.3
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    66
-   ],
-   "multasMedia": [
-    0,
-    53,
-    0,
-    14
-   ],
-   "soldadinho": 0.84,
+   "multasVoce": 0,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 1.4,
+   "seloFimVoce": 100,
+   "soldadinho": 0.795,
    "javaporcoFim": null,
    "Jmedio": [
     4,
+    3.9,
+    4,
+    4,
+    4,
     3.8,
-    3.9,
-    4,
-    4,
-    4,
-    3.9,
     3.7,
     3.5,
-    3.4,
-    3.2
+    3.3,
+    3.2,
+    3
    ],
    "Nmedio": [
     0.55,
     0.64,
     0.69,
     0.71,
-    0.7,
-    0.7,
-    0.7,
+    0.71,
     0.71,
     0.72,
+    0.72,
     0.73,
-    0.73
-   ]
+    0.74,
+    0.75
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 455,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 48,
+     "vizinhoDeFrente": 39,
+     "multas": 78,
+     "derrubou": 1.8,
+     "revides": 0.3,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 530,
+     "posicao": 3.6,
+     "vence": 6,
+     "voceVence": 58,
+     "vizinhoDeFrente": 25,
+     "multas": 83,
+     "derrubou": 0.7,
+     "revides": 0.3,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 838,
+     "posicao": 1.7,
+     "vence": 47,
+     "voceVence": 36,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1.2,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 663,
+     "posicao": 2.7,
+     "vence": 7,
+     "voceVence": 70,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 776,
+     "posicao": 2.2,
+     "vence": 23,
+     "voceVence": 52,
+     "vizinhoDeFrente": 34,
+     "multas": 13,
+     "derrubou": 1,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 637,
+     "posicao": 2.9,
+     "vence": 5,
+     "voceVence": 58,
+     "vizinhoDeFrente": 38,
+     "multas": 71,
+     "derrubou": 0.7,
+     "revides": 0.1,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 766,
+     "posicao": 2.2,
+     "vence": 24,
+     "voceVence": 50,
+     "vizinhoDeFrente": 38,
+     "multas": 17,
+     "derrubou": 1.3,
+     "revides": 1,
+     "griladas": 0
+    }
+   }
   },
   "desmatar_abater": {
-   "vitoria": 0.3,
-   "patrimonio": 270,
-   "ia": [
-    164,
-    652,
-    442
-   ],
-   "ataquesVoce": 14,
-   "ataquesIA": [
-    9.7,
-    4.5,
-    4.6
-   ],
-   "abates": 4.9,
-   "oncasFim": 3.6,
+   "vitoria": 0,
+   "posicao": 3.7,
+   "patrimonio": 295,
+   "iaMedia": 626,
+   "iaMelhor": 801,
+   "ataquesVoce": 23,
+   "abates": 5,
+   "oncasFim": 3.4,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.2,
-    0.2,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    3.3,
-    1.4,
-    0,
-    9.7
-   ],
-   "sofreu": [
-    0,
-    13,
-    0,
-    1.4
-   ],
-   "seloFim": [
-    14,
-    9,
-    100,
-    64
-   ],
-   "multasMedia": [
-    75,
-    60,
-    0,
-    16
-   ],
-   "soldadinho": 0.79,
+   "multasVoce": 61,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 0.4,
+   "extraviadosVoce": 0.9,
+   "seloFimVoce": 11,
+   "soldadinho": 0.7879999999999999,
    "javaporcoFim": null,
    "Jmedio": [
     4,
     3.7,
+    3.8,
+    3.9,
+    3.9,
+    3.9,
+    3.8,
+    3.7,
+    3.6,
+    3.5,
+    3.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.65,
+    0.71,
+    0.73,
+    0.73,
+    0.72,
+    0.72,
+    0.72,
+    0.73,
+    0.73,
+    0.74
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 412,
+     "posicao": 3.2,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 39,
+     "multas": 71,
+     "derrubou": 1.7,
+     "revides": 0.5,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 480,
+     "posicao": 2.9,
+     "vence": 6,
+     "voceVence": 0,
+     "vizinhoDeFrente": 25,
+     "multas": 86,
+     "derrubou": 0.7,
+     "revides": 0.4,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 823,
+     "posicao": 1.3,
+     "vence": 74,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 658,
+     "posicao": 1.7,
+     "vence": 36,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 767,
+     "posicao": 1.5,
+     "vence": 57,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 13,
+     "derrubou": 0.9,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 587,
+     "posicao": 2.1,
+     "vence": 18,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 72,
+     "derrubou": 0.7,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 729,
+     "posicao": 1.6,
+     "vence": 50,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 19,
+     "derrubou": 1.5,
+     "revides": 1.1,
+     "griladas": 0
+    }
+   }
+  },
+  "abater": {
+   "vitoria": 0,
+   "posicao": 3.9,
+   "patrimonio": 246,
+   "iaMedia": 652,
+   "iaMelhor": 823,
+   "ataquesVoce": 14.9,
+   "abates": 5.1,
+   "oncasFim": 3.6,
+   "extincao": 0,
+   "multasVoce": 36,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 0.2,
+   "extraviadosVoce": 0.5,
+   "seloFimVoce": 28,
+   "soldadinho": 0.8079999999999999,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
     3.7,
     3.8,
     3.9,
+    4,
+    4,
     3.9,
     3.9,
     3.8,
-    3.8,
-    3.6,
+    3.7,
     3.6
    ],
    "Nmedio": [
@@ -3658,505 +5815,748 @@
     0.71,
     0.72,
     0.73
-   ]
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 443,
+     "posicao": 3,
+     "vence": 2,
+     "voceVence": 0,
+     "vizinhoDeFrente": 39,
+     "multas": 67,
+     "derrubou": 1.3,
+     "revides": 0.5,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 524,
+     "posicao": 2.7,
+     "vence": 10,
+     "voceVence": 0,
+     "vizinhoDeFrente": 25,
+     "multas": 84,
+     "derrubou": 0.6,
+     "revides": 0.3,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 845,
+     "posicao": 1.3,
+     "vence": 76,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 674,
+     "posicao": 1.7,
+     "vence": 36,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 797,
+     "posicao": 1.5,
+     "vence": 59,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 16,
+     "derrubou": 1.1,
+     "revides": 0.5,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 599,
+     "posicao": 2.2,
+     "vence": 18,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 69,
+     "derrubou": 0.7,
+     "revides": 0.1,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 750,
+     "posicao": 1.7,
+     "vence": 40,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 17,
+     "derrubou": 1.5,
+     "revides": 1.2,
+     "griladas": 0
+    }
+   }
   },
-  "abater": {
-   "vitoria": 0,
-   "patrimonio": 251,
-   "ia": [
-    164,
-    686,
-    465
-   ],
-   "ataquesVoce": 12.8,
-   "ataquesIA": [
-    9.9,
-    4.6,
-    5.4
-   ],
-   "abates": 5.1,
-   "oncasFim": 4,
+  "oportunista": {
+   "vitoria": 39.7,
+   "posicao": 2,
+   "patrimonio": 764,
+   "iaMedia": 652,
+   "iaMelhor": 822,
+   "ataquesVoce": 13.3,
+   "abates": 1.1,
+   "oncasFim": 3,
    "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.3,
-    0.2,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    3.6,
-    1.2,
-    0,
-    10.1
-   ],
-   "sofreu": [
-    0,
-    13.7,
-    0,
-    1.2
-   ],
-   "seloFim": [
-    21,
-    7,
-    100,
-    63
-   ],
-   "multasMedia": [
-    33,
-    61,
-    0,
-    18
-   ],
-   "soldadinho": 0.85,
+   "multasVoce": 2,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 1.6,
+   "extraviadosVoce": 1.4,
+   "seloFimVoce": 92,
+   "soldadinho": 0.797,
    "javaporcoFim": null,
    "Jmedio": [
     4,
+    3.9,
+    4,
+    4,
+    4,
+    3.9,
+    3.7,
+    3.5,
+    3.4,
+    3.2,
+    3
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.71,
+    0.71,
+    0.71,
+    0.72,
+    0.73,
+    0.74,
+    0.75
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 449,
+     "posicao": 3.8,
+     "vence": 0,
+     "voceVence": 40,
+     "vizinhoDeFrente": 39,
+     "multas": 77,
+     "derrubou": 2.1,
+     "revides": 0.5,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 531,
+     "posicao": 3.5,
+     "vence": 7,
+     "voceVence": 39,
+     "vizinhoDeFrente": 25,
+     "multas": 82,
+     "derrubou": 1.3,
+     "revides": 0.4,
+     "griladas": 0.2
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 839,
+     "posicao": 1.5,
+     "vence": 63,
+     "voceVence": 20,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 665,
+     "posicao": 2.6,
+     "vence": 13,
+     "voceVence": 59,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 1.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 774,
+     "posicao": 2.1,
+     "vence": 28,
+     "voceVence": 43,
+     "vizinhoDeFrente": 34,
+     "multas": 15,
+     "derrubou": 1.2,
+     "revides": 0.6,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 624,
+     "posicao": 2.8,
+     "vence": 7,
+     "voceVence": 41,
+     "vizinhoDeFrente": 38,
+     "multas": 75,
+     "derrubou": 1.4,
+     "revides": 0.2,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 753,
+     "posicao": 2.2,
+     "vence": 23,
+     "voceVence": 36,
+     "vizinhoDeFrente": 38,
+     "multas": 18,
+     "derrubou": 1.8,
+     "revides": 1.1,
+     "griladas": 0
+    }
+   }
+  },
+  "sabotador": {
+   "vitoria": 0,
+   "posicao": 3.8,
+   "patrimonio": 214,
+   "iaMedia": 594,
+   "iaMelhor": 856,
+   "ataquesVoce": 9.1,
+   "abates": 1.1,
+   "oncasFim": 3.9,
+   "extincao": 0,
+   "multasVoce": 128,
+   "perdidasVoce": 0.2,
+   "derrubouVoce": 14.9,
+   "sofreuVoce": 1,
+   "extraviadosVoce": 1.2,
+   "seloFimVoce": 10,
+   "soldadinho": 0.8079999999999999,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    4,
+    4.1,
+    4.2,
+    4.2,
+    4.2,
+    4.2,
+    4.1,
+    4,
+    4,
+    3.9
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.68,
+    0.69,
+    0.69,
+    0.68,
+    0.68,
+    0.68,
+    0.68,
+    0.69,
+    0.69
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 427,
+     "posicao": 2.5,
+     "vence": 2,
+     "voceVence": 0,
+     "vizinhoDeFrente": 39,
+     "multas": 72,
+     "derrubou": 1.3,
+     "revides": 0.6,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 434,
+     "posicao": 2.7,
+     "vence": 1,
+     "voceVence": 0,
+     "vizinhoDeFrente": 25,
+     "multas": 87,
+     "derrubou": 0.6,
+     "revides": 0.4,
+     "griladas": 0.4
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 777,
+     "posicao": 1.5,
+     "vence": 67,
+     "voceVence": 0,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 0.6,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 636,
+     "posicao": 1.9,
+     "vence": 42,
+     "voceVence": 0,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 689,
+     "posicao": 1.8,
+     "vence": 49,
+     "voceVence": 0,
+     "vizinhoDeFrente": 34,
+     "multas": 15,
+     "derrubou": 1.1,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 578,
+     "posicao": 2,
+     "vence": 29,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 63,
+     "derrubou": 0.6,
+     "revides": 0.1,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 667,
+     "posicao": 1.9,
+     "vence": 53,
+     "voceVence": 0,
+     "vizinhoDeFrente": 38,
+     "multas": 24,
+     "derrubou": 1.9,
+     "revides": 2.4,
+     "griladas": 0.1
+    }
+   }
+  },
+  "sabotador_pontual": {
+   "vitoria": 21.7,
+   "posicao": 2.3,
+   "patrimonio": 700,
+   "iaMedia": 643,
+   "iaMelhor": 809,
+   "ataquesVoce": 13.1,
+   "abates": 1.2,
+   "oncasFim": 3.2,
+   "extincao": 0,
+   "multasVoce": 12,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 2.8,
+   "sofreuVoce": 1.1,
+   "extraviadosVoce": 1.6,
+   "seloFimVoce": 100,
+   "soldadinho": 0.805,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.9,
+    4,
+    4.1,
+    4.1,
+    4,
+    3.9,
+    3.7,
     3.6,
+    3.4,
+    3.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.74
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 452,
+     "posicao": 3.8,
+     "vence": 1,
+     "voceVence": 21,
+     "vizinhoDeFrente": 39,
+     "multas": 75,
+     "derrubou": 2.1,
+     "revides": 0.7,
+     "griladas": 0.3
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 492,
+     "posicao": 3.7,
+     "vence": 3,
+     "voceVence": 22,
+     "vizinhoDeFrente": 25,
+     "multas": 86,
+     "derrubou": 1.1,
+     "revides": 0.7,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 833,
+     "posicao": 1.4,
+     "vence": 73,
+     "voceVence": 7,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1.1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 676,
+     "posicao": 2.3,
+     "vence": 23,
+     "voceVence": 36,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 763,
+     "posicao": 1.9,
+     "vence": 38,
+     "voceVence": 12,
+     "vizinhoDeFrente": 34,
+     "multas": 15,
+     "derrubou": 1.3,
+     "revides": 0.7,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 593,
+     "posicao": 2.7,
+     "vence": 7,
+     "voceVence": 32,
+     "vizinhoDeFrente": 38,
+     "multas": 77,
+     "derrubou": 0.9,
+     "revides": 0.3,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 752,
+     "posicao": 1.9,
+     "vence": 40,
+     "voceVence": 21,
+     "vizinhoDeFrente": 38,
+     "multas": 17,
+     "derrubou": 1.6,
+     "revides": 1.4,
+     "griladas": 0
+    }
+   }
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 27,
+   "posicao": 2.1,
+   "patrimonio": 749,
+   "iaMedia": 654,
+   "iaMelhor": 824,
+   "ataquesVoce": 11.6,
+   "abates": 1.2,
+   "oncasFim": 3.1,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 0.5,
+   "extraviadosVoce": 1.2,
+   "seloFimVoce": 100,
+   "soldadinho": 0.805,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.9,
+    4,
+    4,
+    4,
     3.8,
+    3.7,
+    3.6,
+    3.4,
+    3.2,
+    3.1
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.71,
+    0.71,
+    0.71,
+    0.72,
+    0.73,
+    0.74,
+    0.75
+   ],
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 451,
+     "posicao": 3.9,
+     "vence": 1,
+     "voceVence": 23,
+     "vizinhoDeFrente": 39,
+     "multas": 77,
+     "derrubou": 1.7,
+     "revides": 0.4,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 508,
+     "posicao": 3.6,
+     "vence": 4,
+     "voceVence": 31,
+     "vizinhoDeFrente": 25,
+     "multas": 83,
+     "derrubou": 0.8,
+     "revides": 0.4,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 839,
+     "posicao": 1.4,
+     "vence": 64,
+     "voceVence": 11,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1.3,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 666,
+     "posicao": 2.6,
+     "vence": 11,
+     "voceVence": 42,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 0.9,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 809,
+     "posicao": 1.7,
+     "vence": 52,
+     "voceVence": 19,
+     "vizinhoDeFrente": 34,
+     "multas": 11,
+     "derrubou": 1,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 640,
+     "posicao": 2.6,
+     "vence": 20,
+     "voceVence": 29,
+     "vizinhoDeFrente": 38,
+     "multas": 70,
+     "derrubou": 0.9,
+     "revides": 0.2,
+     "griladas": 0.1
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 751,
+     "posicao": 2.1,
+     "vence": 31,
+     "voceVence": 32,
+     "vizinhoDeFrente": 38,
+     "multas": 18,
+     "derrubou": 1.6,
+     "revides": 1.3,
+     "griladas": 0.1
+    }
+   }
+  },
+  "desmatar_legal": {
+   "vitoria": 30.7,
+   "posicao": 2.3,
+   "patrimonio": 701,
+   "iaMedia": 660,
+   "iaMelhor": 826,
+   "ataquesVoce": 41.3,
+   "abates": 1.2,
+   "oncasFim": 3.3,
+   "extincao": 0,
+   "multasVoce": 0,
+   "perdidasVoce": 0.1,
+   "derrubouVoce": 1.6,
+   "sofreuVoce": 0.6,
+   "extraviadosVoce": 1.2,
+   "seloFimVoce": 100,
+   "soldadinho": 0.799,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.9,
     4,
     4.1,
-    4.1,
-    4.1,
     4,
-    4.1,
     4,
-    4
+    3.8,
+    3.7,
+    3.5,
+    3.4,
+    3.3
    ],
    "Nmedio": [
     0.55,
     0.65,
-    0.71,
-    0.72,
-    0.71,
-    0.7,
-    0.7,
-    0.7,
-    0.7,
-    0.7,
-    0.7
-   ]
-  },
-  "oportunista": {
-   "vitoria": 54,
-   "patrimonio": 665,
-   "ia": [
-    194,
-    660,
-    457
-   ],
-   "ataquesVoce": 5.9,
-   "ataquesIA": [
-    7.6,
-    4,
-    3.5
-   ],
-   "abates": 1.5,
-   "oncasFim": 3.2,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.4,
-    0.3,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    3.6,
-    1.3,
-    0,
-    10.6
-   ],
-   "sofreu": [
-    0,
-    14.2,
-    0,
-    1.3
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    66
-   ],
-   "multasMedia": [
-    0,
-    53,
-    0,
-    14
-   ],
-   "soldadinho": 0.84,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.8,
-    3.9,
-    4,
-    4,
-    4,
-    3.9,
-    3.7,
-    3.5,
-    3.4,
-    3.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.64,
     0.69,
     0.71,
     0.7,
     0.7,
-    0.7,
+    0.71,
     0.71,
     0.72,
     0.73,
-    0.73
-   ]
-  },
-  "sabotador": {
-   "vitoria": 54,
-   "patrimonio": 665,
-   "ia": [
-    194,
-    660,
-    457
+    0.74
    ],
-   "ataquesVoce": 5.9,
-   "ataquesIA": [
-    7.6,
-    4,
-    3.5
-   ],
-   "abates": 1.5,
-   "oncasFim": 3.2,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.4,
-    0.3,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    3.6,
-    1.3,
-    0,
-    10.6
-   ],
-   "sofreu": [
-    0,
-    14.2,
-    0,
-    1.3
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    66
-   ],
-   "multasMedia": [
-    0,
-    53,
-    0,
-    14
-   ],
-   "soldadinho": 0.84,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.8,
-    3.9,
-    4,
-    4,
-    4,
-    3.9,
-    3.7,
-    3.5,
-    3.4,
-    3.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.64,
-    0.69,
-    0.71,
-    0.7,
-    0.7,
-    0.7,
-    0.71,
-    0.72,
-    0.73,
-    0.73
-   ]
-  },
-  "sabotador_pontual": {
-   "vitoria": 54,
-   "patrimonio": 665,
-   "ia": [
-    194,
-    660,
-    457
-   ],
-   "ataquesVoce": 5.9,
-   "ataquesIA": [
-    7.6,
-    4,
-    3.5
-   ],
-   "abates": 1.5,
-   "oncasFim": 3.2,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.4,
-    0.3,
-    0.1,
-    0.1
-   ],
-   "derrubou": [
-    3.6,
-    1.3,
-    0,
-    10.6
-   ],
-   "sofreu": [
-    0,
-    14.2,
-    0,
-    1.3
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    66
-   ],
-   "multasMedia": [
-    0,
-    53,
-    0,
-    14
-   ],
-   "soldadinho": 0.84,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.8,
-    3.9,
-    4,
-    4,
-    4,
-    3.9,
-    3.7,
-    3.5,
-    3.4,
-    3.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.64,
-    0.69,
-    0.71,
-    0.7,
-    0.7,
-    0.7,
-    0.71,
-    0.72,
-    0.73,
-    0.73
-   ]
-  },
-  "conviver_sem_manejo": {
-   "vitoria": 27.3,
-   "patrimonio": 603,
-   "ia": [
-    196,
-    668,
-    457
-   ],
-   "ataquesVoce": 5.3,
-   "ataquesIA": [
-    7.6,
-    3.8,
-    3.7
-   ],
-   "abates": 1.5,
-   "oncasFim": 3.3,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.4,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.5,
-    0.2,
-    0.2,
-    0.1
-   ],
-   "derrubou": [
-    3.8,
-    1.4,
-    0,
-    10.4
-   ],
-   "sofreu": [
-    0,
-    14.1,
-    0,
-    1.4
-   ],
-   "seloFim": [
-    100,
-    8,
-    100,
-    65
-   ],
-   "multasMedia": [
-    0,
-    55,
-    0,
-    14
-   ],
-   "soldadinho": 0.84,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.8,
-    3.9,
-    4,
-    4,
-    4,
-    3.9,
-    3.8,
-    3.6,
-    3.5,
-    3.3
-   ],
-   "Nmedio": [
-    0.55,
-    0.64,
-    0.69,
-    0.71,
-    0.7,
-    0.7,
-    0.7,
-    0.71,
-    0.71,
-    0.72,
-    0.73
-   ]
-  },
-  "desmatar_legal": {
-   "vitoria": 41,
-   "patrimonio": 622,
-   "ia": [
-    201,
-    672,
-    462
-   ],
-   "ataquesVoce": 18.8,
-   "ataquesIA": [
-    7.4,
-    3.8,
-    3.5
-   ],
-   "abates": 1.4,
-   "oncasFim": 3.3,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.4,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "extraviados": [
-    0.3,
-    0.3,
-    0.2,
-    0.1
-   ],
-   "derrubou": [
-    3.5,
-    1.4,
-    0,
-    10.3
-   ],
-   "sofreu": [
-    0,
-    13.8,
-    0,
-    1.4
-   ],
-   "seloFim": [
-    100,
-    6,
-    100,
-    64
-   ],
-   "multasMedia": [
-    0,
-    55,
-    0,
-    15
-   ],
-   "soldadinho": 0.85,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.8,
-    4,
-    4.1,
-    4.1,
-    4.1,
-    3.9,
-    3.8,
-    3.6,
-    3.5,
-    3.3
-   ],
-   "Nmedio": [
-    0.55,
-    0.64,
-    0.69,
-    0.7,
-    0.7,
-    0.7,
-    0.7,
-    0.7,
-    0.71,
-    0.72,
-    0.73
-   ]
+   "perfis": {
+    "bras": {
+     "jogos": 155,
+     "patrimonio": 463,
+     "posicao": 3.7,
+     "vence": 0,
+     "voceVence": 30,
+     "vizinhoDeFrente": 39,
+     "multas": 73,
+     "derrubou": 1.9,
+     "revides": 0.3,
+     "griladas": 0.2
+    },
+    "firmino": {
+     "jogos": 145,
+     "patrimonio": 518,
+     "posicao": 3.5,
+     "vence": 7,
+     "voceVence": 31,
+     "vizinhoDeFrente": 25,
+     "multas": 93,
+     "derrubou": 0.9,
+     "revides": 0.4,
+     "griladas": 0.3
+    },
+    "celeste": {
+     "jogos": 148,
+     "patrimonio": 841,
+     "posicao": 1.6,
+     "vence": 49,
+     "voceVence": 22,
+     "vizinhoDeFrente": 30,
+     "multas": 0,
+     "derrubou": 1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "lucia": {
+     "jogos": 152,
+     "patrimonio": 669,
+     "posicao": 2.4,
+     "vence": 14,
+     "voceVence": 39,
+     "vizinhoDeFrente": 32,
+     "multas": 0,
+     "derrubou": 1,
+     "revides": 0,
+     "griladas": 0
+    },
+    "ze": {
+     "jogos": 94,
+     "patrimonio": 818,
+     "posicao": 1.6,
+     "vence": 57,
+     "voceVence": 22,
+     "vizinhoDeFrente": 34,
+     "multas": 15,
+     "derrubou": 0.9,
+     "revides": 0.4,
+     "griladas": 0
+    },
+    "otavio": {
+     "jogos": 97,
+     "patrimonio": 632,
+     "posicao": 2.7,
+     "vence": 16,
+     "voceVence": 36,
+     "vizinhoDeFrente": 38,
+     "multas": 72,
+     "derrubou": 0.9,
+     "revides": 0.3,
+     "griladas": 0
+    },
+    "zefa": {
+     "jogos": 109,
+     "patrimonio": 761,
+     "posicao": 2,
+     "vence": 30,
+     "voceVence": 33,
+     "vizinhoDeFrente": 38,
+     "multas": 18,
+     "derrubou": 1.7,
+     "revides": 1.2,
+     "griladas": 0
+    }
+   }
   }
  }
 }
