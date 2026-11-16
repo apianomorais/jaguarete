@@ -1,7 +1,8 @@
 // Motor do jogo: estado, modelo presa-predador, regras, economia e fazendeiros do computador.
 // Não usa o DOM; roda no navegador e no Node (para a simulação de balanceamento).
 import { RODADAS, ACOES_POR_RODADA, W, H, ESPECIES, GALINHA, CUSTOS, MANUTENCAO, MULTA, SELO_BONUS, VENDA_FORCADA,
-         JUROS_DIVIDA, MAX_CAMERAS, CRA_POR_CELULA, DEFESAS, TIPOS, CAPACIDADE, MODELO, BIOMAS, FAZENDAS, SEDES } from './dados.js';
+         JUROS_DIVIDA, MAX_CAMERAS, CRA_POR_CELULA, DEFESAS, TIPOS, CAPACIDADE, MODELO, BIOMAS, FAZENDAS, SEDES,
+         CERCAS, ESTACAS_DESMATE, JUSTICA } from './dados.js';
 
 // ---------------------------------------------------------------- aleatoriedade com semente
 export function rnd(st) {
@@ -44,7 +45,12 @@ export const habitat = cel => TIPOS[cel.tipo].habitat > 0;
 export const pastejavel = cel => cel.tipo === 'pasto' || cel.tipo === 'campo';
 export function estacao(st, t = st.t) { return t % 2 === 0 ? 'chuva' : 'seca'; }
 export function ano(st, t = st.t) { return Math.floor(t / 2) + 1; }
-export const celulasDe = (st, f) => st.celulas.filter(c => c.dono === f);
+export const celulasDe = (st, f) => st.celulas.filter(c => c.dono === f);          // terra com título da fazenda
+export const posse = c => c.cercaDe >= 0 ? c.cercaDe : c.dono;                    // quem controla: quem cercou, ou o dono
+export const controladas = (st, f) => st.celulas.filter(c => posse(c) === f);
+export const grilada = c => c.cercaDe >= 0 && c.cercaDe !== c.dono;
+// lados do hexágono que precisam de cerca: os que não encostam em área já cercada pela mesma fazenda
+export function ladosExpostos(st, f, id) { return 6 - vizinhos(id).filter(v => st.celulas[v].cercaDe === f).length; }
 
 export function nativaFrac(st, f) {
   const cs = celulasDe(st, f).filter(c => c.tipo !== 'sede');
@@ -60,6 +66,8 @@ export const app = (st, cel) => cel.nascente || vizinhos(cel.id).some(v => st.ce
 // motivo pelo qual desmatar esta célula é ilegal (ou null se for permitido)
 export function desmateIlegal(st, f, id) {
   const c = st.celulas[id];
+  if (c.reserva) return 'unidade de conservação';
+  if (c.dono !== f) return 'terra de outro fazendeiro';
   if (app(st, c)) return 'APP de nascente';
   if (c.zona === 'restrito') return 'Zona de Uso Restrito';
   if (c.zona === 'moderado') return 'Zona de Uso Moderado';
@@ -95,7 +103,7 @@ export function capacidade(st, cel, especie, t = st.t) {
   if (B.evento === 'seca' && est === 'seca') fator *= cel.dono >= 0 ? 0.3 + 0.5 * nativaFrac(st, cel.dono) : 0.6;
   if (cel.queimado) fator *= 0.5;
   fator *= st.fatorHerbivoros ?? 1;
-  if (B.javaporco && !(cel.dono >= 0 && (st.fazendas[cel.dono]?.manejoAte ?? -1) >= t)) fator *= st.fatorJavaporco ?? 1;
+  if (B.javaporco && !(posse(cel) >= 0 && (st.fazendas[posse(cel)]?.manejoAte ?? -1) >= t)) fator *= st.fatorJavaporco ?? 1;
   // a chapada é área de recarga: com menos vegetação no alto, as nascentes do vale correm mais fracas na seca
   if (B.mapa === 'araripe' && est === 'seca' && cel.regiao === 'vale') fator *= 0.6 + 0.4 * recarga(st);
   return Math.floor(cap * fator + 1e-9);
@@ -103,7 +111,7 @@ export function capacidade(st, cel, especie, t = st.t) {
 export function exposicao(st, cel) {
   if (!pastejavel(cel) || !cel.n || !naBorda(st, cel)) return 0;
   let x = cel.n * ESPECIES[cel.especie].presa * (bioma(st).presaPeso?.[cel.especie] ?? 1);
-  if (cel.cerca) x *= DEFESAS.cerca;
+  if (cel.eletrica) x *= DEFESAS.cerca;
   if (cel.guarda) x *= DEFESAS.guarda;
   if (cel.curral) x *= DEFESAS.curral;
   return x;
@@ -111,13 +119,13 @@ export function exposicao(st, cel) {
 export function valorRebanho(st, f) {
   const F = st.fazendas[f];
   let v = F.galinhas * GALINHA.venda;
-  for (const c of celulasDe(st, f)) if (c.n) v += c.n * ESPECIES[c.especie].venda;
+  for (const c of controladas(st, f)) if (c.n) v += c.n * ESPECIES[c.especie].venda;
   return v * (F.selo ? 1 + SELO_BONUS : 1);
 }
 export function patrimonio(st, f) { return Math.round(st.fazendas[f].caixa + valorRebanho(st, f)); }
 export function cabecas(st, f) {
   const out = { boi: 0, carneiro: 0, galinha: st.fazendas[f].galinhas };
-  for (const c of celulasDe(st, f)) if (c.n) out[c.especie] += c.n;
+  for (const c of controladas(st, f)) if (c.n) out[c.especie] += c.n;
   return out;
 }
 export function capacidadeK(st) {
@@ -141,8 +149,8 @@ export function novoJogo(biomaId, semente = (Date.now() & 0x7fffffff)) {
       let melhor = 1e9;
       sedes.forEach((s, i) => { const d = distancia(id, s) + i * 1e-3; if (d < melhor) { melhor = d; dono = i; } });
     }
-    st.celulas.push({ id, tipo: 'mata', dono, reserva, regen: 0, especie: null, n: 0,
-                      cerca: false, guarda: false, curral: false, camera: -1, queimado: false });
+    st.celulas.push({ id, tipo: 'mata', dono, reserva, regen: 0, especie: null, n: 0, cercaDe: -1, material: null, validade: 0,
+                      eletrica: false, guarda: false, curral: false, camera: -1, queimado: false });
   }
   // água: um rio que serpenteia da esquerda para a direita pelo meio do mapa
   if (B.agua) {
@@ -171,7 +179,7 @@ export function novoJogo(biomaId, semente = (Date.now() & 0x7fffffff)) {
                 sede: sedes[i], caixa: B.caixa, selo: true, seguro: false, galinhas: 2, galCap: GALINHA.cap, telado: false,
                 acoes: ACOES_POR_RODADA, cra: false, abates: 0, multas: 0, perdas: { boi: 0, carneiro: 0, galinha: 0 },
                 perdasRodada: { boi: 0, carneiro: 0, galinha: 0 }, ataquesUltimos: [], ataquesTotal: 0, motivoSelo: null,
-                receitaTotal: 0, desmatadas: 0, infracoes: [], manejos: 0 };
+                receitaTotal: 0, desmatadas: 0, infracoes: [], manejos: 0, estacas: 0 };
     st.fazendas.push(F);
     const sede = st.celulas[F.sede]; sede.tipo = 'sede';
     const minhas = celulasDe(st, i).filter(c => c.tipo !== 'sede' && c.tipo !== 'agua')
@@ -186,6 +194,9 @@ export function novoJogo(biomaId, semente = (Date.now() & 0x7fffffff)) {
     // rebanho inicial: primeiro nos pastos, depois nos campos nativos mais próximos
     const pastos = celulasDe(st, i).filter(pastejavel).sort((a, b) => (a.tipo === 'pasto' ? 0 : 1) - (b.tipo === 'pasto' ? 0 : 1) || distancia(a.id, F.sede) - distancia(b.id, F.sede));
     B.rebanho.forEach(([esp, n], k) => { const c = pastos[k]; if (c) { c.especie = esp; c.n = Math.min(n, capacidade(st, c, esp)); } });
+    // cercas iniciais: a sede (permanente) e os pastos já abertos, com estacas de madeira de idades diferentes
+    sede.cercaDe = i; sede.material = 'concreto'; sede.validade = 999;
+    for (const c of celulasDe(st, i)) if (c.tipo === 'pasto' || c.n) { c.cercaDe = i; c.material = 'madeira'; c.validade = 4 + Math.floor(rnd(st) * 7); }
   });
   // onças iniciais
   const K = capacidadeK(st);
@@ -209,7 +220,8 @@ function gerarAraripe(st, sedes) {
     if (!uc) { let melhor = 1e9; sedes.forEach((s, i) => { const d = distancia(id, s) + i * 1e-3; if (d < melhor) { melhor = d; dono = i; } }); }
     st.celulas.push({ id, tipo: 'mata', dono, reserva: !!uc, uc, zona: null, nascente: false,
                       regiao: linha(id) <= 2 ? 'chapada' : linha(id) <= 4 ? 'encosta' : 'vale',
-                      regen: 0, especie: null, n: 0, cerca: false, guarda: false, curral: false, camera: -1, queimado: false });
+                      regen: 0, especie: null, n: 0, cercaDe: -1, material: null, validade: 0,
+                      eletrica: false, guarda: false, curral: false, camera: -1, queimado: false });
   }
   for (const [r, c] of [[4, 1], [4, 4], [4, 6], [4, 9]]) { const cel = st.celulas[r * W + c]; cel.tipo = 'agua'; cel.nascente = true; }
   // cerrado aberto no alto da chapada
@@ -238,9 +250,26 @@ export function acoesCelula(st, f, id) {
   const out = [];
   const add = (acao, rotulo, custo, ok, motivo) => out.push({ acao, rotulo, custo, ok: ok && F.acoes > 0 && F.caixa >= custo, motivo:
     !ok ? motivo : F.acoes <= 0 ? 'Sem ações nesta estação' : F.caixa < custo ? 'Dinheiro insuficiente' : null });
-  const minha = c.dono === f;
+  const minha = posse(c) === f;
+  // cercar: área livre (ou cerca própria perto de vencer) encostada em área controlada pela fazenda
+  const encostada = vizinhos(id).some(v => posse(st.celulas[v]) === f);
+  const renovar = c.cercaDe === f && c.material !== 'concreto' && c.validade <= 2 && c.tipo !== 'sede';
+  if (c.tipo !== 'agua' && c.tipo !== 'sede' && (c.cercaDe < 0 || renovar)) {
+    const lados = ladosExpostos(st, f, id);
+    const ilegal = c.dono !== f ? (c.reserva ? 'grilagem de área pública' : `grilagem de terra da ${st.fazendas[c.dono].nome}`) : null;
+    const pode = minha || encostada;
+    const verbo = renovar ? 'Renovar a cerca' : 'Cercar';
+    for (const mat of ['nativa', 'madeira', 'concreto']) {
+      const M_ = CERCAS[mat], custo = Math.round(lados * M_.preco * 10) / 10;
+      const temEstaca = mat !== 'nativa' || F.estacas >= lados;
+      add(`cercar_${mat}`, `${verbo} com ${M_.nome}${ilegal ? ` (ilegal: ${ilegal})` : ''}`, custo, pode && temEstaca,
+          !pode ? 'Só dá para cercar ao lado de uma área que você controla' : `Precisa de ${lados} lotes de estacas da mata; você tem ${F.estacas}`);
+      Object.assign(out[out.length - 1], { ilegal, lados, material: mat });
+    }
+  }
+  if (c.dono === f && grilada(c)) add('justica', 'Entrar na Justiça para reaver a área', CUSTOS.justica, (c.processo ?? -1) < st.t, 'Processo já em andamento');
   if (minha && TIPOS[c.tipo].nativa && c.tipo !== 'agua') {
-    const vizinhoUsado = vizinhos(id).some(v => st.celulas[v].dono === f && !TIPOS[st.celulas[v].tipo].nativa);
+    const vizinhoUsado = vizinhos(id).some(v => posse(st.celulas[v]) === f && !TIPOS[st.celulas[v].tipo].nativa);
     const ilegal = desmateIlegal(st, f, id);
     add('desmatar', ilegal ? `Desmatar (ilegal: ${ilegal})` : 'Desmatar para pasto', B.custoDesmate, vizinhoUsado,
         'Só é possível abrir pasto ao lado de outro pasto ou da sede');
@@ -248,11 +277,11 @@ export function acoesCelula(st, f, id) {
   }
   if (minha && c.tipo === 'pasto') add('reflorestar', 'Deixar a mata voltar', CUSTOS.reflorestar, !c.n, 'Retire os animais antes');
   if (minha && pastejavel(c)) {
-    add('cerca', 'Cerca elétrica', CUSTOS.cerca, !c.cerca, 'Já tem cerca elétrica');
+    add('cerca', 'Eletrificar a cerca', CUSTOS.cerca, c.cercaDe === f && !c.eletrica, c.eletrica ? 'Cerca já eletrificada' : 'Cerque a área antes');
     add('guarda', B.id === 'pantanal' ? 'Búfalos de guarda' : 'Cães de guarda', CUSTOS.guarda, !c.guarda, 'Já tem animais de guarda');
     add('curral', 'Curral noturno', CUSTOS.curral, !c.curral && distancia(id, F.sede) <= 1, c.curral ? 'Já tem curral' : 'Só ao lado da sede');
   }
-  if (minha && c.tipo === 'sede') {
+  if (c.dono === f && c.tipo === 'sede') {
     add('telar', 'Telar o galinheiro', CUSTOS.telar, !F.telado, 'Galinheiro já telado');
     add('ampliar', 'Ampliar o galinheiro', CUSTOS.ampliar, true, null);
     if (!F.seguro) add('seguro', 'Aderir à compensação por ataques', CUSTOS.seguro, F.selo, 'Exige o selo de convivência');
@@ -260,7 +289,7 @@ export function acoesCelula(st, f, id) {
     if (B.evento === 'fogo') add('aceiro', 'Abrir aceiros contra o fogo', CUSTOS.aceiro, (F.aceiroAte ?? -1) < st.t, 'Aceiros já abertos neste ano');
     if (B.javaporco) add('manejo', `Contratar caçadores de manejo de ${B.javaporco.nome}`, CUSTOS.manejo, (st.onca.V || 0) >= 1, `Não há ${B.javaporco.plural} para manejar`);
   }
-  const acessivel = minha || c.reserva;
+  const acessivel = minha || (c.reserva && c.cercaDe < 0);
   if (habitat(c) && acessivel) {
     const nCam = st.celulas.filter(x => x.camera === f).length;
     add('camera', 'Armadilha fotográfica', CUSTOS.camera, c.camera < 0 && nCam < MAX_CAMERAS, c.camera >= 0 ? 'Já há câmera aqui' : `Máximo de ${MAX_CAMERAS} câmeras`);
@@ -298,11 +327,13 @@ export function executar(st, f, acao, id) {
   switch (acao) {
     case 'desmatar': {
       const ilegal = desmateIlegal(st, f, id);
+      const estacas = ESTACAS_DESMATE[c.tipo] || 0; F.estacas += estacas;
       c.tipo = 'pasto'; c.regen = 0; c.camera = -1; F.desmatadas++;
       for (const tk of st.tokens) if (tk.cel === id) moveTokenParaHabitat(st, tk);
       if (ilegal && F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = `desmate ilegal (${ilegal})`; }
       if (ilegal && ilegal !== 'abaixo da reserva legal') F.infracoes.push({ cel: id, tipo: ilegal === 'APP de nascente' ? 'app' : 'zona' });
-      msg = ilegal ? `Pasto aberto de forma ilegal (${ilegal}). O selo foi perdido e a fiscalização pode multar.` : 'Pasto aberto. A mata e suas presas diminuíram.';
+      msg = (ilegal ? `Pasto aberto de forma ilegal (${ilegal}). O selo foi perdido e a fiscalização pode multar.` : 'Pasto aberto. A mata e suas presas diminuíram.')
+        + (estacas ? ` A madeira rendeu ${estacas} lotes de estacas.` : '') + (c.cercaDe !== f ? ' Cerque a área para pôr animais.' : '');
       break;
     }
     case 'aceiro': F.aceiroAte = st.t + 1; msg = 'Aceiros abertos: o fogo não entra na sua fazenda nesta estação nem na próxima.'; break;
@@ -312,9 +343,24 @@ export function executar(st, f, acao, id) {
       msg = `Os caçadores de manejo, com autorização no SIMAF, retiraram cerca de ${Math.round(antes - st.onca.V)} ${B.javaporco.plural} da região e mantêm as varas longe dos seus pastos por três estações.`;
       break;
     }
-    case 'reflorestar': c.tipo = 'capoeira'; c.regen = B.regen; c.cerca = c.guarda = c.curral = false;
+    case 'reflorestar': c.tipo = 'capoeira'; c.regen = B.regen; c.eletrica = c.guarda = c.curral = false;
       msg = `A capoeira vira mata em ${B.regen} estações.`; break;
-    case 'cerca': c.cerca = true; msg = 'Cerca elétrica instalada.'; break;
+    case 'cerca': c.eletrica = true; msg = 'Cerca eletrificada: o risco de ataque neste pasto caiu 80%.'; break;
+    case 'cercar_nativa': case 'cercar_madeira': case 'cercar_concreto': {
+      const mat = a.material, M_ = CERCAS[mat];
+      if (mat === 'nativa') F.estacas -= a.lados;
+      const tomou = c.cercaDe < 0 && c.dono !== f;
+      if (f === 0) { st.marcas = st.marcas || {}; st.marcas.cercou = true; if (tomou) st.marcas.grilagem = true; }
+      c.cercaDe = f; c.material = mat; c.validade = M_.validade;
+      if (tomou) {
+        if (F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = 'grilagem de terra'; }
+        if (c.dono >= 0) (st.invasoes = st.invasoes || []).push({ por: f, de: c.dono, cel: id });
+      }
+      msg = `Área cercada com ${M_.nome} (${a.lados} lados${M_.validade < 999 ? `, dura ${M_.validade} estações` : ', permanente'}).`
+        + (tomou ? ` É grilagem: o selo foi perdido e a Justiça pode devolver a área ${c.reserva ? 'ao poder público' : 'ao dono'} e multar.` : '');
+      break;
+    }
+    case 'justica': c.processo = st.t + 1; msg = 'Processo aberto: a chance de a Justiça devolver a área na próxima estação subiu.'; break;
     case 'guarda': c.guarda = true; msg = 'Animais de guarda soltos com o rebanho.'; break;
     case 'curral': c.curral = true; msg = 'O rebanho dorme no curral.'; break;
     case 'telar': F.telado = true; msg = 'Galinheiro telado.'; break;
@@ -370,7 +416,8 @@ export function comprar(st, f, id, especie, n = 1) {
     if (k <= 0) return { ok: false, msg: F.galinhas >= F.galCap ? 'Galinheiro cheio' : 'Dinheiro insuficiente' };
     F.galinhas += k; F.caixa -= k * GALINHA.compra; return { ok: true, n: k };
   }
-  if (c.dono !== f || !pastejavel(c)) return { ok: false, msg: 'Escolha um pasto seu' };
+  if (posse(c) !== f || !pastejavel(c)) return { ok: false, msg: 'Escolha um pasto seu' };
+  if (c.cercaDe !== f) return { ok: false, msg: 'Cerque o pasto antes de pôr animais' };
   if (c.n && c.especie !== especie) return { ok: false, msg: 'Cada pasto tem uma só espécie' };
   const k = Math.min(n, capacidade(st, c, especie) - c.n, Math.floor(F.caixa / ESPECIES[especie].compra));
   if (k <= 0) return { ok: false, msg: c.n >= capacidade(st, c, especie) ? 'Pasto lotado' : 'Dinheiro insuficiente' };
@@ -382,13 +429,14 @@ export function vender(st, f, id, n = 1) {
     const k = Math.min(n, F.galinhas); if (k <= 0) return { ok: false, msg: 'Sem galinhas' };
     F.galinhas -= k; F.caixa += k * GALINHA.venda * bonus; return { ok: true, n: k };
   }
-  if (c.dono !== f || !c.n) return { ok: false, msg: 'Nada para vender aqui' };
+  if (posse(c) !== f || !c.n) return { ok: false, msg: 'Nada para vender aqui' };
   const k = Math.min(n, c.n); F.caixa += k * ESPECIES[c.especie].venda * bonus; c.n -= k; if (!c.n) c.especie = null;
   return { ok: true, n: k };
 }
 export function mover(st, f, de, para, n = 1) {
   const a = st.celulas[de], b = st.celulas[para];
-  if (a.dono !== f || b.dono !== f || !a.n || !pastejavel(b)) return { ok: false, msg: 'Movimento inválido' };
+  if (posse(a) !== f || !a.n || !pastejavel(b)) return { ok: false, msg: 'Movimento inválido' };
+  if (b.cercaDe !== f) return { ok: false, msg: 'O destino precisa ser um pasto cercado por você' };
   if (b.n && b.especie !== a.especie) return { ok: false, msg: 'Cada pasto tem uma só espécie' };
   const k = Math.min(n, a.n, capacidade(st, b, a.especie) - b.n);
   if (k <= 0) return { ok: false, msg: 'Destino lotado' };
@@ -399,20 +447,32 @@ export function mover(st, f, de, para, n = 1) {
 // ---------------------------------------------------------------- fazendeiros do computador
 export function jogaIA(st, f) {
   const F = st.fazendas[f], P = F.perfil, B = bioma(st);
-  const minhas = () => celulasDe(st, f);
+  const minhas = () => controladas(st, f);
+  const cercar = (c, preferido) => {
+    const opcoes = acoesCelula(st, f, c.id).filter(a => a.acao.startsWith('cercar_') && a.ok);
+    const escolha = opcoes.find(a => a.material === 'nativa') || opcoes.find(a => a.material === preferido) || opcoes.find(a => a.material === 'madeira');
+    return escolha && F.caixa >= escolha.custo + 15 ? executar(st, f, escolha.acao, c.id).ok : false;
+  };
   let guarda = 0;
   while (F.acoes > 0 && guarda++ < 12) {
-    const atacadas = F.ataquesUltimos.map(a => st.celulas[a.cel]).filter(c => c.dono === f);
+    // 0) defender a terra: processar quem grilou, renovar cercas com animais, cercar pasto aberto
+    const invadida = celulasDe(st, f).find(c => grilada(c) && (c.processo ?? -1) < st.t);
+    if (invadida && rnd(st) < 0.4 + 0.5 * P.respeitaLei && executar(st, f, 'justica', invadida.id).ok) continue;
+    const vencendo = minhas().find(c => c.cercaDe === f && c.n && c.material !== 'concreto' && c.validade <= 2);
+    if (vencendo && cercar(vencendo, P.respeitaLei >= 0.9 ? 'concreto' : 'madeira')) continue;
+    const aberto = minhas().find(c => c.cercaDe < 0 && pastejavel(c) && c.dono === f);
+    if (aberto && cercar(aberto, 'madeira')) continue;
+    const atacadas = F.ataquesUltimos.map(a => st.celulas[a.cel]).filter(c => posse(c) === f);
     // 1) reação a ataques
     if (atacadas.length) {
-      const alvoDef = atacadas.find(c => !c.cerca || !c.guarda);
+      const alvoDef = atacadas.find(c => !c.eletrica || !c.guarda);
       if (alvoDef && rnd(st) < P.defende) {
-        const ac = !alvoDef.cerca && F.caixa >= CUSTOS.cerca + 5 ? 'cerca' : !alvoDef.guarda ? 'guarda' : null;
+        const ac = !alvoDef.eletrica && alvoDef.cercaDe === f && F.caixa >= CUSTOS.cerca + 5 ? 'cerca' : !alvoDef.guarda ? 'guarda' : null;
         if (ac && executar(st, f, ac, alvoDef.id).ok) continue;
       }
       if (rnd(st) < P.abate * Math.min(1, F.ataquesUltimos.length / (P.abate > 0.5 ? 1 : 3)) && F.caixa >= CUSTOS.matador + 10) {
         const lugar = F.ataquesUltimos.find(a => a.onca != null);
-        const alvo = lugar ? lugar.onca : vizinhos(atacadas[0].id).find(v => habitat(st.celulas[v]) && (st.celulas[v].dono === f || st.celulas[v].reserva));
+        const alvo = lugar ? lugar.onca : vizinhos(atacadas[0].id).find(v => habitat(st.celulas[v]) && (posse(st.celulas[v]) === f || st.celulas[v].reserva));
         if (alvo != null && executar(st, f, 'matador', alvo).ok) { F.ataquesUltimos = []; continue; }
       }
     }
@@ -424,26 +484,39 @@ export function jogaIA(st, f) {
     }
     // 3) prevenção na borda
     if (rnd(st) < P.defende * 0.6) {
-      const borda = minhas().filter(c => pastejavel(c) && c.n && naBorda(st, c) && !c.cerca).sort((a, b) => b.n * ESPECIES[b.especie].venda - a.n * ESPECIES[a.especie].venda)[0];
+      const borda = minhas().filter(c => pastejavel(c) && c.n && naBorda(st, c) && !c.eletrica && c.cercaDe === f).sort((a, b) => b.n * ESPECIES[b.especie].venda - a.n * ESPECIES[a.especie].venda)[0];
       if (borda && F.caixa >= CUSTOS.cerca + 15 && executar(st, f, 'cerca', borda.id).ok) continue;
     }
     // 4) monitoramento
     if (rnd(st) < P.monitora * 0.5 && st.celulas.filter(x => x.camera === f).length < 2) {
-      const local = minhas().filter(c => habitat(c) && c.camera < 0 && vizinhos(c.id).some(v => pastejavel(st.celulas[v]) && st.celulas[v].dono === f))[0];
+      const local = minhas().filter(c => habitat(c) && c.camera < 0 && vizinhos(c.id).some(v => pastejavel(st.celulas[v]) && posse(st.celulas[v]) === f))[0];
       if (local && F.caixa >= CUSTOS.camera + 15 && executar(st, f, 'camera', local.id).ok) continue;
     }
     // 5) expansão
     // 5) manejo de javaporco
     if (B.javaporco && st.onca.V / capacidadeKV(st) > 0.3 && (F.manejoAte ?? -1) < st.t && rnd(st) < (P.defende + P.abate) / 1.4 && F.caixa >= CUSTOS.manejo + 15
         && executar(st, f, 'manejo', F.sede).ok) continue;
-    // 6) expansão
-    const lotado = minhas().filter(pastejavel).every(c => c.n >= capacidade(st, c, c.especie || 'boi') * 0.6);
+    // 6) expansão: abrir pasto na própria terra (as estacas da mata servem para cercar depois)
+    const lotado = minhas().filter(c => pastejavel(c) && c.cercaDe === f).every(c => c.n >= capacidade(st, c, c.especie || 'boi') * 0.6);
     if (rnd(st) < P.desmata && lotado && F.caixa >= B.custoDesmate + 25) {
-      const cands = minhas().filter(c => TIPOS[c.tipo].nativa && c.tipo !== 'agua' && vizinhos(c.id).some(v => st.celulas[v].dono === f && !TIPOS[st.celulas[v].tipo].nativa))
+      const cands = minhas().filter(c => c.dono === f && TIPOS[c.tipo].nativa && c.tipo !== 'agua' && vizinhos(c.id).some(v => posse(st.celulas[v]) === f && !TIPOS[st.celulas[v].tipo].nativa))
         .sort((a, b) => distancia(a.id, F.sede) - distancia(b.id, F.sede));
       const legais = cands.filter(c => !desmateIlegal(st, f, c.id));
       const cand = legais[0] || (rnd(st) > P.respeitaLei ? cands[0] : null);
       if (cand && executar(st, f, 'desmatar', cand.id).ok) continue;
+    }
+    // 7) grilagem: quem respeita pouco a lei cerca a terra aberta dos vizinhos (mata ou campo encostado na sua)
+    if (rnd(st) < (1 - P.respeitaLei) * 1.2 && F.caixa >= 10) {
+      const alheias = st.celulas.filter(c => c.cercaDe < 0 && c.dono >= 0 && c.dono !== f && !c.reserva && c.tipo !== 'agua' && c.tipo !== 'sede'
+        && vizinhos(c.id).some(v => posse(st.celulas[v]) === f))
+        .sort((a, b) => (pastejavel(b) ? 1 : 0) - (pastejavel(a) ? 1 : 0) || distancia(a.id, F.sede) - distancia(b.id, F.sede));
+      if (alheias[0] && cercar(alheias[0], 'madeira')) { st.grileiros = [...new Set([...(st.grileiros || []), f])]; continue; }
+    }
+    // 8) cerca de proteção: depois de alguém grilar na região, cerca a própria terra aberta que encosta na do vizinho
+    if ((st.grileiros || []).some(g => g !== f) && rnd(st) < P.defende * 0.7) {
+      const divisa = celulasDe(st, f).filter(c => c.cercaDe < 0 && c.tipo !== 'agua' && c.tipo !== 'sede'
+        && vizinhos(c.id).some(v => posse(st.celulas[v]) === f) && vizinhos(c.id).some(v => { const p = posse(st.celulas[v]); return p >= 0 && p !== f; }))[0];
+      if (divisa && cercar(divisa, 'madeira')) continue;
     }
     break;
   }
@@ -543,9 +616,9 @@ function resolveAtaques(st, esperado) {
     }
     const esp = cel.especie, mortos = esp === 'carneiro' ? Math.min(cel.n, 1 + (rnd(st) < 0.4 ? 1 : 0)) : 1;
     cel.n -= mortos; if (!cel.n) cel.especie = null;
-    const F = st.fazendas[cel.dono];
+    const F = st.fazendas[posse(cel)];
     F.perdas[esp] += mortos; F.perdasRodada[esp] += mortos; F.ataquesTotal++;
-    const a = { cel: cel.id, onca: local, especie: esp, mortos, dono: cel.dono };
+    const a = { cel: cel.id, onca: local, especie: esp, mortos, dono: posse(cel) };
     F.ataquesUltimos.push(a); ataques.push(a);
   }
   return ataques;
@@ -557,7 +630,7 @@ function eventosBioma(st, rel) {
   if (B.evento === 'cheia' && est === 'chuva') rel.eventos.push('Cheia: os campos nativos ficaram alagados e suportam menos gado.');
   if (B.evento === 'seca' && est === 'seca') rel.eventos.push('Seca: o pasto rendeu menos e as presas silvestres quase não se reproduziram.');
   if (B.evento === 'fogo' && est === 'seca' && rnd(st) < 0.45) {
-    const protegida = c => c.dono >= 0 && (st.fazendas[c.dono].aceiroAte ?? -1) >= st.t;
+    const protegida = c => posse(c) >= 0 && (st.fazendas[posse(c)].aceiroAte ?? -1) >= st.t;
     const inicio = sorteia(st, st.celulas.filter(c => (c.tipo === 'campo' || c.tipo === 'mata' || c.tipo === 'pasto') && !protegida(c)), c => c.tipo === 'campo' ? 3 : 1);
     if (inicio) {
       const queimadas = [inicio]; let frente = [inicio];
@@ -569,8 +642,9 @@ function eventosBioma(st, rel) {
       for (const u of queimadas) {
         if (u.tipo === 'mata') { u.tipo = 'capoeira'; u.regen = B.regen; u.camera = -1; }
         u.queimado = true;
+        if (u.cercaDe >= 0 && u.material !== 'concreto' && u.tipo !== 'sede') { const dono = u.cercaDe; perdeCerca(st, u, rel); if (dono === 0) rel.eventos.push('O fogo queimou uma cerca de madeira sua.'); }
       }
-      const daPessoa = queimadas.filter(u => u.dono === 0).length;
+      const daPessoa = queimadas.filter(u => posse(u) === 0).length;
       const encosta = queimadas.filter(u => u.regiao === 'encosta').length;
       rel.eventos.push(`Fogo ${B.id === 'araripe' ? 'na Chapada' : 'no Cerrado'}: ${queimadas.length} ${queimadas.length === 1 ? 'área queimou' : 'áreas queimaram'}${daPessoa ? `, ${daPessoa} na sua fazenda` : ''}${encosta ? `, ${encosta} na encosta das nascentes` : ''}. Matas queimadas viraram capoeira.`);
       rel.queimadas = queimadas.map(u => u.id);
@@ -580,7 +654,7 @@ function eventosBioma(st, rel) {
 
 function detectar(st, rel) {
   const B = bioma(st), v = novoVisto();
-  const minhas = new Set(celulasDe(st, 0).map(c => c.id));
+  const minhas = new Set(st.celulas.filter(c => posse(c) === 0 || c.dono === 0).map(c => c.id));
   const proximas = new Set([...minhas].flatMap(id => [id, ...vizinhos(id)]));
   for (const tk of st.tokens) {
     for (const id of tk.caminho) {
@@ -601,6 +675,55 @@ function detectar(st, rel) {
   rel.vistos = v;
 }
 
+// Uma área perde a cerca: os animais vão para outro pasto cercado da mesma fazenda ou são vendidos às pressas.
+function perdeCerca(st, c, rel, novoDono = -1) {
+  const f = c.cercaDe;
+  if (c.n && f >= 0) {
+    const destinos = st.celulas.filter(d => d !== c && d.cercaDe === f && pastejavel(d) && (!d.n || d.especie === c.especie));
+    for (const d of destinos) { const k = Math.min(c.n, capacidade(st, d, c.especie) - d.n); if (k > 0) { d.especie = c.especie; d.n += k; c.n -= k; } if (!c.n) break; }
+    if (c.n) {
+      st.vendasCerca = st.vendasCerca || {};
+      const bonus = st.fazendas[f].selo ? 1 + SELO_BONUS : 1;
+      st.vendasCerca[f] = (st.vendasCerca[f] || 0) + c.n * ESPECIES[c.especie].venda * VENDA_FORCADA * bonus;
+      if (f === 0) rel?.eventos.push(`Sem cerca, ${c.n} ${c.n > 1 ? ESPECIES[c.especie].plural : ESPECIES[c.especie].nome} foram vendidos às pressas.`);
+      c.n = 0;
+    }
+    if (!c.n) c.especie = null;
+  }
+  c.cercaDe = novoDono; c.eletrica = false; c.processo = undefined;
+  if (novoDono < 0) { c.material = null; c.validade = 0; }
+}
+function cercasEJustica(st, rel) {
+  st.multasGrilagem = {};
+  let avisos = 0;
+  for (const c of st.celulas) {
+    if (c.cercaDe < 0 || c.tipo === 'sede') continue;
+    // desgaste das estacas
+    if (c.material !== 'concreto') {
+      c.validade--;
+      if (c.validade <= 0) {
+        const f = c.cercaDe;
+        if (f === 0) rel.eventos.push(`Uma cerca de ${CERCAS[c.material].nome} sua apodreceu e caiu: a área ficou aberta.`);
+        perdeCerca(st, c, rel); continue;
+      }
+      if (c.cercaDe === 0 && c.validade === 1 && c.n) avisos++;
+    }
+    // Justiça contra a grilagem
+    if (grilada(c)) {
+      const p = (c.processo ?? -1) >= st.t ? JUSTICA.acionada : c.reserva ? JUSTICA.uc : JUSTICA.base;
+      if (rnd(st) < p) {
+        const g = c.cercaDe, multa = c.reserva ? MULTA.grilagemUC : MULTA.grilagem;
+        st.multasGrilagem[g] = (st.multasGrilagem[g] || 0) + multa; st.fazendas[g].multas += multa;
+        const dono = c.dono;
+        if (g === 0) rel.eventos.push(`A Justiça tirou de você uma área grilada${dono >= 0 ? ` e a devolveu à ${st.fazendas[dono].nome}` : ''}: multa de R$ ${multa} mil.`);
+        if (dono === 0) rel.eventos.push(`A Justiça devolveu a você uma área que a ${st.fazendas[g].nome} tinha cercado.`);
+        perdeCerca(st, c, rel, dono >= 0 ? dono : -1);
+      }
+    }
+  }
+  if (avisos) rel.eventos.push(avisos > 1 ? `As cercas de ${avisos} pastos com animais caem no fim da próxima estação: renove-as.` : 'A cerca de um pasto com animais cai no fim da próxima estação: renove-a.');
+}
+
 function economia(st, rel) {
   for (const F of st.fazendas) {
     const f = F.id, bonus = F.selo ? 1 + SELO_BONUS : 1;
@@ -609,7 +732,7 @@ function economia(st, rel) {
     const taxa = MODELO.perdaGalinha * st.onca.M * (F.telado ? 0.3 : 1);
     const perdidas = binom(st, F.galinhas, taxa);
     F.galinhas -= perdidas; F.perdas.galinha += perdidas; F.perdasRodada.galinha += perdidas;
-    for (const c of celulasDe(st, f)) {
+    for (const c of controladas(st, f)) {
       if (pastejavel(c) && c.n) {
         const cap = capacidade(st, c, c.especie);
         if (c.n > cap) { const k = c.n - cap; forcada += k * ESPECIES[c.especie].venda * VENDA_FORCADA * bonus; c.n = cap; if (!c.n) c.especie = null; }
@@ -620,8 +743,7 @@ function economia(st, rel) {
         const nasc = Math.min(binom(st, c.n, ESPECIES[c.especie].repro), capacidade(st, c, c.especie) - c.n);
         c.n += Math.max(0, nasc); nascimentos[c.especie] += Math.max(0, nasc);
       }
-      if (c.cerca) despesa += MANUTENCAO.cerca;
-      if (c.tipo === 'capoeira' && c.regen > 0) { c.regen--; if (c.regen === 0) c.tipo = 'mata'; }
+      if (c.eletrica) despesa += MANUTENCAO.cerca;
     }
     receita += F.galinhas * GALINHA.renda;
     const ng = Math.min(binom(st, F.galinhas, GALINHA.repro) + (F.galinhas === 0 ? 0 : 0), F.galCap - F.galinhas);
@@ -644,6 +766,8 @@ function economia(st, rel) {
     for (const inf of [...F.infracoes]) {
       if (rnd(st) < bioma(st).fiscalDesmate) { const v = inf.tipo === 'app' ? MULTA.app : MULTA.zona; multa += v; F.multas += v; F.infracoes = F.infracoes.filter(x => x !== inf); }
     }
+    multa += st.multasGrilagem?.[f] || 0;
+    forcada += st.vendasCerca?.[f] || 0;
     F.caixa += receita + forcada + compensacao - despesa - multa;
     if (F.caixa < 0) F.caixa *= 1 + JUROS_DIVIDA;
     F.receitaTotal += receita;
@@ -657,8 +781,11 @@ export function encerrarRodada(st) {
   for (const F of st.fazendas) { F.ataquesUltimos = []; F.perdasRodada = { boi: 0, carneiro: 0, galinha: 0 }; }
   const B = bioma(st);
   const rel = { t: st.t, estacao: estacao(st), ano: ano(st), eventos: [], ataques: [], fazendas: [], manejoNestaEstacao: !!st.marcas?.manejo,
-                abateNestaEstacao: !!st.marcas?.abate, desmateNestaEstacao: !!st.marcas?.desmate };
+                abateNestaEstacao: !!st.marcas?.abate, desmateNestaEstacao: !!st.marcas?.desmate,
+                cercouNestaEstacao: !!st.marcas?.cercou, grilagemNestaEstacao: !!st.marcas?.grilagem };
   st.marcas = {};
+  for (const inv of st.invasoes || []) if (inv.de === 0) rel.eventos.push(`${st.fazendas[inv.por].apelido} cercou uma área sem cerca da sua fazenda. Você pode entrar na Justiça ou cercar o resto antes que ele avance.`);
+  st.invasoes = []; st.vendasCerca = {};
   const Jantes = st.onca.J, Nantes = st.onca.N;
   eventosBioma(st, rel);
   // herbívoros em excesso comem o pasto (efeito de cascata quando faltam onças)
@@ -684,6 +811,8 @@ export function encerrarRodada(st) {
     rel.soldadinho = { antes, depois: S.S };
     if (S.S < antes - 0.03) rel.eventos.push('Menos cantos de soldadinho-do-araripe nas trilhas das nascentes.');
   }
+  cercasEJustica(st, rel);
+  for (const c of st.celulas) if (c.tipo === 'capoeira' && c.regen > 0) { c.regen--; if (c.regen === 0) c.tipo = 'mata'; }
   detectar(st, rel);
   economia(st, rel);
   rel.modelo = { ...mod, Jantes, Nantes, J: st.onca.J, N: st.onca.N, M: st.onca.M };

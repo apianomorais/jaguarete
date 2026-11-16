@@ -150,6 +150,16 @@ export const NATUREZA = {
     texto: 'Aceiros são faixas sem vegetação que impedem o fogo de passar. Na Chapada do Araripe, o fogo na seca ameaça a mata da encosta onde vive o soldadinho, e o novo plano de manejo limita o uso do fogo em toda a APA.',
     ref: null,
   },
+  grilagem: {
+    titulo: 'Grilagem',
+    texto: 'Grilagem é a apropriação ilegal de terra alheia ou pública. Deslocar cerca ou marco para se apropriar de imóvel alheio é crime de alteração de limites (Código Penal, art. 161), e invadir terras públicas para ocupá-las também é crime (Lei nº 4.947/1966, art. 20). No jogo, cercar a terra aberta de um vizinho, ou uma unidade de conservação, tira o seu selo; a cada estação, a Justiça pode devolver a área e multar quem grilou.',
+    ref: 'Código Penal, art. 161; Lei nº 4.947/1966, art. 20.',
+  },
+  cercas: {
+    titulo: 'Cercas e mourões',
+    texto: 'Uma cerca de arame depende dos mourões, as estacas que a sustentam. Madeira tirada da própria mata e sem tratamento apodrece mais rápido; eucalipto tratado dura mais; mourões de concreto duram décadas e não queimam. No jogo, o custo de cercar depende de quantos lados da área ficam expostos: áreas juntas saem mais baratas.',
+    ref: null,
+  },
   compensacao: {
     titulo: 'Compensação por ataques',
     texto: 'Alguns projetos de conservação pagam ao fazendeiro parte do valor dos animais mortos por grandes felinos, desde que não haja retaliação. A ideia é dividir o custo de conviver com um animal que interessa a todos.',
@@ -173,6 +183,8 @@ export function dicaDaEstacao(st, rel, vistos) {
   if (rel.desmateNestaEstacao) cands.push('desmate', 'reserva');
   const araripe = st.bioma === 'araripe';
   if (rel.manejoNestaEstacao) cands.unshift('manejo');
+  if (rel.grilagemNestaEstacao || rel.eventos.some(e => e.includes('cercou uma área') || e.includes('Justiça'))) cands.unshift('grilagem');
+  if (rel.cercouNestaEstacao) cands.push('cercas');
   if (rel.javaporco > 0.3) cands.push('javaporco', 'competicao');
   if (araripe) {
     if (rel.soldadinho && rel.soldadinho.depois < rel.soldadinho.antes - 0.03) cands.push('soldadinho');
@@ -184,7 +196,7 @@ export function dicaDaEstacao(st, rel, vistos) {
   if (rel.t === 0) cands.unshift(araripe ? 'onca_parda' : 'modelo');
   if (araripe) cands.push('plano', 'soldadinho', 'recarga', 'onca_parda', 'aceiro');
   if (rel.javaporco != null) cands.push('javaporco', 'manejo', 'competicao');
-  cands.push('modelo', 'ataque', 'defesa', 'desmate', 'reserva', 'cra', 'compensacao', 'monitoramento');
+  cands.push('modelo', 'cercas', 'ataque', 'defesa', 'grilagem', 'desmate', 'reserva', 'cra', 'compensacao', 'monitoramento');
   const id = cands.find(c => !ja.includes(c)) || cands[0];
   ja.push(id);
   const n = NATUREZA[`${id}_${st.bioma}`] || NATUREZA[id];
@@ -193,7 +205,8 @@ export function dicaDaEstacao(st, rel, vistos) {
 
 export const COMO_JOGAR = [
   ['Objetivo', 'Termine os 10 anos (20 estações) com o maior patrimônio: dinheiro em caixa mais o valor do rebanho. Você disputa com três fazendas vizinhas controladas pelo computador.'],
-  ['Cada estação', 'Você tem 3 ações: desmatar, deixar a mata voltar, instalar defesas, pôr câmeras, capturar um jaguar para pôr colar ou chamar o matador. Comprar, vender e mover animais não gasta ação.'],
+  ['Cada estação', 'Você tem 3 ações: cercar, desmatar, deixar a mata voltar, instalar defesas, pôr câmeras, capturar um jaguar para pôr colar ou chamar o matador. Comprar, vender e mover animais não gasta ação.'],
+  ['Cercas e terra', 'As divisas são abertas: a posse de cada área é de quem a cerca. Animais só ficam em pasto cercado. Cercar custa por lado exposto; as estacas podem vir do seu desmate, de madeira tratada ou de concreto, que não apodrece. Cercar a terra aberta de um vizinho é grilagem: dá área, mas tira o selo e a Justiça pode devolvê-la e multar.'],
   ['Os jaguares', 'Vivem na mata e ninguém os vê. Você descobre por onde andam pelas pegadas na sua terra, pelas fotos das câmeras, pelos ataques e pelos colares GPS. Eles comem presas silvestres; quando faltam presas, atacam o rebanho que fica na borda da mata.'],
   ['A mata', 'A mata sustenta as presas silvestres, que sustentam os jaguares. Desmatar dá pasto, mas reduz as presas e deixa mais rebanho na borda. Abaixo da reserva legal, você perde o selo e pode ser multado.'],
   ['O selo', 'Fazendas que não matam jaguares e respeitam a reserva legal têm um selo que paga 20% a mais pela produção e pelo rebanho, e podem aderir à compensação por ataques.'],

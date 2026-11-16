@@ -10,9 +10,11 @@ Jogo de estratégia para o navegador sobre pecuária e grandes felinos no Pantan
 
 - **Objetivo:** terminar os 10 anos (20 estações, alternando chuva e seca) com o maior patrimônio, somando o dinheiro em caixa e o valor do rebanho.
 - **Cada estação:** você tem 3 ações:
+  - cercar uma área, ou renovar uma cerca que está vencendo;
   - desmatar para abrir pasto;
   - deixar a mata voltar;
-  - instalar cerca elétrica, curral noturno ou animais de guarda;
+  - eletrificar a cerca, instalar curral noturno ou pôr animais de guarda;
+  - entrar na Justiça contra um vizinho que cercou a sua terra;
   - pôr armadilhas fotográficas;
   - capturar um jaguar para pôr colar GPS;
   - contratar um matador de jaguares.
@@ -27,6 +29,29 @@ Jogo de estratégia para o navegador sobre pecuária e grandes felinos no Pantan
   - capivaras e queixadas se multiplicam e comem o pasto.
 
   O território vago também atrai jovens jaguares em dispersão.
+
+## Cercas, posse e grilagem
+
+As divisas entre as fazendas são abertas. O título (a linha pontilhada no mapa) diz de quem é a terra; a cerca (a linha cheia) diz quem a usa.
+
+- **Posse:** uma área cercada é de quem a cercou e não pode ser tomada. Uma área sem cerca, mesmo com título de outra fazenda, fica com quem a cercar primeiro.
+- **Animais:** só ficam em pasto cercado. Quando uma cerca apodrece, queima ou é tirada pela Justiça, os animais vão para outro pasto cercado da mesma fazenda ou são vendidos às pressas, a 60% do preço.
+- **Custo:** cercar uma área custa por lado exposto. Os lados que encostam em outra área cercada por você não precisam de cerca, por isso áreas juntas saem mais baratas. Só dá para cercar uma área encostada em terra que você já controla.
+- **Estacas:**
+
+  | Material | Custo por lado | Duração | Observação |
+  |---|---|---|---|
+  | Estacas da mata | 1 lote de estacas | 6 estações | os lotes vêm do desmate: 4 por área de mata, 2 por capoeira |
+  | Madeira tratada | R$ 1,2 mil | 10 estações | |
+  | Concreto | R$ 2,5 mil | permanente | não queima |
+
+  O relatório avisa uma estação antes de uma cerca com animais cair. A cerca pode ser renovada a partir de duas estações antes do vencimento.
+- **Grilagem:** cercar a terra aberta de um vizinho, ou de uma unidade de conservação, é grilagem.
+  - Você perde o selo na hora.
+  - A cada estação, a Justiça pode devolver a área ao dono e multar quem grilou: 15% de chance por estação, 30% numa unidade de conservação.
+  - A multa é de R$ 15 mil, ou R$ 40 mil numa unidade de conservação.
+  - Quem teve a terra cercada pode entrar na Justiça (R$ 3 mil e uma ação). O processo eleva a chance para 60% nesta e na próxima estação.
+- **Os vizinhos:** cada fazendeiro do computador tem um grau de respeito à lei. Seu Brás, o menos cuidadoso, cerca com frequência a terra aberta dos outros quando sobra dinheiro; Zé Ramos faz isso de vez em quando; Dona Celeste nunca. Os três renovam as cercas dos pastos com animais, cercam os próprios pastos abertos, entram na Justiça quando são invadidos e reforçam as divisas quando há um grileiro por perto.
 
 ## Cenário da Chapada do Araripe
 
@@ -92,6 +117,8 @@ js/interface.js       mapa SVG, painel, relatórios e gráficos
 dist/jaguarete.html   versão em arquivo único (gerada)
 sim/                  simulação de Monte Carlo usada no balanceamento
 ferramentas/          script que gera dist/jaguarete.html
+LICENSE               licença MIT do código
+LICENSE-CONTEUDO.md   licença CC BY 4.0 dos textos e ilustrações
 ```
 
 Comandos (Node 18 ou mais recente):
@@ -126,29 +153,38 @@ Com os parâmetros padrão, Pantanal e Amazônia mostram oscilações amortecida
 
 Resultado de `npm run sim` com 300 partidas por bioma e estratégia (semente 20261116). Cada coluna é uma estratégia de teste para a fazenda da pessoa:
 
-- **Conviver:** cercas na borda, compensação, cotas de reserva, manejo de javaporcos e expansão só dentro da lei.
+Todas as estratégias, menos a passiva, cuidam das cercas: renovam as que estão vencendo, cercam os pastos abertos e entram na Justiça quando um vizinho cerca a sua terra.
+
+- **Conviver:** cerca elétrica na borda, compensação, cotas de reserva, manejo de javaporcos e expansão só dentro da lei.
 - **Desmatar legal:** abre pasto até o limite da reserva.
-- **Passiva:** só repõe animais.
+- **Grileiro:** usa as três ações de cada estação para cercar a terra aberta dos vizinhos.
+- **Passiva:** só repõe animais e não renova as cercas.
 - **Abater:** chama o matador após cada ataque.
-- **Desmatar e abater:** combina as duas anteriores.
+- **Desmatar e abater:** combina desmate e matador.
 
 Vitória (%) e patrimônio médio (R$ mil):
 
-| Bioma    | Conviver | Desmatar legal | Passiva | Abater | Desmatar e abater |
-|----------|---------:|---------------:|--------:|-------:|------------------:|
-| Pantanal | 67% · 504 | 0% · 153 | 0% · 122 | 0% · 72 | 0% · 90 |
-| Amazônia | 87% · 515 | 9% · 305 | 9% · 304 | 0% · 159 | 0% · 22 |
-| Cerrado  | 60% · 773 | 10% · 485 | 0% · 350 | 0% · 203 | 0% · 239 |
-| Caatinga | 9% · 240 | 67% · 320 | 45% · 293 | 2% · 160 | 0% · 162 |
-| Araripe  | 60% · 699 | 78% · 786 | 0% · 485 | 0% · 284 | 0% · 275 |
+| Bioma    | Conviver | Desmatar legal | Grileiro | Passiva | Abater | Desmatar e abater |
+|----------|---------:|---------------:|---------:|--------:|-------:|------------------:|
+| Pantanal | 58% · 411 | 0% · 122 | 0% · 25 | 1% · 209 | 0% · 61 | 0% · 69 |
+| Amazônia | 99% · 498 | 15% · 296 | 0% · 46 | 2% · 258 | 2% · 157 | 0% · 6 |
+| Cerrado  | 38% · 608 | 4% · 366 | 0% · 62 | 0% · 280 | 0% · 158 | 0% · 176 |
+| Caatinga | 78% · 248 | 97% · 288 | 0% · 33 | 26% · 211 | 4% · 142 | 9% · 173 |
+| Araripe  | 43% · 639 | 36% · 620 | 0% · 55 | 0% · 277 | 0% · 238 | 0% · 249 |
 
-Onde há javaporcos, "conviver" inclui chamar os caçadores de manejo quando os porcos ocupam mais de 30% da capacidade. Sem o manejo, a mesma estratégia cai para 10% de vitórias no Pantanal, 68% na Amazônia e 2% no Cerrado. No Araripe, desmatar dentro da Zona de Produção é o que mais rende ao fazendeiro. O soldadinho termina com 75% a 81% da população inicial, pressionado pelo fogo e pelo desmate no alto da chapada.
+A grilagem não compensa: o grileiro perde o selo logo na primeira área, paga de R$ 90 mil a R$ 185 mil em multas e termina com uma fração do patrimônio da estratégia passiva. Mesmo a grilagem ocasional pesa: a estratégia "conviver" que cerca o pasto aberto de um vizinho sempre que aparece um cai de 58% para 26% de vitórias no Pantanal e de 38% para 16% no Cerrado. Nos outros biomas, os vizinhos quase não deixam pasto aberto. Do outro lado, quem não cuida das cercas perde terra: com a estratégia passiva, os vizinhos terminam a partida com 0,5 a 1,9 área sua cercada, e as cercas que apodrecem forçam a venda dos animais.
 
-Na Caatinga há poucos jaguares e poucos ataques. Lá, desmatar até o limite legal rende mais ao fazendeiro, enquanto a população de jaguares cai de 3 para cerca de 1,5 em dez anos.
+Onde há javaporcos, "conviver" inclui chamar os caçadores de manejo quando os porcos ocupam mais de 30% da capacidade. Sem o manejo, a mesma estratégia cai para 16% de vitórias no Pantanal, 88% na Amazônia e 4% no Cerrado. No Araripe, conviver e desmatar dentro da Zona de Produção rendem quase o mesmo. O soldadinho termina com cerca de 84% da população inicial, pressionado pelo fogo e pelo desmate no alto da chapada.
+
+Na Caatinga há poucos jaguares e poucos ataques. Lá, desmatar até o limite legal rende mais ao fazendeiro, enquanto a população de jaguares cai de 3 para cerca de 2 em dez anos.
 
 ## Referências
 
 AZEVEDO, F. C. et al. Avaliação do risco de extinção da onça-parda *Puma concolor* (Linnaeus, 1771) no Brasil. **Biodiversidade Brasileira**, v. 3, n. 1, p. 107-121, 2013.
+
+BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940. Código Penal. Art. 161 (alteração de limites). Rio de Janeiro, 1940.
+
+BRASIL. Lei nº 4.947, de 6 de abril de 1966. Fixa normas de direito agrário. Art. 20 (invasão de terras públicas). Brasília, DF, 1966.
 
 BRASIL. Lei nº 9.605, de 12 de fevereiro de 1998. Dispõe sobre as sanções penais e administrativas derivadas de condutas e atividades lesivas ao meio ambiente. Brasília, DF, 1998.
 
@@ -189,6 +225,11 @@ REALTIME1. Exóticos e perigosos, javalis estão nas portas do Amazonas. 23 out.
 ROSENZWEIG, M. L.; MACARTHUR, R. H. Graphical representation and stability conditions of predator-prey interactions. **The American Naturalist**, v. 97, n. 895, p. 209-223, 1963.
 
 VOLTERRA, V. Fluctuations in the abundance of a species considered mathematically. **Nature**, v. 118, p. 558-560, 1926.
+
+## Licença
+
+- **Código:** licença MIT. Veja [LICENSE](LICENSE).
+- **Textos e ilustrações:** licença [Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br). Veja [LICENSE-CONTEUDO.md](LICENSE-CONTEUDO.md), que diz o que essa licença cobre e como dar o crédito.
 
 ## Créditos
 

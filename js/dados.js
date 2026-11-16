@@ -10,11 +10,20 @@ export const ESPECIES = {
 };
 export const GALINHA = { nome: 'lote de galinhas', plural: 'lotes de galinhas', compra: 4, venda: 3, renda: 1, repro: 0.3, cap: 6 };
 
-export const CUSTOS = { desmatar: 8, reflorestar: 5, cerca: 10, guarda: 8, curral: 4, telar: 6, ampliar: 6,
+export const CUSTOS = { desmatar: 8, reflorestar: 5, cerca: 5, justica: 3, guarda: 8, curral: 4, telar: 6, ampliar: 6,
                         camera: 4, colar: 12, matador: 8, seguro: 0, cra: 5, manejo: 5, aceiro: 3 };
 export const CRA_POR_CELULA = 0.5;  // renda por célula de vegetação nativa acima da reserva legal, por estação
 export const MANUTENCAO = { pasto: 1, cerca: 1, seguro: 2 };
-export const MULTA = { desmateCelula: 12, abate: 40, abateReserva: 80, app: 30, zona: 20 };
+export const MULTA = { desmateCelula: 12, abate: 40, abateReserva: 80, app: 30, zona: 20, grilagem: 15, grilagemUC: 40 };
+// Cercas: a posse de cada área é de quem a cercou. O custo é por lado exposto do hexágono (lado que não encosta
+// em outra área cercada pela mesma fazenda). Estacas da mata vêm do próprio desmate; madeira e concreto se compram.
+export const CERCAS = {
+  nativa:   { nome: 'estacas da mata', preco: 0,   validade: 6 },
+  madeira:  { nome: 'madeira tratada', preco: 1.2, validade: 10 },
+  concreto: { nome: 'concreto',        preco: 2.5, validade: 999 },
+};
+export const ESTACAS_DESMATE = { mata: 4, capoeira: 2, campo: 0 }; // lotes de estacas (um lote cerca um lado)
+export const JUSTICA = { base: 0.15, uc: 0.3, acionada: 0.6 };    // chance por estação de a Justiça devolver uma área grilada
 export const SELO_BONUS = 0.2;        // selo de pecuária que convive com o predador: +20% na receita e no valor do rebanho
 export const VENDA_FORCADA = 0.6;     // excesso de animais vendido às pressas
 export const JUROS_DIVIDA = 0.1;

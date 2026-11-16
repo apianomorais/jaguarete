@@ -1,11 +1,11 @@
 // Interface do jogo no navegador: mapa SVG, painel, relatórios e gráficos.
 import * as M from './motor.js';
-import { BIOMAS, ESPECIES, GALINHA, CUSTOS, FAZENDAS, RODADAS, TIPOS, W, H, MAX_CAMERAS, SELO_BONUS, CRA_POR_CELULA } from './dados.js';
+import { BIOMAS, ESPECIES, GALINHA, CUSTOS, FAZENDAS, RODADAS, TIPOS, W, H, MAX_CAMERAS, SELO_BONUS, CRA_POR_CELULA, CERCAS } from './dados.js';
 import { NATUREZA, dicaDaEstacao, COMO_JOGAR } from './textos.js';
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const reais = v => `R$ ${Math.round(v).toLocaleString('pt-BR')} mil`;
+const reais = v => `R$ ${(Math.round(v * 10) / 10).toLocaleString('pt-BR')} mil`;
 const CHAVE = 'jaguarete-partida-v1';
 const plural = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
 const maiusc = s => s[0].toUpperCase() + s.slice(1);
@@ -72,7 +72,7 @@ function telaInicio() {
       <div>
         <div class="marca">Jagua<span>retê</span></div>
         <div class="subtitulo">no reino do jaguar</div>
-        <p>Você cria bois, carneiros e galinhas numa fazenda cercada de mata. Na mata vivem os jaguares, que ninguém vê. Eles caçam capivaras e queixadas e, quando a caça falta, vêm ao seu pasto. Abra pasto, proteja o rebanho, conte os jaguares ou chame o matador: em dez anos, vence quem juntar mais patrimônio.</p>
+        <p>Você cria bois, carneiros e galinhas numa fazenda cercada de mata. Na mata vivem os jaguares, que ninguém vê. Eles caçam capivaras e queixadas e, quando a caça falta, vêm ao seu pasto. Abra pasto, cerque a sua terra antes que um vizinho a cerque, proteja o rebanho, conte os jaguares ou chame o matador: em dez anos, vence quem juntar mais patrimônio.</p>
       </div>
       <div class="nota">presas sobem, jaguares sobem,<br>presas caem, jaguares caem…<br>e o seu rebanho no meio.</div>
     </div>
@@ -98,6 +98,7 @@ function telaInicio() {
     <div class="regras">
       ${COMO_JOGAR.map(([t, p]) => `<div><h3>${t}</h3><p>${esc(p)}</p></div>`).join('')}
     </div>
+    <p class="licenca">Código sob licença <a href="https://opensource.org/license/mit" target="_blank" rel="noopener">MIT</a>. Textos e ilustrações sob licença <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener">CC BY 4.0</a>. Concepção de Apiano Ferreira Morais.</p>
   </div>`;
   document.querySelectorAll('.bioma').forEach(b => b.onclick = () => { biomaEscolhido = b.dataset.bioma; telaInicio(); });
   $('#comecar').onclick = () => comecar(biomaEscolhido);
@@ -177,7 +178,9 @@ function renderLegenda() {
 ` : ''}
     ${M.bioma(st).javaporco ? `<span><svg><use href="#i-fucado" style="color:var(--javaporco)"/></svg>Sinal de ${M.bioma(st).javaporco.nome}</span>` : ''}
     ${M.bioma(st).mesopredador ? `<span><svg><use href="#i-raposa" style="color:var(--raposa)"/></svg>Raposa no galinheiro</span>` : ''}
-    <span><i style="background:none;border:2.5px solid var(--voce)"></i>Sua divisa</span>
+    <span><svg><line x1="0" y1="7" x2="14" y2="7" stroke="var(--voce)" stroke-width="3.5"/></svg>Sua cerca</span>
+    <span><svg><line x1="0" y1="7" x2="14" y2="7" stroke="var(--voce)" stroke-width="1.6" stroke-dasharray="1.5 2.5"/></svg>Divisa do título</span>
+    <span><svg><rect width="14" height="14" fill="var(--pasto)"/><path d="M0 14 14 0M-4 8 8 -4M6 18 18 6" stroke="var(--perigo)" stroke-width="2"/></svg>Área grilada</span>
     <span><i style="background:none;border:2px dotted var(--onca-tinta)"></i>${M.bioma(st).mapa === 'araripe' ? 'Unidade de conservação' : 'Reserva'}</span>`;
 }
 
@@ -189,11 +192,11 @@ function renderMapa() {
   const visiveis = M.oncasVisiveis(st);
   const pegadas = new Set(st.vistos.pegadas), fucados = new Set(st.vistos.fucados || []);
   const parda = B.predador.f;
-  let celulas = '', contornos = '', marcadores = '';
+  let celulas = '', contornos = '', cercas = '', marcadores = '';
   for (const c of st.celulas) {
     const x = cx(c.id), y = cy(c.id);
     const alagado = c.tipo === 'campo' && B.evento === 'cheia' && est === 'chuva';
-    const classes = ['cel', c.queimado ? 'queimado' : '', sel === c.id ? 'sel' : '', moverDe != null && c.dono === 0 && M.pastejavel(c) && c.id !== moverDe ? 'alvo' : ''].join(' ');
+    const classes = ['cel', c.queimado ? 'queimado' : '', sel === c.id ? 'sel' : '', moverDe != null && c.cercaDe === 0 && M.pastejavel(c) && c.id !== moverDe ? 'alvo' : ''].join(' ');
     let g = `<g class="${classes}" data-id="${c.id}" tabindex="-1"><polygon class="base t-${c.tipo}${alagado ? ' alagado' : ''}" points="${pts(cantos(c.id))}"/>`;
     g += glifos(c, x, y);
     if (c.zona === 'moderado' || c.zona === 'restrito') g += `<polygon points="${pts(cantos(c.id, S - 1))}" fill="url(#z-${c.zona})" pointer-events="none"/>`;
@@ -202,12 +205,13 @@ function renderMapa() {
     // crachá de animais
     const qtd = c.tipo === 'sede' ? st.fazendas[c.dono].galinhas : c.n;
     const icone = c.tipo === 'sede' ? 'i-galinha' : c.especie ? `i-${c.especie}` : null;
-    if (icone && (qtd || c.tipo === 'sede') && (c.dono === 0 || c.n || c.tipo === 'sede')) {
+    if (icone && (qtd || c.tipo === 'sede') && (M.posse(c) === 0 || c.n || c.tipo === 'sede')) {
       const yy = c.tipo === 'sede' ? y + 7 : y - 1;
       g += `<g class="cracha"><rect x="${x - 17}" y="${yy}" width="34" height="15" rx="7.5"/><use href="#${icone}" x="${x - 15}" y="${yy + 1.5}" width="12" height="12"/><text x="${x + 4}" y="${yy + 11.5}" text-anchor="middle">${qtd}</text></g>`;
     }
     // defesas
-    const def = [c.cerca && 'i-raio', c.guarda && 'i-guarda', c.curral && 'i-curral'].filter(Boolean);
+    const def = [c.eletrica && 'i-raio', c.guarda && 'i-guarda', c.curral && 'i-curral'].filter(Boolean);
+    if (M.grilada(c)) g += `<polygon points="${pts(cantos(c.id, S - 1))}" fill="url(#z-grilagem)" pointer-events="none"/>`;
     def.forEach((d, k) => { g += `<use href="#${d}" x="${x - def.length * 6 + k * 12}" y="${y - 19}" width="11" height="11" style="color:var(--tinta)"/>`; });
     if (c.camera === 0) g += `<g class="m-camera"><rect x="${x + 7}" y="${y - 19}" width="14" height="12" rx="3"/><use href="#i-camera" x="${x + 8}" y="${y - 18.5}" width="12" height="11" style="color:var(--tinta)"/></g>`;
     g += `<polygon class="selecao" points="${pts(cantos(c.id, S - 2.5))}"/></g>`;
@@ -217,7 +221,9 @@ function renderMapa() {
     for (let k = 0; k < 6; k++) {
       const v = vizinhoAresta(c.id, k), o = v == null ? null : st.celulas[v];
       const [a, b] = [cs[k], cs[(k + 1) % 6]];
-      if (c.dono >= 0 && (!o || o.dono !== c.dono)) contornos += `<line class="contorno f${c.dono}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"/>`;
+      const seg = `x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"`;
+      if (c.dono >= 0 && (!o || o.dono !== c.dono)) contornos += `<line class="divisa f${c.dono}" ${seg}/>`;
+      if (c.cercaDe >= 0 && (!o || o.cercaDe !== c.cercaDe)) cercas += `<line class="cerca-linha f${c.cercaDe} m-${c.material}${c.material !== 'concreto' && c.validade <= 2 ? ' vencendo' : ''}" ${seg}/>`;
       if (c.reserva && o && !o.reserva) contornos += `<line class="contorno reserva" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"/>`;
     }
     if (pegadas.has(c.id)) marcadores += `<g class="marcador m-pegada"><use href="#i-pegada" x="${x - 18}" y="${y + 2}" width="13" height="13"/></g>`;
@@ -246,8 +252,9 @@ function renderMapa() {
     nomes += `<text class="rotulo-mapa" x="${cx(centro)}" y="${cy(centro) + S * 1.5 + 9}" text-anchor="middle">Reserva</text>`;
   }
   const defs = `<defs><pattern id="z-moderado" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.3" fill="var(--superficie)" opacity=".75"/></pattern>
-    <pattern id="z-restrito" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--superficie)" stroke-width="1.6" opacity=".6"/></pattern></defs>`;
-  svg.innerHTML = defs + celulas + contornos + marcadores + nomes;
+    <pattern id="z-restrito" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--superficie)" stroke-width="1.6" opacity=".6"/></pattern>
+    <pattern id="z-grilagem" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="9" stroke="var(--perigo)" stroke-width="2.2" opacity=".55"/></pattern></defs>`;
+  svg.innerHTML = defs + celulas + contornos + cercas + marcadores + nomes;
 }
 function glifos(c, x, y) {
   const pseudo = k => ((c.id * 9301 + k * 49297) % 233280) / 233280;
@@ -270,7 +277,7 @@ function renderAbas() {
   $('#abas').innerHTML = ABAS.map(([id, nome]) => `<button role="tab" aria-selected="${aba === id}" data-aba="${id}">${nome}</button>`).join('');
   $('#abas').querySelectorAll('button').forEach(b => b.onclick = () => { aba = b.dataset.aba; armado = null; renderAbas(); renderPainel(); });
 }
-function excesso() { return M.celulasDe(st, 0).filter(c => M.pastejavel(c) && c.n).reduce((s, c) => s + Math.max(0, c.n - M.capacidade(st, c, c.especie)), 0); }
+function excesso() { return M.controladas(st, 0).filter(c => M.pastejavel(c) && c.n).reduce((s, c) => s + Math.max(0, c.n - M.capacidade(st, c, c.especie)), 0); }
 function renderRodape() {
   const F = st.fazendas[0];
   $('#rodape').innerHTML = st.fim
@@ -300,8 +307,18 @@ const COR_TIPO = { mata: 'var(--mata)', capoeira: 'var(--capoeira)', campo: 'var
 
 function painelArea() {
   if (sel == null) return '<p class="vazio">Toque numa área do mapa.</p>';
-  const c = st.celulas[sel], F = st.fazendas[0], B = M.bioma(st), minha = c.dono === 0;
+  const c = st.celulas[sel], F = st.fazendas[0], B = M.bioma(st), minha = M.posse(c) === 0;
   let h = `<div class="cab-cel"><span class="amostra" style="background:${COR_TIPO[c.tipo]}"></span><div><h3>${c.nascente ? 'Nascente' : TIPOS[c.tipo].nome}${c.tipo === 'capoeira' && c.regen ? ` <small class="rotulo">vira mata em ${c.regen}</small>` : ''}</h3><div class="rotulo">${esc(NOME_DONO(c))}</div></div></div>`;
+  if (c.tipo !== 'agua') {
+    const quem = f => f === 0 ? 'você' : st.fazendas[f].apelido;
+    h += `<div class="bloco">
+      <div class="linha-info"><span>Cerca</span>${c.tipo === 'sede' ? '<span>sede</span>' : c.cercaDe >= 0
+        ? `<b>${quem(c.cercaDe)} · ${CERCAS[c.material].nome}${c.material === 'concreto' ? ', permanente' : `, ${plural(c.validade, 'estação', 'estações')}`}</b>`
+        : '<span>sem cerca</span>'}</div>
+      ${M.grilada(c) ? `<div class="msg erro">Área grilada por ${quem(c.cercaDe)}: o título é ${c.reserva ? 'público' : `da ${st.fazendas[c.dono].nome}`}. A Justiça pode devolvê-la.</div>` : ''}
+      ${c.cercaDe < 0 && c.dono === 0 && c.tipo !== 'sede' ? '<p class="vazio" style="margin:0">Terra sua, mas aberta: um vizinho encostado pode cercá-la.</p>' : ''}
+    </div>`;
+  }
   if (c.zona || c.regiao || (B.mapa === 'araripe' && M.app(st, c))) h += `<div class="bloco">
       ${c.regiao ? `<div class="linha-info"><span>Paisagem</span><span>${{ chapada: 'alto da chapada', encosta: 'encosta úmida', vale: 'vale do Cariri' }[c.regiao]}</span></div>` : ''}
       ${c.zona ? `<div class="linha-info"><span>Plano de manejo</span><b>${NOME_ZONA[c.zona]}</b></div><p class="vazio" style="margin:0">${REGRA_ZONA[c.zona]}</p>` : ''}
@@ -316,9 +333,10 @@ function painelArea() {
       <div class="linha-info"><span>Capacidade nesta estação</span><span class="num">${capB} bois ou ${capC} carneiros</span></div>
       ${esp && c.n > M.capacidade(st, c, esp) ? `<div class="msg erro">Acima da capacidade nesta estação: ${plural(c.n - M.capacidade(st, c, esp), ESPECIES[esp].nome, ESPECIES[esp].plural)} serão vendidos às pressas, por 60% do valor, se não forem movidos ou vendidos antes.</div>` : ''}
       <div class="linha-info"><span>Risco de ataque</span><span>${borda ? (M.exposicao(st, c) || !c.n ? `<b style="color:var(--perigo)">na borda da mata</b>` : 'na borda') : '<span style="color:var(--ok)">longe da mata</span>'}</span></div>
-      ${c.cerca || c.guarda || c.curral ? `<div class="chips">${c.cerca ? '<span class="chip">cerca elétrica</span>' : ''}${c.guarda ? `<span class="chip">${B.id === 'pantanal' ? 'búfalos' : 'cães'} de guarda</span>` : ''}${c.curral ? '<span class="chip">curral noturno</span>' : ''}</div>` : ''}
+      ${c.eletrica || c.guarda || c.curral ? `<div class="chips">${c.eletrica ? '<span class="chip">cerca elétrica</span>' : ''}${c.guarda ? `<span class="chip">${B.id === 'pantanal' ? 'búfalos' : 'cães'} de guarda</span>` : ''}${c.curral ? '<span class="chip">curral noturno</span>' : ''}</div>` : ''}
     </div>`;
-    if (minha && !st.fim) {
+    if (minha && !st.fim && c.cercaDe !== 0) h += `<div class="msg">Cerque este pasto para pôr animais.</div>`;
+    if (minha && !st.fim && c.cercaDe === 0) {
       h += `<div class="bloco"><span class="rotulo">Mercado · não gasta ação</span><div class="botoes">`;
       const especies = esp ? [esp] : ['boi', 'carneiro'];
       for (const e of especies) {
@@ -362,20 +380,25 @@ function painelArea() {
         const perigo = a.acao === 'matador' || !!a.ilegal;
         const arm = armado && armado.acao === a.acao && armado.id === c.id;
         h += `<button class="acao ${perigo ? 'perigo' : ''} ${arm ? 'armado' : ''}" data-acao="${a.acao}" ${a.ok ? '' : 'disabled'}>
-          <span>${arm ? 'Toque de novo para confirmar' : esc(a.rotulo)}</span><span class="custo">${a.custo ? reais(a.custo) : 'grátis'}</span>
-          <small>${a.ok ? esc(dicaAcao(a.acao, c)) : esc(a.motivo)}</small></button>`;
+          <span>${arm ? 'Toque de novo para confirmar' : esc(a.rotulo)}</span><span class="custo">${a.material === 'nativa' ? `${a.lados} lotes` : a.custo ? reais(a.custo) : 'grátis'}</span>
+          <small>${a.ok ? esc(dicaAcao(a.acao, c, a)) : esc(a.motivo)}</small></button>`;
       }
       h += `</div>`;
-    } else if (c.dono > 0) h += `<p class="vazio">Terra de vizinho: você não pode agir aqui.</p>`;
+    } else if (M.posse(c) > 0) h += `<p class="vazio">Área cercada por vizinho: você não pode agir aqui.</p>`;
   }
   return h;
 }
-function dicaAcao(acao, c) {
-  const B = M.bioma(st);
+function dicaAcao(acao, c, a = {}) {
+  const B = M.bioma(st), F = st.fazendas[0];
+  const aviso = a.ilegal ? ' Grilagem: você perde o selo e a Justiça pode devolver a área e multar.' : '';
   return {
+    cercar_nativa: `Usa ${a.lados} lotes das estacas do seu desmate (você tem ${F.estacas}). Dura ${CERCAS.nativa.validade} estações.${aviso}`,
+    cercar_madeira: `${a.lados} lados de eucalipto tratado. Dura ${CERCAS.madeira.validade} estações.${aviso}`,
+    cercar_concreto: `${a.lados} lados de mourões de concreto. Permanente e não queima.${aviso}`,
+    justica: 'A chance de a Justiça devolver a área sobe para 60% na próxima estação.',
     desmatar: (() => { const il = M.desmateIlegal(st, 0, c.id); return !il ? `Vira pasto para ${M.capacidade(st, { ...c, tipo: 'pasto' }, 'boi')} bois. Menos mata, menos presas silvestres.` : `Ilegal (${il}). Você perde o selo e pode ser multado.`; })(),
     reflorestar: `Vira capoeira e, em ${B.regen} estações, mata.`,
-    cerca: 'Reduz em 80% o risco de ataque neste pasto. Manutenção de R$ 1 mil por estação.',
+    cerca: 'Eletrifica a cerca deste pasto: o risco de ataque cai 80%. Manutenção de R$ 1 mil por estação.',
     guarda: B.id === 'pantanal' ? 'Búfalos se defendem em grupo e protegem o gado: risco cai pela metade.' : `Cães latem e espantam ${art()} ${P().nome}: risco cai pela metade.`,
     curral: 'Rebanho recolhido à noite perto da sede: risco cai 60%.',
     telar: `Galinheiro fechado: ${mesoAtaca()} levam 70% menos galinhas.`,
@@ -393,7 +416,12 @@ function dicaAcao(acao, c) {
 function painelFazenda() {
   const F = st.fazendas[0], B = M.bioma(st), cab = M.cabecas(st, 0);
   const nat = M.nativaFrac(st, 0), folga = M.folgaReserva(st, 0);
-  const pastos = M.celulasDe(st, 0).filter(M.pastejavel);
+  const pastos = M.controladas(st, 0).filter(M.pastejavel);
+  const minhasCercas = st.celulas.filter(c => c.cercaDe === 0 && c.tipo !== 'sede');
+  const vencendo = minhasCercas.filter(c => c.material !== 'concreto' && c.validade <= 2).length;
+  const abertas = M.celulasDe(st, 0).filter(c => c.cercaDe < 0 && c.tipo !== 'agua' && c.tipo !== 'sede').length;
+  const tomadas = M.celulasDe(st, 0).filter(M.grilada).length;
+  const griladas = minhasCercas.filter(M.grilada).length;
   const expostos = pastos.filter(c => M.exposicao(st, c) > 0).length;
   return `
   <div class="bloco"><h3>Rebanho</h3>
@@ -402,6 +430,14 @@ function painelFazenda() {
     <div class="linha-info"><span>Galinhas</span><b class="num">${cab.galinha} lotes</b></div>
     <div class="linha-info"><span>Pastos expostos a ataques</span><b class="num">${expostos} de ${pastos.length}</b></div>
     <div class="linha-info"><span>Valor do rebanho</span><b class="num">${reais(M.valorRebanho(st, 0))}</b></div>
+  </div>
+  <div class="bloco"><h3>Terra e cercas</h3>
+    <div class="linha-info"><span>Estacas da mata em estoque</span><b class="num">${plural(F.estacas, 'lote', 'lotes')}</b></div>
+    <div class="linha-info"><span>Áreas cercadas por você</span><b class="num">${minhasCercas.length}</b></div>
+    <div class="linha-info"><span>Cercas que vencem em até 2 estações</span><b class="num" style="color:${vencendo ? 'var(--aviso)' : 'inherit'}">${vencendo}</b></div>
+    <div class="linha-info"><span>Áreas suas sem cerca</span><b class="num">${abertas}</b></div>
+    <div class="linha-info"><span>Áreas suas griladas por vizinhos</span><b class="num" style="color:${tomadas ? 'var(--perigo)' : 'inherit'}">${tomadas}</b></div>
+    ${griladas ? `<div class="linha-info"><span>Áreas que você grilou</span><b class="num" style="color:var(--perigo)">${griladas}</b></div>` : ''}
   </div>
   <div class="bloco"><h3>Reserva legal</h3>
     <div class="barra" title="Vegetação nativa na fazenda"><i style="width:${(nat * 100).toFixed(0)}%"></i><b style="left:${B.reservaLegal * 100}%"></b></div>
