@@ -11,10 +11,11 @@ export const ESPECIES = {
 export const GALINHA = { nome: 'lote de galinhas', plural: 'lotes de galinhas', compra: 4, venda: 3, renda: 1, repro: 0.3, cap: 6 };
 
 export const CUSTOS = { desmatar: 8, reflorestar: 5, cerca: 5, justica: 3, guarda: 8, curral: 4, telar: 6, ampliar: 6,
-                        camera: 4, colar: 12, matador: 8, seguro: 0, cra: 5, manejo: 5, aceiro: 3 };
+                        camera: 4, colar: 12, matador: 8, seguro: 0, cra: 5, manejo: 5, aceiro: 3,
+                        derrubar: 0, derrubarConcreto: 10, recolher: 2 };
 export const CRA_POR_CELULA = 0.5;  // renda por célula de vegetação nativa acima da reserva legal, por estação
 export const MANUTENCAO = { pasto: 1, cerca: 1, seguro: 2 };
-export const MULTA = { desmateCelula: 12, abate: 40, abateReserva: 80, app: 30, zona: 20, grilagem: 15, grilagemUC: 40 };
+export const MULTA = { desmateCelula: 12, abate: 40, abateReserva: 80, app: 30, zona: 20, grilagem: 15, grilagemUC: 40, dano: 10, indenizacao: 10 };
 // Cercas: a posse de cada área é de quem a cercou. O custo é por lado exposto do hexágono (lado que não encosta
 // em outra área cercada pela mesma fazenda). Estacas da mata vêm do próprio desmate; madeira e concreto se compram.
 export const CERCAS = {
@@ -23,7 +24,14 @@ export const CERCAS = {
   concreto: { nome: 'concreto',        preco: 2.5, validade: 999 },
 };
 export const ESTACAS_DESMATE = { mata: 4, capoeira: 2, campo: 0 }; // lotes de estacas (um lote cerca um lado)
-export const JUSTICA = { base: 0.15, uc: 0.3, acionada: 0.6 };    // chance por estação de a Justiça devolver uma área grilada
+// chance por estação de a Justiça decidir: devolver uma área grilada (base, uc) ou condenar quem derrubou uma cerca (dano);
+// com processo aberto pela vítima, a chance sobe para "acionada". Processos de dano não decididos em "prazoDano" estações se encerram.
+export const JUSTICA = { base: 0.15, uc: 0.3, acionada: 0.6, dano: 0.2, prazoDano: 6 };
+export const DESFORCO = 1;            // estações em que o dono pode derrubar a cerca de quem grilou a sua terra sem cometer crime
+// Animais soltos (cerca derrubada ou caída): a cada estação cada animal vai para uma área aberta vizinha com chance "difusao",
+// some com chance "extravio", e fica mais exposto aos predadores na mata ("mata" multiplica a exposição).
+export const SOLTOS = { difusao: 0.5, extravio: 0.1, mata: 2 };
+export const SELO_VOLTA = 4;          // estações sem nova infração para recuperar o selo (dois anos)
 export const SELO_BONUS = 0.2;        // selo de pecuária que convive com o predador: +20% na receita e no valor do rebanho
 export const VENDA_FORCADA = 0.6;     // excesso de animais vendido às pressas
 export const JUROS_DIVIDA = 0.1;

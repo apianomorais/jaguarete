@@ -1,34 +1,58 @@
 {
  "pantanal": {
   "passiva": {
-   "vitoria": 1,
-   "patrimonio": 209,
+   "vitoria": 0,
+   "patrimonio": 172,
    "ia": [
-    56,
-    382,
-    203
+    73,
+    379,
+    232
    ],
-   "ataquesVoce": 5.3,
+   "ataquesVoce": 8,
    "ataquesIA": [
-    4.9,
-    6.8,
-    4.2
+    5.3,
+    7.3,
+    5
    ],
-   "abates": 1.4,
+   "abates": 1.8,
    "oncasFim": 11.6,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.6,
+    0.7,
     0,
     0.1
    ],
-   "perdidasVoce": 0.6,
+   "perdidasVoce": 0.7,
+   "extraviados": [
+    1,
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    0,
+    1.2,
+    0.1,
+    6.3
+   ],
+   "sofreu": [
+    0.3,
+    6.1,
+    0.2,
+    1
+   ],
+   "seloFim": [
+    100,
+    23,
+    100,
+    70
+   ],
    "multasMedia": [
     0,
-    92,
+    57,
     0,
-    28
+    15
    ],
    "soldadinho": null,
    "javaporcoFim": 0.29,
@@ -37,18 +61,18 @@
     9.8,
     12.9,
     14.5,
-    13.8,
-    11.9,
+    13.9,
+    12,
     10.4,
     9.8,
-    10.1,
+    10,
     10.8,
     11.6
    ],
    "Nmedio": [
     0.55,
     0.61,
-    0.53,
+    0.54,
     0.41,
     0.31,
     0.27,
@@ -61,43 +85,67 @@
   },
   "grileiro": {
    "vitoria": 0,
-   "patrimonio": 25,
+   "patrimonio": 41,
    "ia": [
-    54,
-    371,
-    206
+    84,
+    342,
+    230
    ],
-   "ataquesVoce": 4.3,
+   "ataquesVoce": 5.4,
    "ataquesIA": [
-    5.1,
-    7.8,
-    4.6
+    5.7,
+    9.7,
+    5
    ],
-   "abates": 1.5,
+   "abates": 2.1,
    "oncasFim": 11.7,
    "extincao": 0,
    "griladasFim": [
-    0.3,
-    0.3,
+    0.2,
+    0.2,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    92,
-    90,
+   "perdidasVoce": 0.1,
+   "extraviados": [
     0,
-    27
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.6,
+    3.5,
+    10.8,
+    6.6
+   ],
+   "sofreu": [
+    13.2,
+    8,
+    0.2,
+    1.1
+   ],
+   "seloFim": [
+    23,
+    25,
+    100,
+    70
+   ],
+   "multasMedia": [
+    33,
+    40,
+    0,
+    14
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.3,
+   "javaporcoFim": 0.29,
    "Jmedio": [
     7,
     9.8,
     12.9,
-    14.6,
-    13.8,
-    12,
+    14.7,
+    14,
+    12.1,
     10.4,
     9.7,
     10,
@@ -109,44 +157,68 @@
     0.61,
     0.54,
     0.41,
-    0.3,
-    0.27,
+    0.31,
+    0.26,
     0.28,
-    0.34,
+    0.33,
     0.39,
     0.42,
     0.41
    ]
   },
   "conviver": {
-   "vitoria": 58.3,
-   "patrimonio": 411,
+   "vitoria": 60.3,
+   "patrimonio": 407,
    "ia": [
-    54,
-    382,
-    193
+    73,
+    379,
+    226
    ],
-   "ataquesVoce": 8,
+   "ataquesVoce": 8.4,
    "ataquesIA": [
-    4.8,
-    6.6,
-    4.3
+    5,
+    7,
+    4.8
    ],
-   "abates": 1.4,
-   "oncasFim": 11.1,
+   "abates": 1.9,
+   "oncasFim": 11,
    "extincao": 0,
    "griladasFim": [
     0,
     0.2,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.1,
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    1.7,
+    1.3,
+    0.1,
+    7
+   ],
+   "sofreu": [
+    0.4,
+    8.5,
+    0.2,
+    1
+   ],
+   "seloFim": [
+    100,
+    20,
+    100,
+    72
+   ],
    "multasMedia": [
     0,
-    95,
+    45,
     0,
-    27
+    15
    ],
    "soldadinho": null,
    "javaporcoFim": 0.27,
@@ -154,14 +226,14 @@
     7,
     9.7,
     12.7,
-    14.3,
+    14.2,
     13.6,
     11.8,
-    10.3,
+    10.4,
     9.7,
     9.9,
-    10.5,
-    11.1
+    10.4,
+    11
    ],
    "Nmedio": [
     0.55,
@@ -171,7 +243,7 @@
     0.32,
     0.28,
     0.3,
-    0.35,
+    0.34,
     0.4,
     0.43,
     0.42
@@ -179,57 +251,81 @@
   },
   "desmatar_abater": {
    "vitoria": 0,
-   "patrimonio": 69,
+   "patrimonio": 77,
    "ia": [
-    54,
-    372,
-    192
+    75,
+    376,
+    217
    ],
-   "ataquesVoce": 7.2,
+   "ataquesVoce": 7.8,
    "ataquesIA": [
-    5.2,
-    7.6,
-    4.8
+    5.8,
+    7.5,
+    5.3
    ],
-   "abates": 4.8,
-   "oncasFim": 11.3,
+   "abates": 5.8,
+   "oncasFim": 11.2,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.2,
     0,
-    0.2
+    0.1
    ],
    "perdidasVoce": 0.2,
-   "multasMedia": [
-    33,
-    93,
+   "extraviados": [
     0,
-    27
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    1.4,
+    0.8,
+    0.1,
+    6.8
+   ],
+   "sofreu": [
+    0,
+    8.1,
+    0.1,
+    0.9
+   ],
+   "seloFim": [
+    59,
+    23,
+    100,
+    66
+   ],
+   "multasMedia": [
+    34,
+    43,
+    0,
+    18
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.3,
+   "javaporcoFim": 0.29,
    "Jmedio": [
     7,
     9.5,
     12.4,
-    14.1,
+    13.9,
     13.8,
-    12.3,
-    10.9,
-    10.1,
-    10.1,
-    10.7,
-    11.3
+    12.4,
+    11.1,
+    10.2,
+    10.2,
+    10.6,
+    11.2
    ],
    "Nmedio": [
     0.55,
     0.61,
     0.56,
-    0.44,
-    0.34,
-    0.29,
-    0.29,
+    0.45,
+    0.35,
+    0.3,
+    0.3,
     0.33,
     0.38,
     0.41,
@@ -238,46 +334,70 @@
   },
   "abater": {
    "vitoria": 0,
-   "patrimonio": 61,
+   "patrimonio": 70,
    "ia": [
-    56,
-    377,
-    198
+    75,
+    372,
+    216
    ],
-   "ataquesVoce": 6.9,
+   "ataquesVoce": 7.2,
    "ataquesIA": [
-    5.2,
-    7.5,
-    4.7
+    5.8,
+    7.6,
+    5.5
    ],
-   "abates": 4.9,
+   "abates": 5.6,
    "oncasFim": 11.4,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.2,
     0,
     0.2
    ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    34,
-    90,
+   "perdidasVoce": 0.1,
+   "extraviados": [
     0,
-    26
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.4,
+    1,
+    0.1,
+    6.6
+   ],
+   "sofreu": [
+    0,
+    7.9,
+    0.1,
+    1.1
+   ],
+   "seloFim": [
+    64,
+    24,
+    100,
+    69
+   ],
+   "multasMedia": [
+    38,
+    46,
+    0,
+    15
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.31,
+   "javaporcoFim": 0.3,
    "Jmedio": [
     7,
     9.5,
     12.4,
-    14.2,
-    14,
-    12.4,
-    11,
-    10.1,
-    10.1,
+    14.1,
+    13.9,
+    12.5,
+    11.1,
+    10.3,
+    10.2,
     10.7,
     11.4
    ],
@@ -291,54 +411,78 @@
     0.29,
     0.32,
     0.37,
-    0.41,
+    0.4,
     0.41
    ]
   },
   "oportunista": {
-   "vitoria": 26.3,
-   "patrimonio": 312,
+   "vitoria": 44,
+   "patrimonio": 368,
    "ia": [
-    53,
-    384,
-    195
+    73,
+    381,
+    225
    ],
-   "ataquesVoce": 7.2,
+   "ataquesVoce": 7.8,
    "ataquesIA": [
-    4.8,
-    6.8,
-    4.2
+    5.1,
+    7.2,
+    4.8
    ],
-   "abates": 1.4,
-   "oncasFim": 11.2,
+   "abates": 1.9,
+   "oncasFim": 11.1,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.2,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    16,
-    96,
+   "perdidasVoce": 0.1,
+   "extraviados": [
     0,
-    26
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    1.6,
+    1.8,
+    0.8,
+    6.9
+   ],
+   "sofreu": [
+    1.6,
+    8.4,
+    0.2,
+    1
+   ],
+   "seloFim": [
+    98,
+    19,
+    100,
+    68
+   ],
+   "multasMedia": [
+    3,
+    44,
+    0,
+    15
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.26,
+   "javaporcoFim": 0.27,
    "Jmedio": [
     7,
     9.7,
     12.7,
     14.3,
-    13.6,
+    13.7,
     11.8,
-    10.3,
+    10.4,
     9.7,
     9.9,
-    10.6,
-    11.2
+    10.5,
+    11.1
    ],
    "Nmedio": [
     0.55,
@@ -346,89 +490,30 @@
     0.53,
     0.41,
     0.32,
-    0.27,
-    0.29,
+    0.28,
+    0.3,
     0.34,
     0.4,
-    0.42,
+    0.43,
     0.42
    ]
   },
-  "conviver_sem_manejo": {
-   "vitoria": 16,
-   "patrimonio": 283,
+  "sabotador": {
+   "vitoria": 31.3,
+   "patrimonio": 291,
    "ia": [
-    56,
-    382,
-    206
+    75,
+    363,
+    227
    ],
-   "ataquesVoce": 6.1,
-   "ataquesIA": [
-    5,
-    7,
-    4.3
-   ],
-   "abates": 1.4,
-   "oncasFim": 11.1,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    0,
-    94,
-    0,
-    26
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.3,
-   "Jmedio": [
-    7,
-    9.7,
-    12.9,
-    14.4,
-    13.6,
-    11.8,
-    10.3,
-    9.6,
-    9.8,
-    10.5,
-    11.1
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.53,
-    0.41,
-    0.31,
-    0.27,
-    0.29,
-    0.35,
-    0.4,
-    0.43,
-    0.43
-   ]
-  },
-  "desmatar_legal": {
-   "vitoria": 0,
-   "patrimonio": 122,
-   "ia": [
-    55,
-    380,
-    202
-   ],
-   "ataquesVoce": 12.2,
+   "ataquesVoce": 7.2,
    "ataquesIA": [
     5.1,
-    7.2,
-    4.4
+    8.3,
+    4.9
    ],
-   "abates": 1.5,
-   "oncasFim": 11.5,
+   "abates": 2,
+   "oncasFim": 11.2,
    "extincao": 0,
    "griladasFim": [
     0,
@@ -437,26 +522,216 @@
     0.2
    ],
    "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    5.7,
+    1.2,
+    0.1,
+    7
+   ],
+   "sofreu": [
+    0.3,
+    8.5,
+    4.2,
+    1.1
+   ],
+   "seloFim": [
+    55,
+    23,
+    100,
+    68
+   ],
    "multasMedia": [
+    39,
+    43,
     0,
-    95,
-    0,
-    27
+    14
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.3,
+   "javaporcoFim": 0.27,
    "Jmedio": [
     7,
+    9.7,
+    12.7,
+    14.3,
+    13.7,
+    11.9,
+    10.4,
     9.8,
-    12.8,
+    9.9,
+    10.5,
+    11.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.41,
+    0.32,
+    0.28,
+    0.29,
+    0.34,
+    0.39,
+    0.42,
+    0.42
+   ]
+  },
+  "sabotador_pontual": {
+   "vitoria": 54.3,
+   "patrimonio": 394,
+   "ia": [
+    74,
+    377,
+    226
+   ],
+   "ataquesVoce": 8.2,
+   "ataquesIA": [
+    5,
+    7.1,
+    4.8
+   ],
+   "abates": 2,
+   "oncasFim": 11,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.2,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0,
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    2.1,
+    1.3,
+    0.1,
+    7.1
+   ],
+   "sofreu": [
+    0.3,
+    8.7,
+    0.5,
+    1
+   ],
+   "seloFim": [
+    100,
+    19,
+    100,
+    71
+   ],
+   "multasMedia": [
+    4,
+    44,
+    0,
+    14
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.27,
+   "Jmedio": [
+    7,
+    9.7,
+    12.7,
     14.3,
     13.6,
     11.8,
     10.4,
     9.7,
-    10.1,
-    10.8,
-    11.5
+    9.9,
+    10.5,
+    11
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.53,
+    0.41,
+    0.32,
+    0.28,
+    0.3,
+    0.34,
+    0.4,
+    0.43,
+    0.42
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 18.3,
+   "patrimonio": 287,
+   "ia": [
+    80,
+    379,
+    229
+   ],
+   "ataquesVoce": 6,
+   "ataquesIA": [
+    5.3,
+    6.9,
+    4.9
+   ],
+   "abates": 1.9,
+   "oncasFim": 11.1,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.2,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.7,
+    1.2,
+    0.1,
+    7.1
+   ],
+   "sofreu": [
+    0.1,
+    8.7,
+    0.1,
+    1.2
+   ],
+   "seloFim": [
+    100,
+    17,
+    100,
+    68
+   ],
+   "multasMedia": [
+    0,
+    43,
+    0,
+    14
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.3,
+   "Jmedio": [
+    7,
+    9.7,
+    12.8,
+    14.4,
+    13.7,
+    11.9,
+    10.3,
+    9.7,
+    9.8,
+    10.4,
+    11.1
    ],
    "Nmedio": [
     0.55,
@@ -468,41 +743,148 @@
     0.29,
     0.34,
     0.4,
+    0.43,
+    0.43
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 0.7,
+   "patrimonio": 120,
+   "ia": [
+    80,
+    376,
+    229
+   ],
+   "ataquesVoce": 12.3,
+   "ataquesIA": [
+    5.4,
+    7.3,
+    5
+   ],
+   "abates": 2.1,
+   "oncasFim": 11.4,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.2,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0,
+    0,
+    0.1,
+    0
+   ],
+   "derrubou": [
+    1.7,
+    1,
+    0,
+    7.1
+   ],
+   "sofreu": [
+    0,
+    8.6,
+    0.2,
+    1
+   ],
+   "seloFim": [
+    100,
+    21,
+    100,
+    71
+   ],
+   "multasMedia": [
+    0,
+    42,
+    0,
+    16
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.29,
+   "Jmedio": [
+    7,
+    9.8,
+    12.8,
+    14.3,
+    13.6,
+    11.9,
+    10.4,
+    9.8,
+    10,
+    10.7,
+    11.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.54,
+    0.41,
+    0.32,
+    0.28,
+    0.29,
+    0.34,
+    0.4,
     0.42,
-    0.41
+    0.42
    ]
   }
  },
  "amazonia": {
   "passiva": {
-   "vitoria": 2.3,
-   "patrimonio": 258,
+   "vitoria": 0,
+   "patrimonio": 200,
    "ia": [
-    98,
-    388,
-    224
+    137,
+    381,
+    278
    ],
-   "ataquesVoce": 8.4,
+   "ataquesVoce": 13.8,
    "ataquesIA": [
-    9.7,
-    4.6,
-    5.1
+    9.9,
+    4.8,
+    5.7
    ],
-   "abates": 2.2,
+   "abates": 2.7,
    "oncasFim": 8.5,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.8,
+    0.7,
     0,
     0.2
    ],
-   "perdidasVoce": 0.7,
+   "perdidasVoce": 0.6,
+   "extraviados": [
+    4.2,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0,
+    1,
+    0,
+    9.9
+   ],
+   "sofreu": [
+    0,
+    9.9,
+    0,
+    1
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    44
+   ],
    "multasMedia": [
     0,
-    140,
+    86,
     0,
-    51
+    33
    ],
    "soldadinho": null,
    "javaporcoFim": 0.33,
@@ -510,21 +892,21 @@
     6,
     8,
     10.3,
-    11.4,
-    10.9,
+    11.3,
+    11,
     9.7,
     8.4,
+    7.7,
     7.6,
-    7.5,
     7.9,
     8.5
    ],
    "Nmedio": [
     0.55,
     0.57,
-    0.5,
-    0.39,
-    0.3,
+    0.51,
+    0.4,
+    0.31,
     0.26,
     0.26,
     0.29,
@@ -535,33 +917,57 @@
   },
   "grileiro": {
    "vitoria": 0,
-   "patrimonio": 46,
+   "patrimonio": 65,
    "ia": [
-    92,
-    388,
-    232
+    142,
+    377,
+    271
    ],
-   "ataquesVoce": 10.2,
+   "ataquesVoce": 12.2,
    "ataquesIA": [
-    9.7,
-    5,
-    4.9
+    10.9,
+    7.6,
+    5.6
    ],
-   "abates": 2.1,
+   "abates": 2.9,
    "oncasFim": 8.5,
    "extincao": 0,
    "griladasFim": [
-    0.5,
-    0.5,
+    0.3,
+    0.2,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.3,
-   "multasMedia": [
-    155,
-    134,
+   "perdidasVoce": 0.1,
+   "extraviados": [
     0,
-    51
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.4,
+    3.9,
+    18.2,
+    8.6
+   ],
+   "sofreu": [
+    21.1,
+    10,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    13,
+    11,
+    100,
+    41
+   ],
+   "multasMedia": [
+    64,
+    71,
+    0,
+    35
    ],
    "soldadinho": null,
    "javaporcoFim": 0.33,
@@ -570,20 +976,20 @@
     8,
     10.3,
     11.4,
-    11,
-    9.7,
-    8.4,
-    7.7,
-    7.5,
+    11.1,
+    9.8,
+    8.5,
+    7.8,
+    7.6,
     7.9,
     8.5
    ],
    "Nmedio": [
     0.55,
     0.57,
-    0.5,
-    0.39,
-    0.3,
+    0.51,
+    0.4,
+    0.31,
     0.26,
     0.26,
     0.29,
@@ -596,103 +1002,151 @@
    "vitoria": 99,
    "patrimonio": 498,
    "ia": [
-    89,
-    385,
-    235
+    136,
+    384,
+    283
    ],
-   "ataquesVoce": 7.1,
+   "ataquesVoce": 7.6,
    "ataquesIA": [
-    9.2,
-    3.9,
-    4.8
+    9.4,
+    4,
+    5.5
    ],
-   "abates": 1.9,
+   "abates": 2.8,
    "oncasFim": 8.5,
    "extincao": 0,
    "griladasFim": [
     0,
     0.3,
     0,
-    0.2
+    0.1
    ],
    "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.8,
+    1,
+    0,
+    10
+   ],
+   "sofreu": [
+    0,
+    11.8,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    7,
+    100,
+    41
+   ],
    "multasMedia": [
     0,
-    144,
+    75,
     0,
-    51
+    30
    ],
    "soldadinho": null,
    "javaporcoFim": 0.35,
    "Jmedio": [
     6,
     8,
-    10.3,
+    10.2,
     11.3,
     10.9,
     9.6,
     8.4,
+    7.7,
     7.6,
-    7.5,
     7.9,
     8.5
    ],
    "Nmedio": [
     0.55,
     0.57,
-    0.5,
-    0.39,
-    0.3,
+    0.51,
+    0.4,
+    0.31,
     0.26,
-    0.26,
+    0.27,
     0.29,
-    0.34,
+    0.33,
     0.37,
     0.39
    ]
   },
   "desmatar_abater": {
    "vitoria": 0,
-   "patrimonio": 6,
+   "patrimonio": -5,
    "ia": [
-    84,
-    386,
-    219
+    123,
+    379,
+    262
    ],
-   "ataquesVoce": 11.8,
+   "ataquesVoce": 13.1,
    "ataquesIA": [
-    10.5,
-    4.9,
-    5.7
+    11.1,
+    5,
+    6.6
    ],
-   "abates": 5.1,
+   "abates": 6.2,
    "oncasFim": 8.4,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.6,
+    0.5,
     0,
-    0.3
+    0.2
    ],
-   "perdidasVoce": 0.5,
-   "multasMedia": [
-    193,
-    131,
+   "perdidasVoce": 0.4,
+   "extraviados": [
+    1,
     0,
-    49
+    0,
+    0
+   ],
+   "derrubou": [
+    0.9,
+    1.1,
+    0,
+    9.1
+   ],
+   "sofreu": [
+    0,
+    9.9,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    5,
+    9,
+    100,
+    41
+   ],
+   "multasMedia": [
+    191,
+    78,
+    0,
+    35
    ],
    "soldadinho": null,
    "javaporcoFim": 0.33,
    "Jmedio": [
     6,
     7.7,
-    9.8,
-    11,
+    9.7,
     10.9,
-    9.8,
-    8.7,
-    8,
-    7.7,
+    10.8,
+    9.9,
+    8.9,
+    8.1,
+    7.8,
     7.9,
     8.4
    ],
@@ -700,66 +1154,7 @@
     0.55,
     0.58,
     0.53,
-    0.43,
-    0.34,
-    0.29,
-    0.28,
-    0.3,
-    0.33,
-    0.37,
-    0.39
-   ]
-  },
-  "abater": {
-   "vitoria": 2.3,
-   "patrimonio": 157,
-   "ia": [
-    79,
-    379,
-    211
-   ],
-   "ataquesVoce": 14.3,
-   "ataquesIA": [
-    11.1,
-    5.4,
-    6.5
-   ],
-   "abates": 7.5,
-   "oncasFim": 8.6,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.4,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    58,
-    133,
-    0,
-    51
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.33,
-   "Jmedio": [
-    6,
-    7.7,
-    9.8,
-    11,
-    10.9,
-    9.9,
-    8.9,
-    8.2,
-    8,
-    8.2,
-    8.6
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.53,
-    0.43,
+    0.44,
     0.35,
     0.3,
     0.29,
@@ -769,21 +1164,21 @@
     0.38
    ]
   },
-  "oportunista": {
-   "vitoria": 99,
-   "patrimonio": 498,
+  "abater": {
+   "vitoria": 1.3,
+   "patrimonio": 155,
    "ia": [
-    89,
-    385,
-    235
+    120,
+    374,
+    251
    ],
-   "ataquesVoce": 7.1,
+   "ataquesVoce": 15,
    "ataquesIA": [
-    9.2,
-    3.9,
-    4.8
+    11.3,
+    5.6,
+    7
    ],
-   "abates": 1.9,
+   "abates": 8.4,
    "oncasFim": 8.5,
    "extincao": 0,
    "griladasFim": [
@@ -793,77 +1188,125 @@
     0.2
    ],
    "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.4,
+    1.1,
+    0,
+    8.8
+   ],
+   "sofreu": [
+    0,
+    10.2,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    24,
+    9,
+    100,
+    41
+   ],
+   "multasMedia": [
+    62,
+    76,
+    0,
+    40
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.32,
+   "Jmedio": [
+    6,
+    7.7,
+    9.7,
+    10.9,
+    10.8,
+    10,
+    9.1,
+    8.4,
+    8.1,
+    8.2,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.53,
+    0.44,
+    0.36,
+    0.31,
+    0.3,
+    0.31,
+    0.33,
+    0.36,
+    0.38
+   ]
+  },
+  "oportunista": {
+   "vitoria": 99,
+   "patrimonio": 498,
+   "ia": [
+    136,
+    384,
+    283
+   ],
+   "ataquesVoce": 7.6,
+   "ataquesIA": [
+    9.4,
+    4,
+    5.5
+   ],
+   "abates": 2.8,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.3,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.8,
+    1,
+    0,
+    10
+   ],
+   "sofreu": [
+    0,
+    11.8,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    7,
+    100,
+    41
+   ],
    "multasMedia": [
     0,
-    144,
+    75,
     0,
-    51
+    30
    ],
    "soldadinho": null,
    "javaporcoFim": 0.35,
    "Jmedio": [
     6,
     8,
-    10.3,
-    11.3,
-    10.9,
-    9.6,
-    8.4,
-    7.6,
-    7.5,
-    7.9,
-    8.5
-   ],
-   "Nmedio": [
-    0.55,
-    0.57,
-    0.5,
-    0.39,
-    0.3,
-    0.26,
-    0.26,
-    0.29,
-    0.34,
-    0.37,
-    0.39
-   ]
-  },
-  "conviver_sem_manejo": {
-   "vitoria": 88,
-   "patrimonio": 452,
-   "ia": [
-    95,
-    393,
-    233
-   ],
-   "ataquesVoce": 5.6,
-   "ataquesIA": [
-    9.5,
-    4.3,
-    4.7
-   ],
-   "abates": 2,
-   "oncasFim": 8.5,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.5,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.3,
-   "multasMedia": [
-    0,
-    142,
-    0,
-    51
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.32,
-   "Jmedio": [
-    6,
-    8,
-    10.3,
+    10.2,
     11.3,
     10.9,
     9.6,
@@ -876,55 +1319,245 @@
    "Nmedio": [
     0.55,
     0.57,
-    0.5,
-    0.39,
+    0.51,
+    0.4,
     0.31,
     0.26,
-    0.26,
+    0.27,
     0.29,
     0.33,
     0.37,
     0.39
    ]
   },
-  "desmatar_legal": {
-   "vitoria": 15.3,
-   "patrimonio": 296,
+  "sabotador": {
+   "vitoria": 99,
+   "patrimonio": 498,
    "ia": [
-    100,
-    396,
-    229
+    136,
+    384,
+    283
    ],
-   "ataquesVoce": 23.5,
+   "ataquesVoce": 7.6,
    "ataquesIA": [
-    9.1,
+    9.4,
     4,
-    4.7
+    5.5
    ],
-   "abates": 2,
+   "abates": 2.8,
    "oncasFim": 8.5,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.5,
+    0.3,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.3,
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.8,
+    1,
+    0,
+    10
+   ],
+   "sofreu": [
+    0,
+    11.8,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    7,
+    100,
+    41
+   ],
    "multasMedia": [
     0,
-    144,
+    75,
     0,
-    52
+    30
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.33,
+   "javaporcoFim": 0.35,
    "Jmedio": [
     6,
     8,
-    10.3,
+    10.2,
+    11.3,
+    10.9,
+    9.6,
+    8.4,
+    7.7,
+    7.6,
+    7.9,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.26,
+    0.27,
+    0.29,
+    0.33,
+    0.37,
+    0.39
+   ]
+  },
+  "sabotador_pontual": {
+   "vitoria": 99,
+   "patrimonio": 498,
+   "ia": [
+    136,
+    384,
+    283
+   ],
+   "ataquesVoce": 7.6,
+   "ataquesIA": [
+    9.4,
+    4,
+    5.5
+   ],
+   "abates": 2.8,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.3,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.8,
+    1,
+    0,
+    10
+   ],
+   "sofreu": [
+    0,
+    11.8,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    7,
+    100,
+    41
+   ],
+   "multasMedia": [
+    0,
+    75,
+    0,
+    30
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    6,
+    8,
+    10.2,
+    11.3,
+    10.9,
+    9.6,
+    8.4,
+    7.7,
+    7.6,
+    7.9,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.26,
+    0.27,
+    0.29,
+    0.33,
+    0.37,
+    0.39
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 93.3,
+   "patrimonio": 458,
+   "ia": [
+    139,
+    386,
+    266
+   ],
+   "ataquesVoce": 6.5,
+   "ataquesIA": [
+    9.8,
+    4.3,
+    5.8
+   ],
+   "abates": 2.8,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.2,
+    0,
+    0.2
+   ],
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.7,
+    1.1,
+    0,
+    9.7
+   ],
+   "sofreu": [
+    0,
     11.4,
-    11,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    7,
+    100,
+    40
+   ],
+   "multasMedia": [
+    0,
+    78,
+    0,
+    35
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.34,
+   "Jmedio": [
+    6,
+    8,
+    10.2,
+    11.3,
+    10.9,
     9.7,
     8.5,
     7.7,
@@ -935,10 +1568,93 @@
    "Nmedio": [
     0.55,
     0.57,
-    0.5,
-    0.39,
-    0.3,
+    0.51,
+    0.4,
+    0.31,
+    0.27,
     0.26,
+    0.29,
+    0.33,
+    0.37,
+    0.39
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 16.3,
+   "patrimonio": 294,
+   "ia": [
+    147,
+    388,
+    275
+   ],
+   "ataquesVoce": 24.4,
+   "ataquesIA": [
+    9.5,
+    4.3,
+    5.5
+   ],
+   "abates": 2.8,
+   "oncasFim": 8.5,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.3,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    1.9,
+    1,
+    0,
+    9.9
+   ],
+   "sofreu": [
+    0,
+    11.8,
+    0,
+    1
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    47
+   ],
+   "multasMedia": [
+    0,
+    79,
+    0,
+    35
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.33,
+   "Jmedio": [
+    6,
+    8,
+    10.2,
+    11.4,
+    11,
+    9.7,
+    8.5,
+    7.8,
+    7.6,
+    7.9,
+    8.5
+   ],
+   "Nmedio": [
+    0.55,
+    0.57,
+    0.51,
+    0.4,
+    0.31,
+    0.27,
     0.26,
     0.29,
     0.33,
@@ -950,33 +1666,57 @@
  "cerrado": {
   "passiva": {
    "vitoria": 0,
-   "patrimonio": 280,
+   "patrimonio": 231,
    "ia": [
-    124,
-    664,
-    324
+    146,
+    655,
+    372
    ],
-   "ataquesVoce": 4,
+   "ataquesVoce": 8.1,
    "ataquesIA": [
-    7.8,
-    7.6,
-    5.5
+    8.5,
+    8.1,
+    6.4
    ],
-   "abates": 1.9,
+   "abates": 2.2,
    "oncasFim": 5.5,
    "extincao": 0,
    "griladasFim": [
     0,
-    1,
+    0.6,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.8,
+   "perdidasVoce": 0.5,
+   "extraviados": [
+    5.1,
+    0.1,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    0,
+    1.8,
+    0,
+    8.9
+   ],
+   "sofreu": [
+    0.3,
+    8.7,
+    0.2,
+    1.5
+   ],
+   "seloFim": [
+    100,
+    11,
+    100,
+    73
+   ],
    "multasMedia": [
     0,
-    129,
+    72,
     0,
-    25
+    13
    ],
    "soldadinho": null,
    "javaporcoFim": 0.36,
@@ -985,11 +1725,11 @@
     4.7,
     5.7,
     6.4,
-    6.7,
-    6.7,
-    6.5,
-    6.1,
-    5.8,
+    6.8,
+    6.8,
+    6.6,
+    6.2,
+    5.9,
     5.6,
     5.5
    ],
@@ -998,115 +1738,163 @@
     0.61,
     0.61,
     0.57,
-    0.51,
+    0.52,
     0.47,
     0.45,
     0.44,
     0.45,
-    0.47,
-    0.49
+    0.46,
+    0.48
    ]
   },
   "grileiro": {
    "vitoria": 0,
-   "patrimonio": 62,
+   "patrimonio": 80,
    "ia": [
-    121,
-    646,
-    326
+    157,
+    545,
+    373
    ],
-   "ataquesVoce": 8.8,
+   "ataquesVoce": 9.3,
    "ataquesIA": [
-    7.9,
-    8.3,
-    5.5
+    8.6,
+    13.7,
+    7
    ],
-   "abates": 1.8,
-   "oncasFim": 5.6,
+   "abates": 2.3,
+   "oncasFim": 5.7,
    "extincao": 0,
    "griladasFim": [
-    0.3,
-    0.3,
+    0.2,
+    0.2,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    131,
-    129,
+   "perdidasVoce": 0.1,
+   "extraviados": [
     0,
-    24
+    0.1,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    1,
+    2.6,
+    20.6,
+    9.6
+   ],
+   "sofreu": [
+    21.7,
+    10.4,
+    0.1,
+    1.6
+   ],
+   "seloFim": [
+    10,
+    17,
+    100,
+    71
+   ],
+   "multasMedia": [
+    39,
+    59,
+    0,
+    12
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.39,
+   "Jmedio": [
+    4,
+    4.7,
+    5.7,
+    6.6,
+    7.1,
+    7.1,
+    6.9,
+    6.5,
+    6.1,
+    5.9,
+    5.7
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.57,
+    0.51,
+    0.47,
+    0.43,
+    0.42,
+    0.43,
+    0.44,
+    0.46
+   ]
+  },
+  "conviver": {
+   "vitoria": 34,
+   "patrimonio": 596,
+   "ia": [
+    140,
+    649,
+    372
+   ],
+   "ataquesVoce": 7.8,
+   "ataquesIA": [
+    8,
+    7.3,
+    6.4
+   ],
+   "abates": 2.1,
+   "oncasFim": 5.2,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.5,
+    0.1,
+    0.2,
+    0.1
+   ],
+   "derrubou": [
+    1.1,
+    2.2,
+    0,
+    9.5
+   ],
+   "sofreu": [
+    0.7,
+    10.4,
+    0.2,
+    1.5
+   ],
+   "seloFim": [
+    100,
+    13,
+    100,
+    72
+   ],
+   "multasMedia": [
+    0,
+    65,
+    0,
+    12
    ],
    "soldadinho": null,
    "javaporcoFim": 0.35,
    "Jmedio": [
     4,
     4.7,
-    5.7,
-    6.5,
-    6.8,
-    6.9,
-    6.6,
-    6.2,
-    5.9,
-    5.7,
-    5.6
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.61,
-    0.57,
-    0.51,
-    0.47,
-    0.44,
-    0.44,
-    0.44,
-    0.46,
-    0.48
-   ]
-  },
-  "conviver": {
-   "vitoria": 38,
-   "patrimonio": 608,
-   "ia": [
-    113,
-    651,
-    319
-   ],
-   "ataquesVoce": 7.6,
-   "ataquesIA": [
-    7.3,
-    6.9,
-    5.2
-   ],
-   "abates": 1.7,
-   "oncasFim": 5.2,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    0,
-    131,
-    0,
-    25
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.36,
-   "Jmedio": [
-    4,
-    4.7,
     5.6,
     6.3,
     6.6,
     6.6,
     6.3,
-    5.9,
+    6,
     5.6,
     5.4,
     5.2
@@ -1114,7 +1902,7 @@
    "Nmedio": [
     0.55,
     0.61,
-    0.6,
+    0.61,
     0.57,
     0.52,
     0.48,
@@ -1126,47 +1914,71 @@
    ]
   },
   "desmatar_abater": {
-   "vitoria": 0,
-   "patrimonio": 176,
+   "vitoria": 0.7,
+   "patrimonio": 195,
    "ia": [
-    105,
-    658,
-    310
+    140,
+    649,
+    350
    ],
-   "ataquesVoce": 11.3,
+   "ataquesVoce": 11.8,
    "ataquesIA": [
-    9.1,
-    8.1,
-    6.9
+    9.7,
+    8.5,
+    8.1
    ],
-   "abates": 5.6,
+   "abates": 6.2,
    "oncasFim": 5.5,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.1,
     0,
     0.1
    ],
-   "perdidasVoce": 0.1,
-   "multasMedia": [
-    36,
-    125,
+   "perdidasVoce": 0,
+   "extraviados": [
+    0.2,
+    0.1,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    0.8,
+    1.7,
     0,
-    24
+    9.4
+   ],
+   "sofreu": [
+    0.3,
+    10.1,
+    0.1,
+    1.4
+   ],
+   "seloFim": [
+    34,
+    15,
+    100,
+    72
+   ],
+   "multasMedia": [
+    35,
+    57,
+    0,
+    13
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.36,
+   "javaporcoFim": 0.37,
    "Jmedio": [
     4,
     4.6,
     5.4,
-    6.1,
+    6,
     6.4,
-    6.6,
     6.5,
+    6.4,
     6.1,
-    5.8,
+    5.9,
     5.7,
     5.5
    ],
@@ -1175,56 +1987,80 @@
     0.61,
     0.63,
     0.6,
-    0.55,
-    0.51,
+    0.56,
+    0.52,
+    0.49,
     0.48,
-    0.47,
     0.48,
     0.49,
-    0.5
+    0.51
    ]
   },
   "abater": {
    "vitoria": 0,
-   "patrimonio": 158,
+   "patrimonio": 171,
    "ia": [
-    110,
-    658,
-    293
+    136,
+    653,
+    348
    ],
-   "ataquesVoce": 10.7,
+   "ataquesVoce": 11.4,
    "ataquesIA": [
-    9,
-    7.8,
-    7
+    9.4,
+    8.4,
+    8.1
    ],
-   "abates": 5.7,
+   "abates": 6.2,
    "oncasFim": 5.6,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.1,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    43,
-    125,
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.2,
+    0.1,
+    0.2,
+    0.1
+   ],
+   "derrubou": [
+    0.7,
+    1.8,
     0,
-    27
+    9.6
+   ],
+   "sofreu": [
+    0.4,
+    10.1,
+    0.1,
+    1.4
+   ],
+   "seloFim": [
+    30,
+    16,
+    100,
+    75
+   ],
+   "multasMedia": [
+    41,
+    59,
+    0,
+    13
    ],
    "soldadinho": null,
-   "javaporcoFim": 0.37,
+   "javaporcoFim": 0.36,
    "Jmedio": [
     4,
     4.6,
     5.4,
-    6.1,
+    6,
     6.5,
     6.7,
     6.6,
-    6.2,
+    6.3,
     6,
     5.8,
     5.6
@@ -1232,7 +2068,7 @@
    "Nmedio": [
     0.55,
     0.61,
-    0.62,
+    0.63,
     0.6,
     0.55,
     0.51,
@@ -1244,34 +2080,58 @@
    ]
   },
   "oportunista": {
-   "vitoria": 15.7,
-   "patrimonio": 471,
+   "vitoria": 23.3,
+   "patrimonio": 537,
    "ia": [
-    112,
-    661,
-    321
+    147,
+    642,
+    370
    ],
-   "ataquesVoce": 6.9,
+   "ataquesVoce": 7.7,
    "ataquesIA": [
-    7.4,
-    6.9,
-    5.2
+    7.9,
+    7.7,
+    6.6
    ],
-   "abates": 1.6,
-   "oncasFim": 5.2,
+   "abates": 2,
+   "oncasFim": 5.3,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.1,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.2,
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.4,
+    0.1,
+    0.2,
+    0
+   ],
+   "derrubou": [
+    1.1,
+    2.7,
+    0.7,
+    9.5
+   ],
+   "sofreu": [
+    1.9,
+    10.5,
+    0.1,
+    1.5
+   ],
+   "seloFim": [
+    97,
+    14,
+    100,
+    70
+   ],
    "multasMedia": [
-    15,
-    130,
+    3,
+    62,
     0,
-    24
+    12
    ],
    "soldadinho": null,
    "javaporcoFim": 0.35,
@@ -1281,126 +2141,8 @@
     5.6,
     6.3,
     6.6,
-    6.5,
-    6.3,
-    5.9,
-    5.7,
-    5.4,
-    5.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.61,
-    0.57,
-    0.51,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
-    0.49,
-    0.51
-   ]
-  },
-  "conviver_sem_manejo": {
-   "vitoria": 4.3,
-   "patrimonio": 467,
-   "ia": [
-    125,
-    664,
-    330
-   ],
-   "ataquesVoce": 5.7,
-   "ataquesIA": [
-    7.7,
-    7.4,
-    5.4
-   ],
-   "abates": 1.8,
-   "oncasFim": 5.2,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    0,
-    129,
-    0,
-    24
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.36,
-   "Jmedio": [
-    4,
-    4.7,
-    5.6,
-    6.4,
-    6.7,
-    6.7,
-    6.3,
-    5.9,
-    5.6,
-    5.3,
-    5.2
-   ],
-   "Nmedio": [
-    0.55,
-    0.61,
-    0.61,
-    0.57,
-    0.52,
-    0.48,
-    0.46,
-    0.46,
-    0.47,
-    0.49,
-    0.51
-   ]
-  },
-  "desmatar_legal": {
-   "vitoria": 4.3,
-   "patrimonio": 366,
-   "ia": [
-    117,
-    677,
-    322
-   ],
-   "ataquesVoce": 17.3,
-   "ataquesIA": [
-    8,
-    7.3,
-    5.7
-   ],
-   "abates": 1.8,
-   "oncasFim": 5.3,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    0,
-    131,
-    0,
-    23
-   ],
-   "soldadinho": null,
-   "javaporcoFim": 0.36,
-   "Jmedio": [
-    4,
-    4.7,
-    5.6,
-    6.4,
     6.6,
-    6.6,
-    6.4,
+    6.3,
     6,
     5.7,
     5.4,
@@ -1419,52 +2161,408 @@
     0.49,
     0.51
    ]
+  },
+  "sabotador": {
+   "vitoria": 15,
+   "patrimonio": 420,
+   "ia": [
+    150,
+    592,
+    369
+   ],
+   "ataquesVoce": 7.2,
+   "ataquesIA": [
+    7.7,
+    8.4,
+    6.5
+   ],
+   "abates": 2.1,
+   "oncasFim": 5.4,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.4,
+    0.1,
+    0.2,
+    0.1
+   ],
+   "derrubou": [
+    6,
+    2,
+    0,
+    9.5
+   ],
+   "sofreu": [
+    0.5,
+    10.6,
+    4.9,
+    1.5
+   ],
+   "seloFim": [
+    50,
+    15,
+    100,
+    75
+   ],
+   "multasMedia": [
+    49,
+    61,
+    0,
+    13
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    4,
+    4.7,
+    5.6,
+    6.3,
+    6.6,
+    6.6,
+    6.4,
+    6,
+    5.8,
+    5.6,
+    5.4
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.57,
+    0.52,
+    0.48,
+    0.45,
+    0.45,
+    0.46,
+    0.48,
+    0.49
+   ]
+  },
+  "sabotador_pontual": {
+   "vitoria": 33.3,
+   "patrimonio": 573,
+   "ia": [
+    142,
+    633,
+    365
+   ],
+   "ataquesVoce": 7.6,
+   "ataquesIA": [
+    7.9,
+    7.5,
+    6.6
+   ],
+   "abates": 2.2,
+   "oncasFim": 5.3,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.5,
+    0.1,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    1.5,
+    2.2,
+    0,
+    9.5
+   ],
+   "sofreu": [
+    0.7,
+    10.4,
+    0.6,
+    1.6
+   ],
+   "seloFim": [
+    100,
+    15,
+    100,
+    72
+   ],
+   "multasMedia": [
+    5,
+    65,
+    0,
+    13
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.35,
+   "Jmedio": [
+    4,
+    4.7,
+    5.6,
+    6.3,
+    6.6,
+    6.6,
+    6.3,
+    6,
+    5.6,
+    5.4,
+    5.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.57,
+    0.52,
+    0.48,
+    0.46,
+    0.46,
+    0.47,
+    0.49,
+    0.51
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 2.7,
+   "patrimonio": 462,
+   "ia": [
+    152,
+    659,
+    373
+   ],
+   "ataquesVoce": 6,
+   "ataquesIA": [
+    8.2,
+    8,
+    6.6
+   ],
+   "abates": 2.2,
+   "oncasFim": 5.2,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.2,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.3,
+    0.2,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    1.1,
+    2.1,
+    0,
+    9.6
+   ],
+   "sofreu": [
+    0.6,
+    10.6,
+    0.1,
+    1.5
+   ],
+   "seloFim": [
+    100,
+    12,
+    100,
+    71
+   ],
+   "multasMedia": [
+    0,
+    62,
+    0,
+    12
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.37,
+   "Jmedio": [
+    4,
+    4.7,
+    5.6,
+    6.3,
+    6.7,
+    6.7,
+    6.4,
+    6,
+    5.6,
+    5.4,
+    5.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.57,
+    0.52,
+    0.48,
+    0.46,
+    0.46,
+    0.47,
+    0.49,
+    0.51
+   ]
+  },
+  "desmatar_legal": {
+   "vitoria": 1.7,
+   "patrimonio": 349,
+   "ia": [
+    155,
+    660,
+    368
+   ],
+   "ataquesVoce": 18.3,
+   "ataquesIA": [
+    8.6,
+    7.5,
+    7
+   ],
+   "abates": 2.4,
+   "oncasFim": 5.3,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0.1,
+    0.2,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    0.9,
+    1.8,
+    0,
+    9.8
+   ],
+   "sofreu": [
+    0.4,
+    10.6,
+    0.1,
+    1.5
+   ],
+   "seloFim": [
+    100,
+    11,
+    100,
+    74
+   ],
+   "multasMedia": [
+    0,
+    57,
+    0,
+    12
+   ],
+   "soldadinho": null,
+   "javaporcoFim": 0.36,
+   "Jmedio": [
+    4,
+    4.7,
+    5.6,
+    6.4,
+    6.7,
+    6.7,
+    6.4,
+    6,
+    5.7,
+    5.4,
+    5.3
+   ],
+   "Nmedio": [
+    0.55,
+    0.61,
+    0.61,
+    0.58,
+    0.52,
+    0.48,
+    0.46,
+    0.46,
+    0.47,
+    0.48,
+    0.5
+   ]
   }
  },
  "caatinga": {
   "passiva": {
-   "vitoria": 26,
-   "patrimonio": 211,
+   "vitoria": 1.7,
+   "patrimonio": 171,
    "ia": [
-    81,
-    231,
-    163
+    131,
+    233,
+    209
    ],
-   "ataquesVoce": 2.7,
+   "ataquesVoce": 5.5,
    "ataquesIA": [
-    3.7,
+    3.8,
     2.1,
-    2
+    2.3
    ],
    "abates": 0.6,
    "oncasFim": 2.1,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.7,
+    0.3,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.5,
+   "perdidasVoce": 0.2,
+   "extraviados": [
+    8.1,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0,
+    1,
+    0,
+    12.4
+   ],
+   "sofreu": [
+    0,
+    12.4,
+    0,
+    1
+   ],
+   "seloFim": [
+    100,
+    11,
+    100,
+    78
+   ],
    "multasMedia": [
     0,
-    136,
+    43,
     0,
-    29
+    9
    ],
    "soldadinho": null,
    "javaporcoFim": null,
    "Jmedio": [
     3,
     2.6,
-    2.5,
     2.4,
+    2.3,
+    2.3,
     2.3,
     2.2,
     2.2,
     2.2,
-    2.2,
-    2.2,
+    2.1,
     2.1
    ],
    "Nmedio": [
@@ -1483,217 +2581,64 @@
   },
   "grileiro": {
    "vitoria": 0,
-   "patrimonio": 33,
+   "patrimonio": 63,
    "ia": [
-    84,
-    229,
-    164
+    136,
+    235,
+    207
    ],
-   "ataquesVoce": 3.6,
+   "ataquesVoce": 4.3,
    "ataquesIA": [
-    3.8,
-    2.1,
-    2
-   ],
-   "abates": 0.5,
-   "oncasFim": 2.1,
-   "extincao": 0,
-   "griladasFim": [
-    0.3,
-    0.5,
-    0,
-    0.1
-   ],
-   "perdidasVoce": 0.3,
-   "multasMedia": [
-    150,
-    135,
-    0,
-    28
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.5,
-    2.3,
-    2.3,
-    2.3,
-    2.2,
-    2.2,
-    2.2,
-    2.2,
-    2.1
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.62,
-    0.65,
-    0.67,
-    0.69,
-    0.7,
-    0.71,
-    0.71,
-    0.71,
-    0.72
-   ]
-  },
-  "conviver": {
-   "vitoria": 78,
-   "patrimonio": 248,
-   "ia": [
-    79,
-    223,
-    153
-   ],
-   "ataquesVoce": 2.8,
-   "ataquesIA": [
-    3.7,
-    1.8,
-    2
-   ],
-   "abates": 0.5,
-   "oncasFim": 1.8,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.1,
-   "multasMedia": [
-    0,
-    137,
-    0,
-    27
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
-    2.3,
-    2.2,
-    2.2,
-    2.1,
-    2,
-    2,
-    1.9,
-    1.8
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.66,
-    0.69,
-    0.71,
-    0.72,
-    0.73,
-    0.74,
-    0.75,
-    0.76
-   ]
-  },
-  "desmatar_abater": {
-   "vitoria": 9.3,
-   "patrimonio": 173,
-   "ia": [
-    72,
-    223,
-    152
-   ],
-   "ataquesVoce": 8.4,
-   "ataquesIA": [
-    4.3,
-    2.3,
-    2.5
-   ],
-   "abates": 2.2,
-   "oncasFim": 1.9,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.1,
-   "multasMedia": [
-    11,
-    132,
-    0,
-    27
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.5,
-    2.3,
-    2.3,
-    2.2,
-    2.1,
-    2.1,
-    2.1,
-    2.1,
-    2,
-    1.9
-   ],
-   "Nmedio": [
-    0.55,
-    0.6,
-    0.65,
-    0.68,
-    0.7,
-    0.72,
-    0.73,
-    0.73,
-    0.74,
-    0.75,
-    0.75
-   ]
-  },
-  "abater": {
-   "vitoria": 3.7,
-   "patrimonio": 142,
-   "ia": [
-    79,
-    237,
-    165
-   ],
-   "ataquesVoce": 5.2,
-   "ataquesIA": [
-    4.1,
-    2,
+    4,
+    3.3,
     2.4
    ],
-   "abates": 2,
+   "abates": 0.7,
    "oncasFim": 2.2,
    "extincao": 0,
    "griladasFim": [
+    0.2,
+    0.1,
     0,
-    0.3,
-    0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    11,
-    138,
+   "perdidasVoce": 0,
+   "extraviados": [
     0,
-    26
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.7,
+    2.3,
+    22.7,
+    11.7
+   ],
+   "sofreu": [
+    24,
+    12.4,
+    0,
+    1
+   ],
+   "seloFim": [
+    10,
+    15,
+    100,
+    80
+   ],
+   "multasMedia": [
+    51,
+    39,
+    0,
+    10
    ],
    "soldadinho": null,
    "javaporcoFim": null,
    "Jmedio": [
     3,
+    2.6,
     2.5,
-    2.4,
     2.4,
     2.3,
     2.3,
@@ -1706,46 +2651,70 @@
    "Nmedio": [
     0.55,
     0.59,
-    0.64,
-    0.66,
-    0.68,
+    0.62,
+    0.65,
+    0.67,
+    0.69,
     0.7,
-    0.7,
     0.71,
     0.71,
-    0.71,
+    0.72,
     0.72
    ]
   },
-  "oportunista": {
-   "vitoria": 78,
-   "patrimonio": 248,
+  "conviver": {
+   "vitoria": 66.7,
+   "patrimonio": 246,
    "ia": [
-    79,
-    223,
-    153
+    123,
+    224,
+    195
    ],
    "ataquesVoce": 2.8,
    "ataquesIA": [
-    3.7,
-    1.8,
-    2
+    3.9,
+    1.9,
+    2.4
    ],
-   "abates": 0.5,
+   "abates": 0.7,
    "oncasFim": 1.8,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.1,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.1,
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.8,
+    1.1,
+    0,
+    11.8
+   ],
+   "sofreu": [
+    0,
+    12.5,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    10,
+    100,
+    81
+   ],
    "multasMedia": [
     0,
-    137,
+    44,
     0,
-    27
+    10
    ],
    "soldadinho": null,
    "javaporcoFim": null,
@@ -1758,6 +2727,504 @@
     2.2,
     2.1,
     2,
+    2,
+    1.9,
+    1.8
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.66,
+    0.69,
+    0.71,
+    0.73,
+    0.74,
+    0.74,
+    0.76,
+    0.77
+   ]
+  },
+  "desmatar_abater": {
+   "vitoria": 17.7,
+   "patrimonio": 189,
+   "ia": [
+    117,
+    222,
+    195
+   ],
+   "ataquesVoce": 8.4,
+   "ataquesIA": [
+    4.5,
+    2.1,
+    2.8
+   ],
+   "abates": 2.7,
+   "oncasFim": 1.9,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.5,
+    0.9,
+    0,
+    12
+   ],
+   "sofreu": [
+    0,
+    12.5,
+    0,
+    0.9
+   ],
+   "seloFim": [
+    36,
+    13,
+    100,
+    82
+   ],
+   "multasMedia": [
+    15,
+    43,
+    0,
+    9
+   ],
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.5,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2.1,
+    2.1,
+    2,
+    2,
+    1.9
+   ],
+   "Nmedio": [
+    0.55,
+    0.6,
+    0.65,
+    0.68,
+    0.7,
+    0.72,
+    0.73,
+    0.74,
+    0.75,
+    0.76,
+    0.76
+   ]
+  },
+  "abater": {
+   "vitoria": 14,
+   "patrimonio": 172,
+   "ia": [
+    122,
+    231,
+    202
+   ],
+   "ataquesVoce": 5.3,
+   "ataquesIA": [
+    4.6,
+    2,
+    3
+   ],
+   "abates": 2.5,
+   "oncasFim": 2.1,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.7,
+    1,
+    0,
+    11.9
+   ],
+   "sofreu": [
+    0,
+    12.6,
+    0,
+    1
+   ],
+   "seloFim": [
+    57,
+    9,
+    100,
+    75
+   ],
+   "multasMedia": [
+    13,
+    41,
+    0,
+    11
+   ],
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.5,
+    2.4,
+    2.3,
+    2.3,
+    2.2,
+    2.2,
+    2.2,
+    2.2,
+    2.2,
+    2.1
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.67,
+    0.69,
+    0.7,
+    0.71,
+    0.72,
+    0.72,
+    0.72,
+    0.73
+   ]
+  },
+  "oportunista": {
+   "vitoria": 66.7,
+   "patrimonio": 246,
+   "ia": [
+    123,
+    224,
+    195
+   ],
+   "ataquesVoce": 2.8,
+   "ataquesIA": [
+    3.9,
+    1.9,
+    2.4
+   ],
+   "abates": 0.7,
+   "oncasFim": 1.8,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.8,
+    1.1,
+    0,
+    11.8
+   ],
+   "sofreu": [
+    0,
+    12.5,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    10,
+    100,
+    81
+   ],
+   "multasMedia": [
+    0,
+    44,
+    0,
+    10
+   ],
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2,
+    2,
+    1.9,
+    1.8
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.66,
+    0.69,
+    0.71,
+    0.73,
+    0.74,
+    0.74,
+    0.76,
+    0.77
+   ]
+  },
+  "sabotador": {
+   "vitoria": 66.7,
+   "patrimonio": 246,
+   "ia": [
+    123,
+    224,
+    195
+   ],
+   "ataquesVoce": 2.8,
+   "ataquesIA": [
+    3.9,
+    1.9,
+    2.4
+   ],
+   "abates": 0.7,
+   "oncasFim": 1.8,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.8,
+    1.1,
+    0,
+    11.8
+   ],
+   "sofreu": [
+    0,
+    12.5,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    10,
+    100,
+    81
+   ],
+   "multasMedia": [
+    0,
+    44,
+    0,
+    10
+   ],
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2,
+    2,
+    1.9,
+    1.8
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.66,
+    0.69,
+    0.71,
+    0.73,
+    0.74,
+    0.74,
+    0.76,
+    0.77
+   ]
+  },
+  "sabotador_pontual": {
+   "vitoria": 66.7,
+   "patrimonio": 246,
+   "ia": [
+    123,
+    224,
+    195
+   ],
+   "ataquesVoce": 2.8,
+   "ataquesIA": [
+    3.9,
+    1.9,
+    2.4
+   ],
+   "abates": 0.7,
+   "oncasFim": 1.8,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.8,
+    1.1,
+    0,
+    11.8
+   ],
+   "sofreu": [
+    0,
+    12.5,
+    0,
+    1.1
+   ],
+   "seloFim": [
+    100,
+    10,
+    100,
+    81
+   ],
+   "multasMedia": [
+    0,
+    44,
+    0,
+    10
+   ],
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2,
+    2,
+    1.9,
+    1.8
+   ],
+   "Nmedio": [
+    0.55,
+    0.59,
+    0.63,
+    0.66,
+    0.69,
+    0.71,
+    0.73,
+    0.74,
+    0.74,
+    0.76,
+    0.77
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 46.7,
+   "patrimonio": 226,
+   "ia": [
+    121,
+    224,
+    196
+   ],
+   "ataquesVoce": 2.6,
+   "ataquesIA": [
+    3.7,
+    1.9,
+    2.5
+   ],
+   "abates": 0.6,
+   "oncasFim": 1.8,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.1,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.1,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.6,
+    1,
+    0,
+    12.1
+   ],
+   "sofreu": [
+    0,
+    12.7,
+    0,
+    1
+   ],
+   "seloFim": [
+    100,
+    11,
+    100,
+    83
+   ],
+   "multasMedia": [
+    0,
+    43,
+    0,
+    9
+   ],
+   "soldadinho": null,
+   "javaporcoFim": null,
+   "Jmedio": [
+    3,
+    2.6,
+    2.4,
+    2.3,
+    2.2,
+    2.2,
+    2.1,
+    2.1,
     2,
     1.9,
     1.8
@@ -1776,94 +3243,59 @@
     0.76
    ]
   },
-  "conviver_sem_manejo": {
-   "vitoria": 54.3,
-   "patrimonio": 228,
-   "ia": [
-    79,
-    223,
-    157
-   ],
-   "ataquesVoce": 2.4,
-   "ataquesIA": [
-    3.6,
-    1.9,
-    1.9
-   ],
-   "abates": 0.5,
-   "oncasFim": 1.9,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    0.3,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 0.2,
-   "multasMedia": [
-    0,
-    138,
-    0,
-    27
-   ],
-   "soldadinho": null,
-   "javaporcoFim": null,
-   "Jmedio": [
-    3,
-    2.6,
-    2.4,
-    2.3,
-    2.2,
-    2.2,
-    2.1,
-    2.1,
-    2,
-    2,
-    1.9
-   ],
-   "Nmedio": [
-    0.55,
-    0.59,
-    0.63,
-    0.66,
-    0.68,
-    0.7,
-    0.72,
-    0.73,
-    0.74,
-    0.74,
-    0.75
-   ]
-  },
   "desmatar_legal": {
-   "vitoria": 97,
-   "patrimonio": 288,
+   "vitoria": 94.7,
+   "patrimonio": 292,
    "ia": [
-    74,
-    222,
-    150
+    117,
+    219,
+    192
    ],
-   "ataquesVoce": 9.8,
+   "ataquesVoce": 10,
    "ataquesIA": [
-    3.8,
-    1.9,
-    2.1
+    4,
+    2,
+    2.3
    ],
-   "abates": 0.6,
-   "oncasFim": 1.8,
+   "abates": 0.8,
+   "oncasFim": 1.7,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.3,
+    0.1,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.1,
+   "perdidasVoce": 0,
+   "extraviados": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "derrubou": [
+    0.6,
+    1,
+    0,
+    12.2
+   ],
+   "sofreu": [
+    0,
+    12.8,
+    0,
+    1
+   ],
+   "seloFim": [
+    100,
+    10,
+    100,
+    79
+   ],
    "multasMedia": [
     0,
-    134,
+    41,
     0,
-    28
+    10
    ],
    "soldadinho": null,
    "javaporcoFim": null,
@@ -1878,171 +3310,243 @@
     2,
     1.9,
     1.8,
-    1.8
+    1.7
    ],
    "Nmedio": [
     0.55,
     0.6,
     0.64,
-    0.66,
+    0.67,
     0.69,
-    0.71,
+    0.72,
     0.73,
-    0.73,
+    0.74,
     0.75,
-    0.76,
-    0.77
+    0.77,
+    0.78
    ]
   }
  },
  "araripe": {
   "passiva": {
    "vitoria": 0,
-   "patrimonio": 277,
+   "patrimonio": 218,
    "ia": [
-    142,
-    727,
-    480
+    181,
+    726,
+    531
    ],
-   "ataquesVoce": 5.9,
+   "ataquesVoce": 12.6,
    "ataquesIA": [
-    8,
-    4.6,
-    3.6
-   ],
-   "abates": 1.3,
-   "oncasFim": 4,
-   "extincao": 0,
-   "griladasFim": [
-    0,
-    2,
-    0,
-    0.2
-   ],
-   "perdidasVoce": 1.9,
-   "multasMedia": [
-    0,
-    158,
-    0,
-    31
-   ],
-   "soldadinho": 0.84,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.9,
-    4,
-    4.1,
-    4.2,
-    4.2,
-    4.2,
-    4.1,
-    4.1,
-    4,
+    7.6,
+    4.3,
     4
    ],
-   "Nmedio": [
-    0.55,
-    0.64,
-    0.68,
-    0.7,
-    0.69,
-    0.68,
-    0.68,
-    0.68,
-    0.68,
-    0.68,
-    0.69
-   ]
-  },
-  "grileiro": {
-   "vitoria": 0,
-   "patrimonio": 55,
-   "ia": [
-    136,
-    713,
-    485
-   ],
-   "ataquesVoce": 11.4,
-   "ataquesIA": [
-    8.1,
-    4.8,
-    3.1
-   ],
-   "abates": 1.2,
+   "abates": 1.5,
    "oncasFim": 4,
    "extincao": 0,
    "griladasFim": [
-    0.6,
-    1,
     0,
-    0.2
+    1.3,
+    0,
+    0.1
    ],
-   "perdidasVoce": 0.9,
-   "multasMedia": [
-    184,
-    155,
+   "perdidasVoce": 1.3,
+   "extraviados": [
+    7.8,
+    0.3,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
     0,
-    30
+    1.3,
+    0,
+    10.5
+   ],
+   "sofreu": [
+    0,
+    10.5,
+    0,
+    1.3
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    64
+   ],
+   "multasMedia": [
+    0,
+    86,
+    0,
+    16
    ],
    "soldadinho": 0.85,
    "javaporcoFim": null,
    "Jmedio": [
     4,
-    3.9,
+    3.8,
     4,
     4.2,
+    4.2,
     4.3,
     4.3,
     4.2,
-    4.2,
     4.1,
-    4.1,
+    4,
     4
    ],
    "Nmedio": [
     0.55,
     0.64,
-    0.68,
     0.69,
+    0.7,
     0.69,
     0.68,
-    0.67,
+    0.68,
     0.67,
     0.67,
     0.68,
     0.68
    ]
   },
-  "conviver": {
-   "vitoria": 42.7,
-   "patrimonio": 639,
+  "grileiro": {
+   "vitoria": 0,
+   "patrimonio": 95,
    "ia": [
-    119,
-    666,
-    398
+    207,
+    602,
+    564
    ],
-   "ataquesVoce": 5.4,
+   "ataquesVoce": 14.8,
    "ataquesIA": [
-    7.4,
-    4,
-    2.8
+    8.4,
+    10.8,
+    3.5
    ],
-   "abates": 1.2,
-   "oncasFim": 3.3,
+   "abates": 1.5,
+   "oncasFim": 4.1,
+   "extincao": 0,
+   "griladasFim": [
+    0.4,
+    0.3,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.3,
+    0.3,
+    0.3,
+    0.1
+   ],
+   "derrubou": [
+    3.1,
+    3.9,
+    25.3,
+    9.9
+   ],
+   "sofreu": [
+    28.1,
+    12.9,
+    0,
+    1.2
+   ],
+   "seloFim": [
+    6,
+    15,
+    100,
+    63
+   ],
+   "multasMedia": [
+    70,
+    53,
+    0,
+    15
+   ],
+   "soldadinho": 0.86,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    4,
+    4.2,
+    4.3,
+    4.4,
+    4.4,
+    4.3,
+    4.2,
+    4.2,
+    4.1
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.68,
+    0.69,
+    0.68,
+    0.68,
+    0.67,
+    0.67,
+    0.67,
+    0.67,
+    0.68
+   ]
+  },
+  "conviver": {
+   "vitoria": 54,
+   "patrimonio": 665,
+   "ia": [
+    194,
+    660,
+    457
+   ],
+   "ataquesVoce": 5.9,
+   "ataquesIA": [
+    7.6,
+    4,
+    3.5
+   ],
+   "abates": 1.5,
+   "oncasFim": 3.2,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.8,
+    0.3,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.7,
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.4,
+    0.3,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
+    3.6,
+    1.3,
+    0,
+    10.6
+   ],
+   "sofreu": [
+    0,
+    14.2,
+    0,
+    1.3
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    66
+   ],
    "multasMedia": [
     0,
-    169,
+    53,
     0,
-    32
+    14
    ],
    "soldadinho": 0.84,
    "javaporcoFim": null,
@@ -2051,13 +3555,13 @@
     3.8,
     3.9,
     4,
-    4.1,
+    4,
     4,
     3.9,
     3.7,
-    3.6,
     3.5,
-    3.3
+    3.4,
+    3.2
    ],
    "Nmedio": [
     0.55,
@@ -2067,112 +3571,160 @@
     0.7,
     0.7,
     0.7,
-    0.7,
     0.71,
     0.72,
+    0.73,
     0.73
    ]
   },
   "desmatar_abater": {
-   "vitoria": 0,
-   "patrimonio": 249,
+   "vitoria": 0.3,
+   "patrimonio": 270,
    "ia": [
-    106,
-    666,
-    386
+    164,
+    652,
+    442
    ],
    "ataquesVoce": 14,
    "ataquesIA": [
-    10.3,
-    4.4,
-    3.8
+    9.7,
+    4.5,
+    4.6
    ],
-   "abates": 4.4,
+   "abates": 4.9,
    "oncasFim": 3.6,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.6,
+    0.3,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.6,
-   "multasMedia": [
-    70,
-    157,
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.2,
+    0.2,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
+    3.3,
+    1.4,
     0,
-    34
+    9.7
+   ],
+   "sofreu": [
+    0,
+    13,
+    0,
+    1.4
+   ],
+   "seloFim": [
+    14,
+    9,
+    100,
+    64
+   ],
+   "multasMedia": [
+    75,
+    60,
+    0,
+    16
    ],
    "soldadinho": 0.79,
    "javaporcoFim": null,
    "Jmedio": [
     4,
     3.7,
-    3.8,
-    3.9,
-    3.9,
-    3.9,
-    3.9,
-    3.9,
-    3.8,
     3.7,
+    3.8,
+    3.9,
+    3.9,
+    3.9,
+    3.8,
+    3.8,
+    3.6,
     3.6
    ],
    "Nmedio": [
     0.55,
     0.65,
     0.71,
+    0.73,
     0.72,
     0.72,
+    0.71,
+    0.71,
+    0.71,
     0.72,
-    0.71,
-    0.71,
-    0.71,
-    0.71,
-    0.72
+    0.73
    ]
   },
   "abater": {
    "vitoria": 0,
-   "patrimonio": 238,
+   "patrimonio": 251,
    "ia": [
-    111,
-    693,
-    411
+    164,
+    686,
+    465
    ],
-   "ataquesVoce": 12.4,
+   "ataquesVoce": 12.8,
    "ataquesIA": [
-    10,
-    4.4,
-    4.1
+    9.9,
+    4.6,
+    5.4
    ],
-   "abates": 4.7,
+   "abates": 5.1,
    "oncasFim": 4,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.5,
+    0.3,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.4,
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.3,
+    0.2,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
+    3.6,
+    1.2,
+    0,
+    10.1
+   ],
+   "sofreu": [
+    0,
+    13.7,
+    0,
+    1.2
+   ],
+   "seloFim": [
+    21,
+    7,
+    100,
+    63
+   ],
    "multasMedia": [
-    32,
-    160,
+    33,
+    61,
     0,
-    35
+    18
    ],
-   "soldadinho": 0.84,
+   "soldadinho": 0.85,
    "javaporcoFim": null,
    "Jmedio": [
     4,
-    3.7,
+    3.6,
     3.8,
     4,
+    4.1,
+    4.1,
+    4.1,
     4,
-    4.1,
-    4.1,
-    4.1,
     4.1,
     4,
     4
@@ -2180,46 +3732,70 @@
    "Nmedio": [
     0.55,
     0.65,
-    0.7,
+    0.71,
     0.72,
     0.71,
-    0.71,
     0.7,
     0.7,
-    0.69,
-    0.69,
+    0.7,
+    0.7,
+    0.7,
     0.7
    ]
   },
   "oportunista": {
-   "vitoria": 42.7,
-   "patrimonio": 639,
+   "vitoria": 54,
+   "patrimonio": 665,
    "ia": [
-    119,
-    666,
-    398
+    194,
+    660,
+    457
    ],
-   "ataquesVoce": 5.4,
+   "ataquesVoce": 5.9,
    "ataquesIA": [
-    7.4,
+    7.6,
     4,
-    2.8
+    3.5
    ],
-   "abates": 1.2,
-   "oncasFim": 3.3,
+   "abates": 1.5,
+   "oncasFim": 3.2,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.8,
+    0.3,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.7,
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.4,
+    0.3,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
+    3.6,
+    1.3,
+    0,
+    10.6
+   ],
+   "sofreu": [
+    0,
+    14.2,
+    0,
+    1.3
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    66
+   ],
    "multasMedia": [
     0,
-    169,
+    53,
     0,
-    32
+    14
    ],
    "soldadinho": 0.84,
    "javaporcoFim": null,
@@ -2228,10 +3804,259 @@
     3.8,
     3.9,
     4,
-    4.1,
+    4,
     4,
     3.9,
     3.7,
+    3.5,
+    3.4,
+    3.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.7,
+    0.7,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.73
+   ]
+  },
+  "sabotador": {
+   "vitoria": 54,
+   "patrimonio": 665,
+   "ia": [
+    194,
+    660,
+    457
+   ],
+   "ataquesVoce": 5.9,
+   "ataquesIA": [
+    7.6,
+    4,
+    3.5
+   ],
+   "abates": 1.5,
+   "oncasFim": 3.2,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.3,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.4,
+    0.3,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
+    3.6,
+    1.3,
+    0,
+    10.6
+   ],
+   "sofreu": [
+    0,
+    14.2,
+    0,
+    1.3
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    66
+   ],
+   "multasMedia": [
+    0,
+    53,
+    0,
+    14
+   ],
+   "soldadinho": 0.84,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    3.9,
+    4,
+    4,
+    4,
+    3.9,
+    3.7,
+    3.5,
+    3.4,
+    3.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.7,
+    0.7,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.73
+   ]
+  },
+  "sabotador_pontual": {
+   "vitoria": 54,
+   "patrimonio": 665,
+   "ia": [
+    194,
+    660,
+    457
+   ],
+   "ataquesVoce": 5.9,
+   "ataquesIA": [
+    7.6,
+    4,
+    3.5
+   ],
+   "abates": 1.5,
+   "oncasFim": 3.2,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.3,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.4,
+    0.3,
+    0.1,
+    0.1
+   ],
+   "derrubou": [
+    3.6,
+    1.3,
+    0,
+    10.6
+   ],
+   "sofreu": [
+    0,
+    14.2,
+    0,
+    1.3
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    66
+   ],
+   "multasMedia": [
+    0,
+    53,
+    0,
+    14
+   ],
+   "soldadinho": 0.84,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    3.9,
+    4,
+    4,
+    4,
+    3.9,
+    3.7,
+    3.5,
+    3.4,
+    3.2
+   ],
+   "Nmedio": [
+    0.55,
+    0.64,
+    0.69,
+    0.71,
+    0.7,
+    0.7,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.73
+   ]
+  },
+  "conviver_sem_manejo": {
+   "vitoria": 27.3,
+   "patrimonio": 603,
+   "ia": [
+    196,
+    668,
+    457
+   ],
+   "ataquesVoce": 5.3,
+   "ataquesIA": [
+    7.6,
+    3.8,
+    3.7
+   ],
+   "abates": 1.5,
+   "oncasFim": 3.3,
+   "extincao": 0,
+   "griladasFim": [
+    0,
+    0.4,
+    0,
+    0.1
+   ],
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.5,
+    0.2,
+    0.2,
+    0.1
+   ],
+   "derrubou": [
+    3.8,
+    1.4,
+    0,
+    10.4
+   ],
+   "sofreu": [
+    0,
+    14.1,
+    0,
+    1.4
+   ],
+   "seloFim": [
+    100,
+    8,
+    100,
+    65
+   ],
+   "multasMedia": [
+    0,
+    55,
+    0,
+    14
+   ],
+   "soldadinho": 0.84,
+   "javaporcoFim": null,
+   "Jmedio": [
+    4,
+    3.8,
+    3.9,
+    4,
+    4,
+    4,
+    3.9,
+    3.8,
     3.6,
     3.5,
     3.3
@@ -2244,121 +4069,86 @@
     0.7,
     0.7,
     0.7,
-    0.7,
+    0.71,
     0.71,
     0.72,
     0.73
    ]
   },
-  "conviver_sem_manejo": {
-   "vitoria": 23.7,
-   "patrimonio": 581,
+  "desmatar_legal": {
+   "vitoria": 41,
+   "patrimonio": 622,
    "ia": [
-    121,
-    670,
-    401
+    201,
+    672,
+    462
    ],
-   "ataquesVoce": 5.1,
+   "ataquesVoce": 18.8,
    "ataquesIA": [
     7.4,
-    4,
-    2.9
+    3.8,
+    3.5
    ],
-   "abates": 1.2,
-   "oncasFim": 3.4,
+   "abates": 1.4,
+   "oncasFim": 3.3,
    "extincao": 0,
    "griladasFim": [
     0,
-    0.8,
+    0.4,
     0,
-    0.2
+    0.1
    ],
-   "perdidasVoce": 0.7,
-   "multasMedia": [
-    0,
-    168,
-    0,
-    32
+   "perdidasVoce": 0.3,
+   "extraviados": [
+    0.3,
+    0.3,
+    0.2,
+    0.1
    ],
-   "soldadinho": 0.84,
-   "javaporcoFim": null,
-   "Jmedio": [
-    4,
-    3.8,
-    3.9,
-    4,
-    4.1,
-    4,
-    3.9,
-    3.8,
-    3.6,
+   "derrubou": [
     3.5,
-    3.4
-   ],
-   "Nmedio": [
-    0.55,
-    0.64,
-    0.69,
-    0.71,
-    0.7,
-    0.7,
-    0.7,
-    0.7,
-    0.71,
-    0.72,
-    0.72
-   ]
-  },
-  "desmatar_legal": {
-   "vitoria": 36,
-   "patrimonio": 620,
-   "ia": [
-    117,
-    672,
-    400
-   ],
-   "ataquesVoce": 18.1,
-   "ataquesIA": [
-    7.8,
-    3.9,
-    2.8
-   ],
-   "abates": 1.3,
-   "oncasFim": 3.4,
-   "extincao": 0,
-   "griladasFim": [
+    1.4,
     0,
-    0.6,
-    0,
-    0.2
+    10.3
    ],
-   "perdidasVoce": 0.6,
+   "sofreu": [
+    0,
+    13.8,
+    0,
+    1.4
+   ],
+   "seloFim": [
+    100,
+    6,
+    100,
+    64
+   ],
    "multasMedia": [
     0,
-    169,
+    55,
     0,
-    32
+    15
    ],
    "soldadinho": 0.85,
    "javaporcoFim": null,
    "Jmedio": [
     4,
-    3.9,
-    3.9,
+    3.8,
     4,
     4.1,
-    4,
+    4.1,
+    4.1,
     3.9,
     3.8,
-    3.7,
+    3.6,
     3.5,
-    3.4
+    3.3
    ],
    "Nmedio": [
     0.55,
     0.64,
     0.69,
-    0.71,
+    0.7,
     0.7,
     0.7,
     0.7,

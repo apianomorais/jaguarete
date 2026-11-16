@@ -1,6 +1,6 @@
 // Interface do jogo no navegador: mapa SVG, painel, relatórios e gráficos.
 import * as M from './motor.js';
-import { BIOMAS, ESPECIES, GALINHA, CUSTOS, FAZENDAS, RODADAS, TIPOS, W, H, MAX_CAMERAS, SELO_BONUS, CRA_POR_CELULA, CERCAS } from './dados.js';
+import { BIOMAS, ESPECIES, GALINHA, CUSTOS, FAZENDAS, RODADAS, TIPOS, W, H, MAX_CAMERAS, SELO_BONUS, CRA_POR_CELULA, CERCAS, MULTA, VENDA_FORCADA } from './dados.js';
 import { NATUREZA, dicaDaEstacao, COMO_JOGAR } from './textos.js';
 
 const $ = s => document.querySelector(s);
@@ -181,6 +181,7 @@ function renderLegenda() {
     <span><svg><line x1="0" y1="7" x2="14" y2="7" stroke="var(--voce)" stroke-width="3.5"/></svg>Sua cerca</span>
     <span><svg><line x1="0" y1="7" x2="14" y2="7" stroke="var(--voce)" stroke-width="1.6" stroke-dasharray="1.5 2.5"/></svg>Divisa do título</span>
     <span><svg><rect width="14" height="14" fill="var(--pasto)"/><path d="M0 14 14 0M-4 8 8 -4M6 18 18 6" stroke="var(--perigo)" stroke-width="2"/></svg>Área grilada</span>
+    <span><svg><rect x="1" y="3" width="12" height="8" rx="4" fill="var(--superficie)" stroke="var(--voce)" stroke-width="1.4" stroke-dasharray="2 1.5"/></svg>Animais soltos</span>
     <span><i style="background:none;border:2px dotted var(--onca-tinta)"></i>${M.bioma(st).mapa === 'araripe' ? 'Unidade de conservação' : 'Reserva'}</span>`;
 }
 
@@ -209,6 +210,11 @@ function renderMapa() {
       const yy = c.tipo === 'sede' ? y + 7 : y - 1;
       g += `<g class="cracha"><rect x="${x - 17}" y="${yy}" width="34" height="15" rx="7.5"/><use href="#${icone}" x="${x - 15}" y="${yy + 1.5}" width="12" height="12"/><text x="${x + 4}" y="${yy + 11.5}" text-anchor="middle">${qtd}</text></g>`;
     }
+    // animais soltos (fora de cerca), com a cor da fazenda dona
+    M.soltosEm(st, c.id).slice(0, 2).forEach((gr, k) => {
+      const yy = y + 8 - k * 17, xx = x - 4 + k * 4;
+      g += `<g class="cracha solto f${gr.f}"><title>${gr.n} ${gr.n > 1 ? ESPECIES[gr.especie].plural : ESPECIES[gr.especie].nome} soltos de ${gr.f === 0 ? 'você' : esc(st.fazendas[gr.f].apelido)}</title><rect x="${xx - 13}" y="${yy}" width="28" height="13" rx="6.5"/><use href="#i-${gr.especie}" x="${xx - 11}" y="${yy + 1.5}" width="10" height="10"/><text x="${xx + 6}" y="${yy + 10}" text-anchor="middle">${gr.n}</text></g>`;
+    });
     // defesas
     const def = [c.eletrica && 'i-raio', c.guarda && 'i-guarda', c.curral && 'i-curral'].filter(Boolean);
     if (M.grilada(c)) g += `<polygon points="${pts(cantos(c.id, S - 1))}" fill="url(#z-grilagem)" pointer-events="none"/>`;
@@ -319,6 +325,10 @@ function painelArea() {
       ${c.cercaDe < 0 && c.dono === 0 && c.tipo !== 'sede' ? '<p class="vazio" style="margin:0">Terra sua, mas aberta: um vizinho encostado pode cercá-la.</p>' : ''}
     </div>`;
   }
+  const soltos = M.soltosEm(st, c.id);
+  if (soltos.length) h += `<div class="bloco">${soltos.map(gr => `<div class="linha-info"><span>Animais soltos</span><b class="num">${gr.n} ${gr.n > 1 ? ESPECIES[gr.especie].plural : ESPECIES[gr.especie].nome} · ${gr.f === 0 ? 'seus' : esc(st.fazendas[gr.f].apelido)}</b></div>`).join('')}
+      ${soltos.some(gr => gr.f === 0) ? `<p class="vazio" style="margin:0">Soltos, seus animais não rendem, se espalham pelas áreas abertas, se perdem e ficam expostos ${gen('aos', 'às')} ${P().plural}. Recolha na sede (uma ação) ou cerque a área onde estão.</p>` : ''}
+    </div>`;
   if (c.zona || c.regiao || (B.mapa === 'araripe' && M.app(st, c))) h += `<div class="bloco">
       ${c.regiao ? `<div class="linha-info"><span>Paisagem</span><span>${{ chapada: 'alto da chapada', encosta: 'encosta úmida', vale: 'vale do Cariri' }[c.regiao]}</span></div>` : ''}
       ${c.zona ? `<div class="linha-info"><span>Plano de manejo</span><b>${NOME_ZONA[c.zona]}</b></div><p class="vazio" style="margin:0">${REGRA_ZONA[c.zona]}</p>` : ''}
@@ -395,7 +405,11 @@ function dicaAcao(acao, c, a = {}) {
     cercar_nativa: `Usa ${a.lados} lotes das estacas do seu desmate (você tem ${F.estacas}). Dura ${CERCAS.nativa.validade} estações.${aviso}`,
     cercar_madeira: `${a.lados} lados de eucalipto tratado. Dura ${CERCAS.madeira.validade} estações.${aviso}`,
     cercar_concreto: `${a.lados} lados de mourões de concreto. Permanente e não queima.${aviso}`,
-    justica: 'A chance de a Justiça devolver a área sobe para 60% na próxima estação.',
+    justica: 'A chance de a Justiça devolver a área sobe para 60% nesta estação e na próxima.',
+    derrubar: a.desforco ? 'Desforço imediato: a terra é sua e acabou de ser cercada, então você pode retomá-la. Os animais de quem grilou ficam soltos.'
+      : `${a.ilegal === 'crime de dano' ? 'Crime de dano' : 'Passou a hora do desforço imediato: é fazer justiça com as próprias mãos'}. Os animais ficam soltos e se espalham. Você perde o selo por dois anos, e a Justiça pode cobrar R$ ${MULTA.dano} mil de multa e R$ ${MULTA.indenizacao} mil de indenização.`,
+    recolher: `Vaqueiros juntam os seus animais soltos nos pastos cercados com vaga. Os que não couberem são vendidos às pressas, por ${Math.round(VENDA_FORCADA * 100)}% do valor.`,
+    processar: 'A chance de a Justiça condenar quem derrubou suas cercas sobe para 60% nesta estação e na próxima. Se condenar, você recebe indenização.',
     desmatar: (() => { const il = M.desmateIlegal(st, 0, c.id); return !il ? `Vira pasto para ${M.capacidade(st, { ...c, tipo: 'pasto' }, 'boi')} bois. Menos mata, menos presas silvestres.` : `Ilegal (${il}). Você perde o selo e pode ser multado.`; })(),
     reflorestar: `Vira capoeira e, em ${B.regen} estações, mata.`,
     cerca: 'Eletrifica a cerca deste pasto: o risco de ataque cai 80%. Manutenção de R$ 1 mil por estação.',
@@ -428,6 +442,7 @@ function painelFazenda() {
     <div class="linha-info"><span>Bois</span><b class="num">${cab.boi}</b></div>
     <div class="linha-info"><span>Carneiros</span><b class="num">${cab.carneiro}</b></div>
     <div class="linha-info"><span>Galinhas</span><b class="num">${cab.galinha} lotes</b></div>
+    ${M.totalSoltos(st, 0) ? `<div class="linha-info"><span>Animais soltos</span><b class="num" style="color:var(--perigo)">${M.totalSoltos(st, 0)}</b></div>` : ''}
     <div class="linha-info"><span>Pastos expostos a ataques</span><b class="num">${expostos} de ${pastos.length}</b></div>
     <div class="linha-info"><span>Valor do rebanho</span><b class="num">${reais(M.valorRebanho(st, 0))}</b></div>
   </div>
@@ -438,6 +453,9 @@ function painelFazenda() {
     <div class="linha-info"><span>Áreas suas sem cerca</span><b class="num">${abertas}</b></div>
     <div class="linha-info"><span>Áreas suas griladas por vizinhos</span><b class="num" style="color:${tomadas ? 'var(--perigo)' : 'inherit'}">${tomadas}</b></div>
     ${griladas ? `<div class="linha-info"><span>Áreas que você grilou</span><b class="num" style="color:var(--perigo)">${griladas}</b></div>` : ''}
+    ${F.cercasDerrubadas ? `<div class="linha-info"><span>Cercas suas derrubadas por vizinhos</span><b class="num">${F.cercasDerrubadas}</b></div>` : ''}
+    ${F.derrubadas ? `<div class="linha-info"><span>Cercas que você derrubou</span><b class="num">${F.derrubadas}</b></div>` : ''}
+    ${M.processosAbertos(st, 0).length ? `<div class="msg">Há ${plural(M.processosAbertos(st, 0).length, 'cerca sua derrubada', 'cercas suas derrubadas')} sem processo. Abra o processo na sede.</div>` : ''}
   </div>
   <div class="bloco"><h3>Reserva legal</h3>
     <div class="barra" title="Vegetação nativa na fazenda"><i style="width:${(nat * 100).toFixed(0)}%"></i><b style="left:${B.reservaLegal * 100}%"></b></div>
@@ -446,6 +464,7 @@ function painelFazenda() {
   </div>
   <div class="bloco"><h3>Selo e programas</h3>
     <div class="linha-info"><span>Selo de convivência</span><b>${F.selo ? 'ativo' : `perdido${F.motivoSelo ? ` (${esc(F.motivoSelo)})` : ''}`}</b></div>
+    ${F.selo ? '' : `<p class="vazio" style="margin:0">Volta ao fim de ${plural(M.voltaDoSelo(st, 0), 'estação', 'estações')} sem nova infração, se a reserva legal estiver em dia e você não tiver área grilada.</p>`}
     <div class="linha-info"><span>Compensação por ataques</span><span>${F.seguro ? 'ativa' : 'não'}</span></div>
     <div class="linha-info"><span>Cotas de reserva (CRA)</span><span>${F.cra ? 'registradas' : 'não'}</span></div>
     <div class="linha-info"><span>Multas pagas</span><span class="num">${reais(F.multas)}</span></div>
@@ -521,7 +540,8 @@ function blocoNatureza(n) {
 function ligarPainel(el) {
   el.querySelectorAll('[data-acao]').forEach(b => b.onclick = () => {
     const acao = b.dataset.acao;
-    const perigosa = acao === 'matador' || (acao === 'desmatar' && !!M.desmateIlegal(st, 0, sel));
+    const def = M.acoesCelula(st, 0, sel).find(x => x.acao === acao);
+    const perigosa = acao === 'matador' || !!def?.ilegal;
     if (perigosa && !(armado && armado.acao === acao && armado.id === sel)) { armado = { acao, id: sel }; renderPainel(); return; }
     armado = null;
     const r = M.executar(st, 0, acao, sel);
@@ -579,7 +599,7 @@ function relatorio(rel) {
   const F = st.fazendas[0], r0 = rel.fazendas[0], v = rel.vistos;
   const meus = rel.ataques.filter(a => a.dono === 0);
   const outros = rel.ataques.filter(a => a.dono !== 0);
-  const saldo = r0.receita + r0.forcada + r0.compensacao - r0.despesa - r0.multa;
+  const saldo = r0.receita + r0.forcada + r0.compensacao + (r0.indenizacao || 0) - r0.despesa - r0.multa;
   const dica = dicaDaEstacao(st, rel, v);
   const boatos = rel.abatesVizinhos.map((n, f) => n > 0 && f > 0 ? `Correu a notícia de que um matador trabalhou na ${st.fazendas[f].nome}.` : null).filter(Boolean);
   abrirModal(`
@@ -587,7 +607,7 @@ function relatorio(rel) {
     <h2>${meus.length ? `${maiusc(art())} ${P().nome} atacou ${meus.length === 1 ? 'uma vez' : `${meus.length} vezes`} na sua fazenda` : v.pegadas.length || v.fotos.length ? `Houve ${P().nome} por perto, mas o rebanho ficou inteiro` : 'Noite tranquila na fazenda'}</h2>
     <div class="rel-grade">
       <div><h3>Na sua fazenda</h3><ul class="lista">
-        ${meus.map(a => `<li class="perda">${a.mortos} ${a.mortos > 1 ? ESPECIES[a.especie].plural : ESPECIES[a.especie].nome} morto${a.mortos > 1 ? 's' : ''} num pasto ${M.naBorda(st, st.celulas[a.cel]) ? 'na borda da mata' : ''}</li>`).join('')}
+        ${meus.map(a => `<li class="perda">${a.mortos} ${a.mortos > 1 ? ESPECIES[a.especie].plural : ESPECIES[a.especie].nome} ${a.solto ? `solto${a.mortos > 1 ? 's' : ''} morto${a.mortos > 1 ? 's' : ''} ${M.habitat(st.celulas[a.cel]) ? 'na mata' : 'fora da cerca'}` : `morto${a.mortos > 1 ? 's' : ''} num pasto${M.naBorda(st, st.celulas[a.cel]) ? ' na borda da mata' : ''}`}</li>`).join('')}
         ${r0.perdas.galinha ? `<li class="perda">${r0.perdas.galinha} ${r0.perdas.galinha > 1 ? 'lotes' : 'lote'} de galinhas levados por ${meso()}</li>` : ''}
         ${r0.nascimentos.boi + r0.nascimentos.carneiro + r0.nascimentos.galinha ? `<li class="ganho">${r0.nascimentos.boi + r0.nascimentos.carneiro + r0.nascimentos.galinha === 1 ? 'Nasceu' : 'Nasceram'} ${[r0.nascimentos.boi && plural(r0.nascimentos.boi, 'bezerro', 'bezerros'), r0.nascimentos.carneiro && plural(r0.nascimentos.carneiro, 'cordeiro', 'cordeiros'), r0.nascimentos.galinha && plural(r0.nascimentos.galinha, 'lote de pintinhos', 'lotes de pintinhos')].filter(Boolean).join(', ')}</li>` : ''}
         ${r0.forcada ? `<li>Excesso de animais vendido às pressas: ${reais(r0.forcada)}</li>` : ''}
@@ -597,7 +617,8 @@ function relatorio(rel) {
         <li>Produção${F.selo ? ' com selo' : ''}: <b class="ganho">${reais(r0.receita)}</b>${r0.cra ? ` (inclui ${reais(r0.cra)} de cotas de reserva)` : ''}</li>
         ${r0.compensacao ? `<li>Compensação por ataques: <b class="ganho">${reais(r0.compensacao)}</b></li>` : ''}
         <li>Manutenção: <b class="perda">${reais(r0.despesa)}</b></li>
-        ${r0.multa ? `<li>Multa por falta de reserva legal: <b class="perda">${reais(r0.multa)}</b></li>` : ''}
+        ${r0.indenizacao ? `<li>Indenização recebida: <b class="ganho">${reais(r0.indenizacao)}</b></li>` : ''}
+        ${r0.multa ? `<li>Multas e indenizações pagas: <b class="perda">${reais(r0.multa)}</b></li>` : ''}
         <li>Saldo: <b>${reais(saldo)}</b> · caixa ${reais(F.caixa)}</li>
       </ul></div>
       <div><h3>Indícios de ${P().nome}</h3><ul class="lista">

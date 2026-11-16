@@ -2,7 +2,7 @@
 // Não usa o DOM; roda no navegador e no Node (para a simulação de balanceamento).
 import { RODADAS, ACOES_POR_RODADA, W, H, ESPECIES, GALINHA, CUSTOS, MANUTENCAO, MULTA, SELO_BONUS, VENDA_FORCADA,
          JUROS_DIVIDA, MAX_CAMERAS, CRA_POR_CELULA, DEFESAS, TIPOS, CAPACIDADE, MODELO, BIOMAS, FAZENDAS, SEDES,
-         CERCAS, ESTACAS_DESMATE, JUSTICA } from './dados.js';
+         CERCAS, ESTACAS_DESMATE, JUSTICA, DESFORCO, SOLTOS, SELO_VOLTA } from './dados.js';
 
 // ---------------------------------------------------------------- aleatoriedade com semente
 export function rnd(st) {
@@ -51,6 +51,27 @@ export const controladas = (st, f) => st.celulas.filter(c => posse(c) === f);
 export const grilada = c => c.cercaDe >= 0 && c.cercaDe !== c.dono;
 // lados do hexágono que precisam de cerca: os que não encostam em área já cercada pela mesma fazenda
 export function ladosExpostos(st, f, id) { return 6 - vizinhos(id).filter(v => st.celulas[v].cercaDe === f).length; }
+// animais soltos: grupos { f, especie, n, cel } que ficaram fora de cerca
+export const soltosEm = (st, id) => (st.soltos || []).filter(g => g.cel === id && g.n > 0);
+export const soltosDe = (st, f) => (st.soltos || []).filter(g => g.f === f && g.n > 0);
+export const totalSoltos = (st, f) => soltosDe(st, f).reduce((s, g) => s + g.n, 0);
+function soltar(st, f, especie, n, cel) {
+  if (n <= 0) return;
+  st.soltos = st.soltos || [];
+  const g = st.soltos.find(x => x.f === f && x.especie === especie && x.cel === cel);
+  if (g) g.n += n; else st.soltos.push({ f, especie, n, cel });
+}
+const limpaSoltos = st => { st.soltos = (st.soltos || []).filter(g => g.n > 0); };
+const abertaParaSoltos = c => c.cercaDe < 0 && c.tipo !== 'agua' && c.tipo !== 'sede';
+export function exposicaoSoltos(st, g) {
+  return g.n * ESPECIES[g.especie].presa * (bioma(st).presaPeso?.[g.especie] ?? 1) * (habitat(st.celulas[g.cel]) ? SOLTOS.mata : 1);
+}
+// processos por cerca derrubada que a vítima ainda pode abrir
+export const processosAbertos = (st, f) => (st.danos || []).filter(d => d.vitima === f && (d.processo ?? -1) < st.t);
+// toda infração tira o selo e zera a contagem para recuperá-lo
+export function perdeSelo(st, F, motivo) { if (F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = motivo; } F.ultimaInfracao = st.t; }
+// estações (contando a atual) até o selo voltar, se não houver nova infração
+export const voltaDoSelo = (st, f) => { const F = st.fazendas[f]; return F.selo ? 0 : Math.max(1, (F.ultimaInfracao ?? -99) + SELO_VOLTA - st.t); };
 
 export function nativaFrac(st, f) {
   const cs = celulasDe(st, f).filter(c => c.tipo !== 'sede');
@@ -120,6 +141,7 @@ export function valorRebanho(st, f) {
   const F = st.fazendas[f];
   let v = F.galinhas * GALINHA.venda;
   for (const c of controladas(st, f)) if (c.n) v += c.n * ESPECIES[c.especie].venda;
+  for (const g of soltosDe(st, f)) v += g.n * ESPECIES[g.especie].venda;   // soltos continuam marcados com o ferro da fazenda
   return v * (F.selo ? 1 + SELO_BONUS : 1);
 }
 export function patrimonio(st, f) { return Math.round(st.fazendas[f].caixa + valorRebanho(st, f)); }
@@ -136,7 +158,7 @@ export function capacidadeK(st) {
 export function novoJogo(biomaId, semente = (Date.now() & 0x7fffffff)) {
   const B = BIOMAS[biomaId];
   const st = { versao: 1, bioma: biomaId, semente, sementeInicial: semente, t: 0, fim: false,
-               celulas: [], fazendas: [], tokens: [], proxToken: 1, hist: [], diario: [], relatorio: null,
+               celulas: [], fazendas: [], tokens: [], soltos: [], danos: [], proxToken: 1, hist: [], diario: [], relatorio: null,
                ousadosPendentes: 0, bonusImigracao: 0, fatorHerbivoros: 1, vistos: novoVisto() };
   const centro = 4 * W + 5;
   const sedes = SEDES.map(([c, r]) => r * W + c);
@@ -267,6 +289,14 @@ export function acoesCelula(st, f, id) {
       Object.assign(out[out.length - 1], { ilegal, lados, material: mat });
     }
   }
+  // derrubar a cerca de outra fazenda: crime de dano, salvo o desforço imediato na própria terra recém-grilada
+  if (c.cercaDe >= 0 && c.cercaDe !== f && c.tipo !== 'sede' && encostada) {
+    const desforco = c.dono === f && grilada(c) && st.t - (c.tomadaEm ?? -99) <= DESFORCO;
+    const ilegal = desforco ? null : c.dono === f ? 'fazer justiça com as próprias mãos' : 'crime de dano';
+    add('derrubar', `Derrubar a cerca de ${st.fazendas[c.cercaDe].apelido}${ilegal ? ` (ilegal: ${ilegal})` : ' (desforço imediato)'}`,
+        c.material === 'concreto' ? CUSTOS.derrubarConcreto : CUSTOS.derrubar, true, null);
+    Object.assign(out[out.length - 1], { ilegal, desforco });
+  }
   if (c.dono === f && grilada(c)) add('justica', 'Entrar na Justiça para reaver a área', CUSTOS.justica, (c.processo ?? -1) < st.t, 'Processo já em andamento');
   if (minha && TIPOS[c.tipo].nativa && c.tipo !== 'agua') {
     const vizinhoUsado = vizinhos(id).some(v => posse(st.celulas[v]) === f && !TIPOS[st.celulas[v].tipo].nativa);
@@ -286,6 +316,9 @@ export function acoesCelula(st, f, id) {
     add('ampliar', 'Ampliar o galinheiro', CUSTOS.ampliar, true, null);
     if (!F.seguro) add('seguro', 'Aderir à compensação por ataques', CUSTOS.seguro, F.selo, 'Exige o selo de convivência');
     if (!F.cra) add('cra', 'Registrar cotas de reserva (CRA)', CUSTOS.cra, true, null);
+    const soltos = totalSoltos(st, f);
+    if (soltos) add('recolher', `Recolher os animais soltos (${soltos})`, CUSTOS.recolher, true, null);
+    if ((st.danos || []).some(d => d.vitima === f)) add('processar', 'Processar quem derrubou suas cercas', CUSTOS.justica, processosAbertos(st, f).length > 0, 'Processo já em andamento');
     if (B.evento === 'fogo') add('aceiro', 'Abrir aceiros contra o fogo', CUSTOS.aceiro, (F.aceiroAte ?? -1) < st.t, 'Aceiros já abertos neste ano');
     if (B.javaporco) add('manejo', `Contratar caçadores de manejo de ${B.javaporco.nome}`, CUSTOS.manejo, (st.onca.V || 0) >= 1, `Não há ${B.javaporco.plural} para manejar`);
   }
@@ -322,7 +355,7 @@ export function executar(st, f, acao, id) {
   if (!a.ok) return { ok: false, msg: a.motivo };
   const F = st.fazendas[f], c = st.celulas[id], B = bioma(st);
   F.caixa -= a.custo; F.acoes--;
-  if (f === 0) { st.marcas = st.marcas || {}; if (acao === 'matador') st.marcas.abate = true; if (acao === 'desmatar') st.marcas.desmate = true; if (acao === 'manejo') st.marcas.manejo = true; }
+  if (f === 0) { st.marcas = st.marcas || {}; if (acao === 'matador') st.marcas.abate = true; if (acao === 'desmatar') st.marcas.desmate = true; if (acao === 'manejo') st.marcas.manejo = true; if (acao === 'derrubar') st.marcas.derrubou = true; }
   let msg = '';
   switch (acao) {
     case 'desmatar': {
@@ -330,7 +363,7 @@ export function executar(st, f, acao, id) {
       const estacas = ESTACAS_DESMATE[c.tipo] || 0; F.estacas += estacas;
       c.tipo = 'pasto'; c.regen = 0; c.camera = -1; F.desmatadas++;
       for (const tk of st.tokens) if (tk.cel === id) moveTokenParaHabitat(st, tk);
-      if (ilegal && F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = `desmate ilegal (${ilegal})`; }
+      if (ilegal) perdeSelo(st, F, `desmate ilegal (${ilegal})`);
       if (ilegal && ilegal !== 'abaixo da reserva legal') F.infracoes.push({ cel: id, tipo: ilegal === 'APP de nascente' ? 'app' : 'zona' });
       msg = (ilegal ? `Pasto aberto de forma ilegal (${ilegal}). O selo foi perdido e a fiscalização pode multar.` : 'Pasto aberto. A mata e suas presas diminuíram.')
         + (estacas ? ` A madeira rendeu ${estacas} lotes de estacas.` : '') + (c.cercaDe !== f ? ' Cerque a área para pôr animais.' : '');
@@ -352,15 +385,55 @@ export function executar(st, f, acao, id) {
       const tomou = c.cercaDe < 0 && c.dono !== f;
       if (f === 0) { st.marcas = st.marcas || {}; st.marcas.cercou = true; if (tomou) st.marcas.grilagem = true; }
       c.cercaDe = f; c.material = mat; c.validade = M_.validade;
+      // animais soltos nesta área: os da fazenda ficam presos no novo cercado; os de outras fazendas são tocados para fora
+      let presos = 0;
+      for (const g of soltosEm(st, id)) {
+        if (g.f === f && pastejavel(c) && (!c.n || c.especie === g.especie)) { const k = Math.min(g.n, capacidade(st, c, g.especie) - c.n); if (k > 0) { c.especie = g.especie; c.n += k; g.n -= k; presos += k; } }
+        if (g.n) { const fora = vizinhos(id).filter(v => abertaParaSoltos(st.celulas[v])); if (fora.length) g.cel = fora[Math.floor(rnd(st) * fora.length)]; }
+      }
+      limpaSoltos(st);
       if (tomou) {
-        if (F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = 'grilagem de terra'; }
+        c.tomadaEm = st.t;
+        perdeSelo(st, F, 'grilagem de terra');
         if (c.dono >= 0) (st.invasoes = st.invasoes || []).push({ por: f, de: c.dono, cel: id });
       }
       msg = `Área cercada com ${M_.nome} (${a.lados} lados${M_.validade < 999 ? `, dura ${M_.validade} estações` : ', permanente'}).`
+        + (presos ? ` ${presos} ${presos > 1 ? 'animais seus que estavam soltos ficaram' : 'animal seu que estava solto ficou'} no cercado.` : '')
         + (tomou ? ` É grilagem: o selo foi perdido e a Justiça pode devolver a área ${c.reserva ? 'ao poder público' : 'ao dono'} e multar.` : '');
       break;
     }
     case 'justica': c.processo = st.t + 1; msg = 'Processo aberto: a chance de a Justiça devolver a área na próxima estação subiu.'; break;
+    case 'processar': for (const d of processosAbertos(st, f)) d.processo = st.t + 1;
+      msg = 'Processo aberto: a chance de a Justiça condenar quem derrubou suas cercas sobe nesta estação e na próxima.'; break;
+    case 'derrubar': {
+      const g = c.cercaDe, Fg = st.fazendas[g], fugiram = c.n, esp = c.especie;
+      F.derrubadas = (F.derrubadas || 0) + 1; Fg.cercasDerrubadas = (Fg.cercasDerrubadas || 0) + 1;
+      if (c.n) { soltar(st, g, esp, c.n, id); c.n = 0; c.especie = null; }
+      c.cercaDe = -1; c.material = null; c.validade = 0; c.eletrica = false; c.processo = undefined; c.tomadaEm = undefined;
+      if (a.ilegal) {
+        perdeSelo(st, F, a.ilegal === 'crime de dano' ? 'derrubou a cerca de um vizinho' : 'fez justiça com as próprias mãos');
+        (st.danos = st.danos || []).push({ por: f, vitima: g, cel: id, t: st.t, processo: -1 });
+      }
+      (st.derrubadas = st.derrubadas || []).push({ por: f, de: g, cel: id, fugiram, especie: esp, legal: !a.ilegal });
+      msg = `Você derrubou a cerca de ${Fg.apelido}.` + (fugiram ? ` ${fugiram} ${fugiram > 1 ? ESPECIES[esp].plural : ESPECIES[esp].nome} ficaram soltos e vão se espalhar.` : '')
+        + (!a.ilegal ? ' Desforço imediato: retomar logo a própria terra é permitido. Cerque a área de novo.'
+          : a.ilegal === 'crime de dano' ? ' É crime de dano: o selo foi perdido e a Justiça pode condenar você a pagar multa e indenização.'
+          : ' Passou a hora do desforço imediato: é fazer justiça com as próprias mãos. O selo foi perdido e a Justiça pode condenar você.');
+      break;
+    }
+    case 'recolher': {
+      let voltaram = 0, vendidos = 0, valor = 0; const bonus = F.selo ? 1 + SELO_BONUS : 1;
+      for (const g of soltosDe(st, f)) {
+        for (const d of st.celulas.filter(d => d.cercaDe === f && pastejavel(d) && (!d.n || d.especie === g.especie))) {
+          const k = Math.min(g.n, capacidade(st, d, g.especie) - d.n); if (k > 0) { d.especie = g.especie; d.n += k; g.n -= k; voltaram += k; } if (!g.n) break;
+        }
+        if (g.n) { vendidos += g.n; valor += g.n * ESPECIES[g.especie].venda * VENDA_FORCADA * bonus; g.n = 0; }
+      }
+      F.caixa += valor; limpaSoltos(st);
+      msg = `Os vaqueiros recolheram ${voltaram} ${voltaram === 1 ? 'animal' : 'animais'} para os pastos cercados`
+        + (vendidos ? ` e venderam às pressas ${vendidos === 1 ? 'o que não coube' : `os ${vendidos} que não couberam`} (R$ ${valor.toFixed(1).replace('.', ',')} mil).` : '.');
+      break;
+    }
     case 'guarda': c.guarda = true; msg = 'Animais de guarda soltos com o rebanho.'; break;
     case 'curral': c.curral = true; msg = 'O rebanho dorme no curral.'; break;
     case 'telar': F.telado = true; msg = 'Galinheiro telado.'; break;
@@ -388,7 +461,7 @@ function abate(st, f, id) {
   if (aqui.length) { const tk = aqui[0]; if (rnd(st) < (detectadoPor(st, f, tk) ? 0.85 : 0.5)) alvo = tk; }
   else if (perto.length && rnd(st) < 0.2) alvo = perto[0];
   const Pd = B.predador, o = Pd.f ? 'a' : 'o';
-  if (F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = `contratou matador de ${Pd.plural}`; }
+  perdeSelo(st, F, `contratou matador de ${Pd.plural}`);
   if (!alvo) return `O matador passou a noite na mata e voltou sem ${o} ${Pd.nome}. O selo foi perdido mesmo assim.`;
   st.tokens = st.tokens.filter(t => t !== alvo);
   st.onca.J = Math.max(0, st.onca.J - 1);
@@ -453,9 +526,13 @@ export function jogaIA(st, f) {
     const escolha = opcoes.find(a => a.material === 'nativa') || opcoes.find(a => a.material === preferido) || opcoes.find(a => a.material === 'madeira');
     return escolha && F.caixa >= escolha.custo + 15 ? executar(st, f, escolha.acao, c.id).ok : false;
   };
-  let guarda = 0;
+  let guarda = 0, derrubou = false;
   while (F.acoes > 0 && guarda++ < 12) {
-    // 0) defender a terra: processar quem grilou, renovar cercas com animais, cercar pasto aberto
+    // 0) defender a terra: desforço imediato, processos, recolher animais soltos, renovar cercas, cercar pasto aberto
+    const recem = celulasDe(st, f).find(c => grilada(c) && st.t - (c.tomadaEm ?? -99) <= DESFORCO && vizinhos(c.id).some(v => posse(st.celulas[v]) === f));
+    if (recem && rnd(st) < 0.3 + 0.5 * P.defende && executar(st, f, 'derrubar', recem.id).ok) continue;
+    if (processosAbertos(st, f).length && rnd(st) < 0.4 + 0.5 * P.respeitaLei && executar(st, f, 'processar', F.sede).ok) continue;
+    if (totalSoltos(st, f) && F.caixa >= CUSTOS.recolher + 5 && executar(st, f, 'recolher', F.sede).ok) continue;
     const invadida = celulasDe(st, f).find(c => grilada(c) && (c.processo ?? -1) < st.t);
     if (invadida && rnd(st) < 0.4 + 0.5 * P.respeitaLei && executar(st, f, 'justica', invadida.id).ok) continue;
     const vencendo = minhas().find(c => c.cercaDe === f && c.n && c.material !== 'concreto' && c.validade <= 2);
@@ -512,7 +589,14 @@ export function jogaIA(st, f) {
         .sort((a, b) => (pastejavel(b) ? 1 : 0) - (pastejavel(a) ? 1 : 0) || distancia(a.id, F.sede) - distancia(b.id, F.sede));
       if (alheias[0] && cercar(alheias[0], 'madeira')) { st.grileiros = [...new Set([...(st.grileiros || []), f])]; continue; }
     }
-    // 8) cerca de proteção: depois de alguém grilar na região, cerca a própria terra aberta que encosta na do vizinho
+    // 8) sabotagem: quem respeita pouco a lei derruba, no máximo uma vez por estação, a cerca de um pasto cheio do vizinho
+    if (!derrubou && rnd(st) < (1 - P.respeitaLei) * 0.5) {
+      const alvos = st.celulas.filter(c => c.cercaDe >= 0 && c.cercaDe !== f && c.tipo !== 'sede' && c.n > 0 && vizinhos(c.id).some(v => posse(st.celulas[v]) === f)
+        && (c.material !== 'concreto' || F.caixa >= CUSTOS.derrubarConcreto + 30))
+        .sort((a, b) => b.n * ESPECIES[b.especie].venda - a.n * ESPECIES[a.especie].venda);
+      if (alvos[0] && executar(st, f, 'derrubar', alvos[0].id).ok) { derrubou = true; st.grileiros = [...new Set([...(st.grileiros || []), f])]; continue; }
+    }
+    // 9) cerca de proteção: depois de alguém grilar na região, cerca a própria terra aberta que encosta na do vizinho
     if ((st.grileiros || []).some(g => g !== f) && rnd(st) < P.defende * 0.7) {
       const divisa = celulasDe(st, f).filter(c => c.cercaDe < 0 && c.tipo !== 'agua' && c.tipo !== 'sede'
         && vizinhos(c.id).some(v => posse(st.celulas[v]) === f) && vizinhos(c.id).some(v => { const p = posse(st.celulas[v]); return p >= 0 && p !== f; }))[0];
@@ -534,7 +618,7 @@ export function jogaIA(st, f) {
 function integraModelo(st) {
   const B = bioma(st), P = MODELO, O = st.onca;
   const K = capacidadeK(st); O.K = K;
-  const L = st.celulas.reduce((s, c) => s + exposicao(st, c), 0);
+  const L = st.celulas.reduce((s, c) => s + exposicao(st, c), 0) + (st.soltos || []).reduce((s, g) => s + exposicaoSoltos(st, g), 0);
   const fracOusado = st.tokens.length ? st.tokens.filter(t => t.ousado > 0).length / st.tokens.length : 0;
   const a2 = P.a * (B.pref ?? P.pref) * (1 + P.ousadoPref * fracOusado);
   const Jmax = Math.max(0.5, B.Jcap * K / O.K0);
@@ -562,6 +646,7 @@ function integraModelo(st) {
 function moveTokens(st) {
   const B = bioma(st);
   const fome = st.onca.N / st.onca.K < 0.35;
+  const comAnimais = new Set([...st.celulas.filter(c => c.n > 0).map(c => c.id), ...(st.soltos || []).filter(g => g.n > 0).map(g => g.cel)]);
   for (const tk of st.tokens) {
     tk.caminho = [tk.cel];
     for (let p = 0; p < B.passos; p++) {
@@ -571,7 +656,7 @@ function moveTokens(st) {
       const prox = sorteia(st, cand, v => {
         const c = st.celulas[v];
         let w = TIPOS[c.tipo].habitat * (v === tk.cel ? 0.6 : 1) * (ocup.has(v) ? 0.25 : 1);
-        if (fome || tk.ousado) { if (vizinhos(v).some(u => st.celulas[u].n > 0)) w *= 2.2; }
+        if (fome || tk.ousado) { if (comAnimais.has(v) || vizinhos(v).some(u => comAnimais.has(u))) w *= 2.2; }
         return w;
       });
       tk.cel = prox; tk.caminho.push(prox);
@@ -598,29 +683,33 @@ function resolveAtaques(st, esperado) {
   const n = poisson(st, esperado);
   const ataques = [];
   for (let k = 0; k < n; k++) {
-    const cand = st.celulas.filter(c => exposicao(st, c) > 0);
+    // alvos: pastos expostos na borda e grupos de animais soltos
+    const cand = [...st.celulas.filter(c => exposicao(st, c) > 0).map(c => ({ id: c.id, exp: exposicao(st, c) })),
+                  ...(st.soltos || []).filter(g => g.n > 0).map(g => ({ id: g.cel, exp: exposicaoSoltos(st, g), g }))];
     if (!cand.length) break;
-    const cel = sorteia(st, cand, c => {
-      const d = Math.min(99, ...st.tokens.map(t => distancia(t.cel, c.id)));
-      return exposicao(st, c) * (d <= 1 ? 3 : d === 2 ? 1.2 : 0.25);
+    const alvo = sorteia(st, cand, x => {
+      const d = Math.min(99, ...st.tokens.map(t => distancia(t.cel, x.id)));
+      return x.exp * (d <= 1 ? 3 : d === 2 ? 1.2 : 0.25);
     });
+    const cel = st.celulas[alvo.id], grupo = alvo.g;
     // a onça responsável: a mais próxima
     let onca = null, dmin = 99;
     for (const t of st.tokens) { const d = distancia(t.cel, cel.id); if (d < dmin) { dmin = d; onca = t; } }
     let local = null;
+    const viz = grupo && habitat(cel) ? [cel.id] : vizinhos(cel.id).filter(v => habitat(st.celulas[v]));
     if (onca && dmin <= 2) {
-      const viz = vizinhos(cel.id).filter(v => habitat(st.celulas[v]));
       if (viz.length) { onca.cel = viz.sort((a, b) => distancia(a, onca.cel) - distancia(b, onca.cel))[0]; local = onca.cel; }
-    } else {
-      const viz = vizinhos(cel.id).filter(v => habitat(st.celulas[v])); local = viz.length ? viz[0] : null;
-    }
-    const esp = cel.especie, mortos = esp === 'carneiro' ? Math.min(cel.n, 1 + (rnd(st) < 0.4 ? 1 : 0)) : 1;
-    cel.n -= mortos; if (!cel.n) cel.especie = null;
-    const F = st.fazendas[posse(cel)];
+    } else local = viz.length ? viz[0] : null;
+    const esp = grupo ? grupo.especie : cel.especie, qtd = grupo ? grupo.n : cel.n;
+    const mortos = esp === 'carneiro' ? Math.min(qtd, 1 + (rnd(st) < 0.4 ? 1 : 0)) : 1;
+    const dono = grupo ? grupo.f : posse(cel);
+    if (grupo) grupo.n -= mortos; else { cel.n -= mortos; if (!cel.n) cel.especie = null; }
+    const F = st.fazendas[dono];
     F.perdas[esp] += mortos; F.perdasRodada[esp] += mortos; F.ataquesTotal++;
-    const a = { cel: cel.id, onca: local, especie: esp, mortos, dono: posse(cel) };
+    const a = { cel: cel.id, onca: local, especie: esp, mortos, dono, solto: !!grupo };
     F.ataquesUltimos.push(a); ataques.push(a);
   }
+  limpaSoltos(st);
   return ataques;
 }
 
@@ -642,7 +731,7 @@ function eventosBioma(st, rel) {
       for (const u of queimadas) {
         if (u.tipo === 'mata') { u.tipo = 'capoeira'; u.regen = B.regen; u.camera = -1; }
         u.queimado = true;
-        if (u.cercaDe >= 0 && u.material !== 'concreto' && u.tipo !== 'sede') { const dono = u.cercaDe; perdeCerca(st, u, rel); if (dono === 0) rel.eventos.push('O fogo queimou uma cerca de madeira sua.'); }
+        if (u.cercaDe >= 0 && u.material !== 'concreto' && u.tipo !== 'sede') { const dono = u.cercaDe; perdeCerca(st, u, rel, -1, 'fogo'); if (dono === 0) rel.eventos.push('O fogo queimou uma cerca de madeira sua.'); }
       }
       const daPessoa = queimadas.filter(u => posse(u) === 0).length;
       const encosta = queimadas.filter(u => u.regiao === 'encosta').length;
@@ -675,12 +764,17 @@ function detectar(st, rel) {
   rel.vistos = v;
 }
 
-// Uma área perde a cerca: os animais vão para outro pasto cercado da mesma fazenda ou são vendidos às pressas.
-function perdeCerca(st, c, rel, novoDono = -1) {
+// Uma área perde a cerca: os animais vão para outro pasto cercado da mesma fazenda; os que não cabem ficam soltos
+// (cerca que apodreceu ou queimou) ou são vendidos às pressas (área devolvida pela Justiça).
+function perdeCerca(st, c, rel, novoDono = -1, motivo = 'caiu') {
   const f = c.cercaDe;
   if (c.n && f >= 0) {
     const destinos = st.celulas.filter(d => d !== c && d.cercaDe === f && pastejavel(d) && (!d.n || d.especie === c.especie));
     for (const d of destinos) { const k = Math.min(c.n, capacidade(st, d, c.especie) - d.n); if (k > 0) { d.especie = c.especie; d.n += k; c.n -= k; } if (!c.n) break; }
+    if (c.n && motivo !== 'justica') {
+      if (f === 0) rel?.eventos.push(`Sem cerca, ${c.n} ${c.n > 1 ? `${ESPECIES[c.especie].plural} ficaram soltos` : `${ESPECIES[c.especie].nome} ficou solto`}. Recolha na sede ou cerque a área de novo.`);
+      soltar(st, f, c.especie, c.n, c.id); c.n = 0;
+    }
     if (c.n) {
       st.vendasCerca = st.vendasCerca || {};
       const bonus = st.fazendas[f].selo ? 1 + SELO_BONUS : 1;
@@ -690,8 +784,27 @@ function perdeCerca(st, c, rel, novoDono = -1) {
     }
     if (!c.n) c.especie = null;
   }
-  c.cercaDe = novoDono; c.eletrica = false; c.processo = undefined;
+  c.cercaDe = novoDono; c.eletrica = false; c.processo = undefined; c.tomadaEm = undefined;
   if (novoDono < 0) { c.material = null; c.validade = 0; }
+}
+// animais soltos se espalham pelas áreas abertas vizinhas (difusão) e alguns se perdem
+function moveSoltos(st, rel) {
+  if (!st.soltos?.length) return;
+  const novos = []; let perdidosVoce = 0;
+  for (const g of st.soltos) {
+    if (g.n <= 0) continue;
+    const perdidos = binom(st, g.n, SOLTOS.extravio);
+    if (perdidos) { const F = st.fazendas[g.f]; F.extraviados = (F.extraviados || 0) + perdidos; if (g.f === 0) perdidosVoce += perdidos; }
+    let fica = g.n - perdidos;
+    const destinos = vizinhos(g.cel).filter(v => abertaParaSoltos(st.celulas[v]));
+    const saem = destinos.length ? binom(st, fica, SOLTOS.difusao) : 0;
+    fica -= saem;
+    if (fica) novos.push({ f: g.f, especie: g.especie, n: fica, cel: g.cel });
+    for (let k = 0; k < saem; k++) novos.push({ f: g.f, especie: g.especie, n: 1, cel: destinos[Math.floor(rnd(st) * destinos.length)] });
+  }
+  st.soltos = [];
+  for (const g of novos) soltar(st, g.f, g.especie, g.n, g.cel);
+  if (perdidosVoce) rel.eventos.push(`${perdidosVoce} ${perdidosVoce > 1 ? 'animais soltos se perderam' : 'animal solto se perdeu'} no mato.`);
 }
 function cercasEJustica(st, rel) {
   st.multasGrilagem = {};
@@ -704,7 +817,7 @@ function cercasEJustica(st, rel) {
       if (c.validade <= 0) {
         const f = c.cercaDe;
         if (f === 0) rel.eventos.push(`Uma cerca de ${CERCAS[c.material].nome} sua apodreceu e caiu: a área ficou aberta.`);
-        perdeCerca(st, c, rel); continue;
+        perdeCerca(st, c, rel, -1, 'apodreceu'); continue;
       }
       if (c.cercaDe === 0 && c.validade === 1 && c.n) avisos++;
     }
@@ -717,10 +830,23 @@ function cercasEJustica(st, rel) {
         const dono = c.dono;
         if (g === 0) rel.eventos.push(`A Justiça tirou de você uma área grilada${dono >= 0 ? ` e a devolveu à ${st.fazendas[dono].nome}` : ''}: multa de R$ ${multa} mil.`);
         if (dono === 0) rel.eventos.push(`A Justiça devolveu a você uma área que a ${st.fazendas[g].nome} tinha cercado.`);
-        perdeCerca(st, c, rel, dono >= 0 ? dono : -1);
+        perdeCerca(st, c, rel, dono >= 0 ? dono : -1, 'justica');
       }
     }
   }
+  // processos por cerca derrubada (crime de dano ou justiça com as próprias mãos)
+  st.indenizacoes = {};
+  for (const d of st.danos || []) {
+    if (st.t - d.t >= JUSTICA.prazoDano) { d.fim = true; continue; }
+    if (rnd(st) < ((d.processo ?? -1) >= st.t ? JUSTICA.acionada : JUSTICA.dano)) {
+      d.fim = true;
+      st.multasGrilagem[d.por] = (st.multasGrilagem[d.por] || 0) + MULTA.dano + MULTA.indenizacao; st.fazendas[d.por].multas += MULTA.dano;
+      st.indenizacoes[d.vitima] = (st.indenizacoes[d.vitima] || 0) + MULTA.indenizacao;
+      if (d.por === 0) rel.eventos.push(`A Justiça condenou você por derrubar a cerca da ${st.fazendas[d.vitima].nome}: multa de R$ ${MULTA.dano} mil e indenização de R$ ${MULTA.indenizacao} mil.`);
+      if (d.vitima === 0) rel.eventos.push(`A Justiça condenou ${st.fazendas[d.por].apelido} por derrubar a sua cerca: você recebeu R$ ${MULTA.indenizacao} mil de indenização.`);
+    }
+  }
+  st.danos = (st.danos || []).filter(d => !d.fim);
   if (avisos) rel.eventos.push(avisos > 1 ? `As cercas de ${avisos} pastos com animais caem no fim da próxima estação: renove-as.` : 'A cerca de um pasto com animais cai no fim da próxima estação: renove-a.');
 }
 
@@ -760,7 +886,7 @@ function economia(st, rel) {
     const cra = F.cra ? Math.max(0, folga) * CRA_POR_CELULA : 0;
     receita += cra;
     if (folga < 0) {
-      if (F.selo) { F.selo = false; F.seguro = false; F.motivoSelo = 'vegetação nativa abaixo da reserva legal'; }
+      perdeSelo(st, F, 'vegetação nativa abaixo da reserva legal');
       if (rnd(st) < bioma(st).fiscalDesmate) { multa = -folga * MULTA.desmateCelula; F.multas += multa; }
     }
     for (const inf of [...F.infracoes]) {
@@ -768,10 +894,17 @@ function economia(st, rel) {
     }
     multa += st.multasGrilagem?.[f] || 0;
     forcada += st.vendasCerca?.[f] || 0;
-    F.caixa += receita + forcada + compensacao - despesa - multa;
+    const indenizacao = st.indenizacoes?.[f] || 0;
+    // o selo volta depois de dois anos sem nova infração, com a reserva legal em dia e sem área grilada
+    let seloVoltou = false;
+    if (!F.selo && st.t - (F.ultimaInfracao ?? -99) >= SELO_VOLTA - 1 && folga >= 0 && !st.celulas.some(c => c.cercaDe === f && grilada(c))) {
+      F.selo = true; F.motivoSelo = null; seloVoltou = true;
+      rel.eventos.push(f === 0 ? 'Dois anos sem infrações: o selo de convivência voltou.' : `A ${F.nome} recuperou o selo de convivência.`);
+    }
+    F.caixa += receita + forcada + compensacao + indenizacao - despesa - multa;
     if (F.caixa < 0) F.caixa *= 1 + JUROS_DIVIDA;
     F.receitaTotal += receita;
-    rel.fazendas[f] = { receita, despesa, forcada, compensacao, multa, cra, nascimentos, perdas: { ...F.perdasRodada } };
+    rel.fazendas[f] = { receita, despesa, forcada, compensacao, indenizacao, multa, cra, nascimentos, seloVoltou, perdas: { ...F.perdasRodada } };
   }
 }
 
@@ -782,12 +915,22 @@ export function encerrarRodada(st) {
   const B = bioma(st);
   const rel = { t: st.t, estacao: estacao(st), ano: ano(st), eventos: [], ataques: [], fazendas: [], manejoNestaEstacao: !!st.marcas?.manejo,
                 abateNestaEstacao: !!st.marcas?.abate, desmateNestaEstacao: !!st.marcas?.desmate,
-                cercouNestaEstacao: !!st.marcas?.cercou, grilagemNestaEstacao: !!st.marcas?.grilagem };
+                cercouNestaEstacao: !!st.marcas?.cercou, grilagemNestaEstacao: !!st.marcas?.grilagem, derrubouNestaEstacao: !!st.marcas?.derrubou,
+                derrubaramSuaCerca: (st.derrubadas || []).some(d => d.de === 0) };
   st.marcas = {};
-  for (const inv of st.invasoes || []) if (inv.de === 0) rel.eventos.push(`${st.fazendas[inv.por].apelido} cercou uma área sem cerca da sua fazenda. Você pode entrar na Justiça ou cercar o resto antes que ele avance.`);
-  st.invasoes = []; st.vendasCerca = {};
+  const invasores = {};
+  for (const inv of st.invasoes || []) if (inv.de === 0) invasores[inv.por] = (invasores[inv.por] || 0) + 1;
+  for (const [por, n] of Object.entries(invasores)) rel.eventos.push(`${st.fazendas[por].apelido} cercou ${n > 1 ? `${n} áreas sem cerca` : 'uma área sem cerca'} da sua fazenda. Na próxima estação você ainda pode derrubar essa cerca sem cometer crime (desforço imediato); depois, só pela Justiça.`);
+  for (const d of st.derrubadas || []) {
+    const quem = st.fazendas[d.por], bichos = d.fugiram ? `${d.fugiram} ${d.fugiram > 1 ? ESPECIES[d.especie].plural : ESPECIES[d.especie].nome}` : null;
+    if (d.de === 0) rel.eventos.push(`${quem.apelido} derrubou a cerca de um pasto seu${bichos ? `: ${bichos} ${d.fugiram > 1 ? 'fugiram' : 'fugiu'}` : ''}. `
+      + (d.legal ? 'Foi desforço imediato: a terra era dele e você a tinha cercado.' : 'Na sede, você pode abrir um processo e recolher os animais soltos.'));
+    else if (d.por !== 0 && !d.legal) rel.eventos.push(`Correu a notícia de que ${quem.apelido} derrubou uma cerca da ${st.fazendas[d.de].nome}.`);
+  }
+  st.invasoes = []; st.vendasCerca = {}; st.derrubadas = [];
   const Jantes = st.onca.J, Nantes = st.onca.N;
   eventosBioma(st, rel);
+  moveSoltos(st, rel);
   // herbívoros em excesso comem o pasto (efeito de cascata quando faltam onças)
   const razao = st.onca.N / capacidadeK(st);
   st.fatorHerbivoros = razao > 0.7 ? 1 - 0.45 * Math.min(1, (razao - 0.7) / 0.3) : 1;

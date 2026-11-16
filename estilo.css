@@ -142,6 +142,9 @@ h1, h2, h3 { font-family: var(--f-titulo); line-height: 1.15; text-wrap: balance
 .cracha rect { fill: var(--superficie); opacity: .92; }
 .cracha text { font: 700 11px var(--f-texto); fill: var(--tinta); }
 .cracha use { color: var(--tinta); }
+.cracha.solto rect { stroke-width: 1.6; stroke-dasharray: 3 2; opacity: 1; }
+.cracha.solto text { font-size: 10px; }
+.cracha.solto.f0 rect { stroke: var(--voce); } .cracha.solto.f1 rect { stroke: var(--ia1); } .cracha.solto.f2 rect { stroke: var(--ia2); } .cracha.solto.f3 rect { stroke: var(--ia3); }
 .marcador use { color: var(--tinta); }
 .m-pegada use { color: #f6e7c5; }
 .m-onca circle { fill: var(--onca); stroke: #2a1a00; stroke-width: 1.2; }

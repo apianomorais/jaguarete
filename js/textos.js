@@ -155,6 +155,11 @@ export const NATUREZA = {
     texto: 'Grilagem é a apropriação ilegal de terra alheia ou pública. Deslocar cerca ou marco para se apropriar de imóvel alheio é crime de alteração de limites (Código Penal, art. 161), e invadir terras públicas para ocupá-las também é crime (Lei nº 4.947/1966, art. 20). No jogo, cercar a terra aberta de um vizinho, ou uma unidade de conservação, tira o seu selo; a cada estação, a Justiça pode devolver a área e multar quem grilou.',
     ref: 'Código Penal, art. 161; Lei nº 4.947/1966, art. 20.',
   },
+  dano: {
+    titulo: 'Derrubar a cerca do vizinho',
+    texto: 'Destruir coisa alheia, como a cerca de um vizinho, é crime de dano (Código Penal, art. 163), e quem causa o prejuízo responde também pela indenização. Quem tem a terra invadida pode retomá-la pela própria força, desde que o faça logo e sem ir além do necessário: é o desforço imediato (Código Civil, art. 1.210, § 1º). Passada essa hora, retomar por conta própria é fazer justiça com as próprias mãos (Código Penal, art. 345), e o caminho é a Justiça.',
+    ref: 'Código Penal, arts. 163 e 345; Código Civil, art. 1.210, § 1º.',
+  },
   cercas: {
     titulo: 'Cercas e mourões',
     texto: 'Uma cerca de arame depende dos mourões, as estacas que a sustentam. Madeira tirada da própria mata e sem tratamento apodrece mais rápido; eucalipto tratado dura mais; mourões de concreto duram décadas e não queimam. No jogo, o custo de cercar depende de quantos lados da área ficam expostos: áreas juntas saem mais baratas.',
@@ -183,7 +188,8 @@ export function dicaDaEstacao(st, rel, vistos) {
   if (rel.desmateNestaEstacao) cands.push('desmate', 'reserva');
   const araripe = st.bioma === 'araripe';
   if (rel.manejoNestaEstacao) cands.unshift('manejo');
-  if (rel.grilagemNestaEstacao || rel.eventos.some(e => e.includes('cercou uma área') || e.includes('Justiça'))) cands.unshift('grilagem');
+  if (rel.grilagemNestaEstacao || rel.eventos.some(e => (e.includes('cercou') && e.includes('sem cerca')) || e.includes('devolve'))) cands.unshift('grilagem');
+  if (rel.derrubouNestaEstacao || rel.derrubaramSuaCerca) cands.unshift('dano');
   if (rel.cercouNestaEstacao) cands.push('cercas');
   if (rel.javaporco > 0.3) cands.push('javaporco', 'competicao');
   if (araripe) {
@@ -206,9 +212,9 @@ export function dicaDaEstacao(st, rel, vistos) {
 export const COMO_JOGAR = [
   ['Objetivo', 'Termine os 10 anos (20 estações) com o maior patrimônio: dinheiro em caixa mais o valor do rebanho. Você disputa com três fazendas vizinhas controladas pelo computador.'],
   ['Cada estação', 'Você tem 3 ações: cercar, desmatar, deixar a mata voltar, instalar defesas, pôr câmeras, capturar um jaguar para pôr colar ou chamar o matador. Comprar, vender e mover animais não gasta ação.'],
-  ['Cercas e terra', 'As divisas são abertas: a posse de cada área é de quem a cerca. Animais só ficam em pasto cercado. Cercar custa por lado exposto; as estacas podem vir do seu desmate, de madeira tratada ou de concreto, que não apodrece. Cercar a terra aberta de um vizinho é grilagem: dá área, mas tira o selo e a Justiça pode devolvê-la e multar.'],
+  ['Cercas e terra', 'As divisas são abertas: a posse de cada área é de quem a cerca. Animais só ficam em pasto cercado. Cercar custa por lado exposto; as estacas podem vir do seu desmate, de madeira tratada ou de concreto, que não apodrece. Cercar a terra aberta de um vizinho é grilagem: dá área, mas tira o selo e a Justiça pode devolvê-la e multar. Derrubar a cerca de um vizinho solta os animais dele, que se espalham, se perdem e viram presa fácil; é crime de dano, salvo quando você retoma logo a própria terra que ele acabou de cercar.'],
   ['Os jaguares', 'Vivem na mata e ninguém os vê. Você descobre por onde andam pelas pegadas na sua terra, pelas fotos das câmeras, pelos ataques e pelos colares GPS. Eles comem presas silvestres; quando faltam presas, atacam o rebanho que fica na borda da mata.'],
   ['A mata', 'A mata sustenta as presas silvestres, que sustentam os jaguares. Desmatar dá pasto, mas reduz as presas e deixa mais rebanho na borda. Abaixo da reserva legal, você perde o selo e pode ser multado.'],
-  ['O selo', 'Fazendas que não matam jaguares e respeitam a reserva legal têm um selo que paga 20% a mais pela produção e pelo rebanho, e podem aderir à compensação por ataques.'],
+  ['O selo', 'Fazendas que não matam jaguares e respeitam a reserva legal têm um selo que paga 20% a mais pela produção e pelo rebanho, e podem aderir à compensação por ataques. Quem perde o selo o recupera depois de dois anos sem nova infração.'],
   ['O matador', 'Abater um jaguar é crime. O jogo permite, mas você perde o selo, arrisca multa, e a ausência do jaguar mexe na cadeia alimentar: mais pequenos predadores nas galinhas, mais capivaras no pasto e jovens jaguares ocupando o território vago.'],
 ];

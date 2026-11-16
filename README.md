@@ -14,14 +14,16 @@ Jogo de estratégia para o navegador sobre pecuária e grandes felinos no Pantan
   - desmatar para abrir pasto;
   - deixar a mata voltar;
   - eletrificar a cerca, instalar curral noturno ou pôr animais de guarda;
-  - entrar na Justiça contra um vizinho que cercou a sua terra;
+  - derrubar a cerca de um vizinho;
+  - recolher os seus animais soltos;
+  - entrar na Justiça contra um vizinho que cercou a sua terra ou derrubou a sua cerca;
   - pôr armadilhas fotográficas;
   - capturar um jaguar para pôr colar GPS;
   - contratar um matador de jaguares.
 
   Comprar, vender e mover animais não gasta ação.
 - **Os jaguares:** ficam ocultos na mata. Você só os descobre por pegadas, fotos, ataques e colares GPS. Eles comem presas silvestres e, quando as presas faltam, atacam o rebanho que fica na borda da mata.
-- **O selo:** fazendas que não matam jaguares e respeitam a reserva legal ganham 20% a mais na produção e no valor do rebanho. Também podem aderir à compensação por ataques.
+- **O selo:** fazendas que não matam jaguares e respeitam a reserva legal ganham 20% a mais na produção e no valor do rebanho. Também podem aderir à compensação por ataques. Toda infração tira o selo: matador, desmate ilegal, falta de reserva legal, grilagem e cerca derrubada. O selo volta depois de dois anos (quatro estações, contando a da infração) sem nova infração, desde que a reserva legal esteja em dia e a fazenda não tenha área grilada.
 - **O matador:** abater jaguar é crime (Lei nº 9.605/1998, art. 29). O jogo permite, mas há quatro consequências:
   - você perde o selo;
   - arrisca multa;
@@ -35,7 +37,7 @@ Jogo de estratégia para o navegador sobre pecuária e grandes felinos no Pantan
 As divisas entre as fazendas são abertas. O título (a linha pontilhada no mapa) diz de quem é a terra; a cerca (a linha cheia) diz quem a usa.
 
 - **Posse:** uma área cercada é de quem a cercou e não pode ser tomada. Uma área sem cerca, mesmo com título de outra fazenda, fica com quem a cercar primeiro.
-- **Animais:** só ficam em pasto cercado. Quando uma cerca apodrece, queima ou é tirada pela Justiça, os animais vão para outro pasto cercado da mesma fazenda ou são vendidos às pressas, a 60% do preço.
+- **Animais:** só ficam em pasto cercado. Quando uma cerca apodrece ou queima, os animais vão para outro pasto cercado da mesma fazenda, e os que não cabem ficam soltos. Quando a Justiça devolve uma área grilada, os animais de quem grilou que não couberem em outro pasto são vendidos às pressas, a 60% do preço.
 - **Custo:** cercar uma área custa por lado exposto. Os lados que encostam em outra área cercada por você não precisam de cerca, por isso áreas juntas saem mais baratas. Só dá para cercar uma área encostada em terra que você já controla.
 - **Estacas:**
 
@@ -51,7 +53,19 @@ As divisas entre as fazendas são abertas. O título (a linha pontilhada no mapa
   - A cada estação, a Justiça pode devolver a área ao dono e multar quem grilou: 15% de chance por estação, 30% numa unidade de conservação.
   - A multa é de R$ 15 mil, ou R$ 40 mil numa unidade de conservação.
   - Quem teve a terra cercada pode entrar na Justiça (R$ 3 mil e uma ação). O processo eleva a chance para 60% nesta e na próxima estação.
-- **Os vizinhos:** cada fazendeiro do computador tem um grau de respeito à lei. Seu Brás, o menos cuidadoso, cerca com frequência a terra aberta dos outros quando sobra dinheiro; Zé Ramos faz isso de vez em quando; Dona Celeste nunca. Os três renovam as cercas dos pastos com animais, cercam os próprios pastos abertos, entram na Justiça quando são invadidos e reforçam as divisas quando há um grileiro por perto.
+- **Derrubar a cerca de um vizinho:** custa uma ação. Cerca de estacas da mata ou de madeira sai de graça; cerca de concreto custa R$ 10 mil (trator). Só dá para derrubar uma cerca encostada em terra que você controla.
+  - Os animais que estavam no pasto ficam soltos.
+  - É crime de dano (Código Penal, art. 163). Você perde o selo, e a Justiça abre um caso: a cada estação, há 20% de chance de condenar quem derrubou, ou 60% se a vítima processar. A condenação custa R$ 10 mil de multa e R$ 10 mil de indenização, paga à vítima. Casos não decididos em seis estações se encerram.
+  - **Desforço imediato:** se um vizinho cercou a sua terra, você pode derrubar a cerca dele sem crime, desde que o faça logo: até o fim da estação seguinte à da grilagem (Código Civil, art. 1.210, § 1º). Depois disso, derrubar por conta própria é fazer justiça com as próprias mãos (Código Penal, art. 345), com as mesmas consequências do crime de dano; o caminho passa a ser a Justiça.
+- **Animais soltos:** aparecem no mapa com um contorno tracejado na cor da fazenda dona.
+  - Continuam contando no patrimônio, mas não rendem nem se reproduzem.
+  - A cada estação, cada animal solto tem 50% de chance de ir para uma área aberta vizinha (difusão) e 10% de chance de se perder.
+  - Na mata, ficam duas vezes mais expostos aos predadores do que num pasto de borda sem defesa, e entram na resposta funcional do modelo como parte do rebanho exposto.
+  - O dono recolhe todos de uma vez, na sede (uma ação e R$ 2 mil): vaqueiros levam os animais para os pastos cercados com vaga e vendem às pressas os que não couberem. Quem cerca a área onde estão os próprios animais soltos também os prende de volta.
+- **Os vizinhos:** cada fazendeiro do computador tem um grau de respeito à lei.
+  - Seu Brás, o menos cuidadoso, cerca com frequência a terra aberta dos outros e, de vez em quando, derruba a cerca do pasto mais cheio de um vizinho (no máximo uma por estação).
+  - Zé Ramos faz isso raramente; Dona Celeste nunca.
+  - Os três derrubam logo a cerca de quem grilou a sua terra (desforço imediato), processam quem derrubou as suas cercas, recolhem os animais soltos, renovam as cercas dos pastos com animais, cercam os próprios pastos abertos e reforçam as divisas quando há um grileiro por perto.
 
 ## Cenário da Chapada do Araripe
 
@@ -153,28 +167,33 @@ Com os parâmetros padrão, Pantanal e Amazônia mostram oscilações amortecida
 
 Resultado de `npm run sim` com 300 partidas por bioma e estratégia (semente 20261116). Cada coluna é uma estratégia de teste para a fazenda da pessoa:
 
-Todas as estratégias, menos a passiva, cuidam das cercas: renovam as que estão vencendo, cercam os pastos abertos e entram na Justiça quando um vizinho cerca a sua terra.
+Todas as estratégias, menos a passiva, cuidam das cercas: renovam as que estão vencendo, cercam os pastos abertos, derrubam logo a cerca de quem grilou a sua terra, processam quem derrubou as suas cercas e recolhem os animais soltos.
 
 - **Conviver:** cerca elétrica na borda, compensação, cotas de reserva, manejo de javaporcos e expansão só dentro da lei.
 - **Desmatar legal:** abre pasto até o limite da reserva.
 - **Grileiro:** usa as três ações de cada estação para cercar a terra aberta dos vizinhos.
+- **Sabotador:** "conviver" que derruba, a cada estação, a cerca do pasto mais cheio de um vizinho encostado na sua terra.
 - **Passiva:** só repõe animais e não renova as cercas.
 - **Abater:** chama o matador após cada ataque.
 - **Desmatar e abater:** combina desmate e matador.
 
 Vitória (%) e patrimônio médio (R$ mil):
 
-| Bioma    | Conviver | Desmatar legal | Grileiro | Passiva | Abater | Desmatar e abater |
-|----------|---------:|---------------:|---------:|--------:|-------:|------------------:|
-| Pantanal | 58% · 411 | 0% · 122 | 0% · 25 | 1% · 209 | 0% · 61 | 0% · 69 |
-| Amazônia | 99% · 498 | 15% · 296 | 0% · 46 | 2% · 258 | 2% · 157 | 0% · 6 |
-| Cerrado  | 38% · 608 | 4% · 366 | 0% · 62 | 0% · 280 | 0% · 158 | 0% · 176 |
-| Caatinga | 78% · 248 | 97% · 288 | 0% · 33 | 26% · 211 | 4% · 142 | 9% · 173 |
-| Araripe  | 43% · 639 | 36% · 620 | 0% · 55 | 0% · 277 | 0% · 238 | 0% · 249 |
+| Bioma    | Conviver | Desmatar legal | Grileiro | Sabotador | Passiva | Abater | Desmatar e abater |
+|----------|---------:|---------------:|---------:|----------:|--------:|-------:|------------------:|
+| Pantanal | 60% · 407 | 1% · 120 | 0% · 41 | 31% · 291 | 0% · 172 | 0% · 70 | 0% · 77 |
+| Amazônia | 99% · 498 | 16% · 294 | 0% · 65 | 99% · 498 | 0% · 200 | 1% · 155 | 0% · −5 |
+| Cerrado  | 34% · 596 | 2% · 349 | 0% · 80 | 15% · 420 | 0% · 231 | 0% · 171 | 1% · 195 |
+| Caatinga | 67% · 246 | 95% · 292 | 0% · 63 | 67% · 246 | 2% · 171 | 14% · 172 | 18% · 189 |
+| Araripe  | 54% · 665 | 41% · 620 | 0% · 95 | 54% · 665 | 0% · 218 | 0% · 251 | 0% · 270 |
 
-A grilagem não compensa: o grileiro perde o selo logo na primeira área, paga de R$ 90 mil a R$ 185 mil em multas e termina com uma fração do patrimônio da estratégia passiva. Mesmo a grilagem ocasional pesa: a estratégia "conviver" que cerca o pasto aberto de um vizinho sempre que aparece um cai de 58% para 26% de vitórias no Pantanal e de 38% para 16% no Cerrado. Nos outros biomas, os vizinhos quase não deixam pasto aberto. Do outro lado, quem não cuida das cercas perde terra: com a estratégia passiva, os vizinhos terminam a partida com 0,5 a 1,9 área sua cercada, e as cercas que apodrecem forçam a venda dos animais.
+Crime continua não compensando como regra, mas a volta do selo tornou as jogadas agressivas uma aposta, e não uma derrota certa:
 
-Onde há javaporcos, "conviver" inclui chamar os caçadores de manejo quando os porcos ocupam mais de 30% da capacidade. Sem o manejo, a mesma estratégia cai para 16% de vitórias no Pantanal, 88% na Amazônia e 4% no Cerrado. No Araripe, conviver e desmatar dentro da Zona de Produção rendem quase o mesmo. O soldadinho termina com cerca de 84% da população inicial, pressionado pelo fogo e pelo desmate no alto da chapada.
+- **Grilagem:** o grileiro que usa todas as ações para cercar terra alheia termina sempre em último, com R$ 40 mil a R$ 95 mil. Já a grilagem ocasional (cercar o pasto aberto de um vizinho quando aparece um) dá 44% de vitórias no Pantanal e 23% no Cerrado, contra 26% e 16% quando o selo não voltava.
+- **Sabotagem:** derrubar cercas toda estação mantém o selo perdido e cai para 31% de vitórias no Pantanal e 15% no Cerrado. Derrubar só duas vezes nos seis primeiros anos, sempre no pasto do vizinho que lidera, quase não custa: 54% no Pantanal e 33% no Cerrado. Na Amazônia, na Caatinga e no Araripe, a sua terra quase nunca encosta num pasto cercado de vizinho, e a estratégia não tem o que derrubar.
+- **Defesa:** quem cuida das cercas derruba, por desforço imediato, de 1 a 4 cercas de grileiro por partida. Seu Brás tem de 8 a 14 cercas derrubadas por partida, quase todas por desforço imediato dos vizinhos que ele grilou. Com a estratégia passiva, que não recolhe os animais, de 1 a 8 animais soltos se perdem por partida.
+
+Onde há javaporcos, "conviver" inclui chamar os caçadores de manejo quando os porcos ocupam mais de 30% da capacidade. Sem o manejo, a mesma estratégia cai para 18% de vitórias no Pantanal, 93% na Amazônia e 3% no Cerrado. No Araripe, conviver rende um pouco mais que desmatar dentro da Zona de Produção. O soldadinho termina com cerca de 84% da população inicial, pressionado pelo fogo e pelo desmate no alto da chapada.
 
 Na Caatinga há poucos jaguares e poucos ataques. Lá, desmatar até o limite legal rende mais ao fazendeiro, enquanto a população de jaguares cai de 3 para cerca de 2 em dez anos.
 
@@ -182,7 +201,9 @@ Na Caatinga há poucos jaguares e poucos ataques. Lá, desmatar até o limite le
 
 AZEVEDO, F. C. et al. Avaliação do risco de extinção da onça-parda *Puma concolor* (Linnaeus, 1771) no Brasil. **Biodiversidade Brasileira**, v. 3, n. 1, p. 107-121, 2013.
 
-BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940. Código Penal. Art. 161 (alteração de limites). Rio de Janeiro, 1940.
+BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940. Código Penal. Arts. 161 (alteração de limites), 163 (dano) e 345 (exercício arbitrário das próprias razões). Rio de Janeiro, 1940.
+
+BRASIL. Lei nº 10.406, de 10 de janeiro de 2002. Código Civil. Art. 1.210, § 1º (desforço imediato). Brasília, DF, 2002.
 
 BRASIL. Lei nº 4.947, de 6 de abril de 1966. Fixa normas de direito agrário. Art. 20 (invasão de terras públicas). Brasília, DF, 1966.
 
