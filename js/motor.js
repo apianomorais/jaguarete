@@ -2,7 +2,7 @@
 // Não usa o DOM; roda no navegador e no Node (para a simulação de balanceamento).
 import { RODADAS, ACOES_POR_RODADA, W, H, ESPECIES, GALINHA, CUSTOS, MANUTENCAO, MULTA, SELO_BONUS, VENDA_FORCADA,
          JUROS_DIVIDA, MAX_CAMERAS, CRA_POR_CELULA, DEFESAS, TIPOS, CAPACIDADE, MODELO, BIOMAS, JOGADOR, VIZINHOS, SEDES,
-         CERCAS, ESTACAS_DESMATE, JUSTICA, DESFORCO, SOLTOS, SELO_VOLTA } from './dados.js';
+         CERCAS, ESTACAS_DESMATE, JUSTICA, DESFORCO, SOLTOS, SELO_VOLTA, USUCAPIAO, VIGILANCIA } from './dados.js';
 
 // ---------------------------------------------------------------- aleatoriedade com semente
 export function rnd(st) {
@@ -50,6 +50,9 @@ export const posse = c => c.cercaDe >= 0 ? c.cercaDe : c.dono;                  
 export const controladas = (st, f) => st.celulas.filter(c => posse(c) === f);
 export const grilada = c => c.cercaDe >= 0 && c.cercaDe !== c.dono;
 // lados do hexágono que precisam de cerca: os que não encostam em área já cercada pela mesma fazenda
+// estações que faltam para uma área grilada virar usucapião, se o dono não reclamar (Infinity para terra pública)
+export const faltaUsucapiao = c => !grilada(c) || c.reserva || c.dono < 0 ? Infinity
+  : Math.max(0, Math.min(USUCAPIAO.comUso - (c.posseUso || 0), USUCAPIAO.semUso - (c.posse || 0)));
 export function ladosExpostos(st, f, id) { return 6 - vizinhos(id).filter(v => st.celulas[v].cercaDe === f).length; }
 // animais soltos: grupos { f, especie, n, cel } que ficaram fora de cerca
 export const soltosEm = (st, id) => (st.soltos || []).filter(g => g.cel === id && g.n > 0);
@@ -431,7 +434,7 @@ export function executar(st, f, acao, id) {
       }
       limpaSoltos(st);
       if (tomou) {
-        c.tomadaEm = st.t;
+        c.tomadaEm = st.t; c.posse = 0; c.posseUso = 0; c.notada = c.dono === 0;   // a pessoa é avisada; o computador precisa perceber
         perdeSelo(st, F, 'grilagem de terra');
         if (c.dono >= 0) { (st.invasoes = st.invasoes || []).push({ por: f, de: c.dono, cel: id }); guardaRancor(st, st.fazendas[c.dono], f); }
       }
@@ -440,14 +443,15 @@ export function executar(st, f, acao, id) {
         + (tomou ? ` É grilagem: o selo foi perdido e a Justiça pode devolver a área ${c.reserva ? 'ao poder público' : 'ao dono'} e multar.` : '');
       break;
     }
-    case 'justica': c.processo = st.t + 1; msg = 'Processo aberto: a chance de a Justiça devolver a área na próxima estação subiu.'; break;
+    case 'justica': c.processo = st.t + 1; c.posse = 0; c.posseUso = 0;
+      msg = 'Processo aberto: a contagem da usucapião foi zerada, e a Justiça pode devolver a área nesta estação ou na próxima.'; break;
     case 'processar': for (const d of processosAbertos(st, f)) d.processo = st.t + 1;
       msg = 'Processo aberto: a chance de a Justiça condenar quem derrubou suas cercas sobe nesta estação e na próxima.'; break;
     case 'derrubar': {
       const g = c.cercaDe, Fg = st.fazendas[g], fugiram = c.n, esp = c.especie;
       F.derrubadas = (F.derrubadas || 0) + 1; Fg.cercasDerrubadas = (Fg.cercasDerrubadas || 0) + 1;
       if (c.n) { soltar(st, g, esp, c.n, id); c.n = 0; c.especie = null; }
-      c.cercaDe = -1; c.material = null; c.validade = 0; c.eletrica = false; c.processo = undefined; c.tomadaEm = undefined;
+      c.cercaDe = -1; c.material = null; c.validade = 0; c.eletrica = false; c.processo = undefined; c.tomadaEm = undefined; c.posse = 0; c.posseUso = 0;
       if (a.ilegal) {
         perdeSelo(st, F, a.ilegal === 'crime de dano' ? 'derrubou a cerca de um vizinho' : 'fez justiça com as próprias mãos');
         (st.danos = st.danos || []).push({ por: f, vitima: g, cel: id, t: st.t, processo: -1 });
@@ -577,13 +581,14 @@ export function jogaIA(st, f) {
   repoe(25);
   while (F.acoes > 0 && guarda++ < 12) {
     // 0) defender a terra: desforço imediato, processos, recolher animais soltos, renovar cercas, cercar pasto aberto
-    const recem = celulasDe(st, f).find(c => grilada(c) && st.t - (c.tomadaEm ?? -99) <= DESFORCO && vizinhos(c.id).some(v => posse(st.celulas[v]) === f));
+    const recem = celulasDe(st, f).find(c => grilada(c) && c.notada !== false && st.t - (c.tomadaEm ?? -99) <= DESFORCO && vizinhos(c.id).some(v => posse(st.celulas[v]) === f));
     if (recem && rnd(st) < 0.3 + 0.5 * P.defende && executar(st, f, 'derrubar', recem.id).ok) continue;
     if (processosAbertos(st, f).length && rnd(st) < 0.4 + 0.5 * P.respeitaLei && executar(st, f, 'processar', F.sede).ok) continue;
     if (totalSoltos(st, f) && F.caixa >= CUSTOS.recolher + 5 && executar(st, f, 'recolher', F.sede).ok) continue;
-    const invadida = celulasDe(st, f).find(c => grilada(c) && (c.processo ?? -1) < st.t);
-    if (invadida && rnd(st) < 0.4 + 0.5 * P.respeitaLei && executar(st, f, 'justica', invadida.id).ok) continue;
-    const vencendo = minhas().find(c => c.cercaDe === f && c.n && c.material !== 'concreto' && c.validade <= 2);
+    const invadida = celulasDe(st, f).filter(c => grilada(c) && c.notada !== false && (c.processo ?? -1) < st.t).sort((a, b) => faltaUsucapiao(a) - faltaUsucapiao(b))[0];
+    if (invadida && rnd(st) < (faltaUsucapiao(invadida) <= 3 ? 0.95 : 0.4 + 0.5 * P.respeitaLei) && executar(st, f, 'justica', invadida.id).ok) continue;
+    // renova cercas vencendo dos pastos com animais e das áreas griladas (para não perder a contagem da usucapião)
+    const vencendo = minhas().find(c => c.cercaDe === f && (c.n || grilada(c)) && c.material !== 'concreto' && c.validade <= 2 && c.tipo !== 'sede');
     if (vencendo && cercar(vencendo, P.respeitaLei >= 0.9 ? 'concreto' : 'madeira')) continue;
     const aberto = minhas().find(c => c.cercaDe < 0 && pastejavel(c) && c.dono === f);
     if (aberto && cercar(aberto, 'madeira')) continue;
@@ -867,7 +872,7 @@ function perdeCerca(st, c, rel, novoDono = -1, motivo = 'caiu') {
     }
     if (!c.n) c.especie = null;
   }
-  c.cercaDe = novoDono; c.eletrica = false; c.processo = undefined; c.tomadaEm = undefined;
+  c.cercaDe = novoDono; c.eletrica = false; c.processo = undefined; c.tomadaEm = undefined; c.posse = 0; c.posseUso = 0;
   if (novoDono < 0) { c.material = null; c.validade = 0; }
 }
 // animais soltos se espalham pelas áreas abertas vizinhas (difusão) e alguns se perdem
@@ -889,9 +894,19 @@ function moveSoltos(st, rel) {
   for (const g of novos) soltar(st, g.f, g.especie, g.n, g.cel);
   if (perdidosVoce) rel.eventos.push(`${perdidosVoce} ${perdidosVoce > 1 ? 'animais soltos se perderam' : 'animal solto se perdeu'} no mato.`);
 }
+// a área grilada passa a ser de quem a cercou
+function usucapiao(st, c, rel) {
+  const g = c.cercaDe, antigo = c.dono;
+  c.dono = g; c.posse = 0; c.posseUso = 0; c.processo = undefined; c.tomadaEm = undefined;
+  st.fazendas[g].usucapioes = (st.fazendas[g].usucapioes || 0) + 1;
+  st.fazendas[antigo].perdidasUsucapiao = (st.fazendas[antigo].perdidasUsucapiao || 0) + 1;
+  if (g === 0) rel.eventos.push(`Usucapião: a área que você cercou na terra da ${st.fazendas[antigo].nome} agora é sua. O dono não reclamou a tempo.`);
+  else if (antigo === 0) rel.eventos.push(`A ${st.fazendas[g].nome} ganhou por usucapião uma área sua que tinha cercado: você não reclamou a tempo.`);
+  else rel.eventos.push(`Correu a notícia de que a ${st.fazendas[g].nome} ganhou por usucapião uma área da ${st.fazendas[antigo].nome}.`);
+}
 function cercasEJustica(st, rel) {
   st.multasGrilagem = {};
-  let avisos = 0;
+  let avisos = 0; const alertas = {};
   for (const c of st.celulas) {
     if (c.cercaDe < 0 || c.tipo === 'sede') continue;
     // desgaste das estacas
@@ -904,9 +919,10 @@ function cercasEJustica(st, rel) {
       }
       if (c.cercaDe === 0 && c.validade === 1 && c.n) avisos++;
     }
-    // Justiça contra a grilagem
+    // Justiça contra a grilagem: em terra particular, só com processo do dono; na terra pública, o poder público age sozinho
     if (grilada(c)) {
-      const p = (c.processo ?? -1) >= st.t ? JUSTICA.acionada : c.reserva ? JUSTICA.uc : JUSTICA.base;
+      const ativo = (c.processo ?? -1) >= st.t;
+      const p = ativo ? JUSTICA.acionada : c.reserva || c.dono < 0 ? JUSTICA.uc : JUSTICA.base;
       if (rnd(st) < p) {
         const g = c.cercaDe, multa = c.reserva ? MULTA.grilagemUC : MULTA.grilagem;
         st.multasGrilagem[g] = (st.multasGrilagem[g] || 0) + multa; st.fazendas[g].multas += multa;
@@ -914,13 +930,24 @@ function cercasEJustica(st, rel) {
         if (g === 0) rel.eventos.push(`A Justiça tirou de você uma área grilada${dono >= 0 ? ` e a devolveu à ${st.fazendas[dono].nome}` : ''}: multa de R$ ${multa} mil.`);
         if (dono === 0) rel.eventos.push(`A Justiça devolveu a você uma área que a ${st.fazendas[g].nome} tinha cercado.`);
         perdeCerca(st, c, rel, dono >= 0 ? dono : -1, 'justica');
+        continue;
+      }
+      // o dono (do computador) pode perceber a cerca nesta estação
+      if (c.dono > 0 && !c.notada && rnd(st) < (pastejavel(c) ? VIGILANCIA.pasto : VIGILANCIA.mata) + VIGILANCIA.monitora * (st.fazendas[c.dono].perfil?.monitora ?? 0)) c.notada = true;
+      // usucapião: conta a posse mansa e pacífica (sem processo) de terra particular
+      if (!c.reserva && c.dono >= 0 && !ativo) {
+        c.posse = (c.posse || 0) + 1;
+        if (pastejavel(c) && c.n > 0) c.posseUso = (c.posseUso || 0) + 1;
+        if (faltaUsucapiao(c) === 0) usucapiao(st, c, rel);
+        else if (c.dono === 0 && faltaUsucapiao(c) <= USUCAPIAO.alerta) alertas[c.cercaDe] = Math.min(alertas[c.cercaDe] ?? 99, faltaUsucapiao(c));
       }
     }
   }
+  for (const [g, n] of Object.entries(alertas)) rel.eventos.push(`${n > 1 ? `Faltam ${n} estações` : 'Falta 1 estação'} para a ${st.fazendas[g].nome} ganhar por usucapião uma área sua que ela cercou. Abra um processo para interromper a contagem.`);
   // processos por cerca derrubada (crime de dano ou justiça com as próprias mãos)
   st.indenizacoes = {};
   for (const d of st.danos || []) {
-    if (st.t - d.t >= JUSTICA.prazoDano) { d.fim = true; continue; }
+    if (st.t - d.t >= JUSTICA.prazoQueixa && (d.processo ?? -1) < st.t) { d.fim = true; continue; }   // a vítima não processou: decai o direito de queixa
     if (rnd(st) < ((d.processo ?? -1) >= st.t ? JUSTICA.acionada : JUSTICA.dano)) {
       d.fim = true;
       st.multasGrilagem[d.por] = (st.multasGrilagem[d.por] || 0) + MULTA.dano + MULTA.indenizacao; st.fazendas[d.por].multas += MULTA.dano;
@@ -1003,7 +1030,7 @@ export function encerrarRodada(st) {
   st.marcas = {};
   const invasores = {};
   for (const inv of st.invasoes || []) if (inv.de === 0) invasores[inv.por] = (invasores[inv.por] || 0) + 1;
-  for (const [por, n] of Object.entries(invasores)) rel.eventos.push(`${st.fazendas[por].apelido} cercou ${n > 1 ? `${n} áreas sem cerca` : 'uma área sem cerca'} da sua fazenda. Na próxima estação você ainda pode derrubar essa cerca sem cometer crime (desforço imediato); depois, só pela Justiça.`);
+  for (const [por, n] of Object.entries(invasores)) rel.eventos.push(`${st.fazendas[por].apelido} cercou ${n > 1 ? `${n} áreas sem cerca` : 'uma área sem cerca'} da sua fazenda. Na próxima estação você ainda pode derrubar essa cerca sem cometer crime (desforço imediato); depois, só pela Justiça. Sem reclamação, a área vira usucapião.`);
   for (const d of st.derrubadas || []) {
     const quem = st.fazendas[d.por], bichos = d.fugiram ? `${d.fugiram} ${d.fugiram > 1 ? ESPECIES[d.especie].plural : ESPECIES[d.especie].nome}` : null;
     if (d.de === 0) rel.eventos.push(`${quem.apelido} derrubou a cerca de um pasto seu${bichos ? `: ${bichos} ${d.fugiram > 1 ? 'fugiram' : 'fugiu'}` : ''}. `

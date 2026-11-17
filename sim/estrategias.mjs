@@ -22,7 +22,7 @@ export function cuidaCercas(st, preferido = 'madeira') {
   if (M.processosAbertos(st, 0).length) tenta('processar', F.sede);
   if (M.totalSoltos(st, 0)) tenta('recolher', F.sede);
   for (const c of M.celulasDe(st, 0).filter(c => M.grilada(c) && (c.processo ?? -1) < st.t)) tenta('justica', c.id);
-  for (const c of M.controladas(st, 0).filter(c => c.cercaDe === 0 && c.n && c.material !== 'concreto' && c.validade <= 2)) cercar(c);
+  for (const c of M.controladas(st, 0).filter(c => c.cercaDe === 0 && (c.n || M.grilada(c)) && c.material !== 'concreto' && c.validade <= 2)) cercar(c);
   for (const c of M.controladas(st, 0).filter(c => c.cercaDe < 0 && M.pastejavel(c) && c.dono === 0)) cercar(c);
   return cercar;
 }

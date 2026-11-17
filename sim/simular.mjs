@@ -16,7 +16,7 @@ function partida(biomaId, estr, sem) {
            griladas: st.fazendas.map((_, f) => st.celulas.filter(c => M.grilada(c) && c.cercaDe === f).length),
            perdidas: st.celulas.filter(c => c.dono === 0 && M.grilada(c)).length,
            derrubou: st.fazendas.map(F => F.derrubadas || 0), sofreu: st.fazendas.map(F => F.cercasDerrubadas || 0),
-           revides: st.fazendas.map(F => F.revides || 0), extraviados: st.fazendas.map(F => F.extraviados || 0),
+           revides: st.fazendas.map(F => F.revides || 0), usuc: st.fazendas.map(F => F.usucapioes || 0), usucPerdidas: st.fazendas.map(F => F.perdidasUsucapiao || 0), extraviados: st.fazendas.map(F => F.extraviados || 0),
            selos: st.fazendas.map(F => F.selo ? 1 : 0), S: st.soldadinho?.S ?? null, Vfim: st.hist.at(-1).V, Jfim: st.onca.J,
            Js: st.hist.map(h => h.J), Ns: st.hist.map(h => h.N / h.K) };
 }
@@ -37,7 +37,7 @@ for (const b of Object.keys(BIOMAS).filter(b => !process.env.BIOMAS || process.e
                     voceVence: Math.round(100 * jogos.filter(r => r.pos === 1).length / jogos.length),
                     vizinhoDeFrente: Math.round(100 * jogos.filter(r => r.chaves[2] === k).length / jogos.length),
                     multas: Math.round(media(jogos.map(r => r.multas[f(r)]))), derrubou: r1(media(jogos.map(r => r.derrubou[f(r)]))),
-                    revides: r1(media(jogos.map(r => r.revides[f(r)]))), griladas: r1(media(jogos.map(r => r.griladas[f(r)]))) };
+                    revides: r1(media(jogos.map(r => r.revides[f(r)]))), usucapioes: r1(media(jogos.map(r => r.usuc[f(r)]))), griladas: r1(media(jogos.map(r => r.griladas[f(r)]))) };
     }
     out[b][e] = {
       vitoria: r1(100 * rs.filter(r => r.pos === 1).length / N),
@@ -52,6 +52,7 @@ for (const b of Object.keys(BIOMAS).filter(b => !process.env.BIOMAS || process.e
       multasVoce: Math.round(media(rs.map(r => r.multas[0]))),
       perdidasVoce: r1(media(rs.map(r => r.perdidas))),
       derrubouVoce: r1(media(rs.map(r => r.derrubou[0]))), sofreuVoce: r1(media(rs.map(r => r.sofreu[0]))),
+      usucapiaoVoce: r1(media(rs.map(r => r.usuc[0]))), usucapiaoContraVoce: r1(media(rs.map(r => r.usucPerdidas[0]))), usucapiaoIA: r1(media(rs.map(r => r.usuc.slice(1).reduce((a, b) => a + b, 0)))),
       extraviadosVoce: r1(media(rs.map(r => r.extraviados[0]))), seloFimVoce: Math.round(100 * media(rs.map(r => r.selos[0]))),
       soldadinho: rs[0].S == null ? null : r1(media(rs.map(r => r.S)) * 100) / 100, javaporcoFim: rs[0].Vfim == null ? null : +media(rs.map(r => r.Vfim)).toFixed(2),
       Jmedio: Array.from({ length: 21 }, (_, t) => r1(media(rs.map(r => r.Js[t])))).filter((_, t) => t % 2 === 0),

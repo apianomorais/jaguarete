@@ -320,6 +320,15 @@ const REGRA_ZONA = { producao: 'agricultura e pecuária, com reserva legal e APP
 const NOME_DONO = c => c.uc ? NOME_UC[c.uc] : c.reserva ? 'Reserva · área protegida' : c.dono === 0 ? 'Sua fazenda' : `${st.fazendas[c.dono].nome} (${st.fazendas[c.dono].apelido})`;
 const COR_TIPO = { mata: 'var(--mata)', capoeira: 'var(--capoeira)', campo: 'var(--campo)', pasto: 'var(--pasto)', agua: 'var(--agua)', sede: 'var(--sede)' };
 
+// situação da usucapião numa área grilada, do ponto de vista da pessoa
+function avisoUsucapiao(c) {
+  if (c.reserva || c.dono < 0) return 'Terra pública não vira usucapião: o poder público pode retomá-la a qualquer estação.';
+  const ativo = (c.processo ?? -1) >= st.t, n = M.faltaUsucapiao(c), est = plural(n, 'estação', 'estações');
+  if (ativo) return 'Há processo em andamento: a contagem da usucapião está parada e a Justiça pode devolver a área.';
+  if (c.dono === 0) return `A Justiça só age se você processar. Sem reclamação, a área pode virar de ${st.fazendas[c.cercaDe].apelido} por usucapião em ${est}.`;
+  if (c.cercaDe === 0) return `Se ${st.fazendas[c.dono].apelido} não reclamar, a área pode virar sua por usucapião em ${est} (8 estações com animais no pasto, ou 12 sem uso). Renove a cerca antes de ela cair.`;
+  return `Se ${st.fazendas[c.dono].apelido} não reclamar, a área pode virar de ${st.fazendas[c.cercaDe].apelido} por usucapião em ${est}.`;
+}
 function painelArea() {
   if (sel == null) return '<p class="vazio">Toque numa área do mapa.</p>';
   const c = st.celulas[sel], F = st.fazendas[0], B = M.bioma(st), minha = M.posse(c) === 0;
@@ -330,7 +339,7 @@ function painelArea() {
       <div class="linha-info"><span>Cerca</span>${c.tipo === 'sede' ? '<span>sede</span>' : c.cercaDe >= 0
         ? `<b>${quem(c.cercaDe)} · ${CERCAS[c.material].nome}${c.material === 'concreto' ? ', permanente' : `, ${plural(c.validade, 'estação', 'estações')}`}</b>`
         : '<span>sem cerca</span>'}</div>
-      ${M.grilada(c) ? `<div class="msg erro">Área grilada por ${quem(c.cercaDe)}: o título é ${c.reserva ? 'público' : `da ${st.fazendas[c.dono].nome}`}. A Justiça pode devolvê-la.</div>` : ''}
+      ${M.grilada(c) ? `<div class="msg erro">Área grilada por ${quem(c.cercaDe)}: o título é ${c.reserva || c.dono < 0 ? 'público' : c.dono === 0 ? 'seu' : `da ${st.fazendas[c.dono].nome}`}. ${avisoUsucapiao(c)}</div>` : ''}
       ${c.cercaDe < 0 && c.dono === 0 && c.tipo !== 'sede' ? '<p class="vazio" style="margin:0">Terra sua, mas aberta: um vizinho encostado pode cercá-la.</p>' : ''}
     </div>`;
   }
@@ -414,7 +423,7 @@ function dicaAcao(acao, c, a = {}) {
     cercar_nativa: `Usa ${a.lados} lotes das estacas do seu desmate (você tem ${F.estacas}). Dura ${CERCAS.nativa.validade} estações.${aviso}`,
     cercar_madeira: `${a.lados} lados de eucalipto tratado. Dura ${CERCAS.madeira.validade} estações.${aviso}`,
     cercar_concreto: `${a.lados} lados de mourões de concreto. Permanente e não queima.${aviso}`,
-    justica: 'A chance de a Justiça devolver a área sobe para 60% nesta estação e na próxima.',
+    justica: `Zera a contagem da usucapião. A Justiça pode devolver a área e multar quem grilou: 60% de chance nesta estação e na próxima.${Number.isFinite(M.faltaUsucapiao(c)) ? ` Sem processo, vira usucapião em ${plural(M.faltaUsucapiao(c), 'estação', 'estações')}.` : ''}`,
     derrubar: a.desforco ? 'Desforço imediato: a terra é sua e acabou de ser cercada, então você pode retomá-la. Os animais de quem grilou ficam soltos.'
       : `${a.ilegal === 'crime de dano' ? 'Crime de dano' : 'Passou a hora do desforço imediato: é fazer justiça com as próprias mãos'}. Os animais ficam soltos e se espalham. Você perde o selo por dois anos, e a Justiça pode cobrar R$ ${MULTA.dano} mil de multa e R$ ${MULTA.indenizacao} mil de indenização.`,
     recolher: `Vaqueiros juntam os seus animais soltos nos pastos cercados com vaga. Os que não couberem são vendidos às pressas, por ${Math.round(VENDA_FORCADA * 100)}% do valor.`,
@@ -444,6 +453,7 @@ function painelFazenda() {
   const vencendo = minhasCercas.filter(c => c.material !== 'concreto' && c.validade <= 2).length;
   const abertas = M.celulasDe(st, 0).filter(c => c.cercaDe < 0 && c.tipo !== 'agua' && c.tipo !== 'sede').length;
   const tomadas = M.celulasDe(st, 0).filter(M.grilada).length;
+  const urgente = Math.min(...M.celulasDe(st, 0).filter(c => M.grilada(c) && (c.processo ?? -1) < st.t).map(M.faltaUsucapiao));
   const griladas = minhasCercas.filter(M.grilada).length;
   const expostos = pastos.filter(c => M.exposicao(st, c) > 0).length;
   return `
@@ -461,7 +471,10 @@ function painelFazenda() {
     <div class="linha-info"><span>Cercas que vencem em até 2 estações</span><b class="num" style="color:${vencendo ? 'var(--aviso)' : 'inherit'}">${vencendo}</b></div>
     <div class="linha-info"><span>Áreas suas sem cerca</span><b class="num">${abertas}</b></div>
     <div class="linha-info"><span>Áreas suas griladas por vizinhos</span><b class="num" style="color:${tomadas ? 'var(--perigo)' : 'inherit'}">${tomadas}</b></div>
+    ${Number.isFinite(urgente) ? `<div class="msg erro">Uma área sua grilada vira usucapião em ${plural(urgente, 'estação', 'estações')} se você não abrir processo.</div>` : ''}
     ${griladas ? `<div class="linha-info"><span>Áreas que você grilou</span><b class="num" style="color:var(--perigo)">${griladas}</b></div>` : ''}
+    ${F.usucapioes ? `<div class="linha-info"><span>Áreas ganhas por usucapião</span><b class="num">${F.usucapioes}</b></div>` : ''}
+    ${F.perdidasUsucapiao ? `<div class="linha-info"><span>Áreas perdidas por usucapião</span><b class="num" style="color:var(--perigo)">${F.perdidasUsucapiao}</b></div>` : ''}
     ${F.cercasDerrubadas ? `<div class="linha-info"><span>Cercas suas derrubadas por vizinhos</span><b class="num">${F.cercasDerrubadas}</b></div>` : ''}
     ${F.derrubadas ? `<div class="linha-info"><span>Cercas que você derrubou</span><b class="num">${F.derrubadas}</b></div>` : ''}
     ${M.processosAbertos(st, 0).length ? `<div class="msg">Há ${plural(M.processosAbertos(st, 0).length, 'cerca sua derrubada', 'cercas suas derrubadas')} sem processo. Abra o processo na sede.</div>` : ''}

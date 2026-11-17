@@ -152,13 +152,18 @@ export const NATUREZA = {
   },
   grilagem: {
     titulo: 'Grilagem',
-    texto: 'Grilagem é a apropriação ilegal de terra alheia ou pública. Deslocar cerca ou marco para se apropriar de imóvel alheio é crime de alteração de limites (Código Penal, art. 161), e invadir terras públicas para ocupá-las também é crime (Lei nº 4.947/1966, art. 20). No jogo, cercar a terra aberta de um vizinho, ou uma unidade de conservação, tira o seu selo; a cada estação, a Justiça pode devolver a área e multar quem grilou.',
+    texto: 'Grilagem é a apropriação ilegal de terra alheia ou pública. Deslocar cerca ou marco para se apropriar de imóvel alheio é crime de alteração de limites (Código Penal, art. 161), e invadir terras públicas para ocupá-las também é crime (Lei nº 4.947/1966, art. 20). Em terra particular, sem violência, o crime só é processado por queixa do dono (art. 161, § 3º). No jogo, grilar tira o seu selo; em terra particular, a Justiça só devolve a área e multa se o dono processar, e na reserva o poder público age sozinho.',
     ref: 'Código Penal, art. 161; Lei nº 4.947/1966, art. 20.',
   },
   dano: {
     titulo: 'Derrubar a cerca do vizinho',
     texto: 'Destruir coisa alheia, como a cerca de um vizinho, é crime de dano (Código Penal, art. 163), e quem causa o prejuízo responde também pela indenização. Quem tem a terra invadida pode retomá-la pela própria força, desde que o faça logo e sem ir além do necessário: é o desforço imediato (Código Civil, art. 1.210, § 1º). Passada essa hora, retomar por conta própria é fazer justiça com as próprias mãos (Código Penal, art. 345), e o caminho é a Justiça.',
     ref: 'Código Penal, arts. 163 e 345; Código Civil, art. 1.210, § 1º.',
+  },
+  usucapiao: {
+    titulo: 'Usucapião',
+    texto: 'Quem possui um imóvel como seu, sem interrupção nem oposição, por quinze anos, adquire a propriedade, mesmo sem título e boa-fé; o prazo cai para dez anos se o possuidor morar nele ou o tornar produtivo (Código Civil, art. 1.238). Por isso a reclamação do dono importa: um processo interrompe a posse mansa e pacífica. Imóveis públicos não são adquiridos por usucapião (Constituição, art. 191, parágrafo único). No jogo, os prazos são comprimidos: 8 estações com animais no pasto, ou 12 sem uso.',
+    ref: 'Código Civil, art. 1.238; Constituição Federal, art. 191, parágrafo único; Código Penal, art. 161, § 3º.',
   },
   cercas: {
     titulo: 'Cercas e mourões',
@@ -189,6 +194,7 @@ export function dicaDaEstacao(st, rel, vistos) {
   const araripe = st.bioma === 'araripe';
   if (rel.manejoNestaEstacao) cands.unshift('manejo');
   if (rel.grilagemNestaEstacao || rel.eventos.some(e => (e.includes('cercou') && e.includes('sem cerca')) || e.includes('devolve'))) cands.unshift('grilagem');
+  if (rel.eventos.some(e => e.includes('usucapião'))) cands.unshift('usucapiao');
   if (rel.derrubouNestaEstacao || rel.derrubaramSuaCerca) cands.unshift('dano');
   if (rel.cercouNestaEstacao) cands.push('cercas');
   if (rel.javaporco > 0.3) cands.push('javaporco', 'competicao');
@@ -212,7 +218,7 @@ export function dicaDaEstacao(st, rel, vistos) {
 export const COMO_JOGAR = [
   ['Objetivo', 'Termine os 10 anos (20 estações) com o maior patrimônio: dinheiro em caixa mais o valor do rebanho. Você disputa com três fazendas vizinhas controladas pelo computador.'],
   ['Cada estação', 'Você tem 3 ações: cercar, desmatar, deixar a mata voltar, instalar defesas, pôr câmeras, capturar um jaguar para pôr colar ou chamar o matador. Comprar, vender e mover animais não gasta ação.'],
-  ['Cercas e terra', 'As divisas são abertas: a posse de cada área é de quem a cerca. Animais só ficam em pasto cercado. Cercar custa por lado exposto; as estacas podem vir do seu desmate, de madeira tratada ou de concreto, que não apodrece. Cercar a terra aberta de um vizinho é grilagem: dá área, mas tira o selo e a Justiça pode devolvê-la e multar. Derrubar a cerca de um vizinho solta os animais dele, que se espalham, se perdem e viram presa fácil; é crime de dano, salvo quando você retoma logo a própria terra que ele acabou de cercar.'],
+  ['Cercas e terra', 'As divisas são abertas: a posse de cada área é de quem a cerca. Animais só ficam em pasto cercado. Cercar custa por lado exposto; as estacas podem vir do seu desmate, de madeira tratada ou de concreto, que não apodrece. Cercar a terra aberta de um vizinho é grilagem: dá área, mas tira o selo; em terra particular, a Justiça só devolve e multa se o dono processar, e a área grilada sem reclamação vira usucapião (8 estações com animais, 12 sem uso). Terra pública nunca vira usucapião. Derrubar a cerca de um vizinho solta os animais dele, que se espalham, se perdem e viram presa fácil; é crime de dano, salvo quando você retoma logo a própria terra que ele acabou de cercar.'],
   ['Os vizinhos', 'A cada partida, três vizinhos são sorteados de um elenco de sete: um cuidadoso, um tradicional e um encrenqueiro, em lugares sorteados do mapa. Cada um tem o seu jeito de lidar com a mata, os felinos e a lei. Quem tem a terra grilada ou a cerca derrubada guarda rancor, e os vingativos revidam.'],
   ['Os jaguares', 'Vivem na mata e ninguém os vê. Você descobre por onde andam pelas pegadas na sua terra, pelas fotos das câmeras, pelos ataques e pelos colares GPS. Eles comem presas silvestres; quando faltam presas, atacam o rebanho que fica na borda da mata.'],
   ['A mata', 'A mata sustenta as presas silvestres, que sustentam os jaguares. Desmatar dá pasto, mas reduz as presas e deixa mais rebanho na borda. Abaixo da reserva legal, você perde o selo e pode ser multado.'],

@@ -50,19 +50,24 @@ As divisas entre as fazendas são abertas. O título (a linha pontilhada no mapa
   O relatório avisa uma estação antes de uma cerca com animais cair. A cerca pode ser renovada a partir de duas estações antes do vencimento.
 - **Grilagem:** cercar a terra aberta de um vizinho, ou de uma unidade de conservação, é grilagem.
   - Você perde o selo na hora.
-  - A cada estação, a Justiça pode devolver a área ao dono e multar quem grilou: 15% de chance por estação, 30% numa unidade de conservação.
-  - A multa é de R$ 15 mil, ou R$ 40 mil numa unidade de conservação.
-  - Quem teve a terra cercada pode entrar na Justiça (R$ 3 mil e uma ação). O processo eleva a chance para 60% nesta e na próxima estação.
+  - **Em terra particular**, a Justiça só age se o dono processar, porque, sem violência, o crime de alteração de limites só é processado por queixa (Código Penal, art. 161, § 3º). O processo custa R$ 3 mil e uma ação. Com ele, a chance de a Justiça devolver a área e multar quem grilou (R$ 15 mil) é de 60% nesta e na próxima estação.
+  - **Na reserva e nas unidades de conservação**, o poder público age sozinho: 30% de chance por estação, com multa de R$ 40 mil.
+- **Usucapião:** a área particular grilada que o dono não reclama passa a ser de quem a cercou (Código Civil, art. 1.238).
+  - O jogo comprime os prazos reais para caber em dez anos: 8 estações em que a área foi usada (pasto com animais), como os 10 anos com uso produtivo, ou 12 estações de posse sem uso, como os 15 anos.
+  - Abrir processo zera a contagem, porque a posse deixa de ser mansa e pacífica. A contagem fica parada enquanto o processo corre. O desforço imediato e qualquer queda da cerca também encerram a posse.
+  - Terra pública nunca vira usucapião (Constituição, art. 191, parágrafo único).
+  - A área grilada mostra quantas estações faltam, e o relatório avisa quando faltam duas ou menos.
+  - A pessoa é sempre avisada quando cercam a sua terra. Os fazendeiros do computador precisam perceber: a cada estação, a chance é de 12% para mata e 25% para pasto, mais até 30% para quem monitora a fazenda com câmeras. Quando percebem, processam, primeiro a área mais perto da usucapião.
 - **Derrubar a cerca de um vizinho:** custa uma ação. Cerca de estacas da mata ou de madeira sai de graça; cerca de concreto custa R$ 10 mil (trator). Só dá para derrubar uma cerca encostada em terra que você controla.
   - Os animais que estavam no pasto ficam soltos.
-  - É crime de dano (Código Penal, art. 163). Você perde o selo, e a Justiça abre um caso: a cada estação, há 20% de chance de condenar quem derrubou, ou 60% se a vítima processar. A condenação custa R$ 10 mil de multa e R$ 10 mil de indenização, paga à vítima. Casos não decididos em seis estações se encerram.
+  - É crime de dano (Código Penal, art. 163). Você perde o selo na hora. O crime de dano só é processado por queixa da vítima (art. 167). Quem teve a cerca derrubada tem duas estações para processar; depois, o direito de queixa decai. Com processo, a chance de condenação é de 60% nesta e na próxima estação. A condenação custa R$ 10 mil de multa e R$ 10 mil de indenização, paga à vítima.
   - **Desforço imediato:** se um vizinho cercou a sua terra, você pode derrubar a cerca dele sem crime, desde que o faça logo: até o fim da estação seguinte à da grilagem (Código Civil, art. 1.210, § 1º). Depois disso, derrubar por conta própria é fazer justiça com as próprias mãos (Código Penal, art. 345), com as mesmas consequências do crime de dano; o caminho passa a ser a Justiça.
 - **Animais soltos:** aparecem no mapa com um contorno tracejado na cor da fazenda dona.
   - Continuam contando no patrimônio, mas não rendem nem se reproduzem.
   - A cada estação, cada animal solto tem 50% de chance de ir para uma área aberta vizinha (difusão) e 10% de chance de se perder.
   - Na mata, ficam duas vezes mais expostos aos predadores do que num pasto de borda sem defesa, e entram na resposta funcional do modelo como parte do rebanho exposto.
   - O dono recolhe todos de uma vez, na sede (uma ação e R$ 2 mil): vaqueiros levam os animais para os pastos cercados com vaga e vendem às pressas os que não couberem. Quem cerca a área onde estão os próprios animais soltos também os prende de volta.
-- **Os vizinhos e as cercas:** todos derrubam logo a cerca de quem grilou a sua terra (desforço imediato), processam quem derrubou as suas cercas, recolhem os animais soltos, renovam as cercas dos pastos com animais e cercam os próprios pastos abertos. Quem grila e quem sabota depende da personalidade (veja a seção seguinte).
+- **Os vizinhos e as cercas:** todos derrubam logo a cerca de quem grilou a sua terra quando percebem a tempo (desforço imediato), processam quem grilou ou derrubou as suas cercas, recolhem os animais soltos, renovam as cercas dos pastos com animais e das áreas griladas e cercam os próprios pastos abertos. Quem grila e quem sabota depende da personalidade (veja a seção seguinte).
 
 ## Os vizinhos
 
@@ -229,16 +234,17 @@ Vitória (%) e patrimônio médio (R$ mil):
 
 | Bioma    | Conviver | Sabotar 2 vezes | Grilar quando dá | Desmatar legal | Sabotar sempre | Abater | Passiva | Grileiro |
 |----------|---------:|----------------:|-----------------:|---------------:|---------------:|-------:|--------:|---------:|
-| Pantanal | 55% · 538 | 55% · 526 | 32% · 442 | 0% · 196 | 42% · 474 | 0% · 124 | 0% · 223 | 0% · 40 |
-| Amazônia | 51% · 434 | 34% · 386 | 51% · 430 | 11% · 325 | 3% · 108 | 2% · 209 | 0% · 232 | 0% · 67 |
-| Cerrado  | 49% · 696 | 40% · 658 | 31% · 598 | 6% · 410 | 14% · 429 | 0% · 199 | 0% · 233 | 0% · 82 |
-| Caatinga | 43% · 398 | 39% · 391 | 37% · 381 | 53% · 402 | 6% · 218 | 6% · 302 | 0% · 227 | 0% · 54 |
-| Araripe  | 53% · 823 | 22% · 700 | 40% · 764 | 31% · 701 | 0% · 214 | 0% · 246 | 0% · 210 | 0% · 79 |
+| Pantanal | 57% · 541 | 55% · 527 | 28% · 436 | 0% · 191 | 44% · 477 | 0% · 121 | 0% · 222 | 0% · 2 |
+| Amazônia | 53% · 432 | 40% · 389 | 53% · 429 | 10% · 324 | 5% · 97 | 4% · 221 | 0% · 229 | 0% · 22 |
+| Cerrado  | 52% · 697 | 46% · 666 | 29% · 592 | 8% · 419 | 15% · 422 | 0% · 202 | 0% · 236 | 0% · 44 |
+| Caatinga | 45% · 399 | 42% · 392 | 36% · 377 | 50% · 402 | 5% · 219 | 6% · 298 | 0% · 223 | 0% · −18 |
+| Araripe  | 56% · 820 | 20% · 692 | 41% · 754 | 30% · 703 | 0% · 221 | 0% · 247 | 0% · 204 | 0% · 11 |
 
-- **Apostas:** sabotar de vez em quando e grilar quando aparece um pasto aberto vencem de 22% a 55% das partidas: às vezes compensam, às vezes não. Na Amazônia, grilar quando dá rende o mesmo que conviver, porque quase nunca aparece pasto aberto.
+- **Apostas:** sabotar de vez em quando e grilar quando aparece um pasto aberto vencem de 20% a 55% das partidas: às vezes compensam, às vezes não. Na Amazônia, grilar quando dá rende o mesmo que conviver, porque quase nunca aparece pasto aberto.
 - **Crimes em série:** sabotar toda estação mantém o selo sempre perdido e acumula processos; com as fazendas próximas, como na Amazônia e no Araripe, quase sempre termina em último. O grileiro e o matador também perdem quase sempre.
 - **Desmate:** na Caatinga, desmatar até o limite legal ainda rende um pouco mais que conviver, enquanto a população de jaguares cai de 3 para cerca de 1,5 em dez anos. Nos outros biomas, o desmate deixa o rebanho exposto e perde.
-- **Javaporcos:** sem o manejo, "conviver" cai para 36% de vitórias no Pantanal, 22% na Amazônia e 9% no Cerrado.
+- **Usucapião:** quem cuida da terra e processa nunca perde área assim. A estratégia passiva, que nunca reclama, perde de 0,3 a 1,8 área por partida para os vizinhos, e mais na Amazônia, onde as fazendas se encostam. O grileiro ganha de 0,1 a 0,4 área por partida por usucapião, mas quebra antes com o custo das cercas. Entre os vizinhos, há até 0,4 usucapião por partida.
+- **Javaporcos:** sem o manejo, "conviver" cai para 38% de vitórias no Pantanal, 23% na Amazônia e 11% no Cerrado.
 - **Soldadinho:** termina com cerca de 80% da população inicial.
 
 ### Como joga cada vizinho
@@ -247,26 +253,28 @@ Vitórias de cada vizinho quando está na partida, e suas vitórias com a estrat
 
 | Vizinho | Pantanal | Amazônia | Cerrado | Caatinga | Araripe |
 |---|---|---|---|---|---|
-| Dona Celeste | 35% · você 43% | 42% · você 52% | 44% · você 34% | 24% · você 54% | 47% · você 36% |
-| Professora Lúcia | 6% · você 68% | 39% · você 51% | 4% · você 65% | 58% · você 33% | 7% · você 70% |
-| Zé Ramos | 20% · você 57% | 10% · você 54% | 22% · você 51% | 13% · você 42% | 23% · você 52% |
-| Doutor Otávio | 21% · você 59% | 4% · você 49% | 39% · você 41% | 0% · você 46% | 5% · você 58% |
-| Dona Zefa | 27% · você 50% | 11% · você 51% | 15% · você 57% | 22% · você 40% | 24% · você 50% |
-| Seu Brás | 1% · você 56% | 0% · você 49% | 1% · você 49% | 0% · você 35% | 0% · você 48% |
-| Coronel Firmino | 2% · você 54% | 0% · você 54% | 1% · você 50% | 6% · você 50% | 6% · você 58% |
+| Dona Celeste | 34% · você 45% | 38% · você 52% | 45% · você 36% | 21% · você 63% | 42% · você 42% |
+| Professora Lúcia | 7% · você 70% | 33% · você 54% | 8% · você 67% | 64% · você 30% | 4% · você 70% |
+| Zé Ramos | 17% · você 62% | 16% · você 50% | 14% · você 58% | 6% · você 45% | 28% · você 54% |
+| Doutor Otávio | 24% · você 59% | 7% · você 57% | 35% · você 46% | 0% · você 43% | 6% · você 58% |
+| Dona Zefa | 24% · você 49% | 11% · você 53% | 12% · você 52% | 16% · você 47% | 21% · você 56% |
+| Seu Brás | 0% · você 59% | 0% · você 50% | 1% · você 53% | 1% · você 43% | 1% · você 52% |
+| Coronel Firmino | 1% · você 54% | 0% · você 56% | 1% · você 51% | 5% · você 47% | 6% · você 60% |
 
 - **Dona Celeste** é a rival mais forte em quase todos os biomas.
 - **Professora Lúcia** só lidera na Caatinga: lá, manter a vegetação nativa segura o pasto na seca e as cotas de reserva rendem.
 - **Doutor Otávio** vai bem onde a fiscalização é fraca e há campo para abrir, como no Cerrado, e quebra com as multas na Amazônia.
-- **Os encrenqueiros** quase nunca vencem, mas atrapalham os outros: na Caatinga, com Seu Brás na partida, as suas vitórias caem para 35%.
+- **Os encrenqueiros** quase nunca vencem: perdem o selo, pagam multas e gastam com cercas. Para os vizinhos, o custo é ter de vigiar a terra, desfazer grilagens e processar antes da usucapião.
 
 ## Referências
 
 AZEVEDO, F. C. et al. Avaliação do risco de extinção da onça-parda *Puma concolor* (Linnaeus, 1771) no Brasil. **Biodiversidade Brasileira**, v. 3, n. 1, p. 107-121, 2013.
 
-BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940. Código Penal. Arts. 161 (alteração de limites), 163 (dano) e 345 (exercício arbitrário das próprias razões). Rio de Janeiro, 1940.
+BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil. Art. 191, parágrafo único (imóveis públicos não são adquiridos por usucapião). Brasília, DF, 1988.
 
-BRASIL. Lei nº 10.406, de 10 de janeiro de 2002. Código Civil. Art. 1.210, § 1º (desforço imediato). Brasília, DF, 2002.
+BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940. Código Penal. Arts. 161 (alteração de limites; § 3º, ação por queixa), 163 (dano), 167 (ação por queixa no crime de dano) e 345 (exercício arbitrário das próprias razões). Rio de Janeiro, 1940.
+
+BRASIL. Lei nº 10.406, de 10 de janeiro de 2002. Código Civil. Arts. 1.210, § 1º (desforço imediato), e 1.238 (usucapião extraordinária). Brasília, DF, 2002.
 
 BRASIL. Lei nº 4.947, de 6 de abril de 1966. Fixa normas de direito agrário. Art. 20 (invasão de terras públicas). Brasília, DF, 1966.
 

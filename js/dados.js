@@ -24,9 +24,18 @@ export const CERCAS = {
   concreto: { nome: 'concreto',        preco: 2.5, validade: 999 },
 };
 export const ESTACAS_DESMATE = { mata: 4, capoeira: 2, campo: 0 }; // lotes de estacas (um lote cerca um lado)
-// chance por estação de a Justiça decidir: devolver uma área grilada (base, uc) ou condenar quem derrubou uma cerca (dano);
-// com processo aberto pela vítima, a chance sobe para "acionada". Processos de dano não decididos em "prazoDano" estações se encerram.
-export const JUSTICA = { base: 0.15, uc: 0.3, acionada: 0.6, dano: 0.2, prazoDano: 6 };
+// Justiça: chance por estação de decidir um caso. Em terra particular, a grilagem sem violência (Código Penal, art. 161, § 3º)
+// e o crime de dano (art. 167) só são processados por queixa do dono: sem processo, nada acontece ("base" e "dano" = 0).
+// Na reserva e nas unidades de conservação, o poder público age sozinho ("uc"). Com processo aberto, a chance sobe para "acionada".
+// Quem teve a cerca derrubada tem "prazoQueixa" estações para processar; depois, o direito de queixa decai.
+export const JUSTICA = { base: 0, uc: 0.3, acionada: 0.6, dano: 0, prazoQueixa: 2 };
+// Usucapião (Código Civil, art. 1.238): a posse sem oposição de terra particular grilada vira propriedade de quem cercou.
+// Prazos comprimidos para caber nos 10 anos do jogo: 8 estações em que a área foi usada (pasto com animais), como os
+// 10 anos com uso produtivo, ou 12 estações de posse sem uso, como os 15 anos. Terra pública nunca (Constituição, art. 191).
+export const USUCAPIAO = { comUso: 8, semUso: 12, alerta: 2 };
+// Chance, por estação, de um fazendeiro do computador perceber que cercaram a terra dele (a pessoa sempre é avisada):
+// mata parada é vigiada menos que pasto, e quem monitora a fazenda com câmeras percebe mais.
+export const VIGILANCIA = { mata: 0.12, pasto: 0.25, monitora: 0.3 };
 export const DESFORCO = 1;            // estações em que o dono pode derrubar a cerca de quem grilou a sua terra sem cometer crime
 // Animais soltos (cerca derrubada ou caída): a cada estação cada animal vai para uma área aberta vizinha com chance "difusao",
 // some com chance "extravio", e fica mais exposto aos predadores na mata ("mata" multiplica a exposição).
